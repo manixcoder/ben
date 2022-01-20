@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use Auth;
-
 use Validator;
 use Yajra\Datatables\Datatables;
 
