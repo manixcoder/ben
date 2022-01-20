@@ -22,16 +22,16 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $merchent_data = User::with(['getRole'])
+            ->whereHas('roles', function ($q) {
+                $q->where('name', 'merchent');
+            })->get()->count();
         $user_data = User::with(['getRole'])
             ->whereHas('roles', function ($q) {
-                $q->where('name', 'employee');
-            })->get()->count();
-        $company_data = User::with(['getRole'])
-            ->whereHas('roles', function ($q) {
-                $q->where('name', 'company');
+                $q->where('name', 'user');
             })->get()->count();
         //dd($company_data);
-        return view('admin.dashboard.index')->with(array('user_data' => $user_data, 'company_data' => $company_data));
+        return view('admin.dashboard.index')->with(array('user_data' => $user_data, 'merchent_data' => $merchent_data));
     }
     /**
      * Show the Admin Profile.

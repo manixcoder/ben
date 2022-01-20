@@ -31,9 +31,9 @@ class Role extends Seeder
             ),
             array(
                 'id'            =>    3,
-                'name'          =>    'user',
-                'display_name'  =>    'User',
-                'description'   =>    'user',
+                'name'          =>    'users',
+                'display_name'  =>    'users',
+                'description'   =>    'users',
                 'created_at'    =>    date("Y-m-d H:i:s"),
                 'updated_at'    =>    date("Y-m-d H:i:s"),
             ),
