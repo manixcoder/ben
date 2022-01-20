@@ -15,10 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin-login', function () {
+    return view('admin_login');
+});
+
 Auth::routes();
 Route::get('/validate-user', 'HomeController@checkUserRole');
 Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function () {
-    return "Admin";
+    Route::get('/', 'Admin\DashboardController@index');
 });
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], function () {
+    return "Merchant";
+});

@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
 			array(
 				'id' => 1,
 				'name' => 'administrator',
-				'email' => 'admin@gmail.com',
+				'email' => 'admin@yopmail.com',
 				'email_verified_at' =>  date("Y-m-d H:i:s"),
 				'password' => bcrypt('plokijuh@123'),
 				'remember_token' => null,
