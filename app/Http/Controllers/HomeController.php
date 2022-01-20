@@ -34,8 +34,8 @@ class HomeController extends Controller
         $this->middleware('auth');
         if (Auth::check()) {
             //Get Login User role here
-            
             $role = Auth::user()->roles->first();
+            //dd($role);
             if (!empty($role)) {
                 return redirect('/' . $role->name);
             }
