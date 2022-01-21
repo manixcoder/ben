@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('pageTitle', 'Dashboard')
+@section('pageTitle', 'Category')
 @section('content')
 <div class="company-sec">
     <div class="row">

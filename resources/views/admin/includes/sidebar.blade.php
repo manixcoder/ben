@@ -7,25 +7,25 @@
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="{{ url('admin/user-management') }}">
         <img src="{{ asset('public/adminAssets/images/sp_users.png')}}" alt="users">
         Users
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="{{ url('admin/company-management') }}">
         <img src="{{ asset('public/adminAssets/images/sp_companies.png')}}" alt="Companies">
         Companies
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="{{ url('admin/advertising-management') }}">
         <img src="{{ asset('public/adminAssets/images/sp_advertising.png')}}" alt="Advertising">
         Advertising
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="{{ url('admin/awards-management') }}">
         <img src="{{ asset('public/adminAssets/images/sp_awards.png')}}" alt="awards">
         Awards
       </a>

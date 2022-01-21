@@ -13,11 +13,14 @@ class AddColumnUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {           
+        Schema::table('users', function (Blueprint $table) {
             $table->string('first_name')->after('id')->nullable();
             $table->string('last_name')->after('first_name')->nullable();
             $table->string('company_name')->after('password')->nullable();
-            $table->string('company_type')->after('company_name')->nullable();
+            $table->string('profile_image')->after('company_name')->nullable();
+            $table->string('company_logo')->after('profile_image')->nullable();
+            $table->string('company_banner')->after('company_logo')->nullable();
+            $table->string('company_type')->after('company_banner')->nullable();
             $table->string('restaurant_type')->after('company_type')->nullable();
             $table->string('address')->after('restaurant_type')->nullable();
             $table->string('city')->after('address')->nullable();
@@ -30,6 +33,15 @@ class AddColumnUsersTable extends Migration
             $table->string('mobile')->after('gender')->nullable();
             $table->string('otp')->after('mobile')->nullable();
             $table->string('subscription_id')->after('otp')->nullable();
+            $table->dateTime('last_login')->after('subscription_id')->nullable();
+            $table->longText('about_description')->after('last_login')->nullable();
+            $table->string('opening_time')->after('about_description')->nullable();
+            $table->string('closing_time')->after('opening_time')->nullable();
+            $table->string('website_link')->after('closing_time')->nullable();
+            $table->string('facebook_link')->after('website_link')->nullable();
+            $table->string('instagram_link')->after('facebook_link')->nullable();
+            $table->string('twitter_link')->after('instagram_link')->nullable();
+            $table->enum('is_active', ['1', '0'])->after('twitter_link')->default(1)->comment = '1=Active, 0=Inactive';
         });
     }
 
@@ -41,9 +53,12 @@ class AddColumnUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('firstName')->nullable();
-            $table->dropColumn('lastName')->nullable();
+            $table->dropColumn('first_name')->nullable();
+            $table->dropColumn('last_name')->nullable();
             $table->dropColumn('company_name')->nullable();
+            $table->dropColumn('profile_image')->nullable();
+            $table->dropColumn('company_logo')->nullable();
+            $table->dropColumn('company_banner')->nullable();
             $table->dropColumn('company_type')->nullable();
             $table->dropColumn('restaurant_type')->nullable();
             $table->dropColumn('address')->nullable();
@@ -57,6 +72,15 @@ class AddColumnUsersTable extends Migration
             $table->dropColumn('mobile')->nullable();
             $table->dropColumn('otp')->nullable();
             $table->dropColumn('subscription_id')->nullable();
+            $table->dropColumn('last_login')->nullable();
+            $table->dropColumn('about_description')->nullable();
+            $table->dropColumn('opening_time')->nullable();
+            $table->dropColumn('closing_time')->nullable();
+            $table->dropColumn('website_link')->nullable();
+            $table->dropColumn('facebook_link')->nullable();
+            $table->dropColumn('instagram_link')->nullable();
+            $table->dropColumn('twitter_link')->nullable();
+            $table->dropColumn('is_active')->nullable();
         });
     }
 }
