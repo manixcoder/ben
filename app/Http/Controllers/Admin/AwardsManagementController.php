@@ -73,12 +73,11 @@ class AwardsManagementController extends Controller
     public function update(Request $request, AwardModel $awardModel, $id)
     {
         $validator = Validator::make($request->all(), array(
-            'regular_visitor'          => 'required',
-            'visitor_points'         => 'required',
-            'big_spender'         => 'required',
+            'regular_visitor'       => 'required',
+            'visitor_points'        => 'required',
+            'big_spender'           => 'required',
             'spendor_point'         => 'required',
-            'sharing_app_points'         => 'required',
-
+            'sharing_app_points'    => 'required',
 
         ));
         if ($validator->fails()) {
@@ -103,9 +102,9 @@ class AwardsManagementController extends Controller
         }
 
 
-        dd($awardData);
-        dd($id);
-        dd($request->all());
+        // dd($awardData);
+        // dd($id);
+        // dd($request->all());
     }
 
     /**
