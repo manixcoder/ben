@@ -1,20 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Merchant;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
-use Auth;
-use Validator;
-use Yajra\Datatables\Datatables;
 
-class DashboardController extends Controller
+class AdvertisingManagementController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['auth', 'merchant']);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -22,16 +14,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $merchent_data = User::with(['getRole'])
-            ->whereHas('roles', function ($q) {
-                $q->where('name', 'merchent');
-            })->get()->count();
-        $user_data = User::with(['getRole'])
-            ->whereHas('roles', function ($q) {
-                $q->where('name', 'user');
-            })->get()->count();
-        //dd($company_data);
-        return view('admin.dashboard.index')->with(array('user_data' => $user_data, 'merchent_data' => $merchent_data));
+        $data = array();
+        return view('admin.advertising.index', $data);
     }
 
     /**

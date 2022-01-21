@@ -10,9 +10,7 @@
   <link rel="stylesheet" href="{{ asset('public/adminAssets/Fonts/font.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ asset('public/adminAssets/css/style.css')}}">
-
-
-  <title> Dashboard </title>
+  <title>Admin - @yield('pageTitle')</title>
 </head>
 
 <body>
@@ -32,21 +30,8 @@
       </div>
     </div>
   </header>
-  <div class="side-bar text-left">
-    <ul>
-      <li><a href="#"> <img src="{{ asset('public/adminAssets/images/sp_dashboard.png')}}" alt="Dashboard"> Dashboard</a></li>
-      <li><a href="#"> <img src="{{ asset('public/adminAssets/images/sp_users.png')}}" alt="users"> Users</a></li>
-      <li><a href="#"> <img src="{{ asset('public/adminAssets/images/sp_companies.png')}}" alt="Companies"> Companies</a></li>
-      <li><a href="#"> <img src="{{ asset('public/adminAssets/images/sp_advertising.png')}}" alt="Advertising"> Advertising</a></li>
-      <li><a href="#"> <img src="{{ asset('public/adminAssets/images/sp_awards.png')}}" alt="awards"> Awards</a></li>
-      <li><a href="#"> <img src="{{ asset('public/adminAssets/images/sp_subscriptions.png')}}" alt="Subscriptions"> Subscriptions</a></li>
-      <li><a href="#"> <img src="{{ asset('public/adminAssets/images/sp_payments.png')}}" alt="Payments"> Payments</a></li>
-      <li><a href="#"> <img src="{{ asset('public/adminAssets/images/sp_messages.png')}}" alt="Messages"> Messages</a></li>
-      <li><a href="#"> <img src="{{ asset('public/adminAssets/images/sp_business_category.png')}}" alt="sp_business_category"> Business Category</a></li>
-      <li><a href="#"> <img src="{{ asset('public/adminAssets/images/sp_role_access.png')}}" alt="sp_role_access"> Role Access Company Category Wise</a></li>
-      <li><a href="#"> <img src="{{ asset('public/adminAssets/images/sp_role_access.png')}}" alt="role"> Role Access Company Category Wise</a></li>
-    </ul>
-  </div>
+  
+  @include('admin.includes.sidebar')
   <div class="add-newuser-add">
     @yield('content')
   </div>
