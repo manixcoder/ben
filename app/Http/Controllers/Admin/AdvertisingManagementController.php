@@ -25,7 +25,8 @@ class AdvertisingManagementController extends Controller
      */
     public function create()
     {
-        //
+        $data = array();
+        return view('admin.advertising.create', $data);
     }
 
     /**

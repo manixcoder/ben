@@ -9,7 +9,7 @@
             </p>
         </div>
         <div class="col-md-6 text-right">
-            <a href="#">Add New Advertising Banner</a>
+            <a href="{{ url('admin/advertising-management/create') }}">Add New Advertising Banner</a>
         </div>
     </div>
 </div>
