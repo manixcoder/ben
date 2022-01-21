@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 
-class CategoryController extends Controller
+class CategoryManagementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $data = array();
+        return view('admin.category.index', $data);
     }
 
     /**

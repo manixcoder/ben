@@ -24,6 +24,22 @@ Route::get('/validate-user', 'HomeController@checkUserRole');
 /*=====================================ADMIN=====================================*/
 Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function () {
     Route::get('/', 'Admin\DashboardController@index');
+
+    /*
+    |---------------------------------
+    | Employee Management Routes Here     |
+    |---------------------------------
+     */
+    Route::group(['prefix' => 'category-management'], function () {
+        Route::get('/', 'Admin\CategoryManagementController@index');
+        Route::get('university-data', 'Admin\CategoryManagementController@universityData');
+        Route::get('create', 'Admin\CategoryManagementController@create');
+        Route::post('/save-university', 'Admin\CategoryManagementController@store');
+        Route::get('{id}/edit', 'Admin\CategoryManagementController@edit');
+        Route::post('{id}/update', 'Admin\CategoryManagementController@update');
+        Route::get('delete/{id}', 'Admin\CategoryManagementController@destroy');
+    });
+
 });
 
 /*=====================================ADMIN END=====================================*/
