@@ -37,7 +37,21 @@ class AdvertisingManagementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'ad_name' => 'required',
+            'link' => 'required',
+            'ad_image' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+        try {
+
+            return redirect('/admin/advertising-management')->with(['status' => 'success', 'message' => 'New advertising added Successfully!']);
+        } catch (\Exception $e) {
+            return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);
+            return back()->with(['status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.']);
+        }
     }
 
     /**

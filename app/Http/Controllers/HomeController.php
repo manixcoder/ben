@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\LicenseClassModel;
 use Auth;
+use DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -44,10 +45,11 @@ class HomeController extends Controller
         Auth::logout();
         return redirect('/login')->with(['status' => 'danger', 'message' => 'you are not authorized to login here !']);
     }
-    public function getLicenseClassByCountry(Request $request, $id)
+    public function getSubCategory(Request $request, $id)
     {
         try {
-            $list = LicenseClassModel::Where('country_id', $id)->orderBy('license_class', 'ASC')->get();
+            $list = DB::table('categories')->where('parent_id','=',$id)->where('c_type','=','Business')->get();
+            //dd($list);
             if ($list) {
                 $data['status'] = 'success';
             } else {
@@ -59,4 +61,5 @@ class HomeController extends Controller
             return response()->json(array('status' => 'error', 'message' => $e->getMessage()));
         }
     }
+   
 }

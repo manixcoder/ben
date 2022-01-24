@@ -17,7 +17,9 @@
   <header>
     <div class="benefitme">
       <div class="col-md-6 col-sm-6 ">
-        <a href="#"><img src="{{ asset('public/adminAssets/images/header_logo.png')}}" alt="header_logo" width="220px"></a>
+        <a href="{{ URL::to('/dashboard') }}">
+          <img src="{{ asset('public/adminAssets/images/header_logo.png')}}" alt="header_logo" width="220px">
+        </a>
       </div>
       <div class="col-md-6 col-sm-6 text-right">
         <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -34,7 +36,9 @@
   <div class="add-newuser-add company-categroy">
     @yield('content')
   </div>
-
+  @yield('pagejs')
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="{{ asset('public/adminAssets/js/libaury.js') }}"></script>
   <script src="{{ asset('public/adminAssets/js/bootstrap.min.js') }}"></script>
 </body>

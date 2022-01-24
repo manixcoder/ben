@@ -12,6 +12,12 @@
         <form method="POST" action="{{ url('/admin/advertising-management/save-advertising') }}" enctype="multipart/form-data">
             @csrf
             <div class="col-md-12 col-sm-12">
+                <div class="col-md-6 ">
+                    <p>Advertising Name</p>
+                </div>
+                <input type="text" name="ad_name" class="form-control">
+            </div>
+            <div class="col-md-12 col-sm-12">
                 <div class="upload-file">
                     <div class="form-group">
                         <span>
@@ -23,6 +29,12 @@
                         </span>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <div class="col-md-6 ">
+                    <p>Link</p>
+                </div>
+                <input type="text" name="link" class="form-control">
             </div>
             <div class="btn-group">
                 <div class="col-md-6 col-sm-6">

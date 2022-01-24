@@ -25,7 +25,8 @@ class CompanyManagementController extends Controller
      */
     public function create()
     {
-        //
+        $data = array();
+        return view('admin.company.create_company', $data);
     }
 
     /**
