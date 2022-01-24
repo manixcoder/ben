@@ -3,13 +3,19 @@
 @section('content')
 <div class="add-newuser">
     <div class="row">
+        @if(Session::has('status'))
+        <div class="alert alert-{{ Session::get('status') }}">
+            <i class="ti-user"></i> {{ Session::get('message') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+        </div>
+        @endif
         <div class="col-md-6 text-left">
             <p>
                 <span>users</span>
             </p>
         </div>
         <div class="col-md-6 text-right">
-            <a href="#">
+            <a href="{{ url('admin/user-management/create') }}">
                 Add New User
             </a>
         </div>

@@ -21,8 +21,8 @@ class AddColumnUsersTable extends Migration
             $table->string('company_logo')->after('profile_image')->nullable();
             $table->string('company_banner')->after('company_logo')->nullable();
             $table->string('company_type')->after('company_banner')->nullable();
-            $table->string('restaurant_type')->after('company_type')->nullable();
-            $table->string('address')->after('restaurant_type')->nullable();
+            $table->string('sub_restaurant_type')->after('company_type')->nullable();
+            $table->string('address')->after('sub_restaurant_type')->nullable();
             $table->string('city')->after('address')->nullable();
             $table->string('zip_code')->after('city')->nullable();
             $table->string('uid_number')->after('zip_code')->nullable();
@@ -60,7 +60,7 @@ class AddColumnUsersTable extends Migration
             $table->dropColumn('company_logo')->nullable();
             $table->dropColumn('company_banner')->nullable();
             $table->dropColumn('company_type')->nullable();
-            $table->dropColumn('restaurant_type')->nullable();
+            $table->dropColumn('sub_restaurant_type')->nullable();
             $table->dropColumn('address')->nullable();
             $table->dropColumn('city')->nullable();
             $table->dropColumn('zip_code')->nullable();

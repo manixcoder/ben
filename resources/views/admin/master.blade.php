@@ -17,7 +17,7 @@
   <header>
     <div class="benefitme">
       <div class="col-md-6 col-sm-6 ">
-        <a href="{{ URL::to('/dashboard') }}">
+        <a href="{{ URL::to('/') }}">
           <img src="{{ asset('public/adminAssets/images/header_logo.png')}}" alt="header_logo" width="220px">
         </a>
       </div>

@@ -4,6 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
+use Illuminate\Support\Facades\Hash;
+use Redirect;
+use Validator;
+use App\Models\UserRoleRelation;
+use DB;
 
 class UserManagementController extends Controller
 {
@@ -25,7 +31,8 @@ class UserManagementController extends Controller
      */
     public function create()
     {
-        //
+        $data = array();
+        return view('admin.users.create', $data);
     }
 
     /**
@@ -36,7 +43,43 @@ class UserManagementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'name' => 'required|string|max:255|unique:users',
+            'email' => 'required|string|max:255|unique:users',
+            'mobile' => 'required',
+            'password' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+        try {
+            $userData = User::create([
+                'first_name'        => $request->has('first_name') ? $request->first_name : '',
+                'last_name'         => $request->has('last_name') ? $request->last_name : '',
+                'name'              => $request->has('name') ? $request->name : '',
+                'email'             => $request->has('email') ? $request->email : '',
+                'mobile'            => $request->has('mobile') ? $request->mobile : '',
+                'password'          => Hash::make($request->input('password')),
+            ]);
+            // $roleArray = array(
+            //     'user_id' => $userData->id,
+            //     'role_id' => 3,
+            // );
+            // DB::table('role_user')->insert([
+            //     'user_id' => $userData->id,
+            //     'role_id' => 3,
+
+            // ]);
+            //UserRoleRelation::insert($roleArray);
+
+            return redirect('/admin/user-management')->with(['status' => 'success', 'message' => 'New User added Successfully!']);
+        } catch (\Exception $e) {
+            return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);
+            return back()->with(['status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.']);
+        }
     }
 
     /**

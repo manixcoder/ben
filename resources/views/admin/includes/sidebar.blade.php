@@ -1,7 +1,7 @@
 <div class="side-bar text-left">
   <ul>
     <li>
-      <a href="#">
+      <a href="{{ URL::to('/') }}">
         <img src="{{ asset('public/adminAssets/images/sp_dashboard.png')}}" alt="Dashboard">
         Dashboard
       </a>
