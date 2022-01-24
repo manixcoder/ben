@@ -21,6 +21,7 @@ Route::get('/admin-login', function () {
 
 Auth::routes();
 Route::get('/validate-user', 'HomeController@checkUserRole');
+Route::get('/request/get-sub-category/{id}', 'HomeController@getSubCategory');
 /*=====================================ADMIN=====================================*/
 Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function () {
     Route::get('/', 'Admin\DashboardController@index');
@@ -33,7 +34,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
     Route::group(['prefix' => 'category-management'], function () {
         Route::get('/', 'Admin\CategoryManagementController@index');
         Route::get('create', 'Admin\CategoryManagementController@create');
-        Route::post('/save-university', 'Admin\CategoryManagementController@store');
+        Route::post('/save-category', 'Admin\CategoryManagementController@store');
         Route::get('{id}/edit', 'Admin\CategoryManagementController@edit');
         Route::post('{id}/update', 'Admin\CategoryManagementController@update');
         Route::get('delete/{id}', 'Admin\CategoryManagementController@destroy');
@@ -46,7 +47,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
     Route::group(['prefix' => 'user-management'], function () {
         Route::get('/', 'Admin\UserManagementController@index');
         Route::get('create', 'Admin\CategoryManagementController@create');
-        Route::post('/save-university', 'Admin\CategoryManagementController@store');
+        Route::post('/save-user', 'Admin\CategoryManagementController@store');
         Route::get('{id}/edit', 'Admin\CategoryManagementController@edit');
         Route::post('{id}/update', 'Admin\CategoryManagementController@update');
         Route::get('delete/{id}', 'Admin\CategoryManagementController@destroy');
@@ -60,7 +61,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
     Route::group(['prefix' => 'company-management'], function () {
         Route::get('/', 'Admin\CompanyManagementController@index');
         Route::get('create', 'Admin\CompanyManagementController@create');
-        Route::post('/save-university', 'Admin\CompanyManagementController@store');
+        Route::post('/save-company', 'Admin\CompanyManagementController@store');
         Route::get('{id}/edit', 'Admin\CompanyManagementController@edit');
         Route::post('{id}/update', 'Admin\CompanyManagementController@update');
         Route::get('delete/{id}', 'Admin\CompanyManagementController@destroy');
@@ -74,7 +75,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
     Route::group(['prefix' => 'advertising-management'], function () {
         Route::get('/', 'Admin\AdvertisingManagementController@index');
         Route::get('create', 'Admin\AdvertisingManagementController@create');
-        Route::post('/save-university', 'Admin\AdvertisingManagementController@store');
+        Route::post('/save-advertising', 'Admin\AdvertisingManagementController@store');
         Route::get('{id}/edit', 'Admin\AdvertisingManagementController@edit');
         Route::post('{id}/update', 'Admin\AdvertisingManagementController@update');
         Route::get('delete/{id}', 'Admin\AdvertisingManagementController@destroy');
@@ -92,10 +93,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
 });
 
 /*=====================================ADMIN END=====================================*/
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 /*=====================================Merchant=====================================*/
 Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], function () {
     return "Merchant";
 });
 /*=====================================Merchant End=====================================*/
+Route::group(['prefix' => 'users', 'middleware' => ['users', 'auth']], function () {
+    return "Merchant";
+});

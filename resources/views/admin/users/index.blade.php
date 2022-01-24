@@ -9,7 +9,9 @@
             </p>
         </div>
         <div class="col-md-6 text-right">
-            <a href="#">Add New User</a>
+            <a href="#">
+                Add New User
+            </a>
         </div>
     </div>
 </div>
