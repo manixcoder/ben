@@ -15,17 +15,23 @@
                 <div class="col-md-6 ">
                     <p>Advertising Name</p>
                 </div>
-                <input type="text" name="ad_name" class="form-control">
+                <input type="text" name="ad_name" class="form-control @error('ad_name') has-danger @enderror">
+                @error('ad_name')
+                <small class="form-control-feedback">{{ $errors->first('ad_name') }}</small>
+                @enderror
             </div>
             <div class="col-md-12 col-sm-12">
                 <div class="upload-file">
                     <div class="form-group">
                         <span>
-                            <input type="file" name="ad_image" class="form-control choise-file" placeholder="Upload advertisement banner">
+                            <input type="file" name="ad_image" class="form-control @error('ad_image') has-danger @enderror choise-file" placeholder="Upload advertisement banner">
                             <figure>
                                 <img src="{{ asset('public/adminAssets/images/upload.png')}}" alt="upload">
                             </figure>
                             Upload advertisement banner
+                            @error('ad_image')
+                            <small class="form-control-feedback">{{ $errors->first('ad_image') }}</small>
+                            @enderror
                         </span>
                     </div>
                 </div>
@@ -34,7 +40,10 @@
                 <div class="col-md-6 ">
                     <p>Link</p>
                 </div>
-                <input type="text" name="link" class="form-control">
+                <input type="text" name="link" class="form-control @error('ad_image') has-danger @enderror">
+                @error('link')
+                <small class="form-control-feedback">{{ $errors->first('link') }}</small>
+                @enderror
             </div>
             <div class="btn-group">
                 <div class="col-md-6 col-sm-6">

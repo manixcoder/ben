@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Validator;
+use App\Models\Adverting;
 
 class AdvertisingManagementController extends Controller
 {
@@ -46,7 +48,18 @@ class AdvertisingManagementController extends Controller
             return back()->withErrors($validator)->withInput();
         }
         try {
-
+            if ($file = $request->file('ad_image')) {
+                $destinationPath = base_path('public/uploads/');
+                $ad_image = uniqid('file') . "-" . $file->getClientOriginalName();
+                $path = $file->move($destinationPath, $ad_image);
+            } else {
+                $ad_image = '760614_1.jpg';
+            }
+            $userData = Adverting::create([
+                'ad_name' => $request->has('ad_name') ? $request->ad_name : '',
+                'link' => $request->has('link') ? $request->link : '',
+                'ad_image' => $ad_image,
+            ]);
             return redirect('/admin/advertising-management')->with(['status' => 'success', 'message' => 'New advertising added Successfully!']);
         } catch (\Exception $e) {
             return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);

@@ -2,6 +2,12 @@
 @section('pageTitle', 'Advertising')
 @section('content')
 <div class="add-newuser ">
+    @if(Session::has('status'))
+    <div class="alert alert-{{ Session::get('status') }}">
+        <i class="ti-user"></i> {{ Session::get('message') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+    </div>
+    @endif
     <div class="row">
         <div class="col-md-6 text-left">
             <p>
@@ -13,6 +19,7 @@
         </div>
     </div>
 </div>
+
 <div class="advertising">
     <div class="row">
         <div class="col-md-12 col-sm-12">
