@@ -92,10 +92,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
 });
 
 /*=====================================ADMIN END=====================================*/
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 /*=====================================Merchant=====================================*/
 Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], function () {
     return "Merchant";
 });
 /*=====================================Merchant End=====================================*/
+Route::group(['prefix' => 'users', 'middleware' => ['users', 'auth']], function () {
+    return "Merchant";
+});

@@ -18,7 +18,6 @@
     <div class="benefitme">
       <div class="col-md-6 col-sm-6 ">
         <a href="#"><img src="{{ asset('public/adminAssets/images/header_logo.png')}}" alt="header_logo" width="220px"></a>
-
       </div>
       <div class="col-md-6 col-sm-6 text-right">
         <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -30,9 +29,9 @@
       </div>
     </div>
   </header>
-  
+
   @include('admin.includes.sidebar')
-  <div class="add-newuser-add">
+  <div class="add-newuser-add company-categroy">
     @yield('content')
   </div>
 
