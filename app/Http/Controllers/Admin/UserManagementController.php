@@ -8,7 +8,7 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use Redirect;
 use Validator;
-use App\Models\UserRoleRelation;
+use App\Models\UserRoleRelations;
 use DB;
 
 class UserManagementController extends Controller
@@ -64,16 +64,16 @@ class UserManagementController extends Controller
                 'mobile'            => $request->has('mobile') ? $request->mobile : '',
                 'password'          => Hash::make($request->input('password')),
             ]);
-            // $roleArray = array(
-            //     'user_id' => $userData->id,
-            //     'role_id' => 3,
-            // );
+            $roleArray = array(
+                'user_id' => $userData->id,
+                'role_id' => 3,
+            );
             // DB::table('role_user')->insert([
             //     'user_id' => $userData->id,
             //     'role_id' => 3,
 
             // ]);
-            //UserRoleRelation::insert($roleArray);
+            UserRoleRelations::create($roleArray);
 
             return redirect('/admin/user-management')->with(['status' => 'success', 'message' => 'New User added Successfully!']);
         } catch (\Exception $e) {

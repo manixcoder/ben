@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserRoleRelation extends Model
+class UserRoleRelations extends Model
 {
     /**
      * The table associated with the model.
@@ -19,7 +19,7 @@ class UserRoleRelation extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 
+        'user_id',
         'role_id'
     ];
 
@@ -28,5 +28,4 @@ class UserRoleRelation extends Model
      *
      * @var string
      */
-
 }

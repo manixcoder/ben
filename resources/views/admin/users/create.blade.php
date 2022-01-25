@@ -4,9 +4,7 @@
 <div class="add-newuser">
     <p>
         <span class="user-color">
-            <a href="{{ url('admin/user-management') }}">
-                Users
-            </a>
+            Users
         </span>
         <span>>Add New User</span>
     </p>
