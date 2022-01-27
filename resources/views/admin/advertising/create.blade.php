@@ -1,6 +1,9 @@
 @extends('admin.master')
 @section('pageTitle', 'Create Advertising')
 @section('content')
+@section('pageCss')
+<style></style>
+@stop
 <div class="add-newuser">
     <p>
         <span class="user-color">Advertising</span>

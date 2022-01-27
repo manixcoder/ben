@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Redirect;
 use Validator;
 use App\Models\Adverting;
 
@@ -75,7 +76,9 @@ class AdvertisingManagementController extends Controller
      */
     public function show($id)
     {
-        //
+        foreach (Adverting::lazy() as $flight) {
+            dd($flight);
+        }
     }
 
     /**

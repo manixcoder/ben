@@ -18,12 +18,16 @@ class UserRoleRelation extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'role_id'];
+    protected $fillable = [
+        'user_id',
+        'role_id',
+        'created_at',
+        'updated_at'
+    ];
 
     /**
      * Return current login user role here.
      *
      * @var string
      */
-
 }

@@ -1,6 +1,9 @@
 @extends('admin.master')
 @section('pageTitle', 'Advertising')
 @section('content')
+@section('pageCss')
+<style></style>
+@stop
 <div class="add-newuser ">
     @if(Session::has('status'))
     <div class="alert alert-{{ Session::get('status') }}">

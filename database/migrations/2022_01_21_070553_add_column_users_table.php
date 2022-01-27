@@ -14,15 +14,16 @@ class AddColumnUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('first_name')->after('id')->nullable();
+            $table->string('user_role')->after('id')->nullable();
+            $table->string('first_name')->after('user_role')->nullable();
             $table->string('last_name')->after('first_name')->nullable();
             $table->string('company_name')->after('password')->nullable();
             $table->string('profile_image')->after('company_name')->nullable();
             $table->string('company_logo')->after('profile_image')->nullable();
             $table->string('company_banner')->after('company_logo')->nullable();
             $table->string('company_type')->after('company_banner')->nullable();
-            $table->string('restaurant_type')->after('company_type')->nullable();
-            $table->string('address')->after('restaurant_type')->nullable();
+            $table->string('sub_restaurant_type')->after('company_type')->nullable();
+            $table->string('address')->after('sub_restaurant_type')->nullable();
             $table->string('city')->after('address')->nullable();
             $table->string('zip_code')->after('city')->nullable();
             $table->string('uid_number')->after('zip_code')->nullable();
@@ -53,6 +54,7 @@ class AddColumnUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('user_role')->nullable();
             $table->dropColumn('first_name')->nullable();
             $table->dropColumn('last_name')->nullable();
             $table->dropColumn('company_name')->nullable();
@@ -60,7 +62,7 @@ class AddColumnUsersTable extends Migration
             $table->dropColumn('company_logo')->nullable();
             $table->dropColumn('company_banner')->nullable();
             $table->dropColumn('company_type')->nullable();
-            $table->dropColumn('restaurant_type')->nullable();
+            $table->dropColumn('sub_restaurant_type')->nullable();
             $table->dropColumn('address')->nullable();
             $table->dropColumn('city')->nullable();
             $table->dropColumn('zip_code')->nullable();

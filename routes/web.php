@@ -40,23 +40,24 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
         Route::get('delete/{id}', 'Admin\CategoryManagementController@destroy');
     });
     /*
-    |---------------------------------
+    |--------------------------------------
     | Category Management Routes Here     |
-    |---------------------------------
+    |--------------------------------------
      */
     Route::group(['prefix' => 'user-management'], function () {
         Route::get('/', 'Admin\UserManagementController@index');
-        Route::get('create', 'Admin\CategoryManagementController@create');
-        Route::post('/save-user', 'Admin\CategoryManagementController@store');
-        Route::get('{id}/edit', 'Admin\CategoryManagementController@edit');
-        Route::post('{id}/update', 'Admin\CategoryManagementController@update');
-        Route::get('delete/{id}', 'Admin\CategoryManagementController@destroy');
+        Route::get('user-data', 'Admin\UserManagementController@usersData');
+        Route::get('create', 'Admin\UserManagementController@create');
+        Route::post('/save-user', 'Admin\UserManagementController@store');
+        Route::get('{id}/edit', 'Admin\UserManagementController@edit');
+        Route::post('{id}/update', 'Admin\UserManagementController@update');
+        Route::get('delete/{id}', 'Admin\UserManagementController@destroy');
     });
 
     /*
-    |---------------------------------
+    |-------------------------------------
     | Company Management Routes Here     |
-    |---------------------------------
+    |-------------------------------------
      */
     Route::group(['prefix' => 'company-management'], function () {
         Route::get('/', 'Admin\CompanyManagementController@index');
@@ -68,23 +69,24 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
     });
 
     /*
-    |---------------------------------
+    |-------------------------------------
     | Company Management Routes Here     |
-    |---------------------------------
+    |-------------------------------------
      */
     Route::group(['prefix' => 'advertising-management'], function () {
         Route::get('/', 'Admin\AdvertisingManagementController@index');
         Route::get('create', 'Admin\AdvertisingManagementController@create');
         Route::post('/save-advertising', 'Admin\AdvertisingManagementController@store');
+        Route::get('{id}/show', 'Admin\AdvertisingManagementController@show');
         Route::get('{id}/edit', 'Admin\AdvertisingManagementController@edit');
         Route::post('{id}/update', 'Admin\AdvertisingManagementController@update');
         Route::get('delete/{id}', 'Admin\AdvertisingManagementController@destroy');
     });
 
     /*
-    |---------------------------------
+    |------------------------------------
     | Awards Management Routes Here     |
-    |---------------------------------
+    |------------------------------------
      */
     Route::group(['prefix' => 'awards-management'], function () {
         Route::get('/', 'Admin\AwardsManagementController@index');
