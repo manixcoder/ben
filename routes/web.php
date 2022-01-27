@@ -46,6 +46,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
      */
     Route::group(['prefix' => 'user-management'], function () {
         Route::get('/', 'Admin\UserManagementController@index');
+        Route::get('user-data', 'Admin\UserManagementController@usersData');
         Route::get('create', 'Admin\UserManagementController@create');
         Route::post('/save-user', 'Admin\UserManagementController@store');
         Route::get('{id}/edit', 'Admin\UserManagementController@edit');

@@ -39,6 +39,14 @@
   </div>
   @yield('pagejs')
 
+
+
+  <!-- Data Table ---->
+  <!--script type="text/javascript" src="{{ asset('public/adminAssets/plugins/data-tables/js/data-table.min.js') }}"></script-->
+  <script type="text/javascript" src="{{ asset('public/adminAssets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('public/adminAssets/plugins/datatables/extra-plugins/dataTables.buttons.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('public/adminAssets/plugins/datatables/extra-plugins/buttons.html5.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('public/adminAssets/plugins/datatables/extra-plugins/buttons.colVis.min.js') }}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="{{ asset('public/adminAssets/js/libaury.js') }}"></script>
   <script src="{{ asset('public/adminAssets/js/bootstrap.min.js') }}"></script>

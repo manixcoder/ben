@@ -21,14 +21,20 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
 
+        'id',
+        'user_role',
         'first_name',
         'last_name',
         'name',
         'email',
         'email_verified_at',
+        'password',
         'company_name',
+        'profile_image',
+        'company_logo',
+        'company_banner',
         'company_type',
-        'restaurant_type',
+        'sub_restaurant_type',
         'address',
         'city',
         'zip_code',
@@ -39,8 +45,19 @@ class User extends Authenticatable implements MustVerifyEmail
         'gender',
         'mobile',
         'otp',
-        'password'
-
+        'subscription_id',
+        'last_login',
+        'about_description',
+        'opening_time',
+        'closing_time',
+        'website_link',
+        'facebook_link',
+        'instagram_link',
+        'twitter_link',
+        'is_active',
+        'remember_token',
+        'created_at',
+        'updated_at'
 
     ];
     /**

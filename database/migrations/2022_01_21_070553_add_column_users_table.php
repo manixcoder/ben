@@ -14,7 +14,8 @@ class AddColumnUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('first_name')->after('id')->nullable();
+            $table->string('user_role')->after('id')->nullable();
+            $table->string('first_name')->after('user_role')->nullable();
             $table->string('last_name')->after('first_name')->nullable();
             $table->string('company_name')->after('password')->nullable();
             $table->string('profile_image')->after('company_name')->nullable();
@@ -53,6 +54,7 @@ class AddColumnUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('user_role')->nullable();
             $table->dropColumn('first_name')->nullable();
             $table->dropColumn('last_name')->nullable();
             $table->dropColumn('company_name')->nullable();

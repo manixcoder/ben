@@ -54,8 +54,7 @@
                 <img src="{{ asset('public/adminAssets/images/call.png')}}" alt="call" width="30px">
             </div>
         </div>
-    </div>
-    
+    </div>    
 </div>
 @endforeach
 <!--div class="john-doe">

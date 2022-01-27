@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Redirect;
 use Validator;
 use App\Models\UserRoleRelation;
+use Yajra\Datatables\Datatables;
 use DB;
 
 class UserManagementController extends Controller
@@ -38,6 +39,22 @@ class UserManagementController extends Controller
     {
         $data = array();
         return view('admin.users.create', $data);
+    }
+    public function usersData()
+    {
+        $result = User::with(['getRole'])
+            ->whereHas('roles', function ($q) {
+                $q->where('name', 'users');
+            })->get();
+        dd($result);
+        return Datatables::of($result)
+            ->addColumn('action', function ($result) {
+                return '
+                <a href ="' . url('admin/user-management') . '/' . $result->id . '/edit"  class="btn btn-xs btn-warning edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                <a data-id =' . $result->id . ' class="btn btn-xs btn-danger delete" style="color:#fff"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                ';
+            })
+            ->make(true);
     }
 
     /**
