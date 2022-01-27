@@ -2,7 +2,9 @@
 @section('pageTitle', 'Awards')
 @section('content')
 @section('pageCss')
-<style></style>
+<style>
+
+</style>
 @stop
 @php
 $awardsData = DB::table('awards')->first();
@@ -16,7 +18,11 @@ $awardsData = DB::table('awards')->first();
 @if(Session::has('status'))
 <div class="alert alert-{{ Session::get('status') }}">
     <i class="fa fa-building-o" aria-hidden="true"></i> {{ Session::get('message') }}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">
+            ×
+        </span>
+    </button>
 </div>
 @endif
 <div class="user-name">
@@ -71,6 +77,9 @@ $awardsData = DB::table('awards')->first();
         </form>
     </div>
 </div>
-
-
 @endsection
+@section('pagejs')
+<script>
+
+</script>
+@stop

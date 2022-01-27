@@ -2,7 +2,9 @@
 @section('pageTitle', 'Create Advertising')
 @section('content')
 @section('pageCss')
-<style></style>
+<style>
+    
+</style>
 @stop
 <div class="add-newuser">
     <p>
@@ -65,3 +67,8 @@
 </div>
 
 @endsection
+@section('pagejs')
+<script>
+
+</script>
+@stop

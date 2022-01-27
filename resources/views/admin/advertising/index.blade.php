@@ -2,7 +2,9 @@
 @section('pageTitle', 'Advertising')
 @section('content')
 @section('pageCss')
-<style></style>
+<style>
+    
+</style>
 @stop
 <div class="add-newuser ">
     @if(Session::has('status'))
@@ -53,3 +55,8 @@
 </div>
 
 @endsection
+@section('pagejs')
+<script>
+
+</script>
+@stop

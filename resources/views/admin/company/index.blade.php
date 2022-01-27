@@ -5,6 +5,12 @@
 <style></style>
 @stop
 <div class="company-sec">
+    @if(Session::has('status'))
+    <div class="alert alert-{{ Session::get('status') }}">
+        <i class="ti-user"></i> {{ Session::get('message') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+    </div>
+    @endif
     <div class="row">
         <div class="col-md-6 ">
             <p>Companies</p>
@@ -16,7 +22,9 @@
         </div>
     </div>
 </div>
-
+<?php
+// dd($merchant);
+?>
 <div class="sub-category">
 
     <!-- Nav tabs -->
@@ -40,19 +48,27 @@
             <div class="table-responsive requests-table">
                 <table border="0" class="company-name Companies">
                     <tbody>
+
+                        @foreach($inmerchants as $merchant)
+                        <?php
+                        $categorydata = DB::table('categories')->where('id', $merchant->company_type)->first();
+                        $subcategorydata = DB::table('categories')->where('id', $merchant->sub_restaurant_type)->first();
+                        $usercategorydata = DB::table('categories')->where('id', $merchant->user_type)->first();
+                        ?>
                         <tr>
                             <td>
-                                <p>#NUD5449595</p>
-                                <h3>Company Name</h3>
-                                <p>Restaurant Mexican</p>
-                                <p>2700 Cliffside Drive, Syracuse, 13202</p>
+                                <p>#{{ $merchant->uid_number }}</p>
+                                <h3>{{ $merchant->company_name }}</h3>
+                                <p>{{ $categorydata->name }}</p>
+                                <p>{{ $merchant->address }} , {{ $merchant->city }} , {{ $merchant->zip_code }} </p>
                                 <h3>VAT/UID Numb<er h3="">
                                     </er>
+                                    {{ $merchant->uid_number }}
                                 </h3>
                             </td>
                             <td>
-                                <p class="text-right">10 Jun 21 | 10:30 am</p>
-                                <span class=" pull-right view-all"><a href="#">View Details</a>
+                                <p class="text-right">@if($merchant->last_login) {{ date('d M Y | H:i a', strtotime($merchant->last_login)) }} @endif </p>
+                                <span class=" pull-right view-all"><a href="{{ url('admin/company-management') . '/' . $merchant->id.'/show' }}">View Details</a>
                                     <button type="submit" class="btn btn-primary">Decline</button>
                                     <button type="submit" class="btn btn-primary bgcolor">Accept</button>
                                 </span>
@@ -65,7 +81,10 @@
                                 </span>
                             </td>
                         </tr>
-                        <tr>
+                        @endforeach
+
+
+                        <!--tr>
                             <td>
                                 <p>#NUD5449595</p>
                                 <h3>Company Name</h3>
@@ -89,7 +108,7 @@
                                     </span>
                                 </span>
                             </td>
-                        </tr>
+                        </tr-->
                     </tbody>
                 </table>
             </div>
@@ -97,24 +116,32 @@
         <div role="tabpanel" class="tab-pane" id="profile">
             <div class="table-responsive requests-table">
                 <table border="0" class="company-name Companies">
+
                     <tbody>
+                        @foreach($merchants as $merchant)
+                        <?php
+                        $categorydata = DB::table('categories')->where('id', $merchant->company_type)->first();
+                        $subcategorydata = DB::table('categories')->where('id', $merchant->sub_restaurant_type)->first();
+                        $usercategorydata = DB::table('categories')->where('id', $merchant->user_type)->first();
+                        ?>
                         <tr>
                             <td>
                                 <figure>
                                     <img src="{{ asset('public/adminAssets/images/circle.jpg')}}" alt="icon">
                                 </figure>
                                 <span class="company-profile">
-                                    <p>#NUD5449595</p>
-                                    <h3>Company Name</h3>
-                                    <p>Restaurant Mexican</p>
-                                    <p>2700 Cliffside Drive, Syracuse, 13202</p>
+                                    <p>#{{ $merchant->uid_number }}</p>
+                                    <h3>{{ $merchant->company_name }}</h3>
+                                    <p>{{ $categorydata->name }}</p>
+                                    <p>{{ $merchant->address }} , {{ $merchant->city }} , {{ $merchant->zip_code }}</p>
                                     <h3>VAT/UID Numb<er h3="">
                                         </er>
+                                        {{ $merchant->uid_number }}
                                     </h3>
                                 </span>
                             </td>
                             <td>
-                                <p class="text-right"><span class="grytext-cont">Last Login :</span>10 Jun 21 | 10:30 am</p>
+                                <p class="text-right"><span class="grytext-cont">Last Login :</span>@if($merchant->last_login) {{ date('d M Y | H:i a', strtotime($merchant->last_login)) }} @endif</p>
                                 <ul class="calldetail-box">
                                     <li>
                                         Active
@@ -135,13 +162,16 @@
                                     </li>
                                 </ul>
                                 <span class=" pull-right view-all">
-                                    <a href="#">
+                                    <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/show' }}">
                                         View Details
                                     </a>
                                 </span>
                             </td>
                         </tr>
-                        <tr>
+                        @endforeach
+
+
+                        <!-- tr>
                             <td>
                                 <figure>
                                     <img src="{{ asset('public/adminAssets/images/circle.jpg')}}" alt="icon">
@@ -277,7 +307,7 @@
                                 <span class=" pull-right view-all"><a href="#">View Details</a>
                                 </span>
                             </td>
-                        </tr>
+                        </tr -->
                     </tbody>
                 </table>
             </div>
@@ -285,3 +315,8 @@
     </div>
 </div>
 @endsection
+@section('pagejs')
+<script>
+
+</script>
+@stop

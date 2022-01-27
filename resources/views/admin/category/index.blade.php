@@ -14,7 +14,6 @@
         </div>
     </div>
 </div>
-
 <div class="sub-category">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
@@ -243,9 +242,11 @@
                 </table>
             </div>
         </div>
-
     </div>
-
 </div>
-
 @endsection
+@section('pagejs')
+<script>
+
+</script>
+@stop
