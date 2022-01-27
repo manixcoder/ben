@@ -21,7 +21,7 @@
                 <div class="col-md-6 col-sm-6">
                     <div class="form-group">
                         <label>Company Name</label>
-                        <input type="text" name="company_name" class="form-control @error('company_name') has-danger @enderror" placeholder="Standard Fort" required>
+                        <input type="text" name="company_name" class="form-control @error('company_name') has-danger @enderror" placeholder="Company Name" required>
                         @error('company_name')
                         <small class="form-control-feedback">{{ $errors->first('company_name') }}</small>
                         @enderror
@@ -33,14 +33,14 @@
                         $business_categories = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','Business')->get();
                         @endphp
                         <label>Category</label>
-                        <select class="form-control @error('category') form-control-danger @enderror givepoint-img" id="category" placeholder="category" name="category" onChange="getCategory(this);" required>
+                        <select class="form-control @error('company_type') form-control-danger @enderror givepoint-img" id="company_type" placeholder="company_type" name="company_type" onChange="getCategory(this);" required>
                             <option value="">Select Category</option>
                             @foreach($business_categories as $key =>$categories)
                             <option value="{{ $categories->id }}">{{ ucfirst($categories->name) }}</option>
                             @endforeach
                         </select>
-                        @error('category')
-                        <small class="form-control-feedback">{{ $errors->first('category') }}</small>
+                        @error('company_type')
+                        <small class="form-control-feedback">{{ $errors->first('company_type') }}</small>
                         @enderror
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                         @php
                         $business_subcategories = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','Business')->get();
                         @endphp
-                        <select class="form-control @error('sub_category') form-control-danger @enderror" id="sub_category" placeholder="sub_category" name="sub_category" required>
+                        <select class="form-control @error('sub_restaurant_type') form-control-danger @enderror" id="sub_category" placeholder="Subcategory" name="sub_restaurant_type" required>
                             <option value=""> --Select Options-- </option>
                         </select>
 
@@ -128,7 +128,7 @@
                             $categoriesUser = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','User')->get();
                             @endphp
                             <label>User Type</label>
-                            <select class="form-control @error('address') has-danger @enderror givepoint-img" name="sub_category" required>
+                            <select class="form-control @error('user_type') has-danger @enderror givepoint-img" name="user_type" required>
                                 <option>Select User Type</option>
                                 @foreach($categoriesUser as $key =>$categories)
                                 <option value="{{ $categories->id }}">{{ ucfirst($categories->name) }}</option>
@@ -142,7 +142,7 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="form-group">
                             <label>First Name</label>
-                            <input type="text" name="first_name" class="form-control @error('address') has-danger @enderror" placeholder="John" required>
+                            <input type="text" name="first_name" class="form-control @error('first_name') has-danger @enderror" placeholder="First Name" required>
                             @error('first_name')
                             <small class="form-control-feedback">{{ $errors->first('first_name') }}</small>
                             @enderror
@@ -151,7 +151,7 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="form-group">
                             <label>Last Name</label>
-                            <input type="text" name="last_name" class="form-control @error('last_name') has-danger @enderror" placeholder="Doe" required>
+                            <input type="text" name="last_name" class="form-control @error('last_name') has-danger @enderror" placeholder="Last Name" required>
                             @error('last_name')
                             <small class="form-control-feedback">{{ $errors->first('last_name') }}</small>
                             @enderror
@@ -160,9 +160,9 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="form-group">
                             <label>Date of Birth</label>
-                            <input type="date" name="birthday" class="form-control @error('birthday') has-danger @enderror" placeholder="12 Jun 1995" required>
-                            @error('birthday')
-                            <small class="form-control-feedback">{{ $errors->first('birthday') }}</small>
+                            <input type="date" name="date_birthday" class="form-control @error('date_birthday') has-danger @enderror" placeholder="12 Jun 1995" required>
+                            @error('date_birthday')
+                            <small class="form-control-feedback">{{ $errors->first('date_birthday') }}</small>
                             @enderror
                         </div>
                     </div>
@@ -183,9 +183,9 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input type="email" name="email" class="form-control @error('address') has-danger @enderror" placeholder="doejohn484@gamil.com" required>
-                            @error('address')
-                            <small class="form-control-feedback">{{ $errors->first('address') }}</small>
+                            <input type="email" name="email" class="form-control @error('email') has-danger @enderror" placeholder="doejohn484@gamil.com" required>
+                            @error('email')
+                            <small class="form-control-feedback">{{ $errors->first('email') }}</small>
                             @enderror
                         </div>
                     </div>
@@ -231,6 +231,7 @@
 <script type="text/javascript">
     function getCategory(obj) {
         let categoryId = $(obj).val();
+        //alert(categoryId);
         $.ajax({
             url: '{{ url("/request/get-sub-category") }}' + '/' + categoryId,
             type: 'GET',

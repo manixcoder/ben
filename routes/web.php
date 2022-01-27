@@ -63,6 +63,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
         Route::get('/', 'Admin\CompanyManagementController@index');
         Route::get('create', 'Admin\CompanyManagementController@create');
         Route::post('/save-company', 'Admin\CompanyManagementController@store');
+        Route::get('{id}/show', 'Admin\CompanyManagementController@show');
         Route::get('{id}/edit', 'Admin\CompanyManagementController@edit');
         Route::post('{id}/update', 'Admin\CompanyManagementController@update');
         Route::get('delete/{id}', 'Admin\CompanyManagementController@destroy');
