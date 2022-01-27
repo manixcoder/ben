@@ -31,7 +31,7 @@
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="{{ url('admin/subscription-management') }}">
         <img src="{{ asset('public/adminAssets/images/sp_subscriptions.png')}}" alt="Subscriptions">
         Subscriptions
       </a>

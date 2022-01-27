@@ -84,6 +84,21 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
         Route::get('delete/{id}', 'Admin\AdvertisingManagementController@destroy');
     });
 
+
+    /*
+    |------------------------------------------
+    | Subscription Management Routes Here     |
+    |-----------------------------------------
+     */
+    Route::group(['prefix' => 'subscription-management'], function () {
+        Route::get('/', 'Admin\SubscriptionsManagementController@index');
+        Route::get('create', 'Admin\SubscriptionsManagementController@create');
+        Route::post('/save-advertising', 'Admin\SubscriptionsManagementController@store');
+        Route::get('{id}/show', 'Admin\SubscriptionsManagementController@show');
+        Route::get('{id}/edit', 'Admin\SubscriptionsManagementController@edit');
+        Route::post('{id}/update', 'Admin\SubscriptionsManagementController@update');
+        Route::get('delete/{id}', 'Admin\SubscriptionsManagementController@destroy');
+    });
     /*
     |------------------------------------
     | Awards Management Routes Here     |
