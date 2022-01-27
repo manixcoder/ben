@@ -107,11 +107,13 @@ class AdvertisingManagementController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param  \App\Models\Adverting  $Adverting
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Adverting  $Adverting, $id)
     {
-        //
+        Adverting::find($id)->delete();
+        return redirect('/admin/advertising-management')->with(['status' => 'success', 'message' => 'Advertising Delet Successfully!']);
     }
 }
