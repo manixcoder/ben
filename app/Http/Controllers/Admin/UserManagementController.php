@@ -78,6 +78,7 @@ class UserManagementController extends Controller
         }
         try {
             $userData = User::create([
+                'user_role'         => 3,
                 'first_name'        => $request->has('first_name') ? $request->first_name : '',
                 'last_name'         => $request->has('last_name') ? $request->last_name : '',
                 'name'              => $request->has('name') ? $request->name : '',

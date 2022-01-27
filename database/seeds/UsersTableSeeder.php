@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder
 		$userData = array(
 			array(
 				'id' => 1,
+				'user_role' => 1,
 				'first_name' => 'Super',
 				'last_name' => 'Admin',
 				'name' => 'administrator',
