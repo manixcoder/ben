@@ -11,14 +11,14 @@
   <div class="col-md-4 col-sm-4">
     <div class="total-user">
       <p>Total User
-        <span class="pull-right view-all"><a href="#">1125</a></span>
+        <span class="pull-right view-all"><a href="{{ url('admin/user-management') }}">{{ $user_data }}</a></span>
       </p>
     </div>
   </div>
   <div class="col-md-4 col-sm-4">
     <div class="total-user">
       <p>Total Company
-        <span class="pull-right view-all"><a href="#">852</a></span>
+        <span class="pull-right view-all"><a href="{{ url('admin/company-management') }}">{{ $merchent_data }}</a></span>
       </p>
     </div>
   </div>
@@ -31,7 +31,7 @@
   </div>
   <div class="col-md-12 col-sm-12">
     <h3>Registration Requests
-      <span class="pull-right view-all"><a href="#">View all</a></span>
+      <span class="pull-right view-all"><a href="{{ url('admin/company-management') }}">View all</a></span>
     </h3>
   </div>
 </div>
