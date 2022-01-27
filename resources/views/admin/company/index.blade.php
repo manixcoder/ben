@@ -1,6 +1,9 @@
 @extends('admin.master')
 @section('pageTitle', 'Comapany')
 @section('content')
+@section('pageCss')
+<style></style>
+@stop
 <div class="company-sec">
     <div class="row">
         <div class="col-md-6 ">

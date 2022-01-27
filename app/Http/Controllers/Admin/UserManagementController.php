@@ -8,7 +8,7 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use Redirect;
 use Validator;
-use App\Models\UserRoleRelations;
+use App\Models\UserRoleRelation;
 use DB;
 
 class UserManagementController extends Controller
@@ -21,6 +21,11 @@ class UserManagementController extends Controller
     public function index()
     {
         $data = array();
+        $users = User::with(['getRole'])
+            ->whereHas('roles', function ($q) {
+                $q->where('name', 'users');
+            })->get();
+        $data['users'] = $users;
         return view('admin.users.index', $data);
     }
 
@@ -43,7 +48,6 @@ class UserManagementController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
         $validator = Validator::make($request->all(), [
             'first_name' => 'required',
             'last_name' => 'required',
@@ -63,18 +67,15 @@ class UserManagementController extends Controller
                 'email'             => $request->has('email') ? $request->email : '',
                 'mobile'            => $request->has('mobile') ? $request->mobile : '',
                 'password'          => Hash::make($request->input('password')),
+                'last_login'        => date("Y-m-d H:i:s"),
             ]);
             $roleArray = array(
                 'user_id' => $userData->id,
                 'role_id' => 3,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
             );
-            // DB::table('role_user')->insert([
-            //     'user_id' => $userData->id,
-            //     'role_id' => 3,
-
-            // ]);
-            UserRoleRelations::create($roleArray);
-
+            UserRoleRelation::create($roleArray);
             return redirect('/admin/user-management')->with(['status' => 'success', 'message' => 'New User added Successfully!']);
         } catch (\Exception $e) {
             return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);

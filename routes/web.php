@@ -76,6 +76,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
         Route::get('/', 'Admin\AdvertisingManagementController@index');
         Route::get('create', 'Admin\AdvertisingManagementController@create');
         Route::post('/save-advertising', 'Admin\AdvertisingManagementController@store');
+        Route::get('{id}/show', 'Admin\AdvertisingManagementController@show');
         Route::get('{id}/edit', 'Admin\AdvertisingManagementController@edit');
         Route::post('{id}/update', 'Admin\AdvertisingManagementController@update');
         Route::get('delete/{id}', 'Admin\AdvertisingManagementController@destroy');

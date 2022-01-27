@@ -1,6 +1,9 @@
 @extends('admin.master')
 @section('pageTitle', 'Awards')
 @section('content')
+@section('pageCss')
+<style></style>
+@stop
 @php
 $awardsData = DB::table('awards')->first();
 // dd($awardsData);

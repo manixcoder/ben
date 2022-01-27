@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{ asset('public/adminAssets/Fonts/font.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ asset('public/adminAssets/css/style.css')}}">
+  @yield('pageCss')
   <title>Admin - @yield('pageTitle')</title>
 </head>
 
@@ -37,7 +38,7 @@
     @yield('content')
   </div>
   @yield('pagejs')
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="{{ asset('public/adminAssets/js/libaury.js') }}"></script>
   <script src="{{ asset('public/adminAssets/js/bootstrap.min.js') }}"></script>

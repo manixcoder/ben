@@ -1,6 +1,9 @@
 @extends('admin.master')
 @section('pageTitle', 'Users')
 @section('content')
+@section('pageCss')
+<style></style>
+@stop
 <div class="add-newuser">
     <p>
         <span class="user-color">

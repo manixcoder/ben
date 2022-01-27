@@ -76,7 +76,9 @@ class AdvertisingManagementController extends Controller
      */
     public function show($id)
     {
-        //
+        foreach (Adverting::lazy() as $flight) {
+            dd($flight);
+        }
     }
 
     /**

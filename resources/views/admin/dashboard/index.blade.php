@@ -1,8 +1,9 @@
 @extends('admin.master')
 @section('pageTitle', 'Dashboard')
 @section('content')
-
-
+@section('pageCss')
+<style></style>
+@stop
 <div class="add-newuser">
   <p><span>Dashboard</span></p>
 </div>
