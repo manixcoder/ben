@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\PaymentModel;
 
 class PaymentManagementController extends Controller
 {
@@ -14,7 +15,9 @@ class PaymentManagementController extends Controller
      */
     public function index()
     {
-        //
+       // dd("Hello Here");
+        $data = array();
+        return view('admin.payments.index', $data);
     }
 
     /**

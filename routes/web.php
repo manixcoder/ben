@@ -100,6 +100,20 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
         Route::get('delete/{id}', 'Admin\SubscriptionsManagementController@destroy');
     });
     /*
+    |------------------------------------------
+    | Subscription Management Routes Here     |
+    |-----------------------------------------
+     */
+    Route::group(['prefix' => 'payment-management'], function () {
+        Route::get('/', 'Admin\PaymentManagementController@index');
+        Route::get('create', 'Admin\PaymentManagementController@create');
+        Route::post('/save-advertising', 'Admin\PaymentManagementController@store');
+        Route::get('{id}/show', 'Admin\PaymentManagementController@show');
+        Route::get('{id}/edit', 'Admin\PaymentManagementController@edit');
+        Route::post('{id}/update', 'Admin\PaymentManagementController@update');
+        Route::get('delete/{id}', 'Admin\PaymentManagementController@destroy');
+    });
+    /*
     |------------------------------------
     | Awards Management Routes Here     |
     |------------------------------------

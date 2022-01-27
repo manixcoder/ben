@@ -37,7 +37,7 @@
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="{{ url('admin/payment-management') }}">
         <img src="{{ asset('public/adminAssets/images/sp_payments.png')}}" alt="Payments">
         Payments
       </a>
