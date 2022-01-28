@@ -5,105 +5,91 @@
 <style></style>
 @stop
 <div class="add-newuser">
-    <div class="row">
-        <div class="col-md-6 text-left">
-            <p>
-                <span>Subscriptions</span>
-            </p>
-        </div>
-        <div class="col-md-6 text-right">
-            <a href="#">Add New Subcription Plan</a>
-        </div>
-    </div>
+    <p>
+        <span class="user-color">Subscriptions</span>
+        <span>&gt;Add New Subcription Plan</span>
+    </p>
 </div>
-<div class="john-doe pading-none">
+<div class="user-name">
     <div class="row">
-        <div class="col-md-5 col-sm-5">
-            <div class="sabscrib-sec">
-                <h3>Basic</h3>
-                <p>$ 30/month</p>
-                <div class="advertisements-sec">
-                    <p><img src="{{ asset('public/adminAssets/images/s_included.png')}}">Products Promotions</p>
-                    <p><img src="{{ asset('public/adminAssets/images/s_not_included.png')}}">Advertisements</p>
-                    <p><img src="{{ asset('public/adminAssets/images/s_not_included.png')}}">Times Service</p>
+        <form action="#">
+            <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label>Plan Name</label>
+                    <select class="form-control">
+                        <option selected="">Basic</option>
+                        <option selected="">Standard</option>
+                        <option selected="">Premium</option>
+                    </select>
                 </div>
             </div>
-        </div>
-        <div class="col-md-7 col-sm-7 text-right">
-            <div class="toggle-img">
-                <ul class="calldetail-box">
-                    <li>
-                        Active
-                        <label class="switch">
-                            <input type="checkbox" checked="">
-                            <span class="slider"></span>
-                        </label>
-                    </li>
-                    <li><a href="#"><img src="{{ asset('public/adminAssets/images/edit.png')}}" alt="icon"></a></li>
-                    <li><a href="#"><img src="{{ asset('public/adminAssets/images/delete.png')}}" alt="icon"></a></li>
-                </ul>
+            <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="name" class="form-control extrapad" placeholder="$">
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="john-doe">
-        <div class="row">
-            <div class="col-md-5 col-sm-5">
-                <div class="sabscrib-sec">
-                    <h3>Standard</h3>
-                    <p>$ 30/month</p>
-                    <div class="advertisements-sec">
-                        <p><img src="{{ asset('public/adminAssets/images/s_included.png')}}">Products Promotions</p>
-                        <p><img src="{{ asset('public/adminAssets/images/s_not_included.png')}}">Advertisements</p>
-                        <p><img src="{{ asset('public/adminAssets/images/s_not_included.png')}}">Times Service</p>
+            <div class="col-md-12 col-sm-12">
+                <div class="form-group">
+                    <label>Validity</label>
+                    <div class="rediocheck-box">
+                        <div class="rediocheck-cont">
+                            <input type="radio" class="redio-input">
+                            <label>Per Month</label>
+                        </div>
+                        <div class="rediocheck-cont">
+                            <input type="radio" class="redio-input">
+                            <label>Per Year</label>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-7 col-sm-7 text-right">
-                <div class="toggle-img">
-                    <ul class="calldetail-box">
-                        <li>
-                            Active
-                            <label class="switch">
-                                <input type="checkbox" checked="">
-                                <span class="slider"></span>
-                            </label>
-                        </li>
-                        <li><a href="#"><img src="{{ asset('public/adminAssets/images/edit.png')}}" alt="icon"></a></li>
-                        <li><a href="#"><img src="{{ asset('public/adminAssets/images/delete.png')}}" alt="icon"></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="john-doe">
-        <div class="row">
-            <div class="col-md-5 col-sm-5">
-                <div class="sabscrib-sec">
-                    <h3>Premium</h3>
-                    <p>$ 30/month</p>
-                    <div class="advertisements-sec">
-                        <p><img src="{{ asset('public/adminAssets/images/s_included.png')}}">Products Promotions</p>
-                        <p><img src="{{ asset('public/adminAssets/images/s_not_included.png')}}">Advertisements</p>
-                        <p><img src="{{ asset('public/adminAssets/images/s_not_included.png')}}">Times Service</p>
+            <div class="col-md-12 col-sm-12">
+                <div class="add-newuser-add fw">
+                    <h3>Feature accessibility</h3>
+                    <div class=" normal-business">
+                        <div class="form-group">
+                            <span class="box-input">
+                                <input type="checkbox">
+                                <small></small>
+                            </span>
+                            <label>Dashboard</label>
+                        </div>
+                        <div class="form-group">
+                            <span class="box-input">
+                                <input type="checkbox">
+                                <small></small>
+                            </span>
+                            <label>Messages</label>
+                        </div>
+                        <div class="form-group">
+                            <span class="box-input">
+                                <input type="checkbox">
+                                <small></small>
+                            </span>
+                            <label>Menu</label>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-7 col-sm-7 text-right">
-                <div class="toggle-img">
-                    <ul class="calldetail-box">
-                        <li>
-                            Active
-                            <label class="switch">
-                                <input type="checkbox" checked="">
-                                <span class="slider"></span>
-                            </label>
-                        </li>
-                        <li><a href="#"><img src="{{ asset('public/adminAssets/images/edit.png')}}" alt="icon"></a></li>
-                        <li><a href="#"><img src="{{ asset('public/adminAssets/images/delete.png')}}" alt="icon"></a></li>
-                    </ul>
+            <div class="btn-group">
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Cancel</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary bgcolor">Add</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 @endsection
+@section('pagejs')
+<script>
+
+</script>
+@stop

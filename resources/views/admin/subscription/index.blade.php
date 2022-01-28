@@ -12,7 +12,7 @@
             </p>
         </div>
         <div class="col-md-6 text-right">
-            <a href="#">Add New Subcription Plan</a>
+            <a href="{{ url('admin/subscription-management/create') }}">Add New Subcription Plan</a>
         </div>
     </div>
 </div>
@@ -106,5 +106,9 @@
         </div>
     </div>
 </div>
-
 @endsection
+@section('pagejs')
+<script>
+
+</script>
+@stop

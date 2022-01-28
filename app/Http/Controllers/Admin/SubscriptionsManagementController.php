@@ -26,7 +26,8 @@ class SubscriptionsManagementController extends Controller
      */
     public function create()
     {
-        //
+        $data = array();        
+        return view('admin.subscription.create', $data);
     }
 
     /**
