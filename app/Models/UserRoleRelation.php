@@ -24,10 +24,4 @@ class UserRoleRelation extends Model
         'created_at',
         'updated_at'
     ];
-
-    /**
-     * Return current login user role here.
-     *
-     * @var string
-     */
 }

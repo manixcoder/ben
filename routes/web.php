@@ -41,7 +41,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
     });
     /*
     |--------------------------------------
-    | Category Management Routes Here     |
+    | User Management Routes Here     |
     |--------------------------------------
      */
     Route::group(['prefix' => 'user-management'], function () {
@@ -71,7 +71,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
 
     /*
     |-------------------------------------
-    | Company Management Routes Here     |
+    | Advertising Management Routes Here     |
     |-------------------------------------
      */
     Route::group(['prefix' => 'advertising-management'], function () {
@@ -84,6 +84,49 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
         Route::get('delete/{id}', 'Admin\AdvertisingManagementController@destroy');
     });
 
+
+    /*
+    |------------------------------------------
+    | Subscription Management Routes Here     |
+    |-----------------------------------------
+     */
+    Route::group(['prefix' => 'subscription-management'], function () {
+        Route::get('/', 'Admin\SubscriptionsManagementController@index');
+        Route::get('create', 'Admin\SubscriptionsManagementController@create');
+        Route::post('/save-advertising', 'Admin\SubscriptionsManagementController@store');
+        Route::get('{id}/show', 'Admin\SubscriptionsManagementController@show');
+        Route::get('{id}/edit', 'Admin\SubscriptionsManagementController@edit');
+        Route::post('{id}/update', 'Admin\SubscriptionsManagementController@update');
+        Route::get('delete/{id}', 'Admin\SubscriptionsManagementController@destroy');
+    });
+    /*
+    |------------------------------------------
+    | Permissions Management Routes Here     |
+    |-----------------------------------------
+     */
+    Route::group(['prefix' => 'permissions-management'], function () {
+        Route::get('/', 'Admin\PermissionsManegmentController@index');
+        Route::get('create', 'Admin\PermissionsManegmentController@create');
+        Route::post('/save-permissions', 'Admin\PermissionsManegmentController@store');
+        Route::get('{id}/show', 'Admin\PermissionsManegmentController@show');
+        Route::get('{id}/edit', 'Admin\PermissionsManegmentController@edit');
+        Route::post('{id}/update', 'Admin\PermissionsManegmentController@update');
+        Route::get('delete/{id}', 'Admin\PermissionsManegmentController@destroy');
+    });
+    /*
+    |------------------------------------------
+    | Payment Management Routes Here     |
+    |-----------------------------------------
+     */
+    Route::group(['prefix' => 'payment-management'], function () {
+        Route::get('/', 'Admin\PaymentManagementController@index');
+        Route::get('create', 'Admin\PaymentManagementController@create');
+        Route::post('/save-advertising', 'Admin\PaymentManagementController@store');
+        Route::get('{id}/show', 'Admin\PaymentManagementController@show');
+        Route::get('{id}/edit', 'Admin\PaymentManagementController@edit');
+        Route::post('{id}/update', 'Admin\PaymentManagementController@update');
+        Route::get('delete/{id}', 'Admin\PaymentManagementController@destroy');
+    });
     /*
     |------------------------------------
     | Awards Management Routes Here     |

@@ -24,31 +24,38 @@ class DashboardController extends Controller
     {
         $merchent_data = User::with(['getRole'])
             ->whereHas('roles', function ($q) {
-                $q->where('name', 'merchent');
+                $q->where('name', 'merchant');
             })->get()->count();
         $user_data = User::with(['getRole'])
             ->whereHas('roles', function ($q) {
-                $q->where('name', 'user');
+                $q->where('name', 'users');
             })->get()->count();
         //dd($company_data);
-        return view('admin.dashboard.index')->with(array('user_data' => $user_data, 'merchent_data' => $merchent_data));
+        $incommerchant = User::with(['getRole'])
+            ->whereHas('roles', function ($q) {
+                $q->where('name', 'merchant');
+            })
+            ->where('is_active', '0')
+            ->get();
+        return view('admin.dashboard.index')->with(array(
+            'user_data' => $user_data,
+            'merchent_data' => $merchent_data,
+            'incommerchant' => $incommerchant
+        ));
     }
     /**
      * Show the Admin Profile.
      */
     public function myAccount()
     {
-        $user_data = User::where('id', Auth::user()->id)->first();
-        return view('admin.dashboard.profileSetting')->with(
-            array(
+        $user_data = User::where('id', Auth::user()->id)
+            ->first();
+        return view('admin.dashboard.profileSetting')
+            ->with(array(
                 'user_data' => $user_data,
-            )
-        );
+            ));
     }
-    public function getUsesData($startData, $endDate, Request $request)
-    {
-        dd($startData);
-    }
+
     /**
      * Show the Admin editAccount.
      *
@@ -103,16 +110,15 @@ class DashboardController extends Controller
             $save_profile->info = $request->info;
             $save_profile->save();
             /*
-            if($request->hasFile('profile_picture'))
-            {
-            $user = User::find(Auth::user()->id);
-            $file = $request->file('profile_picture');
-            $filename = 'admin-'.time().'.'.$file->getClientOriginalExtension();
-            $file->move('public/images/profile_pictures/',$filename);
-            $user->profile_picture = $filename;
-            $user->save();
+            if($request->hasFile('profile_picture')){
+                $user = User::find(Auth::user()->id);
+                $file = $request->file('profile_picture');
+                $filename = 'admin-'.time().'.'.$file->getClientOriginalExtension();
+                $file->move('public/images/profile_pictures/',$filename);
+                $user->profile_picture = $filename;
+                $user->save();
             }
-             */
+            */
             return redirect('/admin/profile')->with(array('status' => 'success', 'message' => 'Profile details updated successfully!'));
         } catch (\Exception $e) {
             return back()->with(array('status' => 'danger', 'message' => $e->getMessage()));

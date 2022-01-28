@@ -3,7 +3,7 @@
 @section('content')
 @section('pageCss')
 <style>
-    
+
 </style>
 @stop
 <div class="add-newuser">
@@ -65,7 +65,6 @@
         </form>
     </div>
 </div>
-
 @endsection
 @section('pagejs')
 <script>

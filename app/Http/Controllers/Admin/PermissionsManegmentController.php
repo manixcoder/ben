@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\PaymentModel;
+use App\Models\PermissionModel;
 
-class PaymentManagementController extends Controller
+class PermissionsManegmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,7 @@ class PaymentManagementController extends Controller
      */
     public function index()
     {
-       // dd("Hello Here");
-        $data = array();
-        return view('admin.payments.index', $data);
+        return "Work under progress";
     }
 
     /**

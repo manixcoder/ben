@@ -2,7 +2,9 @@
 @section('pageTitle', 'Create Company')
 @section('content')
 @section('pageCss')
-<style></style>
+<style>
+    
+</style>
 @stop
 <div class="add-newuser">
     <p>

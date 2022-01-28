@@ -31,13 +31,13 @@
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="{{ url('admin/subscription-management') }}">
         <img src="{{ asset('public/adminAssets/images/sp_subscriptions.png')}}" alt="Subscriptions">
         Subscriptions
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="{{ url('admin/payment-management') }}">
         <img src="{{ asset('public/adminAssets/images/sp_payments.png')}}" alt="Payments">
         Payments
       </a>
@@ -55,16 +55,16 @@
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="{{ url('admin/permissions-management') }}">
         <img src="{{ asset('public/adminAssets/images/sp_role_access.png')}}" alt="sp_role_access">
         Role Access Company Category Wise
       </a>
     </li>
-    <li>
+    <!--li>
       <a href="#">
         <img src="{{ asset('public/adminAssets/images/sp_role_access.png')}}" alt="role">
         Role Access Company Category Wise
       </a>
-    </li>
+    </li -->
   </ul>
 </div>

@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Subscription;
 
-class SubscriptionManagementController extends Controller
+class SubscriptionsManagementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class SubscriptionManagementController extends Controller
      */
     public function index()
     {
-        //
+        $data = array();        
+        return view('admin.subscription.index', $data);
     }
 
     /**
@@ -24,7 +26,8 @@ class SubscriptionManagementController extends Controller
      */
     public function create()
     {
-        //
+        $data = array();        
+        return view('admin.subscription.create', $data);
     }
 
     /**
