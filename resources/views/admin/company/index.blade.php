@@ -141,7 +141,11 @@
                                 </span>
                             </td>
                             <td>
-                                <p class="text-right"><span class="grytext-cont">Last Login :</span>@if($merchant->last_login) {{ date('d M Y | H:i a', strtotime($merchant->last_login)) }} @endif</p>
+                                <p class="text-right"><span class="grytext-cont">Last Login :</span>
+                                    @if($merchant->last_login)
+                                    {{ date('d M Y | H:i a', strtotime($merchant->last_login)) }}
+                                    @endif
+                                </p>
                                 <ul class="calldetail-box">
                                     <li>
                                         Active

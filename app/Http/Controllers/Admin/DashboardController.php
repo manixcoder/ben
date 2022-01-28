@@ -31,9 +31,16 @@ class DashboardController extends Controller
                 $q->where('name', 'users');
             })->get()->count();
         //dd($company_data);
+        $incommerchant = User::with(['getRole'])
+            ->whereHas('roles', function ($q) {
+                $q->where('name', 'merchant');
+            })
+            ->where('is_active', '0')
+            ->get();
         return view('admin.dashboard.index')->with(array(
             'user_data' => $user_data,
-            'merchent_data' => $merchent_data
+            'merchent_data' => $merchent_data,
+            'incommerchant' => $incommerchant
         ));
     }
     /**

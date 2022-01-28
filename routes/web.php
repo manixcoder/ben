@@ -41,7 +41,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
     });
     /*
     |--------------------------------------
-    | Category Management Routes Here     |
+    | User Management Routes Here     |
     |--------------------------------------
      */
     Route::group(['prefix' => 'user-management'], function () {
@@ -71,7 +71,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
 
     /*
     |-------------------------------------
-    | Company Management Routes Here     |
+    | Advertising Management Routes Here     |
     |-------------------------------------
      */
     Route::group(['prefix' => 'advertising-management'], function () {
@@ -101,7 +101,21 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
     });
     /*
     |------------------------------------------
-    | Subscription Management Routes Here     |
+    | Permissions Management Routes Here     |
+    |-----------------------------------------
+     */
+    Route::group(['prefix' => 'permissions-management'], function () {
+        Route::get('/', 'Admin\PermissionsManegmentController@index');
+        Route::get('create', 'Admin\PermissionsManegmentController@create');
+        Route::post('/save-permissions', 'Admin\PermissionsManegmentController@store');
+        Route::get('{id}/show', 'Admin\PermissionsManegmentController@show');
+        Route::get('{id}/edit', 'Admin\PermissionsManegmentController@edit');
+        Route::post('{id}/update', 'Admin\PermissionsManegmentController@update');
+        Route::get('delete/{id}', 'Admin\PermissionsManegmentController@destroy');
+    });
+    /*
+    |------------------------------------------
+    | Payment Management Routes Here     |
     |-----------------------------------------
      */
     Route::group(['prefix' => 'payment-management'], function () {
