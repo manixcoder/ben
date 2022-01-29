@@ -32,7 +32,7 @@
                 <div class="col-md-6 col-sm-6">
                     <div class="form-group">
                         @php
-                        $business_categories = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','businesscategory')->get();
+                        $business_categories = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','2')->get();
                         @endphp
                         <label>Category</label>
                         <select class="form-control @error('company_type') form-control-danger @enderror givepoint-img" id="company_type" value="{{ old('company_type') }}" placeholder="company_type" name="company_type" onChange="getCategory(this);" required>
@@ -50,7 +50,7 @@
                     <div class="form-group">
                         <label>Subcategory</label>
                         @php
-                        $business_subcategories = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','businesscategory')->get();
+                        $business_subcategories = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','2')->get();
                         @endphp
                         <select class="form-control @error('sub_restaurant_type') form-control-danger @enderror" id="sub_category" value="{{ old('sub_restaurant_type') }}" placeholder="Subcategory" name="sub_restaurant_type" required>
                             <option value=""> --Select Options-- </option>
@@ -127,7 +127,7 @@
                 <div class="col-md-6 col-sm-6">
                     <div class="form-group">
                         @php
-                        $categoriesUser = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','usercategory')->get();
+                        $categoriesUser = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','1')->get();
                         @endphp
                         <label>User Type</label>
                         <select class="form-control @error('user_type') has-danger @enderror givepoint-img" value="{{ old('user_type') }}" name="user_type" required>
@@ -225,8 +225,6 @@
         </form>
     </div>
 </div>
-
-
 @endsection
 @section('pagejs')
 <script type="text/javascript">

@@ -48,7 +48,7 @@ class HomeController extends Controller
     public function getSubCategory(Request $request, $id)
     {
         try {
-            $list = DB::table('categories')->where('parent_id','=',$id)->where('c_type','=','businesscategory')->get();
+            $list = DB::table('categories')->where('parent_id','=',$id)->where('c_type','=','2')->get();
             //dd($list);
             if ($list) {
                 $data['status'] = 'success';
