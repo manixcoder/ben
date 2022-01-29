@@ -24,6 +24,13 @@ $awardsData = DB::table('awards')->first();
         </span>
     </button>
 </div>
+@elseif(Session::get('status') == "danger")
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ Session::get('message') }}
+    <a href="#" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </a>
+</div>
 @endif
 <div class="user-name">
     <div class="row">

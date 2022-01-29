@@ -21,7 +21,7 @@
             <div class="col-md-6 col-sm-6">
                 <div class="form-group">
                     <label>User Category</label>
-                    <input type="text" name="name" class="form-control @error('name') has-danger @enderror" placeholder="User Category">
+                    <input type="text" name="name" class="form-control @error('name') has-danger @enderror" value="{{ old('name') }}" placeholder="User Category">
                     @error('name')
                     <small class="form-control-feedback">{{ $errors->first('name') }}</small>
                     @enderror

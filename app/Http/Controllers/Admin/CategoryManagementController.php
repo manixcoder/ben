@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\User;
 use Redirect;
 use Validator;
+use DB;
 
 class CategoryManagementController extends Controller
 {
@@ -66,15 +68,26 @@ class CategoryManagementController extends Controller
 
     public function editCategory($id)
     {
-        dd($id);
+        $categoryData = Category::find($id);
+        return view('admin.category.editCategory')->with(array(
+            'categoryData' => $categoryData,
+        ));
     }
     public function editSubCategory($id)
     {
-        dd($id);
+        $categoryData = Category::find($id);
+        return view('admin.category.editSubCategory')->with(array(
+            'categoryData' => $categoryData,
+        ));
     }
     public function editUserCategory($id)
     {
-        dd($id);
+        $categoryData = Category::find($id);
+        return view('admin.category.editUserCategory')->with(
+            array(
+                'categoryData' => $categoryData,
+            )
+        );
     }
 
     /**
@@ -88,6 +101,45 @@ class CategoryManagementController extends Controller
     {
         //
     }
+    public function updateCategary(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|name|unique:categories,name,' . $id,
+            //'name' => 'required|string|max:255|unique:categories,name' . $categoryData->id,
+        ]);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+        try {
+            if ($request->cat_type === 'campany_cat') {
+                $updata = array(
+                    'name'          => $request->has('name') ? $request->name : '',
+                    'parent_id'     => '0',
+                    'status'        => '1',
+                    'c_type'        => 'businesscategory',
+                );
+            } elseif ($request->cat_type === 'sub_cat') {
+                $updata = array(
+                    'name'          => $request->has('name') ? $request->name : '',
+                    'parent_id'     => $request->has('parent') ? $request->parent : '',
+                    'status'        => '1',
+                    'c_type'        => 'businesscategory',
+                );
+            } else {
+                $updata = array(
+                    'name'          => $request->has('name') ? $request->name : '',
+                    'parent_id'     => '0',
+                    'status'        => '1',
+                    'c_type'        => 'usercategory',
+                );
+            }
+            $userData = Category::where('id', $id)->update($updata);
+            return redirect('/admin/category-management')->with(['status' => 'success', 'message' => 'New User added Successfully!']);
+        } catch (\Exception $e) {
+            return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);
+            return back()->with(['status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.']);
+        }
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -98,6 +150,9 @@ class CategoryManagementController extends Controller
     public function destroy($id)
     {
         Category::find($id)->delete();
+        Category::where('parent_id', $id)->delete();
+        User::where('sub_restaurant_type', $id)->orWhere('user_type', $id)->orWhere('company_type', $id)->delete();
+
         return redirect('/admin/category-management')->with([
             'status' => 'success',
             'message' => 'Records Deleted Successfully!'

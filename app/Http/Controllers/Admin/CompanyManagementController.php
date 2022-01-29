@@ -27,7 +27,6 @@ class CompanyManagementController extends Controller
             })
             ->where('is_active', '0')
             ->get();
-
         $merchant = User::with(['getRole'])
             ->whereHas('roles', function ($q) {
                 $q->where('name', 'merchant');
@@ -101,6 +100,7 @@ class CompanyManagementController extends Controller
                 'email'                     => $request->has('email') ? $request->email : '',
                 'mobile'                    => $request->has('mobile') ? $request->mobile : '',
                 'password'                  => Hash::make($request->input('password')),
+                'is_active'                 => '0',
                 'last_login'                => date("Y-m-d H:i:s"),
             ]);
             $roleArray = array(

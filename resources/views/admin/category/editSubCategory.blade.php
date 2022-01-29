@@ -19,15 +19,16 @@
         @php
         $categorydata = DB::table('categories')->where('c_type', 'businesscategory')->where('parent_id', '0')->get();
         @endphp
-        <form method="POST" action="{{ url('/admin/category-management/save-sub-categary') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ url('/admin/category-management/'.$categoryData->id.'/update-categary') }}" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="cat_type" value="sub_cat">
             <div class="col-md-6 col-sm-6">
                 <div class="form-group">
                     <label>Comapany Category</label>
                     <select name="parent" class="form-control @error('parent') has-danger @enderror">
                         <option value="" selected>Select Category</option>
                         @foreach($categorydata as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        <option value="{{ $category->id }}" {{ $category->id == $categoryData->parent_id ? 'selected' : '' }}> {{ $category->name }}</option>
                         @endforeach
                     </select>
                     @error('parent')
@@ -38,7 +39,7 @@
             <div class="col-md-6 col-sm-6">
                 <div class="form-group">
                     <label>Comapany Sub Category</label>
-                    <input type="text" name="name" class="form-control @error('name') has-danger @enderror" value="{{ old('name') }}" placeholder="Comapany Sub Category">
+                    <input type="text" name="name" class="form-control @error('name') has-danger @enderror" value="{{ $categoryData->name }}" placeholder="Comapany Sub Category">
                     @error('name')
                     <small class="form-control-feedback">{{ $errors->first('name') }}</small>
                     @enderror
