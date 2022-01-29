@@ -64,6 +64,19 @@ class CategoryManagementController extends Controller
         //
     }
 
+    public function editCategory($id)
+    {
+        dd($id);
+    }
+    public function editSubCategory($id)
+    {
+        dd($id);
+    }
+    public function editUserCategory($id)
+    {
+        dd($id);
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -87,7 +100,7 @@ class CategoryManagementController extends Controller
         Category::find($id)->delete();
         return redirect('/admin/category-management')->with([
             'status' => 'success',
-            'message' => 'Advertising Delete Successfully!'
+            'message' => 'Records Deleted Successfully!'
         ]);
     }
     public function companyCategory(Request $request)
@@ -109,7 +122,7 @@ class CategoryManagementController extends Controller
                 'name'          => $request->has('name') ? $request->name : '',
                 'parent_id'     => '0',
                 'status'        => '1',
-                'c_type'        => 'Business',
+                'c_type'        => 'businesscategory',
 
             ]);
             return redirect('/admin/category-management')->with(['status' => 'success', 'message' => 'New User added Successfully!']);
@@ -140,7 +153,7 @@ class CategoryManagementController extends Controller
                 'name'          => $request->has('name') ? $request->name : '',
                 'parent_id'     => $request->has('parent') ? $request->parent : '',
                 'status'        => '1',
-                'c_type'        => 'Business',
+                'c_type'        => 'businesscategory',
             ]);
             return redirect('/admin/category-management')->with(['status' => 'success', 'message' => 'New Sub Categary added Successfully!']);
         } catch (\Exception $e) {
@@ -153,7 +166,6 @@ class CategoryManagementController extends Controller
     {
         $data = array();
         return view('admin.category.createUserCategory', $data);
-        // return "Create sub Company category";
     }
     public function saveUserCategary(Request $request)
     {
@@ -168,7 +180,7 @@ class CategoryManagementController extends Controller
                 'name'          => $request->has('name') ? $request->name : '',
                 'parent_id'     => '0',
                 'status'        => '1',
-                'c_type'        => 'User',
+                'c_type'        => 'usercategory',
             ]);
             return redirect('/admin/category-management')->with(['status' => 'success', 'message' => 'New Sub Categary added Successfully!']);
         } catch (\Exception $e) {

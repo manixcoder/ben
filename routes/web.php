@@ -36,6 +36,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
         Route::get('create', 'Admin\CategoryManagementController@create');
         Route::post('/save-category', 'Admin\CategoryManagementController@store');
         Route::get('{id}/edit', 'Admin\CategoryManagementController@edit');
+        Route::get('{id}/edit-category', 'Admin\CategoryManagementController@editCategory');
+        Route::get('{id}/edit-sub-category', 'Admin\CategoryManagementController@editSubCategory');
+        Route::get('{id}/edit-user-category', 'Admin\CategoryManagementController@editUserCategory');
+        
+        
+        
         Route::post('{id}/update', 'Admin\CategoryManagementController@update');
         Route::get('delete/{id}', 'Admin\CategoryManagementController@destroy');
 
