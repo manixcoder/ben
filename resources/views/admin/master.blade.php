@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
   @yield('pageCss')
   <title>{{ config('app.name', 'Laravel') }} @yield('pageTitle')</title>
 </head>
+
 <body>
   <header>
     <div class="benefitme">
@@ -45,4 +47,5 @@
   <script src="{{ asset('public/adminAssets/js/libaury.js') }}"></script>
   <script src="{{ asset('public/adminAssets/js/bootstrap.min.js') }}"></script>
 </body>
+
 </html>

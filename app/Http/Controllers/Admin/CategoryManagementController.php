@@ -103,10 +103,13 @@ class CategoryManagementController extends Controller
     }
     public function updateCategary(Request $request, $id)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|name|unique:categories,name,' . $id,
-            //'name' => 'required|string|max:255|unique:categories,name' . $categoryData->id,
-        ]);
+        $rules = [
+            'name' => 'required',
+        ];
+        $messages = [
+            'name' => 'Category Name Required.',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
@@ -133,8 +136,10 @@ class CategoryManagementController extends Controller
                     'c_type'        => 'usercategory',
                 );
             }
-            $userData = Category::where('id', $id)->update($updata);
-            return redirect('/admin/category-management')->with(['status' => 'success', 'message' => 'New User added Successfully!']);
+            $categoryData = Category::find($id);
+            $categoryData->update($updata);
+            // $userData = Category::where('id', $id)->update($updata);
+            return redirect('/admin/category-management')->with(['status' => 'success', 'message' => 'Record updated Successfully!']);
         } catch (\Exception $e) {
             return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);
             return back()->with(['status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.']);
