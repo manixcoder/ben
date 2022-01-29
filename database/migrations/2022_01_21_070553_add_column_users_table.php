@@ -42,7 +42,7 @@ class AddColumnUsersTable extends Migration
             $table->string('facebook_link')->after('website_link')->nullable();
             $table->string('instagram_link')->after('facebook_link')->nullable();
             $table->string('twitter_link')->after('instagram_link')->nullable();
-            $table->enum('is_active', ['1', '0'])->after('twitter_link')->default(1)->comment = '1=Active, 0=Inactive';
+            $table->enum('is_active', ['1', '2', '0'])->after('twitter_link')->default(1)->comment = '1=Active, 2 = decline 0=Inactive ';
         });
     }
 

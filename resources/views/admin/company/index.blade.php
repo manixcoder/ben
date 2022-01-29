@@ -10,6 +10,13 @@
         <i class="ti-user"></i> {{ Session::get('message') }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
     </div>
+    @elseif(Session::get('status') == "danger")
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ Session::get('message') }}
+        <a href="#" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </a>
+    </div>
     @endif
     <div class="row">
         <div class="col-md-6 ">
@@ -141,10 +148,15 @@
                                 </span>
                             </td>
                             <td>
-                                <p class="text-right"><span class="grytext-cont">Last Login :</span>
-                                    @if($merchant->last_login)
-                                    {{ date('d M Y | H:i a', strtotime($merchant->last_login)) }}
-                                    @endif
+                                <p class="text-right">
+                                    <span class="grytext-cont">Last Login :
+                                        @if($merchant->last_login)
+                                        {{ date('d M Y | H:i a', strtotime($merchant->last_login)) }}
+                                        @else
+                                        Not Login
+                                        @endif
+                                    </span>
+
                                 </p>
                                 <ul class="calldetail-box">
                                     <li>
@@ -173,145 +185,6 @@
                             </td>
                         </tr>
                         @endforeach
-
-
-                        <!-- tr>
-                            <td>
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/circle.jpg')}}" alt="icon">
-                                </figure>
-                                <span class="company-profile">
-                                    <p>#NUD5449595</p>
-                                    <h3>Company Name</h3>
-                                    <p>Restaurant Mexican</p>
-                                    <p>2700 Cliffside Drive, Syracuse, 13202</p>
-                                    <h3>VAT/UID Numb<er h3="">
-                                        </er>
-                                    </h3>
-                                </span>
-                            </td>
-                            <td>
-                                <p class="text-right">
-                                    <span class="grytext-cont">
-                                        Last Login :
-                                    </span>
-                                    10 Jun 21 | 10:30 am
-                                </p>
-                                <ul class="calldetail-box">
-                                    <li>
-                                        Active
-                                        <label class="switch">
-                                            <input type="checkbox" checked="">
-                                            <span class="slider"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="{{ asset('public/adminAssets/images/message.png')}}" alt="icon">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="{{ asset('public/adminAssets/images/call.png')}}" alt="icon">
-                                        </a>
-                                    </li>
-                                </ul>
-                                <span class=" pull-right view-all"><a href="#">View Details</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/circle.jpg')}}" alt="icon">
-                                </figure>
-                                <span class="company-profile">
-                                    <p>#NUD5449595</p>
-                                    <h3>Company Name</h3>
-                                    <p>Restaurant Mexican</p>
-                                    <p>2700 Cliffside Drive, Syracuse, 13202</p>
-                                    <h3>VAT/UID Numb<er h3="">
-                                        </er>
-                                    </h3>
-                                </span>
-                            </td>
-                            <td>
-                                <p class="text-right">
-                                    <span class="grytext-cont">
-                                        Last Login :
-                                    </span>
-                                    10 Jun 21 | 10:30 am
-                                </p>
-                                <ul class="calldetail-box">
-                                    <li>
-                                        Active
-                                        <label class="switch">
-                                            <input type="checkbox" checked="">
-                                            <span class="slider"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="{{ asset('public/adminAssets/images/message.png')}}" alt="icon">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="{{ asset('public/adminAssets/images/call.png')}}" alt="icon">
-                                        </a>
-                                    </li>
-                                </ul>
-                                <span class=" pull-right view-all">
-                                    <a href="#">
-                                        View Details
-                                    </a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/circle.jpg')}}" alt="icon">
-                                </figure>
-                                <span class="company-profile">
-                                    <p>#NUD5449595</p>
-                                    <h3>Company Name</h3>
-                                    <p>Restaurant Mexican</p>
-                                    <p>2700 Cliffside Drive, Syracuse, 13202</p>
-                                    <h3>VAT/UID Numb<er h3="">
-                                        </er>
-                                    </h3>
-                                </span>
-                            </td>
-                            <td>
-                                <p class="text-right">
-                                    <span class="grytext-cont">
-                                        Last Login :
-                                    </span>
-                                    10 Jun 21 | 10:30 am
-                                </p>
-                                <ul class="calldetail-box">
-                                    <li>
-                                        Active
-                                        <label class="switch">
-                                            <input type="checkbox" checked="">
-                                            <span class="slider"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="{{ asset('public/adminAssets/images/message.png')}}" alt="icon">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="{{ asset('public/adminAssets/images/call.png')}}" alt="icon">
-                                        </a>
-                                    </li>
-                                </ul>
-                                <span class=" pull-right view-all"><a href="#">View Details</a>
-                                </span>
-                            </td>
-                        </tr -->
                     </tbody>
                 </table>
             </div>

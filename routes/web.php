@@ -39,10 +39,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
         Route::get('{id}/edit-category', 'Admin\CategoryManagementController@editCategory');
         Route::get('{id}/edit-sub-category', 'Admin\CategoryManagementController@editSubCategory');
         Route::get('{id}/edit-user-category', 'Admin\CategoryManagementController@editUserCategory');
-        
-        
-        
-        Route::post('{id}/update', 'Admin\CategoryManagementController@update');
+
+        Route::post('{id}/update-categary', 'Admin\CategoryManagementController@updateCategary');
+
+        //Route::post('{id}/update', 'Admin\CategoryManagementController@update');
         Route::get('delete/{id}', 'Admin\CategoryManagementController@destroy');
 
         Route::get('company-category', 'Admin\CategoryManagementController@companyCategory');

@@ -16,12 +16,13 @@
 </div>
 <div class="user-name">
     <div class="row">
-        <form method="POST" action="{{ url('/admin/category-management/save-comapany-categary') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ url('/admin/category-management/'.$categoryData->id.'/update-categary') }}" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="cat_type" value="campany_cat">
             <div class="col-md-6 col-sm-6">
                 <div class="form-group">
                     <label>Comapany Category</label>
-                    <input type="text" name="name" class="form-control @error('name') has-danger @enderror" value="{{ old('name') }}" placeholder="Comapany Category">
+                    <input type="text" name="name" class="form-control @error('name') has-danger @enderror" value="{{ $categoryData->name }}" placeholder="Comapany Category">
                     @error('name')
                     <small class="form-control-feedback">{{ $errors->first('name') }}</small>
                     @enderror
@@ -35,7 +36,7 @@
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary bgcolor">Add</button>
+                        <button type="submit" class="btn btn-primary bgcolor">Update</button>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('pageTitle', 'Company Category')
+@section('pageTitle', 'Update User Category')
 @section('content')
 @section('pageCss')
 <style>
@@ -9,19 +9,20 @@
 <div class="add-newuser">
     <p>
         <span class="user-color">
-            Comapany Category
+            User Category
         </span>
-        <span>&gt;Add New Category</span>
+        <span>&gt;Update User Category</span>
     </p>
 </div>
 <div class="user-name">
     <div class="row">
-        <form method="POST" action="{{ url('/admin/category-management/save-comapany-categary') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ url('/admin/category-management/'.$categoryData->id.'/update-categary') }}" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="cat_type" value="usercat">
             <div class="col-md-6 col-sm-6">
                 <div class="form-group">
-                    <label>Comapany Category</label>
-                    <input type="text" name="name" class="form-control @error('name') has-danger @enderror" value="{{ old('name') }}" placeholder="Comapany Category">
+                    <label>User Category</label>
+                    <input type="text" name="name" class="form-control @error('name') has-danger @enderror" value="{{ $categoryData->name }}" placeholder="User Category">
                     @error('name')
                     <small class="form-control-feedback">{{ $errors->first('name') }}</small>
                     @enderror
@@ -30,7 +31,7 @@
             <div class="btn-group">
                 <div class="col-md-6 col-sm-6">
                     <div class="form-group">
-                        <a href="http://localhost/benifitme/admin/category-management" class="btn btn-primary">Cancel</a>
+                        <a href="http://localhost/benifitme/admin/user-management" class="btn btn-primary">Cancel</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6">

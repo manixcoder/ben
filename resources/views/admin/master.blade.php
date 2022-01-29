@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ asset('public/adminAssets/css/style.css')}}">
   @yield('pageCss')
-  <title>Admin - @yield('pageTitle')</title>
+  <title>{{ config('app.name', 'Laravel') }} @yield('pageTitle')</title>
 </head>
 
 <body>
@@ -32,15 +32,11 @@
       </div>
     </div>
   </header>
-
   @include('admin.includes.sidebar')
   <div class="add-newuser-add company-categroy">
     @yield('content')
   </div>
   @yield('pagejs')
-
-
-
   <!-- Data Table ---->
   <!--script type="text/javascript" src="{{ asset('public/adminAssets/plugins/data-tables/js/data-table.min.js') }}"></script-->
   <script type="text/javascript" src="{{ asset('public/adminAssets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
