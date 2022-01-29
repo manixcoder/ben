@@ -18,7 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->bigInteger('parent_id')->default('0');
             $table->enum('status', ['1', '0'])->comment('1 = Active; 0 = Deactive');
-            $table->string('c_type')->nullable();
+            $table->enum('c_type', ['1', '2'])->default(1)->comment('1 = businesscategory; 2 = usercategory');
             $table->timestamps();
         });
     }

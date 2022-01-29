@@ -60,7 +60,7 @@
                 <table border="0" class="table">
                     <tbody>
                         @php
-                        $business_categories = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','businesscategory')->get();
+                        $business_categories = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','2')->get();
                         @endphp
 
                         @forelse ($business_categories as $key =>$categories)
@@ -92,7 +92,7 @@
         </div>
         <div role="tabpanel" class="tab-pane" id="profile">
             @php
-            $bsubcategories = DB::table('categories')->where('parent_id','!=','0')->where('c_type','=','businesscategory')->get();
+            $bsubcategories = DB::table('categories')->where('parent_id','!=','0')->where('c_type','=','2')->get();
             @endphp
             <div class="table-responsive">
                 <div class="col-md-6 text-right">
@@ -183,7 +183,7 @@
                     </a>
                 </div>
                 @php
-                $business_categories = DB::table('categories')->where('c_type','=','usercategory')->get();
+                $business_categories = DB::table('categories')->where('c_type','=','1')->get();
                 @endphp
                 <table border="0" class="table">
                     <tbody>

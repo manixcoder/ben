@@ -4,9 +4,7 @@
 @section('pageCss')
 <style></style>
 @stop
-<?php
-// dd($users);  
-?>
+
 <div class="add-newuser">
     @if(Session::has('status'))
     <div class="alert alert-{{ Session::get('status') }}">
@@ -26,10 +24,9 @@
     </div>
     @endif
     <div class="row">
-
         <div class="col-md-6 text-left">
             <p>
-                <span>users</span>
+                <span>Users</span>
             </p>
         </div>
         <div class="col-md-6 text-right">

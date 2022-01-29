@@ -119,26 +119,25 @@ class CategoryManagementController extends Controller
                     'name'          => $request->has('name') ? $request->name : '',
                     'parent_id'     => '0',
                     'status'        => '1',
-                    'c_type'        => 'businesscategory',
+                    'c_type'        => '1',
                 );
             } elseif ($request->cat_type === 'sub_cat') {
                 $updata = array(
                     'name'          => $request->has('name') ? $request->name : '',
                     'parent_id'     => $request->has('parent') ? $request->parent : '',
                     'status'        => '1',
-                    'c_type'        => 'businesscategory',
+                    'c_type'        => '1',
                 );
             } else {
                 $updata = array(
                     'name'          => $request->has('name') ? $request->name : '',
                     'parent_id'     => '0',
                     'status'        => '1',
-                    'c_type'        => 'usercategory',
+                    'c_type'        => '2',
                 );
             }
             $categoryData = Category::find($id);
-            $categoryData->update($updata);
-            // $userData = Category::where('id', $id)->update($updata);
+            $categoryData->update($updata);           
             return redirect('/admin/category-management')->with(['status' => 'success', 'message' => 'Record updated Successfully!']);
         } catch (\Exception $e) {
             return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);
@@ -182,8 +181,7 @@ class CategoryManagementController extends Controller
                 'name'          => $request->has('name') ? $request->name : '',
                 'parent_id'     => '0',
                 'status'        => '1',
-                'c_type'        => 'businesscategory',
-
+                'c_type'        => '2',
             ]);
             return redirect('/admin/category-management')->with(['status' => 'success', 'message' => 'New User added Successfully!']);
         } catch (\Exception $e) {
@@ -213,7 +211,7 @@ class CategoryManagementController extends Controller
                 'name'          => $request->has('name') ? $request->name : '',
                 'parent_id'     => $request->has('parent') ? $request->parent : '',
                 'status'        => '1',
-                'c_type'        => 'businesscategory',
+                'c_type'        => '2',
             ]);
             return redirect('/admin/category-management')->with(['status' => 'success', 'message' => 'New Sub Categary added Successfully!']);
         } catch (\Exception $e) {
@@ -236,11 +234,11 @@ class CategoryManagementController extends Controller
             return back()->withErrors($validator)->withInput();
         }
         try {
-            $userData = Category::create([
+            $categoryData = Category::create([
                 'name'          => $request->has('name') ? $request->name : '',
                 'parent_id'     => '0',
                 'status'        => '1',
-                'c_type'        => 'usercategory',
+                'c_type'        => '1',
             ]);
             return redirect('/admin/category-management')->with(['status' => 'success', 'message' => 'New Sub Categary added Successfully!']);
         } catch (\Exception $e) {

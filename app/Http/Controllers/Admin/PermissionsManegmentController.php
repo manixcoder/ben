@@ -15,7 +15,8 @@ class PermissionsManegmentController extends Controller
      */
     public function index()
     {
-        return "Work under progress";
+        $data = array();
+        return view('admin.role_permissions.index', $data);
     }
 
     /**
