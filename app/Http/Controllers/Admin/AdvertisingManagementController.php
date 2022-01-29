@@ -114,6 +114,6 @@ class AdvertisingManagementController extends Controller
     public function destroy(Adverting  $Adverting, $id)
     {
         Adverting::find($id)->delete();
-        return redirect('/admin/advertising-management')->with(['status' => 'success', 'message' => 'Advertising Delet Successfully!']);
+        return redirect('/admin/advertising-management')->with(['status' => 'success', 'message' => 'Advertising Delete Successfully!']);
     }
 }
