@@ -32,7 +32,11 @@ $advertingsData = DB::table('advertings')->get();
         <div class="col-md-12 col-sm-12">
             <div class="menu-images">
                 <figure>
+                    @if($adverting->ad_image)
+                    <img src="{{ URL::asset('/public/uploads/') }}/{{ $adverting->ad_image ?? ''}}" alt="760614_1" width="100%">
+                    @else
                     <img src="{{ asset('public/adminAssets/images/760614_1.jpg')}}" alt="760614_1" width="100%">
+                    @endif
                 </figure>
                 <span class="delete-icon">
                     <a href="{{ url('admin/advertising-management') . '/delete/' . $adverting->id }}">

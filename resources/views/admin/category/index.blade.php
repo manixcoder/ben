@@ -5,12 +5,20 @@
 <style></style>
 @stop
 <div class="company-sec">
+    @if(Session::has('status'))
+    <div class="alert alert-{{ Session::get('status') }}">
+        <i class="ti-user"></i> {{ Session::get('message') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+    </div>
+    @endif
     <div class="row">
         <div class="col-md-6 ">
             <p>Business Category</p>
         </div>
         <div class="col-md-6 text-right">
-            <a href="#">Add New Category</a>
+            <a href="#">
+                Add New Category
+            </a>
         </div>
     </div>
 </div>
@@ -37,6 +45,11 @@
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="home">
             <div class="table-responsive">
+                <div class="col-md-6 text-right">
+                    <a href="{{ url('admin/category-management/company-category') }}">
+                        Add New Company Category
+                    </a>
+                </div>
                 <table border="0" class="table">
                     <tbody>
                         @php
@@ -63,9 +76,6 @@
                         </tr>
                         @endforeach
                         @endif
-
-
-
                         <!--<tr>
                             <td class="text-left "> Restaurant</td>
                             <td class="text-right">
@@ -106,6 +116,11 @@
             @endphp
 
             <div class="table-responsive">
+                <div class="col-md-6 text-right">
+                    <a href="{{ url('admin/category-management/add-sub-category') }}">
+                        Add New Sub Category
+                    </a>
+                </div>
                 <table border="0" class="table">
                     <tbody>
                         @if($business_subcategories)
@@ -180,6 +195,11 @@
         </div>
         <div role="tabpanel" class="tab-pane" id="messages">
             <div class="table-responsive">
+                <div class="col-md-6 text-right">
+                    <a href="{{ url('admin/category-management/user-category') }}">
+                        Add New User Category
+                    </a>
+                </div>
                 @php
                 $business_categories = DB::table('categories')->where('c_type','=','User')->get();
                 //dd($business_subcategories);
