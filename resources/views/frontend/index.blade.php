@@ -1,5 +1,11 @@
 @extends('layouts.frontendlayouts')
+@section('pageTitle', 'Users')
 @section('content')
+@section('pageCss')
+<style>
+
+</style>
+@stop
 <section class="service-slider fw text-center">
     <div class="fadeOut owl-carousel owl-theme">
         <div class="item">
@@ -357,5 +363,9 @@
     </div>
 </section>
 
-
 @endsection
+@section('pagejs')
+<script>
+
+</script>
+@stop

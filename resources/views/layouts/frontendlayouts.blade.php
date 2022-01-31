@@ -14,8 +14,9 @@
     <link href="{{ asset('public/frontendAssets/fonts/fonts.css')}}" rel="stylesheet">
     <link href="{{ asset('public/frontendAssets/css/responsive.css')}}" rel="stylesheet">
     <link rel="icon" href="{{ asset('public/frontendAssets/images/favicon.png')}}" type="skype-img" />
-    <title>{{ config('app.name', 'Laravel') }} Customer</title>
+    <title>{{ config('app.name', 'Laravel') }} Customer @yield('pageTitle')</title>
 </head>
+
 <body>
     @include('frontend.includes.header')
     @yield('content')
