@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Permission;
+use App\Models\PermissionRoleRelation;
+use App\Models\Role;
 use App\Models\PermissionModel;
 
 class PermissionsManegmentController extends Controller
@@ -16,6 +19,13 @@ class PermissionsManegmentController extends Controller
     public function index()
     {
         $data = array();
+        $dataRoles = Role::get()->toArray();
+        foreach ($dataRoles as $key => $role) {
+            $dataRoles[$key]['AllPermissions'] = PermissionRoleRelation::where('role_id', $role['id'])->get()->toArray();
+        }
+        $data['roles'] = $dataRoles;
+        $data['permission'] = Permission::get();
+
         return view('admin.role_permissions.index', $data);
     }
 

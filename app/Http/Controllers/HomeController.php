@@ -23,8 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return $this->checkUserRole();
-        //  return view('welcome');
+        //return $this->checkUserRole();
+        return view('index');
+        // return view('welcome');
     }
 
     /**
@@ -48,7 +49,7 @@ class HomeController extends Controller
     public function getSubCategory(Request $request, $id)
     {
         try {
-            $list = DB::table('categories')->where('parent_id','=',$id)->where('c_type','=','2')->get();
+            $list = DB::table('categories')->where('parent_id', '=', $id)->where('c_type', '=', '2')->get();
             //dd($list);
             if ($list) {
                 $data['status'] = 'success';
@@ -61,5 +62,4 @@ class HomeController extends Controller
             return response()->json(array('status' => 'error', 'message' => $e->getMessage()));
         }
     }
-   
 }

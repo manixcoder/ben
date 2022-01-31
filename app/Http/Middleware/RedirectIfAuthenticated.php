@@ -16,6 +16,15 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        // if (Auth::check() && Auth::user()->isAdmin() || Auth::user()->isMerchant() || Auth::user()->isUsers()) {
+        //     return $next($request);
+        // } else {
+        //     $Role = Auth::user()->roles->first();
+        //     return redirect('/' . $Role->name);
+        // }
+
+        // dd();
+        // dd(Auth::guard($guard)->check());
         if (Auth::guard($guard)->check()) {
             return redirect('/home');
         }

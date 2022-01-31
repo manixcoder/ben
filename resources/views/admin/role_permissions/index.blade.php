@@ -10,296 +10,106 @@
     </p>
 </div>
 <div class="row">
+    <?php // dd($roles); 
+    ?>
+    @foreach($roles as $key => $role)
     <div class="col-md-12">
-        <h3>Normal Business</h3>
+        <h3><?php echo  ucfirst($role['name']);  ?></h3>
     </div>
     <div class=" normal-business">
+        @foreach($permission as $key => $single)
         <div class="col-md-3 col-sm-3">
+
             <div class="form-group">
                 <span class="box-input">
-                    <input type="checkbox">
+                    <input type="checkbox" value="{{ $single->id }}" class="custom-control-input permissionsId" data-roleId="{{ $role['id'] }}" data-permissionId="{{ $single->id }}" name="permissions" id="permissionsId" @if (array_search($single->id, array_column($role['AllPermissions'], 'permission_id')) !== false)
+                    {{ "checked" }}
+                    @endif />
                     <small></small>
                 </span>
-                <label>Dashboard</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Messages</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Menu</label>
+                <label>{{ $single->name }}</label>
             </div>
         </div>
-        <div class="col-md-3 col-sm-3">
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Products &amp; Services</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Appointments</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Check In</label>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Loyalty Points</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Tables</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Advertising</label>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>My QR Code</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Rooms</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Awards</label>
-            </div>
-        </div>
+        @endforeach
     </div>
-    <div class="col-md-12">
-        <h3>Restaurant</h3>
-    </div>
-    <div class=" normal-business">
-        <div class="col-md-3 col-sm-3">
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Dashboard</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Messages</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Menu</label>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Products &amp; Services</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Appointments</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Check In</label>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Loyalty Points</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Tables</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Advertising</label>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>My QR Code</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Rooms</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Awards</label>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-12">
-        <h3>Hotel</h3>
-    </div>
-    <div class=" normal-business">
-        <div class="col-md-3 col-sm-3">
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Dashboard</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Messages</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Menu</label>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Products &amp; Services</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Appointments</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Check In</label>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Loyalty Points</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Tables</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Advertising</label>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>My QR Code</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Rooms</label>
-            </div>
-            <div class="form-group">
-                <span class="box-input">
-                    <input type="checkbox">
-                    <small></small>
-                </span>
-                <label>Awards</label>
-            </div>
-        </div>
-    </div>
+    @endforeach
 </div>
 @endsection
+@section('pagejs')
+<script type="text/javascript">
+    $(document).ready(function() {
+        alert("Hello Here");
+        $('.permissionsId').on('change', function() {
+            alert("hello Here");
+            var roleId = $(this).attr("data-roleId");
+            var permissionId = $(this).attr("data-permissionId");
+            //var ch = $("input[type='checkbox']").val();
+            //alert("roleId "+roleId);
+            //alert("permissionId "+permissionId);
+
+            var newForm = {
+                roleId: roleId,
+                permissionId: permissionId,
+                "_token": "{{ csrf_token() }}"
+            };
+            $.ajax({
+                'url': "{!!  url( '/admin/permissions-management/change-permission') !!}",
+                'method': 'post',
+                'dataType': 'json',
+                'data': newForm,
+
+                success: function(data) {
+                    if (data.status == 'success') {
+                        console.log(data.status);
+                    } else if (data.status == 'exception' || data.status == 'danger') {
+                        swal("Error", data.message, "error");
+                    } else {
+                        swal("Action failed", "Please fill required fields", "error");
+                        $('.error').html('');
+                        $('.error').parent().removeClass('has-danger');
+                        $.each(data, function(key, value) {
+                            if (value != "") {
+                                $("#error-" + key).text(value);
+                                $("#error-" + key).parent().addClass('has-danger');
+                            }
+                        });
+                    }
+                }
+            });
+
+        });
+    });
+
+    $(document).on('submit', '#permissionForm', function() {
+        $.ajax({
+            'url': "{!!  url( '/admin/permissions-management/save-permission') !!}",
+            'method': 'post',
+            'dataType': 'json',
+            'data': $(this).serialize(),
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(data) {
+                if (data.status == 'success') {
+                    swal("Success", data.message, "success").then(function() {
+                        window.location.href = "{!! url( '/admin/permissions-management') !!}"
+                    });
+                } else if (data.status == 'exception' || data.status == 'danger') {
+                    swal("Error", data.message, "error");
+                } else {
+                    swal("Action failed", "Please fill required fields", "error");
+                    $('.error').html('');
+                    $('.error').parent().removeClass('has-danger');
+                    $.each(data, function(key, value) {
+                        if (value != "") {
+                            $("#error-" + key).text(value);
+                            $("#error-" + key).parent().addClass('has-danger');
+                        }
+                    });
+                }
+            }
+        });
+        return false;
+    });
+</script>
+@stop
