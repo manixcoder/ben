@@ -119,6 +119,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
      */
     Route::group(['prefix' => 'permissions-management'], function () {
         Route::get('/', 'Admin\PermissionsManegmentController@index');
+
+        Route::post('/save-permission', 'Admin\PermissionsManegmentController@store');
+        Route::post('/change-permission', 'Admin\PermissionsManegmentController@update');
+
+
         Route::get('create', 'Admin\PermissionsManegmentController@create');
         Route::post('/save-permissions', 'Admin\PermissionsManegmentController@store');
         Route::get('{id}/show', 'Admin\PermissionsManegmentController@show');
@@ -156,9 +161,9 @@ Route::get('/', 'HomeController@index')->name('home');
 
 /*=====================================Merchant=====================================*/
 Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], function () {
-    return "Merchant";
+    Route::get('/', 'Admin\DashboardController@index');
 });
 /*=====================================Merchant End=====================================*/
 Route::group(['prefix' => 'users', 'middleware' => ['users', 'auth']], function () {
-    return "Merchant";
+    Route::get('/', 'Customer\DashboardController@index');
 });

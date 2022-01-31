@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Auth;
 use Closure;
 
-class Student
+class Users
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class Student
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->isStudent()) {
+        if (Auth::check() && Auth::user()->isUsers()) {
             return $next($request);
         } else {
             $Role = Auth::user()->roles->first();
