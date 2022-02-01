@@ -24,7 +24,7 @@
             <div class="footertop-sec">
                 <div class="row">
                     <div class="col-md-4">
-                        <a href="#" class="logo-footer">
+                        <a href="{{ url('/') }}" class="logo-footer">
                             <img src="{{ asset('public/frontendAssets/images/footer_logo.png')}}" alt="icon" />
                         </a>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
@@ -73,14 +73,12 @@
             </div>
         </div>
     </footer>
-
-
     <!-- Optional JavaScript; choose one of the two! -->
-    <script src="{{ asset('public/frontendAssets/js/jequery-main3.5.js')}}"></script>
-    <script src="{{ asset('public/frontendAssets/js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('public/frontendAssets/js/owl.carousel.min.js')}}"></script>
-    <script src="{{ asset('public/frontendAssets/js/owl.animate.js')}}"></script>
-    <script src="{{ asset('public/frontendAssets/js/aos.js')}}"></script>
+    <script src="{{ asset('public/frontendAssets/js/jequery-main3.5.js') }}"></script>
+    <script src="{{ asset('public/frontendAssets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public/frontendAssets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('public/frontendAssets/js/owl.animate.js') }}"></script>
+    <script src="{{ asset('public/frontendAssets/js/aos.js') }}"></script>
 
     <script>
         $(window).bind("load", function() {

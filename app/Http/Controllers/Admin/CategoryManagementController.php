@@ -211,7 +211,7 @@ class CategoryManagementController extends Controller
                 'name'          => $request->has('name') ? $request->name : '',
                 'parent_id'     => $request->has('parent') ? $request->parent : '',
                 'status'        => '1',
-                'c_type'        => '2',
+                'c_type'        => '1',
             ]);
             return redirect('/admin/category-management')->with(['status' => 'success', 'message' => 'New Sub Categary added Successfully!']);
         } catch (\Exception $e) {

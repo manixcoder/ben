@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
 				'name' => 'administrator',
 				'email' => 'admin@yopmail.com',
 				'email_verified_at' =>  date("Y-m-d H:i:s"),
-				'password' => bcrypt('plokijuh@123'),
+				'password' => bcrypt('Qwert@123'),
 				'remember_token' => null,
 				'created_at' =>  date("Y-m-d H:i:s"),
 				'updated_at' =>  date("Y-m-d H:i:s"),
