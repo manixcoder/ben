@@ -17,7 +17,7 @@
 <div class="user-name">
     <div class="row">
         @php
-        $categorydata = DB::table('categories')->where('c_type', '2')->where('parent_id', '0')->get();
+        $categorydata = DB::table('categories')->where('c_type', '1')->where('parent_id', '0')->get();
         @endphp
         <form method="POST" action="{{ url('/admin/category-management/save-sub-categary') }}" enctype="multipart/form-data">
             @csrf

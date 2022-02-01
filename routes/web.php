@@ -11,6 +11,16 @@
 |
 */
 
+Route::get('clear-cache', function () {
+    $exitCode = Artisan::call('config:clear');
+    $exitCode = Artisan::call('cache:clear');
+    $exitCode = Artisan::call('route:clear');
+    $exitCode = Artisan::call('view:clear');
+    $exitCode = Artisan::call('config:cache');
+
+    Session::flash('success', 'All Clear');
+    echo "DONE";
+});
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,6 +30,7 @@ Route::get('/admin-login', function () {
 });
 
 Auth::routes();
+use App\User;
 Route::get('/validate-user', 'HomeController@checkUserRole');
 Route::get('/request/get-sub-category/{id}', 'HomeController@getSubCategory');
 /*=====================================ADMIN=====================================*/
