@@ -3,7 +3,6 @@
 @section('content')
 @section('pageCss')
 <style>
-
 </style>
 @stop
 

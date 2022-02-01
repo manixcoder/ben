@@ -1,5 +1,4 @@
-@extends('layouts.frontendlayouts')
-
+@extends('frontend.master')
 @section('content')
 <section class="service-slider fw text-center">
     <div class="fadeOut owl-carousel owl-theme">
@@ -466,7 +465,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <button type="submit" class="btn btn-primary text-color "> <img src="images/l_google.png" alt="" width="22px"> Login with Google</button>
+                                                        <button type="submit" class="btn btn-primary text-color "> <img src="{{ asset('public/frontendAssets/images/l_google.png')}}" alt="" width="22px"> Login with Google</button>
                                                     </div>
                                                 </div>
                                                 <p>Don't have an account ? <a href="javascript:void(0);" data-toggle="modal" data-target="#loginModal"><span>Login</span></a></p>

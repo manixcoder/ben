@@ -2729,7 +2729,7 @@ section.calender-pgsec {
 .login {
     vertical-align: middle;
     width: 100%;
-    background-image: url(../images/l_bg.png);
+    background-image: url(<?php echo asset('public/frontendAssets/images/l_bg.png') ?>);
     background-size: cover;
     background-repeat: no-repeat;
     height: auto;
