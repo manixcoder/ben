@@ -1,4 +1,4 @@
-@extends('frontend.master')
+@extends('layouts.frontendlayouts')
 @section('pageTitle', 'Users')
 @section('content')
 @section('pageCss')
