@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\LicenseClassModel;
 use Auth;
+use App\User;
 use DB;
 use Illuminate\Http\Request;
+use Redirect;
+use Validator;
 
 class HomeController extends Controller
 {
@@ -23,9 +26,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //return $this->checkUserRole();
+        // return $this->checkUserRole();
         return view('index');
         // return view('welcome');
+    }
+
+    public function sendOTPOnEmail(Request $request)
+    {
+        dd($request->email);
+        dd($request->all());
     }
 
     /**
@@ -51,7 +60,7 @@ class HomeController extends Controller
         try {
             $list = DB::table('categories')
                 ->where('parent_id', '=', $id)
-                ->where('c_type', '=', '2')
+                ->where('c_type', '=', '1')
                 ->get();
             //dd($list);
             if ($list) {
