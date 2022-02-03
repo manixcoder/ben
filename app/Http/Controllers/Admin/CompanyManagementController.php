@@ -82,7 +82,7 @@ class CompanyManagementController extends Controller
             return back()->withErrors($validator)->withInput();
         }
         try {
-            dd($request->all());
+            //dd($request->all());
             $companyData = User::create([
                 'user_role'                 => 2,
                 'company_name'              => $request->has('company_name') ? $request->company_name : '',
