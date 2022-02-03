@@ -9,13 +9,10 @@
     <link rel="stylesheet" href="{{ asset('public/adminAssets/Fonts/font.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('public/adminAssets/css/style.css')}}">
-
-
     <title>Forgot Password</title>
 </head>
 
 <body>
-
     <div class="login-to-access">
         <form method="POST" action="{{ url('/send-otp') }}">
             @csrf
@@ -36,8 +33,6 @@
             </div>
         </form>
     </div>
-
-
     <script src="{{ asset('public/adminAssets/js/libaury.js')}}"></script>
     <script src="{{ asset('public/adminAssets/js/bootstrap.min.js')}}"></script>
 </body>

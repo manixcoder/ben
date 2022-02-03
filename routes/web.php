@@ -26,16 +26,32 @@ Route::get('clear-cache', function () {
 Route::get('/', function () {
     return view('welcome');
 });
-
+/*
+|---------------------------------
+| Admin Common Routes Here     |
+|---------------------------------
+*/
 Route::get('/admin-login', function () {
     return view('admin_login');
 });
-
 Route::get('/forgot-password', function () {
     return view('forgot_password');
 });
-Route::any('send-otp','HomeController@sendOTPOnEmail');
+Route::any('send-otp', 'HomeController@sendOTPOnEmail');
 
+Route::get('/verification', function () {
+    return view('verification');
+});
+Route::any('verify-otp', 'HomeController@verifyOtp');
+Route::get('/create-newpassword', function () {
+    return view('create_newpassword');
+});
+Route::any('update-password', 'HomeController@updatePassword');
+/*
+|---------------------------------
+| Admin Common Routes Here     |
+|---------------------------------
+*/
 Route::get('/merchent-sign-up', function () {
     return view('merchentRegistration.registration');
 });

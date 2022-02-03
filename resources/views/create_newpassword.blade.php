@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="{{ asset('public/adminAssets/Fonts/font.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('public/adminAssets/css/style.css')}}">
-    <title>Verification</title>
+    <title>Create New Password</title>
 </head>
 
 <body>
     <div class="login-to-access">
 
-        <form method="POST" action="{{ url('/verify-otp') }}">
+        <form method="POST" action="{{ url('/update-password') }}">
             @csrf
             <div class="login-form">
                 <figure>
@@ -23,30 +23,33 @@
                     <img src="{{ asset('public/adminAssets/images/Group.svg')}}" alt="Group" width="100px">
                 </figure>
                 <div class="form-group">
-                    <h3>Verification</h3>
-                    <?php
-                    $user_id = Session::get('user_id');
-                    $user_email = Session::get('user_email');
-                    $otp = Session::get('otp');
-                    // dd($user_email);
-                    // $userData = DB::table('users')->where('id', $user_id)->first();
-                    //dd($userData); 
-                    ?>
-                    <p>OTP has been sent to <b><?php echo $user_email  ?></b> </p>
-                    <p>OTP has been sent to <b></b><?php echo $otp ?> </p>
+                    <h3>Create New Password</h3>
                 </div>
-                <ul>
-                    <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
-                    <li><input type="text" name="vcode[]" placeholder="0" maxlength="1" required></li>
-                    <li><input type="text" name="vcode[]" placeholder="0" maxlength="1" required></li>
-                    <li><input type="text" name="vcode[]" placeholder="0" maxlength="1" required></li>
-                    <li><input type="text" name="vcode[]" placeholder="0" maxlength="1" required></li>
-                </ul>
+                <?php
+                $user_id = Session::get('user_id');
+                $userData = DB::table('users')->where('id', $user_id)->first();
+
+                // dd($user_id); 
+                ?>
+                <input type="hidden" name="user_id" value="{{ $user_id }}">
                 <div class="form-group">
-                    <a href="#">Resend me OTP</a>
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="New Password">
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $password }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary bg-color">Verify</button>
+                    <input type="Password" class="form-control @error('password_confirmation') is-invalid @enderror password-show" name="password_confirmation" placeholder="Confirm Password">
+                    @error('password_confirmation')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $password_confirmation }}</strong>
+                    </span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary bg-color">Done</button>
                 </div>
                 @if(Session::has('status'))
                 <div class="alert alert-{{ Session::get('status') }}">
@@ -57,6 +60,7 @@
             </div>
         </form>
     </div>
+
     <script src="{{ asset('public/adminAssets/js/libaury.js')}}"></script>
     <script src="{{ asset('public/adminAssets/js/bootstrap.min.js')}}"></script>
 </body>
