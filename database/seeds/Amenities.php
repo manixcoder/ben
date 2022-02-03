@@ -12,7 +12,7 @@ class Amenities extends Seeder
     public function run()
     {
         DB::table('amenities')->delete();
-		$userData = array(
+		$amenitiesData = array(
 			array(
 				'id' => 1,
                 'amenities_name' => 'Free WiFi',
@@ -103,9 +103,7 @@ class Amenities extends Seeder
 				'created_at' =>  date("Y-m-d H:i:s"),
 				'updated_at' =>  date("Y-m-d H:i:s"),
 			),
-            
-
-		);
-		DB::table('amenities')->insert($userData);
+        );
+		DB::table('amenities')->insert($amenitiesData);
     }
 }

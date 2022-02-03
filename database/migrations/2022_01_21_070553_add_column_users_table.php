@@ -42,7 +42,8 @@ class AddColumnUsersTable extends Migration
             $table->string('facebook_link')->after('website_link')->nullable();
             $table->string('instagram_link')->after('facebook_link')->nullable();
             $table->string('twitter_link')->after('instagram_link')->nullable();
-            $table->enum('is_active', ['1', '2', '0'])->after('twitter_link')->default(1)->comment = '1=Active, 2 = decline 0=Inactive ';
+            $table->longText('comp_short_descriptin')->after('twitter_link')->nullable();
+            $table->enum('is_active', ['1', '2', '0'])->after('user_short_descriptin')->default(1)->comment = '1=Active, 2 = decline 0=Inactive ';
         });
     }
 
@@ -82,6 +83,7 @@ class AddColumnUsersTable extends Migration
             $table->dropColumn('facebook_link')->nullable();
             $table->dropColumn('instagram_link')->nullable();
             $table->dropColumn('twitter_link')->nullable();
+            $table->dropColumn('comp_short_descriptin')->nullable();
             $table->dropColumn('is_active')->nullable();
         });
     }

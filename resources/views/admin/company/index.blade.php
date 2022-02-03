@@ -75,9 +75,20 @@
                             </td>
                             <td>
                                 <p class="text-right">@if($merchant->last_login) {{ date('d M Y | H:i a', strtotime($merchant->last_login)) }} @endif </p>
-                                <span class=" pull-right view-all"><a href="{{ url('admin/company-management') . '/' . $merchant->id.'/show' }}">View Details</a>
-                                    <button type="submit" class="btn btn-primary">Decline</button>
-                                    <button type="submit" class="btn btn-primary bgcolor">Accept</button>
+                                <span class=" pull-right view-all">
+                                    <!-- <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/show' }}">
+                                        View Details
+                                    </a> -->
+                                    <form method="POST" action="{{ url('admin/company-management/short-details') }}">
+                                        @csrf
+                                        <input type="hidden" name="comp_id" value="{{ $merchant->id }}">
+                                        <button type="submit">
+                                            View Details
+                                        </button>
+                                    </form>
+
+                                    <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/decline' }}" class="btn btn-primary">Decline</a>
+                                    <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/accept' }}" type="submit" class="btn btn-primary bgcolor">Accept</a>
                                 </span>
                                 <span class="pull-right">
                                     <img src="{{ asset('public/adminAssets/images/timer.png')}}" alt="timer" width="15px">
@@ -88,34 +99,7 @@
                                 </span>
                             </td>
                         </tr>
-                        @endforeach
-
-
-                        <!--tr>
-                            <td>
-                                <p>#NUD5449595</p>
-                                <h3>Company Name</h3>
-                                <p>Hotel</p>
-                                <p>2700 Cliffside Drive, Syracuse, 13202</p>
-                                <h3>VAT/UID Numb<er h3="">
-                                    </er>
-                                </h3>
-                            </td>
-                            <td>
-                                <p class="text-right">10 Jun 21 | 10:30 am</p>
-                                <span class=" pull-right view-all"><a href="#">View Details</a>
-                                    <button type="submit" class="btn btn-primary">Decline</button>
-                                    <button type="submit" class="btn btn-primary bgcolor">Accept</button>
-                                </span>
-                                <span class="pull-right">
-                                    <img src="{{ asset('public/adminAssets/images/timer.png')}}" alt="timer" width="15px">
-                                    Auto Accept In :
-                                    <span class="min-timer">
-                                        03:00 min
-                                    </span>
-                                </span>
-                            </td>
-                        </tr-->
+                        @endforeach                        
                     </tbody>
                 </table>
             </div>
@@ -156,7 +140,6 @@
                                         Not Login
                                         @endif
                                     </span>
-
                                 </p>
                                 <ul class="calldetail-box">
                                     <li>
@@ -181,6 +164,13 @@
                                     <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/show' }}">
                                         View Details
                                     </a>
+                                    <form method="POST" action="{{ url('admin/company-management/details') }}">
+                                        @csrf
+                                        <input type="hidden" name="comp_id" value="{{ $merchant->id }}">
+                                        <button type="submit">
+                                            View Details
+                                        </button>
+                                    </form>
                                 </span>
                             </td>
                         </tr>

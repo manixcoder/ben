@@ -118,7 +118,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
         Route::get('/', 'Admin\CompanyManagementController@index');
         Route::get('create', 'Admin\CompanyManagementController@create');
         Route::post('/save-company', 'Admin\CompanyManagementController@store');
+        Route::post('/details', 'Admin\CompanyManagementController@companyDetails');
+        Route::post('/short-details', 'Admin\CompanyManagementController@companyShortDetails');
         Route::get('{id}/show', 'Admin\CompanyManagementController@show');
+        Route::get('{id}/decline', 'Admin\CompanyManagementController@decline');
+        Route::get('{id}/accept', 'Admin\CompanyManagementController@accept');
         Route::get('{id}/edit', 'Admin\CompanyManagementController@edit');
         Route::post('{id}/update', 'Admin\CompanyManagementController@update');
         Route::get('delete/{id}', 'Admin\CompanyManagementController@destroy');

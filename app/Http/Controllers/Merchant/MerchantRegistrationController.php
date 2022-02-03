@@ -42,7 +42,6 @@ class MerchantRegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
         $validator = Validator::make($request->all(), [
             'company_name' => 'required',
             'company_type' => 'required',
@@ -57,16 +56,16 @@ class MerchantRegistrationController extends Controller
             'last_name' => 'required',
             'date_birthday' => 'required',
             'gender' => 'required',
+            //'name' => 'required|string|max:255|unique:users',
             'email' => 'required|string|max:255|unique:users',
             'mobile' => 'required',
             'password' => 'required',
         ]);
         if ($validator->fails()) {
-            
             return back()->withErrors($validator)->withInput();
         }
         try {
-            dd($validator);
+            //dd($request->all());
             $companyData = User::create([
                 'user_role'                 => 2,
                 'company_name'              => $request->has('company_name') ? $request->company_name : '',
@@ -96,8 +95,8 @@ class MerchantRegistrationController extends Controller
                 'updated_at' => date("Y-m-d H:i:s"),
             );
             UserRoleRelation::create($roleArray);
-            
-            return redirect('/merchant')->with(['status' => 'success', 'message' => 'New Company added Successfully!']);
+            Auth::loginUsingId($companyData->id);
+            return redirect('/admin/company-management')->with(['status' => 'success', 'message' => 'New Company added Successfully!']);
         } catch (\Exception $e) {
             return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);
             return back()->with(['status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.']);

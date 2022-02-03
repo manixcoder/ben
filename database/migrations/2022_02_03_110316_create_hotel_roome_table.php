@@ -26,6 +26,7 @@ class CreateHotelRoomeTable extends Migration
             $table->string('num_beds')->nullable();
             $table->string('check_in')->nullable();
             $table->string('check_out')->nullable();
+            $table->string('hotel_address')->nullable();
             $table->timestamps();
         });
     }
