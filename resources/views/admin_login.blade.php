@@ -40,7 +40,7 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <a href="#">Forgot Password?</a>
+                    <a href="{{ url('/forgot-password') }}">Forgot Password?</a>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary bg-color">Login</button>

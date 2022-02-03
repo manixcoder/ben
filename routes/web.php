@@ -12,13 +12,13 @@
 */
 
 Route::get('clear-cache', function () {
-   
+
     $exitCode = Artisan::call('config:clear');
     $exitCode = Artisan::call('cache:clear');
     $exitCode = Artisan::call('route:clear');
     $exitCode = Artisan::call('view:clear');
     $exitCode = Artisan::call('config:cache');
-    
+
     // $exitCode = Artisan::call('migrate:refresh --seed');
     Session::flash('success', 'All Clear');
     echo "DONE";
@@ -26,13 +26,42 @@ Route::get('clear-cache', function () {
 Route::get('/', function () {
     return view('welcome');
 });
-
+/*
+|---------------------------------
+| Admin Common Routes Here     |
+|---------------------------------
+*/
 Route::get('/admin-login', function () {
     return view('admin_login');
 });
+Route::get('/forgot-password', function () {
+    return view('forgot_password');
+});
+Route::any('send-otp', 'HomeController@sendOTPOnEmail');
 
+Route::get('/verification', function () {
+    return view('verification');
+});
+Route::any('verify-otp', 'HomeController@verifyOtp');
+Route::get('/create-newpassword', function () {
+    return view('create_newpassword');
+});
+Route::any('update-password', 'HomeController@updatePassword');
+/*
+|---------------------------------
+| Admin Common Routes Here     |
+|---------------------------------
+*/
+Route::get('/merchent-sign-up', function () {
+    return view('merchentRegistration.registration');
+});
+
+
+Route::any('/merchent-registration/save-merchent', 'Merchant\MerchantRegistrationController@store');
 Auth::routes();
+
 use App\User;
+
 Route::get('/validate-user', 'HomeController@checkUserRole');
 Route::get('/request/get-sub-category/{id}', 'HomeController@getSubCategory');
 /*=====================================ADMIN=====================================*/
@@ -174,7 +203,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 /*=====================================Merchant=====================================*/
 Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], function () {
-    Route::get('/', 'Admin\DashboardController@index');
+    Route::get('/', 'Merchant\DashboardController@index');
 });
 /*=====================================Merchant End=====================================*/
 Route::group(['prefix' => 'users', 'middleware' => ['users', 'auth']], function () {

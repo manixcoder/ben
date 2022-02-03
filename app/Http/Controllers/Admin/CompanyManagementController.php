@@ -10,6 +10,7 @@ use Redirect;
 use Validator;
 use App\Models\UserRoleRelation;
 use Yajra\Datatables\Datatables;
+use Illuminate\Support\Facades\Auth;
 
 class CompanyManagementController extends Controller
 {
@@ -81,6 +82,7 @@ class CompanyManagementController extends Controller
             return back()->withErrors($validator)->withInput();
         }
         try {
+            dd($request->all());
             $companyData = User::create([
                 'user_role'                 => 2,
                 'company_name'              => $request->has('company_name') ? $request->company_name : '',
@@ -110,6 +112,7 @@ class CompanyManagementController extends Controller
                 'updated_at' => date("Y-m-d H:i:s"),
             );
             UserRoleRelation::create($roleArray);
+            Auth::loginUsingId($companyData->id);
             return redirect('/admin/company-management')->with(['status' => 'success', 'message' => 'New Company added Successfully!']);
         } catch (\Exception $e) {
             return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);

@@ -30,7 +30,7 @@ class AddColumnUsersTable extends Migration
             $table->string('general_layality')->after('uid_number')->nullable();
             $table->string('user_type')->after('general_layality')->nullable();
             $table->string('date_birthday')->after('user_type')->nullable();
-            $table->string('gender')->after('date_birthday')->nullable();
+            $table->enum('gender', ['1', '2', '0'])->after('date_birthday')->default(1)->comment = '1=Male, 2 = Female 0=Special ';
             $table->string('mobile')->after('gender')->nullable();
             $table->string('otp')->after('mobile')->nullable();
             $table->string('subscription_id')->after('otp')->nullable();
