@@ -19,6 +19,7 @@
             <div class="col-md-6 col-sm-6 ">
                 <img src="{{ asset('public/merchemtAssets/images/header_logo.png')}}" alt="header_logo" width="230px">
             </div>
+            <?php // dd(Auth::user()) ?>
             <div class="col-md-6 col-sm-6 text-right">
                 <div class="user-dropdown">
                     <div class="dropdown">
@@ -96,18 +97,22 @@
                     Appointments
                 </a>
             </li>
+            @if(Auth::user()->company_type == '2')
             <li>
                 <a href="#">
                     <img src="{{ asset('public/merchemtAssets/images/sp_tables.png')}}" alt="Tables">
                     Tables
                 </a>
             </li>
+            @endif
+            @if(Auth::user()->company_type == '3')
             <li>
                 <a href="#">
                     <img src="{{ asset('public/merchemtAssets/images/sp_rooms.png')}}" alt="Rooms">
                     Rooms
                 </a>
             </li>
+            @endif
             <li>
                 <a href="#">
                     <img src="{{ asset('public/merchemtAssets/images/sp_menu.png')}}" alt="Menu">
@@ -140,7 +145,7 @@
             </li>
         </ul>
     </div>
-   
+
     @yield('content')
     <script src="{{ asset('public/merchemtAssets/js/libaury.js')}}"></script>
     <script src="{{ asset('public/merchemtAssets/js/bootstrap.min.js')}}"></script>

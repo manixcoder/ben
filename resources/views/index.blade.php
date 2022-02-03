@@ -1,5 +1,6 @@
 @extends('frontend.master')
 @section('content')
+
 <section class="service-slider fw text-center">
     <div class="fadeOut owl-carousel owl-theme">
         <div class="item">

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ asset('public/adminAssets/images/header_logo.png')}}" sizes="10x10">
     <link rel="stylesheet" href="{{ asset('public/adminAssets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/adminAssets/Fonts/font.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,7 +19,9 @@
             @csrf
             <div class="login-form">
                 <figure>
-                    <img src="{{ asset('public/adminAssets/images/Group.svg') }}" alt="Group" width="100px">
+                    <a href="{{ URL::to('/') }}">
+                        <img src="{{ asset('public/adminAssets/images/Group.svg') }}" alt="Group" width="100px">
+                    </a>
                 </figure>
                 <div class="form-group">
                     <h3>Login to access your account</h3>
