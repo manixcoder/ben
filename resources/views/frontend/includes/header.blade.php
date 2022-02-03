@@ -1,4 +1,18 @@
 @guest
+@endguest
+
+@auth
+<?php
+if (Auth::check()) {
+    $role = Auth::user()->roles->first();
+    if (!empty($role)) {
+        return redirect('/' . $role->name);
+    }
+}
+?>
+@endauth
+
+@guest
 <header class="customer-header fw">
     <div class="container">
         <div class="row">
@@ -34,7 +48,8 @@
         </div>
     </div>
 </header>
-@else
+@endguest
+@auth
 <header class="customer-header  fw">
     <div class="container">
         <div class="row">
@@ -174,4 +189,4 @@
         </div>
     </div>
 </header>
-@endguest
+@endauth

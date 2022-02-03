@@ -112,7 +112,7 @@ class CompanyManagementController extends Controller
                 'updated_at' => date("Y-m-d H:i:s"),
             );
             UserRoleRelation::create($roleArray);
-            Auth::loginUsingId($companyData->id);
+           // Auth::loginUsingId($companyData->id);
             return redirect('/admin/company-management')->with(['status' => 'success', 'message' => 'New Company added Successfully!']);
         } catch (\Exception $e) {
             return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);

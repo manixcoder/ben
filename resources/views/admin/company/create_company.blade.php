@@ -127,7 +127,7 @@
                 <div class="col-md-6 col-sm-6">
                     <div class="form-group">
                         @php
-                        $categoriesUser = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','1')->get();
+                        $categoriesUser = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','2')->get();
                         @endphp
                         <label>User Type</label>
                         <select class="form-control @error('user_type') has-danger @enderror givepoint-img" value="{{ old('user_type') }}" name="user_type" required>

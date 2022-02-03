@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    
     @include('frontend.includes.header')
     @yield('content')
     <footer class="site-footer fw">
