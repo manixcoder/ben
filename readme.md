@@ -1,6 +1,8 @@
 <p>Benifit me</p>
 
-<p align="center"><img src="https://avatars.githubusercontent.com/u/16716398?s=96&v=4"></p>
+<p align="center">
+<img src="https://avatars.githubusercontent.com/u/16716398?s=96&v=4">
+</p>
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
@@ -11,7 +13,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-### About Laravel
+### About Project
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
