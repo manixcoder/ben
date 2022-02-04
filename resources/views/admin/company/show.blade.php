@@ -21,8 +21,7 @@
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
             <a href="#home" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">
-                Company
-                Info
+                Company Info
             </a>
         </li>
         <li role="presentation" class="">
@@ -47,6 +46,7 @@
             <div class="companyinfo-banner">
                 <img src="{{ asset('public/adminAssets/images/sfouw-clock-bar.webp')}}" alt="img">
             </div>
+            <?php // dd($merchants); ?>
             <div class="parallax-resturent-sec">
                 <div class="imgleft">
                     <img src="{{ asset('public/adminAssets/images/background2.png')}}" alt="img">
@@ -70,11 +70,11 @@
                 </div>
             </div>
             <div class="praadress-cont fw">
-                <h4><i><img src="{{ asset('public/adminAssets/images/full_address.png')}}" alt="icon"></i>3245 Twin House Lane, Springfield, 94885</h4>
-                <h4 class="mrtop20"><span>VAT/UID Number :</span> 4894 484734 384904</h4>
+                <h4><i><img src="{{ asset('public/adminAssets/images/full_address.png')}}" alt="icon"></i>{{ $merchants->address }}, {{ $merchants->city }}, {{ $merchants->zip_code }}</h4>
+                <h4 class="mrtop20"><span>VAT/UID Number :</span> {{ $merchants->uid_number }}</h4>
                 <h4 class="mrtop20"><span>Opening hours :</span> Open - 8:00 am <span class="dots">.</span> Close - 11:30 pm
                 </h4>
-                <h4 class="mrtop20"><span>Website link :</span><a href="#">www.company.com</a></h4>
+                <h4 class="mrtop20"><span>Website link :</span><a href="#">{{ $merchants->website_link }}</a></h4>
             </div>
             <div class="company-aboutpra-cont">
                 <h3>About</h3>
@@ -86,13 +86,16 @@
             </div>
             <div class="praadress-cont fw">
                 <h3>User Info</h3>
+                <?php 
+                $role = Auth::user()->roles->first();
+                ?>
                 <h4 class="mrtop20"><span>Role :</span> Manager</h4>
-                <h4 class="mrtop20"><span>First Name :</span> John</h4>
-                <h4 class="mrtop20"><span>Last Name :</span>Doe</h4>
-                <h4 class="mrtop20"><span>Email Address :</span>doejohn484@gamil.com</h4>
-                <h4 class="mrtop20"><span>Mobile Number :</span>9600000025</h4>
-                <h4 class="mrtop20"><span>Date of Birth :</span>12 Jun 1995</h4>
-                <h4 class="mrtop20"><span>Gender :</span>Male</h4>
+                <h4 class="mrtop20"><span>First Name :</span> {{ $merchants->first_name }}</h4>
+                <h4 class="mrtop20"><span>Last Name :</span> {{ $merchants->last_name }}</h4>
+                <h4 class="mrtop20"><span>Email Address :</span> {{ $merchants->email }}</h4>
+                <h4 class="mrtop20"><span>Mobile Number :</span>{{ $merchants->mobile }}</h4>
+                <h4 class="mrtop20"><span>Date of Birth :</span>{{ $merchants->date_birthday }}</h4>
+                <h4 class="mrtop20"><span>Gender :</span>{{ $merchants->gender }} </h4>
                 <p class="pra">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
                     laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
                     vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit.</p>
@@ -113,7 +116,6 @@
                             <td class=" mexican">
                                 <figure>
                                     @if($dises->disk_image !=null)
-
                                     <img src="{{ URL::asset('/public/uploads/') }}/{{ $dises->disk_image }}" alt="pizza" width="200px" height="120px">
                                     @else
                                     <img src="{{ asset('public/adminAssets/images/pizza.jpg')}}" alt="pizza" width="200px" height="120px">
