@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use Redirect;
 use Validator;
+use Auth;
 use App\Models\UserRoleRelation;
 use Yajra\Datatables\Datatables;
 
@@ -47,6 +48,7 @@ class MerchantRegistrationController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
         $validator = Validator::make($request->all(), [
             'company_name' => 'required',
             'company_type' => 'required',
@@ -54,8 +56,7 @@ class MerchantRegistrationController extends Controller
             'address' => 'required',
             'city' => 'required',
             'zip_code' => 'required',
-            'uid_number' => 'required',
-            'general_layality' => 'required',
+            'uid_number' => 'required',            
             'user_type' => 'required',
             'first_name' => 'required',
             'last_name' => 'required',

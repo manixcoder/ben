@@ -108,12 +108,16 @@
                 <table border="0" class="company-name Companies menu-table">
                     <tbody>
                         @forelse ($disesData as $dises)
-                        
+
                         <tr>
                             <td class=" mexican">
                                 <figure>
-                                    
-                                    <img src="{{ asset('public/adminAssets/images/pizza.jpg')}}" alt="pizza" width="200px">
+                                    @if($dises->disk_image !=null)
+
+                                    <img src="{{ URL::asset('/public/uploads/') }}/{{ $dises->disk_image }}" alt="pizza" width="200px" height="120px">
+                                    @else
+                                    <img src="{{ asset('public/adminAssets/images/pizza.jpg')}}" alt="pizza" width="200px" height="120px">
+                                    @endif
 
                                 </figure>
                             </td>

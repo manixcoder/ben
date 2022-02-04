@@ -84,8 +84,8 @@
                                         </button>
                                     </form>
 
-                                    <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/decline' }}" type="submit" class="btn btn-primary">Decline</a>
-                                    <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/accept' }}" type="submit" class="btn btn-primary bgcolor">Accept</a>
+                                    <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/decline' }}" class="btn btn-primary">Decline</a>
+                                    <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/accept' }}" class="btn btn-primary bgcolor">Accept</a>
                                 </span>
                                 <span class="pull-right">
                                     <img src="{{ asset('public/adminAssets/images/timer.png')}}" alt="timer" width="15px">
@@ -161,7 +161,7 @@
                                     <!-- <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/show' }}">
                                         View Details
                                     </a> -->
-                                   
+
                                     <form method="POST" action="{{ url('admin/company-management/details') }}">
                                         @csrf
                                         <input type="hidden" name="comp_id" value="{{ $merchant->id }}">
