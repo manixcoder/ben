@@ -16,9 +16,9 @@ class CreateFoodDisesTable extends Migration
         Schema::create('food_dises', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('merchent_id');
-            $table->string('dise_name')->nullable();
-            $table->longText('dise_description')->nullable();
             $table->string('disk_category_id')->nullable();
+            $table->string('dise_name')->nullable();
+            $table->longText('dise_description')->nullable();            
             $table->string('disk_price')->nullable();
             $table->string('disk_discount')->nullable();
             $table->date('disk_valid')->nullable();
@@ -35,6 +35,6 @@ class CreateFoodDisesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('food_disees');
+        Schema::dropIfExists('food_dises');
     }
 }

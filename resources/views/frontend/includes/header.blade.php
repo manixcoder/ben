@@ -1,18 +1,4 @@
 @guest
-@endguest
-
-@auth
-<?php
-if (Auth::check()) {
-    $role = Auth::user()->roles->first();
-    if (!empty($role)) {
-        return redirect('/' . $role->name);
-    }
-}
-?>
-@endauth
-
-@guest
 <header class="customer-header fw">
     <div class="container">
         <div class="row">
@@ -50,11 +36,20 @@ if (Auth::check()) {
 </header>
 @endguest
 @auth
+<?php
+if (Auth::check()) {
+    $role = Auth::user()->roles->first();
+    // dd($role);
+    // if (!empty($role)) {
+    //     return redirect('/' . $role->name);
+    // }
+}
+?>
 <header class="customer-header  fw">
     <div class="container">
         <div class="row">
             <div class="col-md-2 col-sm-3">
-                <a href="{{ URL::to('/users') }}" class="site-logo">
+                <a href="{{ URL::to('/') }}/{{ $role->name }}" class="site-logo">
                     <img src="{{ asset('public/frontendAssets/images/header_logo.png')}}" alt="logo" />
                 </a>
             </div>
@@ -76,7 +71,7 @@ if (Auth::check()) {
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
                             <li>
-                                <a href="#">
+                                <a href="{{ URL::to('/') }}/{{ $role->name }}">
                                     <i>
                                         <img src="{{ asset('public/frontendAssets/images/m_my_account.png')}}" alt="icon">
                                     </i>
@@ -189,4 +184,8 @@ if (Auth::check()) {
         </div>
     </div>
 </header>
+
+
+
+
 @endauth

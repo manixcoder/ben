@@ -32,7 +32,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dLabel">
                             <li>
-                                <a href="#">
+                                <a href="{{ url('merchant/profile-view') }}">
                                     <img src="{{ asset('public/merchemtAssets/images/my_profile.png')}}" alt="my_profile" width="15px">
                                     My profile
                                 </a>

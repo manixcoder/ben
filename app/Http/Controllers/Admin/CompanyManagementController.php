@@ -11,9 +11,31 @@ use Validator;
 use App\Models\UserRoleRelation;
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Facades\Auth;
+use DateTime;
 
 class CompanyManagementController extends Controller
 {
+    public function __construct()
+    {
+        $Inmerchant = User::with(['getRole'])
+            ->whereHas('roles', function ($q) {
+                $q->where('name', 'merchant');
+            })
+            ->where('is_active', '0')
+            ->get();
+        foreach ($Inmerchant as $merchant) {
+            $d1 = new DateTime($merchant->created_at);
+            $d2 = new DateTime(date("Y-m-d H:i:s"));
+            $interval = $d1->diff($d2);
+            $diffInMinutes = $interval->i;
+            if ($diffInMinutes >= 3) {
+                User::where('id', $merchant->id)
+                    ->update([
+                        //  'is_active' => '1'
+                    ]);
+            }
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -58,7 +80,6 @@ class CompanyManagementController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'company_name' => 'required',
             'company_type' => 'required',
@@ -112,12 +133,37 @@ class CompanyManagementController extends Controller
                 'updated_at' => date("Y-m-d H:i:s"),
             );
             UserRoleRelation::create($roleArray);
-           // Auth::loginUsingId($companyData->id);
+            // Auth::loginUsingId($companyData->id);
             return redirect('/admin/company-management')->with(['status' => 'success', 'message' => 'New Company added Successfully!']);
         } catch (\Exception $e) {
             return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);
             return back()->with(['status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.']);
         }
+    }
+    public function companyDetails(Request $request)
+    {
+        // dd($request->all());
+        $merchant = User::with(['getRole'])
+            ->whereHas('roles', function ($q) {
+                $q->where('name', 'merchant');
+            })
+            ->where('id', $request->comp_id)
+            ->first();
+        $data['merchants'] = $merchant;
+        return view('admin.company.show', $data);
+    }
+
+    public function companyShortDetails(Request $request)
+    {
+        $merchant = User::with(['getRole'])
+            ->whereHas('roles', function ($q) {
+                $q->where('name', 'merchant');
+            })
+            ->where('id', $request->comp_id)
+            ->first();
+           // dd($merchant);
+        $data['merchants'] = $merchant;
+        return view('admin.company.short_details', $data);
     }
 
     /**
@@ -136,6 +182,23 @@ class CompanyManagementController extends Controller
             ->first();
         $data['merchants'] = $merchant;
         return view('admin.company.show', $data);
+    }
+    public function decline($id)
+    {
+        User::where('id', $id)
+            ->update([
+                'is_active' => '2'
+            ]);
+        return redirect('/admin/company-management')->with(['status' => 'success', 'message' => 'New Company added Successfully!']);
+    }
+
+    public function accept($id)
+    {
+        User::where('id', $id)
+            ->update([
+                'is_active' => '1'
+            ]);
+        return redirect('/admin/company-management')->with(['status' => 'success', 'message' => 'New Company added Successfully!']);
     }
 
     /**
