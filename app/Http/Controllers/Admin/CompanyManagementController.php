@@ -31,7 +31,7 @@ class CompanyManagementController extends Controller
             if ($diffInMinutes >= 3) {
                 User::where('id', $merchant->id)
                     ->update([
-                        'is_active' => '1'
+                        //  'is_active' => '1'
                     ]);
             }
         }
@@ -161,6 +161,7 @@ class CompanyManagementController extends Controller
             })
             ->where('id', $request->comp_id)
             ->first();
+           // dd($merchant);
         $data['merchants'] = $merchant;
         return view('admin.company.short_details', $data);
     }

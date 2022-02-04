@@ -34,6 +34,11 @@ class MerchantRegistrationController extends Controller
         //
     }
 
+    public function profileShow(Request $request)
+    {
+        return view('merchent.profile.profile_update');
+    }
+
     /**
      * Store a newly created resource in storage.
      *

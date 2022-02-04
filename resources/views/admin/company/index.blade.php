@@ -29,9 +29,6 @@
         </div>
     </div>
 </div>
-<?php
-// dd($merchant);
-?>
 <div class="sub-category">
 
     <!-- Nav tabs -->
@@ -87,7 +84,7 @@
                                         </button>
                                     </form>
 
-                                    <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/decline' }}" class="btn btn-primary">Decline</a>
+                                    <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/decline' }}" type="submit" class="btn btn-primary">Decline</a>
                                     <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/accept' }}" type="submit" class="btn btn-primary bgcolor">Accept</a>
                                 </span>
                                 <span class="pull-right">
@@ -99,7 +96,7 @@
                                 </span>
                             </td>
                         </tr>
-                        @endforeach                        
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -161,9 +158,10 @@
                                     </li>
                                 </ul>
                                 <span class=" pull-right view-all">
-                                    <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/show' }}">
+                                    <!-- <a href="{{ url('admin/company-management') . '/' . $merchant->id.'/show' }}">
                                         View Details
-                                    </a>
+                                    </a> -->
+                                   
                                     <form method="POST" action="{{ url('admin/company-management/details') }}">
                                         @csrf
                                         <input type="hidden" name="comp_id" value="{{ $merchant->id }}">

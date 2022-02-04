@@ -3,7 +3,7 @@
 @section('content')
 @section('pageCss')
 <style>
-    
+
 </style>
 @stop
 <div class="add-newuser company-sec">
@@ -17,18 +17,30 @@
     </div>
 </div>
 <div class="sub-category">
-
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">Company
-                Info</a></li>
-        <li role="presentation" class=""><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false">Menu's</a></li>
-        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Tables</a>
+        <li role="presentation" class="active">
+            <a href="#home" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">
+                Company
+                Info
+            </a>
         </li>
-        <li role="presentation"><a href="#Promotions" aria-controls="Promotions" role="tab" data-toggle="tab">Promotions</a></li>
-
+        <li role="presentation" class="">
+            <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false">
+                Menu's
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+                Tables
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#Promotions" aria-controls="Promotions" role="tab" data-toggle="tab">
+                Promotions
+            </a>
+        </li>
     </ul>
-
     <!-- Tab panes -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="home">
@@ -89,24 +101,39 @@
 
         <div role="tabpanel" class="tab-pane" id="profile">
             <div class="table-responsive">
+                <?php
+                $disesData = DB::table('food_dises')->where('merchent_id', $merchants->id)->get();
+                //dd($disesData);
+                ?>
                 <table border="0" class="company-name Companies menu-table">
                     <tbody>
+                        @forelse ($disesData as $dises)
+                        
                         <tr>
                             <td class=" mexican">
                                 <figure>
+                                    
                                     <img src="{{ asset('public/adminAssets/images/pizza.jpg')}}" alt="pizza" width="200px">
+
                                 </figure>
                             </td>
                             <td class="left-right wave-pizza">
-                                <label>Mexican green wave pizza</label>
-                                <p>With cheese &amp; oregano</p>
-                                <h3>$ 40
-                                    <span class="pull-right active-icon"> Active <img src="{{ asset('public/adminAssets/images/toggle_on.png')}}" alt="toggle_on" width="30px"></span>
+                                <label>{{ $dises->dise_name }}</label>
+                                <p>{{ $dises->dise_description }}</p>
+                                <h3>$ {{ $dises->disk_price }}
+                                    <span class="pull-right active-icon">
+                                        Active
+                                        <img src="{{ asset('public/adminAssets/images/toggle_on.png')}}" alt="toggle_on" width="30px">
+                                    </span>
                                 </h3>
-                                <p class="discount-fish">30% Discount</p>
+                                <p class="discount-fish">{{ $dises->disk_discount }}% Discount</p>
                             </td>
                         </tr>
-                        <tr>
+                        @empty
+                        <p>No users</p>
+                        @endforelse
+
+                        <!--tr>
                             <td class=" mexican">
                                 <figure>
                                     <img src="{{ asset('public/adminAssets/images/pizza1.jpg')}}" alt="pizza1" width="200px">
@@ -192,7 +219,7 @@
                                     <span class="pull-right active-icon"> Active <img src="images/toggle_on.png" alt="toggle_on" width="30px"></span>
                                 </h3>
                             </td>
-                        </tr>
+                        </tr -->
                     </tbody>
                 </table>
             </div>

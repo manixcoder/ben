@@ -208,6 +208,7 @@ Route::get('/', 'HomeController@index')->name('home');
 /*=====================================Merchant=====================================*/
 Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], function () {
     Route::get('/', 'Merchant\DashboardController@index');
+    Route::get('profile-view', 'Merchant\MerchantRegistrationController@profileShow');
 });
 /*=====================================Merchant End=====================================*/
 Route::group(['prefix' => 'users', 'middleware' => ['users', 'auth']], function () {

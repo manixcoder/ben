@@ -3,325 +3,81 @@
 @section('content')
 @section('pageCss')
 <style>
-    
+
 </style>
 @stop
-<div class="add-newuser company-sec">
-    <div class="row">
-        <div class="col-md-12 col-sm-12 ">
-            <p>
-                <span class="user-color">Companies</span>
-                <span> &gt; #{{ $merchants->uid_number }}</span>
+<?php
+// dd($merchants);
+// $ctype = $merchants['company_type'];
+$companyTypeData = DB::table('categories')->where('id', $merchants['company_type'])->first();
+$subrestaurantTypeData = DB::table('categories')->where('id', $merchants['sub_restaurant_type'])->first();
+$userTypeData = DB::table('categories')->where('id', $merchants['user_type'])->first();
+?>
+<div class="add-newuser user-john">
+    <p>
+        <span class="user-color">{{ $merchants['company_name'] }}</span>
+        <span>&gt; # {{ $merchants['uid_number'] }}</span>
+    </p>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h3>Company Info</h3>
+        <div class="company-name">
+            <h3>Company Name
+                <span class="pull-right">@if($merchants['last_login']) {{ $merchants['last_login'] }} @endif</span>
+            </h3>
+            <ul>
+                <li>{{ $companyTypeData->name }}</li>
+                <li>{{ $subrestaurantTypeData->name }}</li>
+                <li>{{ $merchants['address']}}, {{ $merchants['city']}}, {{ $merchants['zip_code']}}</li>
+            </ul>
+            <h3>VAT/UID Number</h3>
+            <p>Subscription Plan
+                <span class="free-bgcolor">Free</span>
             </p>
         </div>
     </div>
-</div>
-<div class="sub-category">
+    <div class="col-md-6">
+        <h3>User Info</h3>
+        <div class="company-name role-manager">
+            <ul>
+                <li>
+                    <span>Role</span>{{ $userTypeData->name }}
+                    <span class="pull-right messg-icon">
+                        <a href="#">
+                            <img src="{{ asset('public/adminAssets/images/message.png')}}" alt="message" width="40px">
+                        </a>
+                        <a href="#">
+                            <img src="{{ asset('public/adminAssets/images/call.png')}}" alt="call" width="40px">
+                        </a>
+                    </span>
+                </li>
+                <li><span>First Name</span>{{ $merchants['first_name'] }}</li>
+                <li><span>Last Name</span>{{ $merchants['last_name'] }}</li>
+                <li><span>Date of Birth</span>{{ $merchants['date_birthday'] }}</li>
+                <li><span>Gender</span>@if($merchants['gender'] =='1') {{ "Male" }} @elseif($merchants['gender'] =='2') {{ "Female" }} @else {{ "Special" }} @endif</li>
+                <li><span>Email Address</span>{{ $merchants['email'] }}</li>
+                <li><span>Mobile Number</span>{{ $merchants['mobile'] }}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-12 text-center ">
+        <p class="auto-accept"> <img src="{{ asset('public/adminAssets/images/timer.png')}}" alt="timer" width="20px"> Auto Accept In :
+            <span class="min-color">03:00 min</span>
+        </p>
 
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">Company
-                Info</a></li>
-        <li role="presentation" class=""><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false">Menu's</a></li>
-        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Tables</a>
-        </li>
-        <li role="presentation"><a href="#Promotions" aria-controls="Promotions" role="tab" data-toggle="tab">Promotions</a></li>
-
-    </ul>
-
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="home">
-            <div class="companyinfo-banner">
-                <img src="{{ asset('public/adminAssets/images/sfouw-clock-bar.webp')}}" alt="img">
-            </div>
-            <div class="parallax-resturent-sec">
-                <div class="imgleft">
-                    <img src="{{ asset('public/adminAssets/images/background2.png')}}" alt="img">
-                </div>
-                <div class="right-pracont">
-                    <h3>{{ $merchants->company_name }}
-                        <ul class="social-cont pull-right">
-                            <li><a href="#"><img src="{{ asset('public/adminAssets/images/s_instagram.png')}}" alt="icon"></a></li>
-                            <li><a href="#"><img src="{{ asset('public/adminAssets/images/s_facebook.png')}}" alt="icon"></a></li>
-                            <li><a href="#"><img src="{{ asset('public/adminAssets/images/s_twitter.png')}}" alt="icon"></a></li>
-                        </ul>
-                    </h3>
-                    <div class="freeversion-sec">
-                        <h4>Restaurant <span>Mexican</span></h4>
-                        <h4 class="red">Free Version</h4>
-                        <div class="pull-right msg-sec">
-                            <a href="#"><img src="{{ asset('public/adminAssets/images/message.png')}}" alt="icon"></a>
-                            <a href="#"><img src="{{ asset('public/adminAssets/images/call.png')}}" alt="icon"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="praadress-cont fw">
-                <h4><i><img src="{{ asset('public/adminAssets/images/full_address.png')}}" alt="icon"></i>3245 Twin House Lane, Springfield, 94885</h4>
-                <h4 class="mrtop20"><span>VAT/UID Number :</span> 4894 484734 384904</h4>
-                <h4 class="mrtop20"><span>Opening hours :</span> Open - 8:00 am <span class="dots">.</span> Close - 11:30 pm
-                </h4>
-                <h4 class="mrtop20"><span>Website link :</span><a href="#">www.company.com</a></h4>
-            </div>
-            <div class="company-aboutpra-cont">
-                <h3>About</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                    rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                    explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                    consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-                    dolorem ipsum quia dolor sit amet, consectetur.</p>
-            </div>
-            <div class="praadress-cont fw">
-                <h3>User Info</h3>
-                <h4 class="mrtop20"><span>Role :</span> Manager</h4>
-                <h4 class="mrtop20"><span>First Name :</span> John</h4>
-                <h4 class="mrtop20"><span>Last Name :</span>Doe</h4>
-                <h4 class="mrtop20"><span>Email Address :</span>doejohn484@gamil.com</h4>
-                <h4 class="mrtop20"><span>Mobile Number :</span>9600000025</h4>
-                <h4 class="mrtop20"><span>Date of Birth :</span>12 Jun 1995</h4>
-                <h4 class="mrtop20"><span>Gender :</span>Male</h4>
-                <p class="pra">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
-                    vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit.</p>
+    </div>
+    <div class="accept-btn">
+        <div class="col-md-6 col-sm-6 text-right">
+            <div class="form-group">
+                <a href="{{ url('admin/company-management') . '/' . $merchants['id'].'/decline' }}" class="btn btn-primary">Decline</a>
             </div>
         </div>
-
-        <div role="tabpanel" class="tab-pane" id="profile">
-            <div class="table-responsive">
-                <table border="0" class="company-name Companies menu-table">
-                    <tbody>
-                        <tr>
-                            <td class=" mexican">
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/pizza.jpg')}}" alt="pizza" width="200px">
-                                </figure>
-                            </td>
-                            <td class="left-right wave-pizza">
-                                <label>Mexican green wave pizza</label>
-                                <p>With cheese &amp; oregano</p>
-                                <h3>$ 40
-                                    <span class="pull-right active-icon"> Active <img src="{{ asset('public/adminAssets/images/toggle_on.png')}}" alt="toggle_on" width="30px"></span>
-                                </h3>
-                                <p class="discount-fish">30% Discount</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class=" mexican">
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/pizza1.jpg')}}" alt="pizza1" width="200px">
-                                </figure>
-                            </td>
-                            <td class="left-right wave-pizza">
-                                <label>Deluxe veggie pizza</label>
-                                <p>With cheese &amp; oregano</p>
-                                <h3>$ 20
-                                    <span class="pull-right active-icon"> Active <img src="{{ asset('public/adminAssets/images/toggle_on.png')}}" alt="toggle_on" width="30px"></span>
-                                </h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class=" mexican">
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/pizza2.jpg')}}" alt="pizza2" width="200px">
-                                </figure>
-                            </td>
-                            <td class="left-right wave-pizza">
-                                <label>Farm house pizza</label>
-                                <p>With cheese &amp; oregano</p>
-                                <h3>$ 40
-                                    <span class="pull-right active-icon"> Inactive <img src="{{ asset('public/adminAssets/images/toggle_off.png')}}" alt="toggle_of" width="30px"></span>
-                                </h3>
-                                <p class="discount-fish">30% Discount</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class=" mexican">
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/pizza.jpg')}}" alt="pizza" width="200px">
-                                </figure>
-                            </td>
-                            <td class="left-right wave-pizza">
-                                <label>Mexican green wave pizza</label>
-                                <p>With cheese &amp; oregano</p>
-                                <h3>$ 40
-                                    <span class="pull-right active-icon"> Active <img src="images/toggle_on.png" alt="toggle_on" width="30px"></span>
-                                </h3>
-                                <p class="discount-fish">30% Discount</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class=" mexican">
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/pizza1.jpg')}}" alt="pizza1" width="200px">
-                                </figure>
-                            </td>
-                            <td class="left-right wave-pizza">
-                                <label>Deluxe veggie pizza</label>
-                                <p>With cheese &amp; oregano</p>
-                                <h3>$ 20
-                                    <span class="pull-right active-icon"> Active <img src="images/toggle_on.png" alt="toggle_on" width="30px"></span>
-                                </h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class=" mexican">
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/pizza.jpg')}}" alt="pizza" width="200px">
-                                </figure>
-                            </td>
-                            <td class="left-right wave-pizza">
-                                <label>Mexican green wave pizza</label>
-                                <p>With cheese &amp; oregano</p>
-                                <h3>$ 40
-                                    <span class="pull-right active-icon"> Active <img src="images/toggle_on.png" alt="toggle_on" width="30px"></span>
-                                </h3>
-                                <p class="discount-fish">30% Discount</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class=" mexican">
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/pizza1.jpg')}}" alt="pizza1" width="200px">
-                                </figure>
-                            </td>
-                            <td class="left-right wave-pizza">
-                                <label>Deluxe veggie pizza</label>
-                                <p>With cheese &amp; oregano</p>
-                                <h3>$ 20
-                                    <span class="pull-right active-icon"> Active <img src="images/toggle_on.png" alt="toggle_on" width="30px"></span>
-                                </h3>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="col-md-6 col-sm-6 text-left">
+            <div class="form-group">
+                <a href="{{ url('admin/company-management') . '/' . $merchants['id'].'/accept' }}" class="btn btn-primary bgcolor addbtn-table">Accept</a>
             </div>
         </div>
-        <div role="tabpane1" class="tab-pane" id="messages">
-            <div class="table-responsive">
-                <table border="0" class="Companies ">
-                    <tbody>
-                        <tr>
-                            <td class="mexican table-for">
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/table_two.png')}}" alt="table_two" width="100px">
-                                </figure>
-                            </td>
-                            <td class="left-right wave-pizza">
-                                <div>
-                                    <span class="mr-left">Table for : <b>2</b></span>
-                                    <span>Number of Table : <b>3</b></span>
-                                    <br>
-                                    <label>Table Name 1</label>
-                                    <span class="pull-right active-icon"> Active <img src="{{ asset('public/adminAssets/images/toggle_on.png')}}" alt="toggle_on" width="30px"></span>
-                                    <div>
-                                        <span class="mr-left">Avarage Booking Time : </span>
-                                        <small> 2 hour</small>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="mexican table-for">
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/table_four.png')}}" alt="table_four" width="100px">
-                                </figure>
-                            </td>
-                            <td class="left-right wave-pizza">
-                                <div>
-                                    <span class="mr-left">Table for : <b>4</b></span>
-                                    <span>Number of Table : <b>6</b></span>
-                                    <br>
-                                    <label>Table Name 1</label>
-                                    <span class="pull-right active-icon"> Inactive <img src="{{ asset('public/adminAssets/images/toggle_off.png')}}" alt="toggle_off" width="30px"></span>
-                                    <div>
-                                        <span class="mr-left">Avarage Booking Time : </span>
-                                        <small> 2 hour</small>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="mexican table-for">
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/table_six.png')}}" alt="table_six" width="100px">
-                                </figure>
-                            </td>
-                            <td class="left-right wave-pizza">
-                                <div>
-                                    <span class="mr-left">Table for : <b>6</b></span>
-                                    <span>Number of Table : <b>3</b></span>
-                                    <br>
-                                    <label>Table Name 1</label>
-                                    <span class="pull-right active-icon"> Active <img src="{{ asset('public/adminAssets/images/toggle_on.png')}}" alt="toggle_on" width="30px"></span>
-                                    <div>
-                                        <span class="mr-left">Avarage Booking Time : </span>
-                                        <small> 2 hour</small>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="mexican table-for">
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/table_two.png')}}" alt="table_two" width="100px">
-                                </figure>
-                            </td>
-                            <td class="left-right wave-pizza">
-                                <div>
-                                    <span class="mr-left">Table for : <b>2</b></span>
-                                    <span>Number of Table : <b>3</b></span>
-                                    <br>
-                                    <label>Table Name 1</label>
-                                    <span class="pull-right active-icon"> Active <img src="{{ asset('public/adminAssets/images/toggle_on.png')}}" alt="toggle_on" width="30px"></span>
-                                    <div>
-                                        <span class="mr-left">Avarage Booking Time : </span>
-                                        <small> 2 hour</small>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="Promotions">
-            <div class="table-responsive">
-                <table border="0" class="company-name Companies menu-table">
-                    <tbody>
-                        <tr>
-                            <td class=" mexican">
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/pizza.jpg')}}" alt="pizza" width="200px">
-                                </figure>
-                            </td>
-                            <td class="left-right wave-pizza">
-                                <label>Advertisement Title</label>
-                                <p>Lenovo Ideapad 5</p>
-                                <a>https://www.benifitme.com/Lenovo Ideapad 5DSGVYF24&amp;marketplace
-                                    <span class="pull-right active-icon"> Active <img src="{{ asset('public/adminAssets/images/toggle_on.png')}}" alt="toggle_on" width="30px"></span>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class=" mexican">
-                                <figure>
-                                    <img src="{{ asset('public/adminAssets/images/pizza1.jpg')}}" alt="pizza1" width="200px">
-                                </figure>
-                            </td>
-                            <td class="left-right wave-pizza">
-                                <label>Advertisement Title</label>
-                                <p>Lenovo Ideapad 5</p>
-                                <a>https://www.benifitme.com/Lenovo Ideapad 5DSGVYF24&amp;marketplace
-                                    <span class="pull-right active-icon"> Inactive <img src="{{ asset('public/adminAssets/images/toggle_off.png')}}" alt="toggle_off" width="30px"></span>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
     </div>
 </div>
 @endsection
