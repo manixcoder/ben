@@ -41,8 +41,10 @@
                 <div class="current-offer">
                     @php
                     $productData = DB::table('products')->where('merchent_id', Auth::user()->id)->where('product_type','1')->orderby('id','DESC')->get();
+                    $id= '59595'
                     @endphp
-                    @forelse ($productData as $product)
+
+                    @forelse ($productData as $key => $product)
 
                     <div class="current-offerBox">
                         <div class="row">
@@ -56,7 +58,7 @@
 
                                 </div>
                                 <div class="current-offercont">
-                                    <h5>#59595</h5>
+                                    <h5>#{{ $key +$id }}</h5>
                                     <h4>
                                         {{ $product->product_name }}
                                         <span>
@@ -118,7 +120,11 @@
                     @empty
                     <div class="current-offerBox">
                         <div class="row">
-                            <p>No users</p>
+                            <div class="col-md-6">
+                              
+                                    <p>Product Not found</p>
+                              
+                            </div>
                         </div>
                     </div>
                     @endforelse
@@ -180,8 +186,9 @@
                 <div class="current-offer">
                     @php
                     $productData = DB::table('products')->where('merchent_id', Auth::user()->id)->where('product_type','2')->orderby('id','DESC')->get();
+                    $id= '59595';
                     @endphp
-                    @forelse ($productData as $product)
+                    @forelse ($productData as $key => $product)
                     <div class="current-offerBox">
                         <div class="row">
                             <div class="col-md-6">
@@ -193,15 +200,14 @@
                                     @endif
                                 </div>
                                 <div class="current-offercont">
-                                    <h5>#59595</h5>
+                                    <h5>#{{ $key +$id }}</h5>
                                     <h4>
                                         {{ $product->product_name }}
                                         <span>
                                             {{ $product->pro_category }}
                                         </span>
                                     </h4>
-                                    <p>$
-                                        {{ $product->pro_price }}
+                                    <p>                                        
                                         <span class="discount-cont">
                                             {{ $product->pro_discount }}% Discount
                                         </span>
@@ -255,12 +261,16 @@
                     @empty
                     <div class="current-offerBox">
                         <div class="row">
-                            <p>No users</p>
+                            <div class="col-md-6">
+
+                                <p>Service Not found</p>
+
+                            </div>
                         </div>
                     </div>
                     @endforelse
 
-                    <div class="current-offerBox">
+                    <!-- div class="current-offerBox">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="imgbox">
@@ -318,7 +328,7 @@
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                             </div>
                         </div>
-                    </div>
+                    </div -->
                 </div>
             </div>
         </div>

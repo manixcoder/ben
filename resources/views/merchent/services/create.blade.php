@@ -48,7 +48,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6">
+                    <!-- <div class="col-md-6 col-sm-6">
                         <div class="form-group">
                             <input type="text" name="pro_price" class="form-control @error('pro_price') is-invalid @enderror" value="{{ old('pro_price') }}" placeholder="$ Price">
                             @error('pro_price')
@@ -57,7 +57,7 @@
                             </span>
                             @enderror
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-6 col-sm-6">
 
                         <div class="form-group">

@@ -49,13 +49,32 @@ class ProductManagementController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        if ($request->product_type == '1') {
+            $validator = Validator::make($request->all(), [
+                'product_name' => 'required',
+                'pro_category' => 'required',
+                'pro_discount' => 'required',
+                'pro_valid_till' => 'required',
+                'pro_description' => 'required',
+                //'pro_price' => 'required',
+            ]);
+        } else {
+            $validator = Validator::make($request->all(), [
+                'product_name' => 'required',
+                'pro_category' => 'required',
+                'pro_discount' => 'required',
+                'pro_valid_till' => 'required',
+                'pro_description' => 'required',
+                //'pro_price' => 'required',
+            ]);
+        }
         $validator = Validator::make($request->all(), [
             'product_name' => 'required',
             'pro_category' => 'required',
             'pro_discount' => 'required',
             'pro_valid_till' => 'required',
             'pro_description' => 'required',
-            'pro_price' => 'required',
+            //'pro_price' => 'required',
         ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();

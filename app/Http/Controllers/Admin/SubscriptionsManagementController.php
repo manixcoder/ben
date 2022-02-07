@@ -15,7 +15,7 @@ class SubscriptionsManagementController extends Controller
      */
     public function index()
     {
-        $data = array();        
+        $data = array();
         return view('admin.subscription.index', $data);
     }
 
@@ -26,7 +26,7 @@ class SubscriptionsManagementController extends Controller
      */
     public function create()
     {
-        $data = array();        
+        $data = array();
         return view('admin.subscription.create', $data);
     }
 

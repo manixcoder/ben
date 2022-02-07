@@ -14,14 +14,14 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'merchent_id', 
-        'product_name', 
-        'pro_category', 
-        'pro_price', 
-        'pro_discount', 
-        'pro_valid_till', 
-        'pro_description', 
-        'pro_image', 
+        'merchent_id',
+        'product_name',
+        'pro_category',
+        'pro_price',
+        'pro_discount',
+        'pro_valid_till',
+        'pro_description',
+        'pro_image',
         'product_type'
     ];
 }

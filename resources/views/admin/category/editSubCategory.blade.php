@@ -17,7 +17,7 @@
 <div class="user-name">
     <div class="row">
         @php
-        $categorydata = DB::table('categories')->where('c_type', 'businesscategory')->where('parent_id', '0')->get();
+        $categorydata = DB::table('categories')->where('c_type', '1')->where('parent_id', '0')->get();
         @endphp
         <form method="POST" action="{{ url('/admin/category-management/'.$categoryData->id.'/update-categary') }}" enctype="multipart/form-data">
             @csrf
@@ -28,7 +28,7 @@
                     <select name="parent" class="form-control @error('parent') has-danger @enderror">
                         <option value="" selected>Select Category</option>
                         @foreach($categorydata as $category)
-                        <option value="{{ $category->id }}" {{ $category->id == $categoryData->parent_id ? 'selected' : '' }}> {{ $category->name }}</option>
+                        <option value="{{ $category->id }}" {{ $category->id == $categoryData->parent_id ? 'selected' : '' }} > {{ $category->name }}</option>
                         @endforeach
                     </select>
                     @error('parent')

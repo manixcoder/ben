@@ -24,7 +24,7 @@
         </div>
         <div class="col-md-6 text-right">
             <a href="#">
-                Add New Category
+                
             </a>
         </div>
     </div>
