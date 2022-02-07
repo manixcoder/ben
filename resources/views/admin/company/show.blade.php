@@ -46,7 +46,8 @@
             <div class="companyinfo-banner">
                 <img src="{{ asset('public/adminAssets/images/sfouw-clock-bar.webp')}}" alt="img">
             </div>
-            <?php // dd($merchants); ?>
+            <?php // dd($merchants); 
+            ?>
             <div class="parallax-resturent-sec">
                 <div class="imgleft">
                     <img src="{{ asset('public/adminAssets/images/background2.png')}}" alt="img">
@@ -86,7 +87,7 @@
             </div>
             <div class="praadress-cont fw">
                 <h3>User Info</h3>
-                <?php 
+                <?php
                 $role = Auth::user()->roles->first();
                 ?>
                 <h4 class="mrtop20"><span>Role :</span> Manager</h4>
@@ -266,7 +267,10 @@
                                     <span>Number of Table : <b>6</b></span>
                                     <br>
                                     <label>Table Name 1</label>
-                                    <span class="pull-right active-icon"> Inactive <img src="{{ asset('public/adminAssets/images/toggle_off.png')}}" alt="toggle_off" width="30px"></span>
+                                    <span class="pull-right active-icon">
+                                        Inactive
+                                        <img src="{{ asset('public/adminAssets/images/toggle_off.png')}}" alt="toggle_off" width="30px">
+                                    </span>
                                     <div>
                                         <span class="mr-left">Avarage Booking Time : </span>
                                         <small> 2 hour</small>
@@ -286,7 +290,10 @@
                                     <span>Number of Table : <b>3</b></span>
                                     <br>
                                     <label>Table Name 1</label>
-                                    <span class="pull-right active-icon"> Active <img src="{{ asset('public/adminAssets/images/toggle_on.png')}}" alt="toggle_on" width="30px"></span>
+                                    <span class="pull-right active-icon">
+                                        Active
+                                        <img src="{{ asset('public/adminAssets/images/toggle_on.png')}}" alt="toggle_on" width="30px">
+                                    </span>
                                     <div>
                                         <span class="mr-left">Avarage Booking Time : </span>
                                         <small> 2 hour</small>

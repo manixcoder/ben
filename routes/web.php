@@ -209,6 +209,24 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], function () {
     Route::get('/', 'Merchant\DashboardController@index');
     Route::get('profile-view', 'Merchant\MerchantRegistrationController@profileShow');
+
+
+    /*
+    |------------------------------------------
+    | Payment Management Routes Here     |
+    |-----------------------------------------
+     */
+    Route::group(['prefix' => 'product-management'], function () {
+        Route::get('/', 'Merchant\ProductManagementController@index');
+        Route::get('create', 'Merchant\ProductManagementController@create');
+
+        Route::get('create-service', 'Merchant\ProductManagementController@createService');
+        Route::post('/save-product', 'Merchant\ProductManagementController@store');
+        Route::get('{id}/show', 'Merchant\ProductManagementController@show');
+        Route::get('{id}/edit', 'Merchant\ProductManagementController@edit');
+        Route::post('{id}/update', 'Merchant\ProductManagementController@update');
+        Route::get('delete/{id}', 'Merchant\ProductManagementController@destroy');
+    });
 });
 /*=====================================Merchant End=====================================*/
 Route::group(['prefix' => 'users', 'middleware' => ['users', 'auth']], function () {

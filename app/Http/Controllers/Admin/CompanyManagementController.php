@@ -161,7 +161,7 @@ class CompanyManagementController extends Controller
             })
             ->where('id', $request->comp_id)
             ->first();
-           // dd($merchant);
+        // dd($merchant);
         $data['merchants'] = $merchant;
         return view('admin.company.short_details', $data);
     }

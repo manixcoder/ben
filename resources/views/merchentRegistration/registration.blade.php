@@ -167,9 +167,9 @@
                                     </span>
                                     @enderror
                                 </div>
-                                
+
                                 <div class="form-group">
-                                    <input type="date" class="form-control @error('date_birthday') is-invalid @enderror" name="date_birthday" value="{{ old('date_birthday') }}"  placeholder="date_birthday">
+                                    <input type="date" class="form-control @error('date_birthday') is-invalid @enderror" name="date_birthday" value="{{ old('date_birthday') }}" placeholder="date_birthday">
                                     @error('date_birthday')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
