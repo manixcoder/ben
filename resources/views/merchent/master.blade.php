@@ -62,7 +62,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url('merchant/product-management') }}">
                     <img src="{{ asset('public/merchemtAssets/images/sp_products_&_services.png')}}" alt="Products">
                     Products & Services
                 </a>

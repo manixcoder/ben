@@ -56,7 +56,7 @@ class MerchantRegistrationController extends Controller
             'address' => 'required',
             'city' => 'required',
             'zip_code' => 'required',
-            'uid_number' => 'required',            
+            'uid_number' => 'required',
             'user_type' => 'required',
             'first_name' => 'required',
             'last_name' => 'required',

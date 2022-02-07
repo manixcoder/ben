@@ -49,12 +49,14 @@ class CompanyManagementController extends Controller
                 $q->where('name', 'merchant');
             })
             ->where('is_active', '0')
+            ->orderBy('id', 'DESC')
             ->get();
         $merchant = User::with(['getRole'])
             ->whereHas('roles', function ($q) {
                 $q->where('name', 'merchant');
             })
             ->where('is_active', '1')
+            ->orderBy('id', 'DESC')
             ->get();
         $data['inmerchants'] = $Inmerchant;
         $data['merchants'] = $merchant;
@@ -161,7 +163,7 @@ class CompanyManagementController extends Controller
             })
             ->where('id', $request->comp_id)
             ->first();
-           // dd($merchant);
+        // dd($merchant);
         $data['merchants'] = $merchant;
         return view('admin.company.short_details', $data);
     }
@@ -189,7 +191,7 @@ class CompanyManagementController extends Controller
             ->update([
                 'is_active' => '2'
             ]);
-        return redirect('/admin/company-management')->with(['status' => 'success', 'message' => 'New Company added Successfully!']);
+        return redirect('/admin/company-management')->with(['status' => 'success', 'message' => 'Company decline Successfully!']);
     }
 
     public function accept($id)
@@ -198,7 +200,7 @@ class CompanyManagementController extends Controller
             ->update([
                 'is_active' => '1'
             ]);
-        return redirect('/admin/company-management')->with(['status' => 'success', 'message' => 'New Company added Successfully!']);
+        return redirect('/admin/company-management')->with(['status' => 'success', 'message' => 'Company Accepted Successfully!']);
     }
 
     /**
