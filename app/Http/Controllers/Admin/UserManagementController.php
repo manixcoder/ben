@@ -71,6 +71,7 @@ class UserManagementController extends Controller
             'name' => 'required|string|max:255|unique:users',
             'email' => 'required|string|max:255|unique:users',
             'mobile' => 'required',
+            'gender' => 'required',
             'password' => 'required',
         ]);
         if ($validator->fails()) {

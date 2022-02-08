@@ -19,7 +19,8 @@
             <div class="col-md-6 col-sm-6 ">
                 <img src="{{ asset('public/merchemtAssets/images/header_logo.png')}}" alt="header_logo" width="230px">
             </div>
-            <?php // dd(Auth::user()) ?>
+            <?php // dd(Auth::user()) 
+            ?>
             <div class="col-md-6 col-sm-6 text-right">
                 <div class="user-dropdown">
                     <div class="dropdown">
@@ -68,19 +69,19 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url('merchant/loyalty-management') }}">
                     <img src="{{ asset('public/merchemtAssets/images/sp_loyalty_points.png')}}" alt="Loyalty">
                     Loyalty Points
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url('merchant/customer-jouney-management') }}">
                     <img src="{{ asset('public/merchemtAssets/images/sp_customer_journey.png')}}" alt="Customer-journey">
                     Customer Journey
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url('merchant/qr-code-management') }}">
                     <img src="{{ asset('public/merchemtAssets/images/sp_my_qr_code.png')}}" alt="sp_my_qr_code">
                     My QR Code
                 </a>
@@ -92,53 +93,52 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url('merchant/appointments-management') }}">
                     <img src="{{ asset('public/merchemtAssets/images/sp_appointments.png')}}" alt="Appointments">
                     Appointments
                 </a>
             </li>
-            @if(Auth::user()->company_type == '2')
+
             <li>
-                <a href="#">
+                <a href="{{ url('merchant/table-management') }}">
                     <img src="{{ asset('public/merchemtAssets/images/sp_tables.png')}}" alt="Tables">
                     Tables
                 </a>
             </li>
-            @endif
-            @if(Auth::user()->company_type == '3')
+
             <li>
-                <a href="#">
+                <a href="{{ url('merchant/room-management') }}">
                     <img src="{{ asset('public/merchemtAssets/images/sp_rooms.png')}}" alt="Rooms">
                     Rooms
                 </a>
             </li>
-            @endif
+
             <li>
-                <a href="#">
+                <a href="{{ url('merchant/menu-management') }}">
                     <img src="{{ asset('public/merchemtAssets/images/sp_menu.png')}}" alt="Menu">
                     Menu
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url('merchant/check-in-management') }}">
                     <img src="{{ asset('public/merchemtAssets/images/sp_check_in.png')}}" alt="Check">
                     Check In
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url('merchant/adverting-management') }}">
                     <img src="{{ asset('public/merchemtAssets/images/sp_advertising.png')}}" alt="Advertising">
                     Advertising
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url('merchant/invite-people-management') }}">
                     <img src="{{ asset('public/merchemtAssets/images/sp_invite_people.png')}}" alt="sp_invite_people">
                     Invite People
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url('merchant/awards-management') }}">
                     <img src="{{ asset('public/merchemtAssets/images/sp_awards.png')}}" alt="Awards">
                     Awards
                 </a>
