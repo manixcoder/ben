@@ -24,7 +24,7 @@ $userTypeData = DB::table('categories')->where('id', $merchants['user_type'])->f
         <h3>Company Info</h3>
         <div class="company-name">
             <h3>Company Name
-                <span class="pull-right">@if($merchants['last_login']) {{ $merchants['last_login'] }} @endif</span>
+                <span class="pull-right">@if($merchants['last_login']) {{ date('d M Y | H:i a', strtotime($merchants['last_login'])) }} @endif </span>
             </h3>
             <ul>
                 <li>{{ $companyTypeData->name }}</li>

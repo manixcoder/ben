@@ -82,6 +82,7 @@ class CompanyManagementController extends Controller
      */
     public function store(Request $request)
     {
+
         $validator = Validator::make($request->all(), [
             'company_name' => 'required',
             'company_type' => 'required',
@@ -96,16 +97,24 @@ class CompanyManagementController extends Controller
             'last_name' => 'required',
             'date_birthday' => 'required',
             'gender' => 'required',
-            //'name' => 'required|string|max:255|unique:users',
+            'is_audience' => 'required',
+            'is_confirmation_chk' => 'required',
             'email' => 'required|string|max:255|unique:users',
-            'mobile' => 'required',
+            'mobile' => 'required|unique:users',
             'password' => 'required',
         ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
         try {
-            //dd($request->all());
+            if ($request->gender == '1') {
+                $profile_image = 'boy.png';
+            } else if ($request->gender == '2') {
+                $profile_image = 'woman.png';
+            } else {
+                $profile_image = 'user.png';
+            }
+            // dd($request->all());
             $companyData = User::create([
                 'user_role'                 => 2,
                 'company_name'              => $request->has('company_name') ? $request->company_name : '',
@@ -126,6 +135,9 @@ class CompanyManagementController extends Controller
                 'mobile'                    => $request->has('mobile') ? $request->mobile : '',
                 'password'                  => Hash::make($request->input('password')),
                 'is_active'                 => '0',
+                'is_audience'               => '1',
+                'is_confirmation_chk'       => '1',
+                'profile_image'             => $profile_image,
                 'last_login'                => date("Y-m-d H:i:s"),
             ]);
             $roleArray = array(

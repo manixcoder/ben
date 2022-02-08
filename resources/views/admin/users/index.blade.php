@@ -44,7 +44,12 @@
     <div class="row">
         <div class="col-md-2 col-sm-2">
             <figure>
+                @if($user->profile_image !='')
+
+                <img src="{{ asset('public/uploads')}}/{{ $user->profile_image }}" alt="background2" width="120px">
+                @else
                 <img src="{{ asset('public/adminAssets/images/background2.png')}}" alt="background2" width="120px">
+                @endif
             </figure>
         </div>
         <div class="col-md-3 col-sm-3">
