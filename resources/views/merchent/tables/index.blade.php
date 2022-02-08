@@ -48,15 +48,16 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> 
-                                    <span> 
-                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 
+                                <p>
+                                    <span>
+                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
                                         4 People
-                                    </span> 
-                                    | Appontment for : 
-                                        <span>
-                                            10 Jun 21 | 10:30 am
-                                        </span></p>
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <span><a href="#">Decline</a></span>
                             <span><a href="#" class="accept-bg">Accept</a></span>
@@ -78,7 +79,16 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> <span> <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People</span> | Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
+                                <p>
+                                    <span>
+                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                        4 People
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <span><a href="#">Decline</a></span>
                             <span><a href="#" class="accept-bg">Accept</a></span>
@@ -100,7 +110,16 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> <span> <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People</span> | Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
+                                <p>
+                                    <span>
+                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                        4 People
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <span><a href="#">Decline</a></span>
                             <span><a href="#" class="accept-bg">Accept</a></span>
@@ -122,7 +141,16 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> <span> <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People</span> | Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
+                                <p>
+                                    <span>
+                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                        4 People
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <span><a href="#">Decline</a></span>
                             <span><a href="#" class="accept-bg">Accept</a></span>
@@ -144,7 +172,16 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> <span> <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People</span> | Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
+                                <p>
+                                    <span>
+                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                        4 People
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <span><a href="#">Decline</a></span>
                             <span><a href="#" class="accept-bg">Accept</a></span>
@@ -166,7 +203,16 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> <span> <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People</span> | Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
+                                <p>
+                                    <span>
+                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                        4 People
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <span><a href="#">Decline</a></span>
                             <span><a href="#" class="accept-bg">Accept</a></span>
@@ -188,7 +234,16 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> <span> <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People</span> | Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
+                                <p>
+                                    <span>
+                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                        4 People
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <span><a href="#">Decline</a></span>
                             <span><a href="#" class="accept-bg">Accept</a></span>
@@ -212,12 +267,33 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> <span> <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People</span> | Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
+                                <p>
+                                    <span>
+                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                        4 People
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <ul>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px"></a></li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -237,12 +313,33 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> <span> <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People</span> | Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
+                                <p>
+                                    <span>
+                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                        4 People
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <ul>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px"></a></li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -262,12 +359,33 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> <span> <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People</span> | Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
+                                <p>
+                                    <span>
+                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                        4 People
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <ul>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px"></a></li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -287,12 +405,34 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> <span> <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People</span> | Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
+                                <p>
+                                    <span>
+                                        <i>
+                                            <img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                        4 People
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <ul>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px"></a></li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -312,12 +452,33 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> <span> <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People</span> | Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
+                                <p>
+                                    <span>
+                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                        4 People
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <ul>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px"></a></li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -337,12 +498,33 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> <span> <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People</span> | Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
+                                <p>
+                                    <span>
+                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                        4 People
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <ul>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px"></a></li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -362,21 +544,52 @@
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="appointment-for">
-                                <p> <span> <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People</span> | Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
+                                <p>
+                                    <span>
+                                        <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                        4 People
+                                    </span>
+                                    | Appontment for :
+                                    <span>
+                                        10 Jun 21 | 10:30 am
+                                    </span>
+                                </p>
                             </div>
                             <ul>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px"></a></li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
+            @php
+            $tables2Data = DB::table('tables')->where('merchent_id', Auth::user()->id)->where('table_for','2')->orderby('id','DESC')->get();
+            $tables4Data = DB::table('tables')->where('merchent_id', Auth::user()->id)->where('table_for','4')->orderby('id','DESC')->get();
+            $tables6Data = DB::table('tables')->where('merchent_id', Auth::user()->id)->where('table_for','6')->orderby('id','DESC')->get();
+
+            @endphp
+
             <div role="tabpanel" class="tab-pane" id="messages">
+                <a href="{{ url('merchant/table-management/create') }}" class="addproduct-btn pull-right">Add New Table</a>
                 <div class="new-booking">
                     <div class="row">
                         <ul class="nav nav-tabs number-sec col-md-12" role="tablist">
+
                             <li class="col-md-4 text-left active" role="presentation">
                                 <a class="number-table" href="#subhome" aria-controls="subhome" role="tab" data-toggle="tab">
                                     <figure>
@@ -384,10 +597,11 @@
                                     </figure>
                                     <div class="Jessica-pra">
                                         <p> <span>Table for</span><b>2</b></p>
-                                        <p> <span> Number of Table</span><b>3</b></p>
+                                        <p> <span> Number of Table</span><b>{{ count($tables2Data) }}</b></p>
                                     </div>
                                 </a>
                             </li>
+
                             <li class="col-md-4 text-left" role="presentation">
                                 <a class="number-table table-box" href="#profilesub" aria-controls="profilesub" role="tab" data-toggle="tab">
                                     <figure class="small-img">
@@ -395,25 +609,42 @@
                                     </figure>
                                     <div class="Jessica-pra">
                                         <p> <span>Table for</span><b>4</b></p>
-                                        <p> <span> Number of Table</span><b>6</b></p>
+                                        <p> <span> Number of Table</span><b>{{ count($tables4Data) }}</b></p>
                                     </div>
                                 </a>
                             </li>
+
                             <li class="col-md-4 text-left" role="presentation">
                                 <a class="number-table table-box" href="#messagessub" aria-controls="messagessub" role="tab" data-toggle="tab">
                                     <figure class="small-img">
-                                        <img src="{{ asset('public/merchemtAssets/images/table_four.png')}}" alt="icon" width="80%">
+                                        <img src="{{ asset('public/merchemtAssets/images/table_six.png')}}" alt="icon" width="80%">
                                     </figure>
                                     <div class="Jessica-pra">
-                                        <p> <span>Table for</span><b>4</b></p>
-                                        <p> <span> Number of Table</span><b>6</b></p>
+                                        <p>
+                                            <span>
+                                                Table for
+                                            </span>
+                                            <b>
+                                                6
+                                            </b>
+                                        </p>
+                                        <p>
+                                            <span>
+                                                Number of Table
+                                            </span>
+                                            <b>
+                                                {{ count($tables4Data) }}
+                                            </b>
+                                        </p>
                                     </div>
                                 </a>
                             </li>
+
                         </ul>
                         <div class="tab-content">
+
                             <div role="tabpanel" class="tab-pane active" id="subhome">
-                                1
+                                @forelse($tables2Data as $tables)
                                 <div class="john-doe-box">
                                     <div class="row">
                                         <div class="col-md-6 text-left">
@@ -421,23 +652,49 @@
                                                 <img src="{{ asset('public/merchemtAssets/images/table_two.png')}}" alt="icon">
                                             </figure>
                                             <div class="Jessica-pra">
-                                                <h3>Table Name 1</h3>
-                                                <p> <span>Avarage Booking Time :</span> 2 hours</p>
+                                                <h3>{{ $tables->table_name }}</h3>
+                                                <p> <span>Avarage Booking Time :</span> {{ $tables->booking_time }} hours</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6 text-right">
                                             <div class="appointment-for">
-
                                             </div>
                                             <ul>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px"></a></li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px">
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
+                                @empty
                                 <div class="john-doe-box">
+                                    <div class="row">
+                                        <div class="col-md-6 text-left">
+                                            <figure class="avarage-box">
+                                                <img src="{{ asset('public/merchemtAssets/images/table_two.png')}}" alt="icon">
+                                            </figure>
+                                            <div class="Jessica-pra">
+                                                <h3>Table not found</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforelse
+
+                                <!-- <div class="john-doe-box">
                                     <div class="row">
                                         <div class="col-md-6 text-left">
                                             <figure class="avarage-box">
@@ -482,19 +739,22 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
+
+
+
                             <div role="tabpanel" class="tab-pane " id="profilesub">
-                                2
+                                @forelse($tables4Data as $tables)
                                 <div class="john-doe-box">
                                     <div class="row">
                                         <div class="col-md-6 text-left">
                                             <figure class="avarage-box">
-                                                <img src="{{ asset('public/merchemtAssets/images/table_two.png')}}" alt="icon">
+                                                <img src="{{ asset('public/merchemtAssets/images/table_four.png')}}" alt="icon">
                                             </figure>
                                             <div class="Jessica-pra">
-                                                <h3>Table Name 1</h3>
-                                                <p> <span>Avarage Booking Time :</span> 2 hours</p>
+                                                <h3>{{ $tables->table_name }}</h3>
+                                                <p> <span>Avarage Booking Time :</span> {{ $tables->booking_time }} hours</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6 text-right">
@@ -509,34 +769,25 @@
                                         </div>
                                     </div>
                                 </div>
+                                @empty
                                 <div class="john-doe-box">
                                     <div class="row">
                                         <div class="col-md-6 text-left">
                                             <figure class="avarage-box">
-                                                <img src="{{ asset('public/merchemtAssets/images/table_two.png')}}" alt="icon">
+                                                <img src="{{ asset('public/merchemtAssets/images/table_four.png')}}" alt="icon">
                                             </figure>
                                             <div class="Jessica-pra">
-                                                <h3>Table Name 2</h3>
-                                                <p> <span>Avarage Booking Time :</span> 2 hours</p>
+                                                <h3>Table not found</h3>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 text-right">
-                                            <div class="appointment-for">
-
-                                            </div>
-                                            <ul>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px"></a></li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="john-doe-box">
+                                @endforelse
+                                <!-- <div class="john-doe-box">
                                     <div class="row">
                                         <div class="col-md-6 text-left">
                                             <figure class="avarage-box">
-                                                <img src="{{ asset('public/merchemtAssets/images/table_two.png')}}" alt="icon">
+                                                <img src="{{ asset('public/merchemtAssets/images/table_four.png')}}" alt="icon">
                                             </figure>
                                             <div class="Jessica-pra">
                                                 <h3>Table Name 2</h3>
@@ -555,20 +806,43 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="john-doe-box">
+                                    <div class="row">
+                                        <div class="col-md-6 text-left">
+                                            <figure class="avarage-box">
+                                                <img src="{{ asset('public/merchemtAssets/images/table_four.png')}}" alt="icon">
+                                            </figure>
+                                            <div class="Jessica-pra">
+                                                <h3>Table Name 2</h3>
+                                                <p> <span>Avarage Booking Time :</span> 2 hours</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                            <div class="appointment-for">
+
+                                            </div>
+                                            <ul>
+                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px"></a></li>
+                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px"></a></li>
+                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div> -->
                             </div>
 
 
                             <div role="tabpanel" class="tab-pane " id="messagessub">
-                                3
+                                @forelse($tables6Data as $tables)
                                 <div class="john-doe-box">
                                     <div class="row">
                                         <div class="col-md-6 text-left">
                                             <figure class="avarage-box">
-                                                <img src="{{ asset('public/merchemtAssets/images/table_two.png')}}" alt="icon">
+                                                <img src="{{ asset('public/merchemtAssets/images/table_six.png')}}" alt="icon">
                                             </figure>
                                             <div class="Jessica-pra">
-                                                <h3>Table Name 1</h3>
-                                                <p> <span>Avarage Booking Time :</span> 2 hours</p>
+                                                <h3>{{ $tables->table_name }}</h3>
+                                                <p> <span>Avarage Booking Time :</span> {{ $tables->booking_time }} hours</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6 text-right">
@@ -583,34 +857,25 @@
                                         </div>
                                     </div>
                                 </div>
+                                @empty
                                 <div class="john-doe-box">
                                     <div class="row">
                                         <div class="col-md-6 text-left">
                                             <figure class="avarage-box">
-                                                <img src="{{ asset('public/merchemtAssets/images/table_two.png')}}" alt="icon">
+                                                <img src="{{ asset('public/merchemtAssets/images/table_six.png')}}" alt="icon">
                                             </figure>
                                             <div class="Jessica-pra">
-                                                <h3>Table Name 2</h3>
-                                                <p> <span>Avarage Booking Time :</span> 2 hours</p>
+                                                <h3>Table not found</h3>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 text-right">
-                                            <div class="appointment-for">
-
-                                            </div>
-                                            <ul>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px"></a></li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="john-doe-box">
+                                @endforelse
+                                <!-- <div class="john-doe-box">
                                     <div class="row">
                                         <div class="col-md-6 text-left">
                                             <figure class="avarage-box">
-                                                <img src="{{ asset('public/merchemtAssets/images/table_two.png')}}" alt="icon">
+                                                <img src="{{ asset('public/merchemtAssets/images/table_six.png')}}" alt="icon">
                                             </figure>
                                             <div class="Jessica-pra">
                                                 <h3>Table Name 2</h3>
@@ -629,10 +894,33 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="john-doe-box">
+                                    <div class="row">
+                                        <div class="col-md-6 text-left">
+                                            <figure class="avarage-box">
+                                                <img src="{{ asset('public/merchemtAssets/images/table_six.png')}}" alt="icon">
+                                            </figure>
+                                            <div class="Jessica-pra">
+                                                <h3>Table Name 2</h3>
+                                                <p> <span>Avarage Booking Time :</span> 2 hours</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                            <div class="appointment-for">
+
+                                            </div>
+                                            <ul>
+                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px"></a></li>
+                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px"></a></li>
+                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div> -->
                             </div>
                         </div>
 
-                        
+
                     </div>
                 </div>
 
