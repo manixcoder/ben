@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('public/merchemtAssets/Fonts/font.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('public/merchemtAssets/css/style.css')}}">
+    @yield('pageCss')
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 
@@ -19,8 +20,7 @@
             <div class="col-md-6 col-sm-6 ">
                 <img src="{{ asset('public/merchemtAssets/images/header_logo.png')}}" alt="header_logo" width="230px">
             </div>
-            <?php // dd(Auth::user()) 
-            ?>
+
             <div class="col-md-6 col-sm-6 text-right">
                 <div class="user-dropdown">
                     <div class="dropdown">
@@ -147,6 +147,7 @@
     </div>
 
     @yield('content')
+    @yield('pagejs')
     <script src="{{ asset('public/merchemtAssets/js/libaury.js')}}"></script>
     <script src="{{ asset('public/merchemtAssets/js/bootstrap.min.js')}}"></script>
     <script>

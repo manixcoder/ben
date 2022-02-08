@@ -30,7 +30,6 @@
                 </a>
             </li>
         </ul>
-
         <!-- Tab panes -->
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane" id="home">
@@ -343,7 +342,7 @@
                 </div>
             </div>
             <div role="tabpanel" class="tab-pane active" id="messages">
-                <a href="{{ url('merchant/room-management/create') }}" class="addproduct-btn pull-right">Add New Room</a>
+                <a href="{{ url('merchant/room-management/create') }}" class="addproduct-btn pull-right">Add New Room</a> 
                 <div class="new-booking">
                     <div class="row">
                         <div class="col-md-4 text-left">
