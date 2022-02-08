@@ -46,7 +46,7 @@ class UserManagementController extends Controller
             ->whereHas('roles', function ($q) {
                 $q->where('name', 'users');
             })->get();
-        dd($result);
+        // dd($result);
         return Datatables::of($result)
             ->addColumn('action', function ($result) {
                 return '
@@ -77,6 +77,13 @@ class UserManagementController extends Controller
             return back()->withErrors($validator)->withInput();
         }
         try {
+            if ($request->gender == '1') {
+                $profile_image = 'boy.png';
+            } else if ($request->gender == '2') {
+                $profile_image = 'woman.png';
+            } else {
+                $profile_image = 'user.png';
+            }
             $userData = User::create([
                 'user_role'         => 3,
                 'first_name'        => $request->has('first_name') ? $request->first_name : '',
@@ -85,6 +92,8 @@ class UserManagementController extends Controller
                 'email'             => $request->has('email') ? $request->email : '',
                 'mobile'            => $request->has('mobile') ? $request->mobile : '',
                 'password'          => Hash::make($request->input('password')),
+                'gender'            => $request->has('gender') ? $request->gender : '',
+                'profile_image'     => $profile_image,
                 'last_login'        => date("Y-m-d H:i:s"),
             ]);
             $roleArray = array(

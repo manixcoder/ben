@@ -7,7 +7,8 @@
 <div class="company-sec">
     @if(Session::has('status'))
     <div class="alert alert-{{ Session::get('status') }}">
-        <i class="ti-user"></i> {{ Session::get('message') }}
+        <i class="ti-user"></i>
+        {{ Session::get('message') }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
     </div>
     @elseif(Session::get('status') == "danger")
@@ -107,15 +108,19 @@
 
                     <tbody>
                         @foreach($merchants as $merchant)
-                        <?php
+                        @php
                         $categorydata = DB::table('categories')->where('id', $merchant->company_type)->first();
                         $subcategorydata = DB::table('categories')->where('id', $merchant->sub_restaurant_type)->first();
                         $usercategorydata = DB::table('categories')->where('id', $merchant->user_type)->first();
-                        ?>
+                        @endphp
                         <tr>
                             <td>
                                 <figure>
+                                    @if($merchant->profile_image !='')
+                                    <img src="{{ asset('public/uploads')}}/{{ $merchant->profile_image }}" alt="icon">
+                                    @else
                                     <img src="{{ asset('public/adminAssets/images/circle.jpg')}}" alt="icon">
+                                    @endif
                                 </figure>
                                 <span class="company-profile">
                                     <p>#{{ $merchant->uid_number }}</p>

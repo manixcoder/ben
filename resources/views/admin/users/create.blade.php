@@ -63,6 +63,22 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <label>Select Gender</label>
+                        <select class="form-control @error('gender') has-danger @enderror givepoint-img" value="{{ old('gender') }}" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                            <option value="0">Other</option>
+                            @error('gender')
+                            <small class="form-control-feedback">
+                                {{ $errors->first('gender') }}
+                            </small>
+                            @enderror
+                        </select>
+                    </div>
+                </div>
+            <div class="col-md-6 col-sm-6">
                 <div class="form-group">
                     <label>Password</label>
                     <input type="password" name="password" class="form-control @error('password') has-danger @enderror" placeholder="DoeJohn@0052">

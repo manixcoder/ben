@@ -71,6 +71,14 @@ class MerchantRegistrationController extends Controller
             return back()->withErrors($validator)->withInput();
         }
         try {
+            if ($request->gender == '1') {
+                $profile_image = 'boy.png';
+            } else if ($request->gender == '2') {
+                $profile_image = 'woman.png';
+            } else {
+                $profile_image = 'user.png';
+            }
+
             //dd($request->all());
             $companyData = User::create([
                 'user_role'                 => 2,
@@ -91,6 +99,7 @@ class MerchantRegistrationController extends Controller
                 'email'                     => $request->has('email') ? $request->email : '',
                 'mobile'                    => $request->has('mobile') ? $request->mobile : '',
                 'password'                  => Hash::make($request->input('password')),
+                'profile_image'             => $profile_image,
                 'is_active'                 => '0',
                 'last_login'                => date("Y-m-d H:i:s"),
             ]);

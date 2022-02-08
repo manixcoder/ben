@@ -94,17 +94,11 @@ class AwardsManagementController extends Controller
 
             );
             $awardData->update($updateData);
-
             return redirect('/admin/awards-management')->with(array('status' => 'success', 'message' => 'Update record successfully.'));
         } catch (\exception $e) {
             return back()->with(array('status' => 'danger', 'message' =>  $e->getMessage()));
             return back()->with(array('status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.'));
         }
-
-
-        // dd($awardData);
-        // dd($id);
-        // dd($request->all());
     }
 
     /**

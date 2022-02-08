@@ -42,7 +42,9 @@
                             @endforeach
                         </select>
                         @error('company_type')
-                        <small class="form-control-feedback">{{ $errors->first('company_type') }}</small>
+                        <small class="form-control-feedback">
+                            {{ $errors->first('company_type') }}
+                        </small>
                         @enderror
                     </div>
                 </div>
@@ -63,7 +65,9 @@
                         <label>Address</label>
                         <input type="text" name="address" class="form-control @error('address') has-danger @enderror" value="{{ old('address') }}" placeholder="2700 Cliffside Drive" required>
                         @error('address')
-                        <small class="form-control-feedback">{{ $errors->first('address') }}</small>
+                        <small class="form-control-feedback">
+                            {{ $errors->first('address') }}
+                        </small>
                         @enderror
                     </div>
                 </div>
@@ -72,7 +76,9 @@
                         <label>City</label>
                         <input type="text" name="city" class="form-control @error('city') has-danger @enderror" value="{{ old('city') }}" placeholder="Syracuse" required>
                         @error('city')
-                        <small class="form-control-feedback">{{ $errors->first('city') }}</small>
+                        <small class="form-control-feedback">
+                            {{ $errors->first('city') }}
+                        </small>
                         @enderror
                     </div>
                 </div>
@@ -81,7 +87,9 @@
                         <label>Zip Code</label>
                         <input type="text" name="zip_code" class="form-control @error('zip_code') has-danger @enderror" value="{{ old('zip_code') }}" placeholder="13202" maxlength="6" required>
                         @error('zip_code')
-                        <small class="form-control-feedback">{{ $errors->first('zip_code') }}</small>
+                        <small class="form-control-feedback">
+                            {{ $errors->first('zip_code') }}
+                        </small>
                         @enderror
                     </div>
                 </div>
@@ -90,7 +98,9 @@
                         <label>VAT/UID Number</label>
                         <input type="text" name="uid_number" class="form-control @error('uid_number') has-danger @enderror" value="{{ old('uid_number') }}" placeholder="HdKH88494JH98" required>
                         @error('uid_number')
-                        <small class="form-control-feedback">{{ $errors->first('uid_number') }}</small>
+                        <small class="form-control-feedback">
+                            {{ $errors->first('uid_number') }}
+                        </small>
                         @enderror
                     </div>
                 </div>
@@ -102,7 +112,9 @@
                             <option value="no">No</option>
                         </select>
                         @error('general_layality')
-                        <small class="form-control-feedback">{{ $errors->first('general_layality') }}</small>
+                        <small class="form-control-feedback">
+                            {{ $errors->first('general_layality') }}
+                        </small>
                         @enderror
                     </div>
                 </div>
@@ -137,7 +149,9 @@
                             @endforeach
                         </select>
                         @error('sub_category')
-                        <small class="form-control-feedback">{{ $errors->first('sub_category') }}</small>
+                        <small class="form-control-feedback">
+                            {{ $errors->first('sub_category') }}
+                        </small>
                         @enderror
                     </div>
                 </div>
@@ -146,7 +160,9 @@
                         <label>First Name</label>
                         <input type="text" name="first_name" class="form-control @error('first_name') has-danger @enderror" value="{{ old('first_name') }}" placeholder="First Name" required>
                         @error('first_name')
-                        <small class="form-control-feedback">{{ $errors->first('first_name') }}</small>
+                        <small class="form-control-feedback">
+                            {{ $errors->first('first_name') }}
+                        </small>
                         @enderror
                     </div>
                 </div>
@@ -155,7 +171,9 @@
                         <label>Last Name</label>
                         <input type="text" name="last_name" class="form-control @error('last_name') has-danger @enderror" value="{{ old('last_name') }}" placeholder="Last Name" required>
                         @error('last_name')
-                        <small class="form-control-feedback">{{ $errors->first('last_name') }}</small>
+                        <small class="form-control-feedback">
+                            {{ $errors->first('last_name') }}
+                        </small>
                         @enderror
                     </div>
                 </div>
@@ -164,7 +182,9 @@
                         <label>Date of Birth</label>
                         <input type="date" name="date_birthday" class="form-control @error('date_birthday') has-danger @enderror" value="{{ old('date_birthday') }}" required>
                         @error('date_birthday')
-                        <small class="form-control-feedback">{{ $errors->first('date_birthday') }}</small>
+                        <small class="form-control-feedback">
+                            {{ $errors->first('date_birthday') }}
+                        </small>
                         @enderror
                     </div>
                 </div>
@@ -174,11 +194,13 @@
                         <select class="form-control @error('gender') has-danger @enderror givepoint-img" value="{{ old('gender') }}" name="gender" required>
                             <option value="">Select Gender</option>
                             <option value="1">Male</option>
-                            <option value="0">Female</option>
+                            <option value="2">Female</option>
+                            <option value="0">Other</option>
                             @error('gender')
-                            <small class="form-control-feedback">{{ $errors->first('gender') }}</small>
+                            <small class="form-control-feedback">
+                                {{ $errors->first('gender') }}
+                            </small>
                             @enderror
-
                         </select>
                     </div>
                 </div>
@@ -205,10 +227,43 @@
                         <label>Password</label>
                         <input type="password" name="password" class="form-control @error('password') has-danger @enderror" required>
                         @error('password')
-                        <small class="form-control-feedback">{{ $errors->first('password') }}</small>
+                        <small class="form-control-feedback">
+                            {{ $errors->first('password') }}
+                        </small>
                         @enderror
                     </div>
                 </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <input class="form-check-input" type="checkbox" name="is_audience"  id="is_audience" required>
+                        <label class="form-check-label" for="is_audience">
+                            This person gave me permission to email them
+                            <span>
+                                This person wil not receive a confirmation email from Mailchimp.
+                                Since you're adding this recipient manually, they won't have an opt-in IP address or date in your records,
+                                so be extra sure you have permission first.<a href="">Learn more</a>
+                            </span>
+                        </label>
+                        @error('is_audience')
+                        <small class="form-control-feedback">
+                            {{ $errors->first('is_audience') }}
+                        </small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <input class="form-check-input" type="checkbox" name="is_confirmation_chk"  id="is_confirmation_chk" required>
+                        <label class="form-check-label" for="is_confirmation_chk">
+                            If this person is already in my audience,update their profile
+
+                        </label>
+                        @error('is_confirmation_chk')
+                        <small class="form-control-feedback">
+                            {{ $errors->first('is_confirmation_chk') }}
+                        </small>
+                        @enderror
+                    </div>
+                </div>
+
                 <div class="btn-group">
                     <div class="col-md-6 col-sm-6">
                         <div class="form-group">
