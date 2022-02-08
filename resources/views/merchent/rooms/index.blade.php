@@ -45,7 +45,7 @@
                                 <h3>John Doe</h3>
                                 <p>doejohn33@gmail.com</p>
                                 <p>9600000052</p>
-                                <h3>Room Name 1</h3>
+                                <h3> Room Name 1</h3>
                                 <p>
                                     <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
                                     4 People 2 Room

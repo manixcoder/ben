@@ -16,7 +16,7 @@ class RoomManagementController extends Controller
     public function index()
     {
         $data = array();
-        return view('merchent.tables.index', $data);
+        return view('merchent.rooms.index', $data);
     }
 
     /**
@@ -27,7 +27,7 @@ class RoomManagementController extends Controller
     public function create()
     {
         $data = array();
-        return view('merchent.tables.create', $data);
+        return view('merchent.rooms.create', $data);
     }
 
     /**

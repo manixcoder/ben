@@ -1546,3 +1546,30 @@ div#messages .new-booking {
 .appoint-ment .new-requests div#messages .john-doe-box li:first-child a img {
     width: 16px;
 }
+.new-booking .active.col-md-4 .number-table {
+    float: left;
+    width: 100%;
+    border-bottom: 10px solid #06C6B3;
+    border-radius: 6px;
+    padding-bottom: 26px;
+    padding-left: 25px;
+}
+
+ul.nav.nav-tabs.number-sec.col-md-12{
+    border: 0;
+}
+ul.nav.nav-tabs.number-sec.col-md-12 a.number-table {
+    background: none !important;
+    padding: 15px;
+}
+ ul.nav.nav-tabs.number-sec li a:hover ,  ul.nav.nav-tabs.number-sec li.active a{
+    float: left;
+    width: 100%;
+    border-bottom: 10px solid #06C6B3;
+    border-radius: 6px;
+    padding-bottom: 26px;
+    padding-left: 25px;
+ }
+
+
+
