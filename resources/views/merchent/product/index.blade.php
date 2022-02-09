@@ -1,5 +1,5 @@
 @extends('merchent.master')
-@section('pageTitle', 'Merchent')
+@section('pageTitle', 'Product')
 @section('content')
 @section('pageCss')
 <style>
@@ -121,9 +121,9 @@
                     <div class="current-offerBox">
                         <div class="row">
                             <div class="col-md-6">
-                              
-                                    <p>Product Not found</p>
-                              
+
+                                <p>Product Not found</p>
+
                             </div>
                         </div>
                     </div>
@@ -185,7 +185,11 @@
                 <a href="{{ url('merchant/product-management/create-service') }}" class="addproduct-btn pull-right">Add New Service</a>
                 <div class="current-offer">
                     @php
-                    $productData = DB::table('products')->where('merchent_id', Auth::user()->id)->where('product_type','2')->orderby('id','DESC')->get();
+                    $productData = DB::table('products')
+                    ->where('merchent_id', Auth::user()->id)
+                    ->where('product_type','2')
+                    ->orderby('id','DESC')
+                    ->get();
                     $id= '59595';
                     @endphp
                     @forelse ($productData as $key => $product)
@@ -200,14 +204,14 @@
                                     @endif
                                 </div>
                                 <div class="current-offercont">
-                                    <h5>#{{ $key +$id }}</h5>
+                                    <h5>#{{ $key + $id }}</h5>
                                     <h4>
                                         {{ $product->product_name }}
                                         <span>
                                             {{ $product->pro_category }}
                                         </span>
                                     </h4>
-                                    <p>                                        
+                                    <p>
                                         <span class="discount-cont">
                                             {{ $product->pro_discount }}% Discount
                                         </span>

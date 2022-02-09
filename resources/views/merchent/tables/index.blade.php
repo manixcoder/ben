@@ -1,5 +1,5 @@
 @extends('merchent.master')
-@section('pageTitle', 'Merchent')
+@section('pageTitle', 'Tables')
 @section('content')
 @section('pageCss')
 <style>
@@ -27,7 +27,6 @@
                     My Tables
                 </a>
             </li>
-
         </ul>
 
         <!-- Tab panes -->
@@ -59,8 +58,16 @@
                                     </span>
                                 </p>
                             </div>
-                            <span><a href="#">Decline</a></span>
-                            <span><a href="#" class="accept-bg">Accept</a></span>
+                            <span>
+                                <a href="#">
+                                    Decline
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#" class="accept-bg">
+                                    Accept
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -90,8 +97,16 @@
                                     </span>
                                 </p>
                             </div>
-                            <span><a href="#">Decline</a></span>
-                            <span><a href="#" class="accept-bg">Accept</a></span>
+                            <span>
+                                <a href="#">
+                                    Decline
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#" class="accept-bg">
+                                    Accept
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -121,8 +136,16 @@
                                     </span>
                                 </p>
                             </div>
-                            <span><a href="#">Decline</a></span>
-                            <span><a href="#" class="accept-bg">Accept</a></span>
+                            <span>
+                                <a href="#">
+                                    Decline
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#" class="accept-bg">
+                                    Accept
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -152,8 +175,16 @@
                                     </span>
                                 </p>
                             </div>
-                            <span><a href="#">Decline</a></span>
-                            <span><a href="#" class="accept-bg">Accept</a></span>
+                            <span>
+                                <a href="#">
+                                    Decline
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#" class="accept-bg">
+                                    Accept
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -183,8 +214,16 @@
                                     </span>
                                 </p>
                             </div>
-                            <span><a href="#">Decline</a></span>
-                            <span><a href="#" class="accept-bg">Accept</a></span>
+                            <span>
+                                <a href="#">
+                                    Decline
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#" class="accept-bg">
+                                    Accept
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -621,28 +660,18 @@
                                     </figure>
                                     <div class="Jessica-pra">
                                         <p>
-                                            <span>
-                                                Table for
-                                            </span>
-                                            <b>
-                                                6
-                                            </b>
+                                            <span>Table for</span>
+                                            <b>6</b>
                                         </p>
                                         <p>
-                                            <span>
-                                                Number of Table
-                                            </span>
-                                            <b>
-                                                {{ count($tables4Data) }}
-                                            </b>
+                                            <span>Number of Table</span>
+                                            <b>{{ count($tables4Data) }}</b>
                                         </p>
                                     </div>
                                 </a>
                             </li>
-
                         </ul>
                         <div class="tab-content">
-
                             <div role="tabpanel" class="tab-pane active" id="subhome">
                                 @forelse($tables2Data as $tables)
                                 <div class="john-doe-box">
@@ -661,17 +690,17 @@
                                             </div>
                                             <ul>
                                                 <li>
-                                                    <a href="#">
+                                                    <a href="{{ url('admin/table-management')}}/{{ $tables->id }}/view">
                                                         <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px">
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">
+                                                    <a href="{{ url('admin/table-management')}}/{{ $tables->id }}/edit">
                                                         <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px">
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">
+                                                    <a href="{{ url('admin/table-management')}}/{{ $tables->id }}/delete">
                                                         <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px">
                                                     </a>
                                                 </li>
@@ -693,53 +722,6 @@
                                     </div>
                                 </div>
                                 @endforelse
-
-                                <!-- <div class="john-doe-box">
-                                    <div class="row">
-                                        <div class="col-md-6 text-left">
-                                            <figure class="avarage-box">
-                                                <img src="{{ asset('public/merchemtAssets/images/table_two.png')}}" alt="icon">
-                                            </figure>
-                                            <div class="Jessica-pra">
-                                                <h3>Table Name 2</h3>
-                                                <p> <span>Avarage Booking Time :</span> 2 hours</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 text-right">
-                                            <div class="appointment-for">
-
-                                            </div>
-                                            <ul>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="john-doe-box">
-                                    <div class="row">
-                                        <div class="col-md-6 text-left">
-                                            <figure class="avarage-box">
-                                                <img src="{{ asset('public/merchemtAssets/images/table_two.png')}}" alt="icon">
-                                            </figure>
-                                            <div class="Jessica-pra">
-                                                <h3>Table Name 2</h3>
-                                                <p> <span>Avarage Booking Time :</span> 2 hours</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 text-right">
-                                            <div class="appointment-for">
-
-                                            </div>
-                                            <ul>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
 
 
@@ -762,9 +744,21 @@
 
                                             </div>
                                             <ul>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px"></a></li>
+                                                <li>
+                                                    <a href="{{ url('admin/table-management')}}/{{ $tables->id }}/view">
+                                                        <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('admin/table-management')}}/{{ $tables->id }}/edit">
+                                                        <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('admin/table-management')}}/{{ $tables->id }}/delete">
+                                                        <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px">
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -783,55 +777,7 @@
                                     </div>
                                 </div>
                                 @endforelse
-                                <!-- <div class="john-doe-box">
-                                    <div class="row">
-                                        <div class="col-md-6 text-left">
-                                            <figure class="avarage-box">
-                                                <img src="{{ asset('public/merchemtAssets/images/table_four.png')}}" alt="icon">
-                                            </figure>
-                                            <div class="Jessica-pra">
-                                                <h3>Table Name 2</h3>
-                                                <p> <span>Avarage Booking Time :</span> 2 hours</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 text-right">
-                                            <div class="appointment-for">
-
-                                            </div>
-                                            <ul>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="john-doe-box">
-                                    <div class="row">
-                                        <div class="col-md-6 text-left">
-                                            <figure class="avarage-box">
-                                                <img src="{{ asset('public/merchemtAssets/images/table_four.png')}}" alt="icon">
-                                            </figure>
-                                            <div class="Jessica-pra">
-                                                <h3>Table Name 2</h3>
-                                                <p> <span>Avarage Booking Time :</span> 2 hours</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 text-right">
-                                            <div class="appointment-for">
-
-                                            </div>
-                                            <ul>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
-
-
                             <div role="tabpanel" class="tab-pane " id="messagessub">
                                 @forelse($tables6Data as $tables)
                                 <div class="john-doe-box">
@@ -841,18 +787,36 @@
                                                 <img src="{{ asset('public/merchemtAssets/images/table_six.png')}}" alt="icon">
                                             </figure>
                                             <div class="Jessica-pra">
-                                                <h3>{{ $tables->table_name }}</h3>
-                                                <p> <span>Avarage Booking Time :</span> {{ $tables->booking_time }} hours</p>
+                                                <h3>
+                                                    {{ $tables->table_name }}
+                                                </h3>
+                                                <p>
+                                                    <span>
+                                                        Avarage Booking Time :
+                                                    </span>
+                                                    {{ $tables->booking_time }} hours
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="col-md-6 text-right">
                                             <div class="appointment-for">
-
                                             </div>
                                             <ul>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px"></a></li>
+                                                <li>
+                                                    <a href="{{ url('admin/table-management')}}/{{ $tables->id }}/view">
+                                                        <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('admin/table-management')}}/{{ $tables->id }}/edit">
+                                                        <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ url('admin/table-management')}}/{{ $tables->id }}/delete">
+                                                        <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px">
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -871,59 +835,10 @@
                                     </div>
                                 </div>
                                 @endforelse
-                                <!-- <div class="john-doe-box">
-                                    <div class="row">
-                                        <div class="col-md-6 text-left">
-                                            <figure class="avarage-box">
-                                                <img src="{{ asset('public/merchemtAssets/images/table_six.png')}}" alt="icon">
-                                            </figure>
-                                            <div class="Jessica-pra">
-                                                <h3>Table Name 2</h3>
-                                                <p> <span>Avarage Booking Time :</span> 2 hours</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 text-right">
-                                            <div class="appointment-for">
-
-                                            </div>
-                                            <ul>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="john-doe-box">
-                                    <div class="row">
-                                        <div class="col-md-6 text-left">
-                                            <figure class="avarage-box">
-                                                <img src="{{ asset('public/merchemtAssets/images/table_six.png')}}" alt="icon">
-                                            </figure>
-                                            <div class="Jessica-pra">
-                                                <h3>Table Name 2</h3>
-                                                <p> <span>Avarage Booking Time :</span> 2 hours</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 text-right">
-                                            <div class="appointment-for">
-
-                                            </div>
-                                            <ul>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px"></a></li>
-                                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
-
-
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

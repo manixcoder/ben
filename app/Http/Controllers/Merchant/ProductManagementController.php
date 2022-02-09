@@ -48,7 +48,7 @@ class ProductManagementController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+       //  dd($request->all());
         if ($request->product_type == '1') {
             $validator = Validator::make($request->all(), [
                 'product_name'      => 'required',

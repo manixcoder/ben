@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('public/merchemtAssets/css/style.css')}}">
     @yield('pageCss')
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }} @yield('pageTitle')</title>
 </head>
 
 <body>
@@ -145,7 +145,6 @@
             </li>
         </ul>
     </div>
-
     @yield('content')
     @yield('pagejs')
     <script src="{{ asset('public/merchemtAssets/js/libaury.js')}}"></script>

@@ -1,5 +1,5 @@
 @extends('merchent.master')
-@section('pageTitle', 'Merchent')
+@section('pageTitle', 'Table Edit')
 @section('content')
 @section('pageCss')
 <style>
