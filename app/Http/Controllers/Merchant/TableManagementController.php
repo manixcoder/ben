@@ -83,9 +83,9 @@ class TableManagementController extends Controller
      * @param  \App\Models\TableModel  $tableModel
      * @return \Illuminate\Http\Response
      */
-    public function edit(TableModel $tableModel)
+    public function edit(TableModel $tableModel,$id)
     {
-        //
+        dd($id);
     }
 
     /**
