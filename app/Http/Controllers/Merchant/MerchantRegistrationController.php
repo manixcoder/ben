@@ -50,22 +50,22 @@ class MerchantRegistrationController extends Controller
     {
         //dd($request->all());
         $validator = Validator::make($request->all(), [
-            'company_name' => 'required',
-            'company_type' => 'required',
-            'sub_restaurant_type' => 'required',
-            'address' => 'required',
-            'city' => 'required',
-            'zip_code' => 'required',
-            'uid_number' => 'required',
-            'user_type' => 'required',
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'date_birthday' => 'required',
-            'gender' => 'required',
-            //'name' => 'required|string|max:255|unique:users',
-            'email' => 'required|string|max:255|unique:users',
-            'mobile' => 'required',
-            'password' => 'required',
+            'company_name'          => 'required',
+            'company_type'          => 'required',
+            'sub_restaurant_type'   => 'required',
+            'address'               => 'required',
+            'city'                  => 'required',
+            'zip_code'              => 'required',
+            'uid_number'            => 'required',
+            'user_type'             => 'required',
+            'first_name'            => 'required',
+            'last_name'             => 'required',
+            'date_birthday'         => 'required',
+            'gender'                => 'required',
+            //'name'                => 'required|string|max:255|unique:users',
+            'email'                 => 'required|string|max:255|unique:users',
+            'mobile'                => 'required',
+            'password'              => 'required',
         ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();

@@ -207,6 +207,9 @@ Route::get('/', 'HomeController@index')->name('home');
 
 /*=====================================Merchant=====================================*/
 Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], function () {
+
+
+
     Route::get('/', 'Merchant\DashboardController@index');
     Route::get('profile-view', 'Merchant\MerchantRegistrationController@profileShow');
 
@@ -217,6 +220,7 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
     |-----------------------------------------
      */
     Route::group(['prefix' => 'product-management'], function () {
+
         Route::get('/', 'Merchant\ProductManagementController@index');
         Route::get('create', 'Merchant\ProductManagementController@create');
 
@@ -227,8 +231,43 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
         Route::post('{id}/update', 'Merchant\ProductManagementController@update');
         Route::get('delete/{id}', 'Merchant\ProductManagementController@destroy');
     });
+
+    /*
+    |------------------------------------------
+    | Room Management Routes Here     |
+    |-----------------------------------------
+     */
+    Route::group(['prefix' => 'room-management'], function () {
+
+        Route::get('/', 'Merchant\RoomManagementController@index');
+        Route::get('create', 'Merchant\RoomManagementController@create');
+       
+        Route::post('/save-room', 'Merchant\RoomManagementController@store');
+        Route::get('{id}/show', 'Merchant\RoomManagementController@show');
+        Route::get('{id}/edit', 'Merchant\RoomManagementController@edit');
+        Route::post('{id}/update', 'Merchant\RoomManagementController@update');
+        Route::get('delete/{id}', 'Merchant\RoomManagementController@destroy');
+    });
+
+    /*
+    |------------------------------------------
+    | Table Management Routes Here     |
+    |-----------------------------------------
+     */
+    Route::group(['prefix' => 'table-management'], function () {
+
+        Route::get('/', 'Merchant\TableManagementController@index');
+        Route::get('create', 'Merchant\TableManagementController@create');
+
+        Route::post('/save-table', 'Merchant\TableManagementController@store');
+        Route::get('{id}/show', 'Merchant\TableManagementController@show');
+        Route::get('{id}/edit', 'Merchant\TableManagementController@edit');
+        Route::post('{id}/update', 'Merchant\TableManagementController@update');
+        Route::get('delete/{id}', 'Merchant\TableManagementController@destroy');
+    });
 });
 /*=====================================Merchant End=====================================*/
 Route::group(['prefix' => 'users', 'middleware' => ['users', 'auth']], function () {
+
     Route::get('/', 'Customer\DashboardController@index');
 });
