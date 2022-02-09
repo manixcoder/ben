@@ -665,7 +665,7 @@
                                         </p>
                                         <p>
                                             <span>Number of Table</span>
-                                            <b>{{ count($tables4Data) }}</b>
+                                            <b>{{ count($tables6Data) }}</b>
                                         </p>
                                     </div>
                                 </a>
@@ -1509,6 +1509,7 @@
                                                         eventTime: "2018-09-13 16:47:00"
                                                     }
                                                 ];
+
                                                 function addDate(ev) {}
 
                                                 var calendar = new Calendar("#calendar_{{ $tables2->id }}", data);
@@ -2372,6 +2373,7 @@
                                                         eventTime: "2018-09-13 16:47:00"
                                                     }
                                                 ];
+
                                                 function addDate(ev) {}
 
                                                 var calendar = new Calendar("#calendar_{{ $tables4->id }}", data);
@@ -3238,6 +3240,7 @@
                                                         eventTime: "2018-09-13 16:47:00"
                                                     }
                                                 ];
+
                                                 function addDate(ev) {}
 
                                                 var calendar = new Calendar("#calendar_{{ $tables6->id }}", data);
@@ -3271,6 +3274,6 @@
 
 @endsection
 @section('pagejs')
-<script >
+<script>
 </script>
 @stop

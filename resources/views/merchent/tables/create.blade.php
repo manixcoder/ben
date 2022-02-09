@@ -48,7 +48,7 @@
                                 <select class="form-control text-color @error('booking_time') is-invalid @enderror" value="{{ old('booking_time') }}" name="booking_time">
                                     <option>Select Booking Time</option>
                                     <option value="2">2</option>
-                                    <option value="4">4</option>
+                                    <!-- <option value="4">4</option> -->
                                 </select>
                                 @error('booking_time')
                                 <span class="invalid-feedback" role="alert">
@@ -66,7 +66,7 @@
                                 <select class="form-control text-color @error('number_tables') is-invalid @enderror" value="{{ old('number_tables') }}" name="number_tables">
                                     <option>Select Number of Tables</option>
                                     <option value="2">2</option>
-                                    <option value="5">5</option>
+                                    <!-- <option value="5">5</option> -->
                                 </select>
                                 @error('number_tables')
                                 <span class="invalid-feedback" role="alert">
