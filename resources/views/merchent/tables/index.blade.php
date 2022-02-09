@@ -865,7 +865,7 @@
                                                                                 </ul>
                                                                             </div>
                                                                         </div>
-                                                                    </div>  
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1350,7 +1350,7 @@
                                 @endforelse
                             </div>
 
-
+                            
 
                             <div role="tabpanel" class="tab-pane " id="profilesub">
                                 @forelse($tables4Data as $tables4)
@@ -1498,7 +1498,7 @@
                                                                                 </ul>
                                                                             </div>
                                                                         </div>
-                                                                    </div> 
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1977,7 +1977,7 @@
                                                 <img src="{{ asset('public/merchemtAssets/images/table_four.png')}}" alt="icon">
                                             </figure>
                                             <div class="Jessica-pra">
-                                                <h3>Table not found</h3>
+                                                <h3>Table 4 not found</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -2136,7 +2136,7 @@
                                                                                 </ul>
                                                                             </div>
                                                                         </div>
-                                                                    </div>                                                                    
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2148,7 +2148,6 @@
                                         <script>
                                             !(function() {
                                                 var today = moment();
-
                                                 function Calendar(selector, events) {
                                                     this.el = document.querySelector(selector);
                                                     this.events = events;
@@ -2613,7 +2612,7 @@
                                                 <img src="{{ asset('public/merchemtAssets/images/table_six.png')}}" alt="icon">
                                             </figure>
                                             <div class="Jessica-pra">
-                                                <h3>Table not found</h3>
+                                                <h3>Table 6 not found</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -2627,8 +2626,6 @@
         </div>
     </div>
 </div>
-
-
 @endsection
 @section('pagejs')
 <script>
