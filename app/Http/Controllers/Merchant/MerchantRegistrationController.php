@@ -62,7 +62,6 @@ class MerchantRegistrationController extends Controller
             'last_name'             => 'required',
             'date_birthday'         => 'required',
             'gender'                => 'required',
-            //'name'                => 'required|string|max:255|unique:users',
             'email'                 => 'required|string|max:255|unique:users',
             'mobile'                => 'required',
             'password'              => 'required',
