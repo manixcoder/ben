@@ -53,7 +53,9 @@
                                         @endforeach
                                     </select>
                                     @error('company_type')
-                                    <small class="form-control-feedback">{{ $errors->first('company_type') }}</small>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                     @enderror
                                 </div>
                                 <div class="form-group ">
