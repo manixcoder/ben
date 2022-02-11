@@ -2297,3 +2297,11 @@ ul.nav.nav-tabs.number-sec li a:hover ,  ul.nav.nav-tabs.number-sec li.active a{
     color: #9b3270;
     font-weight: 600;
 }
+
+.login-with .form-box-sec span.invalid-feedback {
+    text-align: left;
+    color: red;
+    width: 100%;
+    float: left;
+    font-size: 13px;
+}
