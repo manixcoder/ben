@@ -44,7 +44,6 @@
             @else
             @endif
         </ul>
-
         <!-- Tab panes -->
         <div class="tab-content">
             @if(count($foodCategoryData) > 0)

@@ -96,8 +96,6 @@
         </table>
     </div>
 </div>
-
-
 @endsection
 @section('pagejs')
 <script>
