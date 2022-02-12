@@ -20,15 +20,21 @@ class RoomModel extends Model
      */
     protected $fillable = [
         'merchent_id',
-        'room_for', 
-        'number_of_room', 
-        'booking_for', 'price_per_night',
+        'room_type',
+        'room_image',
+        'room_for',
+        'number_of_room',
+        'min_booking_for',
+        'price_per_night',
         'discount',
         'short_discription',
         'room_sq_ft',
-        'num_beds', 
-        'check_in', 
+        'single_beds',
+        'hotle_address',
+        'check_in',
         'check_out',
-        'hotel_address'
+        'extra_rows',
+        'health_safety',
+        'selected_amenities'
     ];
 }

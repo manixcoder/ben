@@ -615,12 +615,10 @@
                     </div>
                 </div>
             </div>
-
             @php
             $tables2Data = DB::table('tables')->where('merchent_id', Auth::user()->id)->where('table_for','2')->orderby('id','DESC')->get();
             $tables4Data = DB::table('tables')->where('merchent_id', Auth::user()->id)->where('table_for','4')->orderby('id','DESC')->get();
             $tables6Data = DB::table('tables')->where('merchent_id', Auth::user()->id)->where('table_for','6')->orderby('id','DESC')->get();
-
             @endphp
 
             <div role="tabpanel" class="tab-pane" id="messages">
@@ -695,12 +693,12 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ url('admin/table-management')}}/{{ $tables2->id }}/edit">
+                                                    <a href="{{ url('merchant/table-management')}}/{{ $tables2->id }}/edit">
                                                         <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px">
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ url('admin/table-management')}}/{{ $tables2->id }}/delete">
+                                                    <a href="{{ url('merchant/table-management')}}/{{ $tables2->id }}/delete">
                                                         <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px">
                                                     </a>
                                                 </li>
@@ -865,7 +863,7 @@
                                                                                 </ul>
                                                                             </div>
                                                                         </div>
-                                                                    </div>  
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1376,12 +1374,12 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ url('admin/table-management')}}/{{ $tables4->id }}/edit">
+                                                    <a href="{{ url('merchant/table-management')}}/{{ $tables4->id }}/edit">
                                                         <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px">
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ url('admin/table-management')}}/{{ $tables4->id }}/delete">
+                                                    <a href="{{ url('merchant/table-management')}}/{{ $tables4->id }}/delete">
                                                         <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px">
                                                     </a>
                                                 </li>
@@ -1498,7 +1496,7 @@
                                                                                 </ul>
                                                                             </div>
                                                                         </div>
-                                                                    </div> 
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1977,7 +1975,7 @@
                                                 <img src="{{ asset('public/merchemtAssets/images/table_four.png')}}" alt="icon">
                                             </figure>
                                             <div class="Jessica-pra">
-                                                <h3>Table not found</h3>
+                                                <h3>Table 4 not found</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -2014,12 +2012,12 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ url('admin/table-management')}}/{{ $tables6->id }}/edit">
+                                                    <a href="{{ url('merchant/table-management')}}/{{ $tables6->id }}/edit">
                                                         <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="20px">
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ url('admin/table-management')}}/{{ $tables6->id }}/delete">
+                                                    <a href="{{ url('merchant/table-management')}}/{{ $tables6->id }}/delete">
                                                         <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="20px">
                                                     </a>
                                                 </li>
@@ -2136,7 +2134,7 @@
                                                                                 </ul>
                                                                             </div>
                                                                         </div>
-                                                                    </div>                                                                    
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2613,7 +2611,7 @@
                                                 <img src="{{ asset('public/merchemtAssets/images/table_six.png')}}" alt="icon">
                                             </figure>
                                             <div class="Jessica-pra">
-                                                <h3>Table not found</h3>
+                                                <h3>Table 6 not found</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -2627,8 +2625,6 @@
         </div>
     </div>
 </div>
-
-
 @endsection
 @section('pagejs')
 <script>

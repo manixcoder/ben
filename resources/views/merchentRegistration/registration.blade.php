@@ -23,7 +23,7 @@
                         <img src="{{ asset('public/merchemtAssets/images/OBJECTS.svg')}}" alt="OBJECTS">
                     </figure>
                     <h3>Contrary to popular belief </h3>
-                    <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
                 </div>
                 <div class="login-with sign-up-benefitme">
                     <figure>
@@ -53,7 +53,9 @@
                                         @endforeach
                                     </select>
                                     @error('company_type')
-                                    <small class="form-control-feedback">{{ $errors->first('company_type') }}</small>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                     @enderror
                                 </div>
                                 <div class="form-group ">
