@@ -241,7 +241,7 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
 
         Route::get('/', 'Merchant\RoomManagementController@index');
         Route::get('create', 'Merchant\RoomManagementController@create');
-       
+
         Route::post('/save-room', 'Merchant\RoomManagementController@store');
         Route::get('{id}/show', 'Merchant\RoomManagementController@show');
         Route::get('{id}/edit', 'Merchant\RoomManagementController@edit');
@@ -264,6 +264,42 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
         Route::get('{id}/edit', 'Merchant\TableManagementController@edit');
         Route::post('{id}/update', 'Merchant\TableManagementController@update');
         Route::get('delete/{id}', 'Merchant\TableManagementController@destroy');
+    });
+
+    /*
+    |------------------------------------------
+    | Menu Management Routes Here     |
+    |-----------------------------------------
+     */
+    Route::group(['prefix' => 'menu-management'], function () {
+
+        Route::get('/', 'Merchant\MenuManagementController@index');
+        Route::get('create', 'Merchant\MenuManagementController@create');
+
+        Route::post('/save-menu', 'Merchant\MenuManagementController@store');
+        Route::get('{id}/show', 'Merchant\MenuManagementController@show');
+        Route::get('{id}/edit', 'Merchant\MenuManagementController@edit');
+        Route::post('{id}/update', 'Merchant\MenuManagementController@update');
+        Route::get('delete/{id}', 'Merchant\MenuManagementController@destroy');
+    });
+
+
+    /*
+    |------------------------------------------
+    | Menu Category Management Routes Here     |
+    |-----------------------------------------
+     */
+    Route::group(['prefix' => 'menu-category-management'], function () {
+
+        Route::get('/', 'Merchant\MenuCategoryManagementController@index');
+        Route::get('create', 'Merchant\MenuCategoryManagementController@create');
+
+        Route::post('/save-menu-category', 'Merchant\MenuCategoryManagementController@store');
+        Route::get('{id}/show', 'Merchant\MenuCategoryManagementController@show');
+        Route::get('{id}/edit', 'Merchant\MenuCategoryManagementController@edit');
+        Route::post('{id}/update-menu-category', 'Merchant\MenuCategoryManagementController@update');
+        Route::get('delete/{id}', 'Merchant\MenuCategoryManagementController@destroy');
+        Route::get('getcategoryData/{id}', 'Merchant\MenuCategoryManagementController@getcategoryData');
     });
 });
 /*=====================================Merchant End=====================================*/

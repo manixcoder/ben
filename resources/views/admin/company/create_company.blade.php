@@ -32,12 +32,12 @@
                 <div class="col-md-6 col-sm-6">
                     <div class="form-group">
                         @php
-                        $business_categories = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','1')->get();
+                        $businessCategories = DB::table('categories')->where('parent_id','=','0')->where('c_type','=','1')->get();
                         @endphp
                         <label>Category</label>
                         <select class="form-control @error('company_type') form-control-danger @enderror givepoint-img" id="company_type" value="{{ old('company_type') }}" placeholder="company_type" name="company_type" onChange="getCategory(this);" required>
                             <option value="">Select Category</option>
-                            @foreach($business_categories as $key =>$categories)
+                            @foreach($businessCategories as $key =>$categories)
                             <option value="{{ $categories->id }}">{{ ucfirst($categories->name) }}</option>
                             @endforeach
                         </select>
@@ -235,7 +235,7 @@
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <div class="form-group">
-                        <input class="form-check-input" type="checkbox" name="is_audience"  id="is_audience" required>
+                        <input class="form-check-input" type="checkbox" name="is_audience" id="is_audience" required>
                         <label class="form-check-label" for="is_audience">
                             This person gave me permission to email them
                             <span>
@@ -251,7 +251,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="checkbox" name="is_confirmation_chk"  id="is_confirmation_chk" required>
+                        <input class="form-check-input" type="checkbox" name="is_confirmation_chk" id="is_confirmation_chk" required>
                         <label class="form-check-label" for="is_confirmation_chk">
                             If this person is already in my audience,update their profile
 
