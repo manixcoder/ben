@@ -20,7 +20,7 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="form-group ">
                             <div class="coutome-uploadbtn">
-                                <input type="file" name="room_image" class="form-control upload-file" placeholder="Mobile Number">
+                                <input type="file" name="room_image" onchange="loadFile(event)" class="form-control upload-file" placeholder="Mobile Number">
                                 @error('room_image')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -28,7 +28,7 @@
                                 @enderror
                                 <span>
                                     <figure>
-                                        <img src="{{ asset('public/merchemtAssets/images/upload_img.png')}}" alt="upload_img " width="40px">
+                                        <img src="{{ asset('public/merchemtAssets/images/upload_img.png')}}" id="output" alt="upload_img " width="40px">
                                     </figure>
                                     Upload an image
                                 </span>
@@ -38,7 +38,7 @@
                     <div class="col-md-6 col-sm-6">
                         <label>Room Type</label>
                         <div class="form-group">
-                            <input type="text" name="room_type" id="room_type" class="form-control">
+                            <input type="text" name="room_type" id="room_type" class="form-control" placeholder="Room Type">
                             @error('room_type')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -283,5 +283,14 @@
             $("#safty_add").append('<input  type="text" name="health_safety[]" class="form-control" placeholder="Health & Safety" style="margin-top: 10px;display: inline-block;width: 100%;" >');
         });
     });
+
+    /*image display */
+    var loadFile = function(event) {
+        var output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+            URL.revokeObjectURL(output.src) // free memory
+        }
+    };
 </script>
 @stop
