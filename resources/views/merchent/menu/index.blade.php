@@ -19,7 +19,7 @@
                 <p>Menu</p>
             </div>
             <div class="col-md-6 text-right">
-                <button><i class="fa fa-refresh" aria-hidden="true"></i> Switch to created menu</button>
+                <a href="{{ url('merchant/menu-management/menu-list') }}" class="refresh-box"><i class="fa fa-refresh" aria-hidden="true"></i> Switch to created menu</a>
                 <a href="{{ url('merchant/menu-category-management') }}">Categories</a>
                 <a href="{{ url('merchant/menu-management/create') }}">Add New Menu</a>
             </div>

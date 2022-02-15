@@ -20,7 +20,7 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="form-group ">
                             <div class="coutome-uploadbtn">
-                                <input type="file" name="disk_image" class="form-control upload-file">
+                                <input type="file" name="disk_image" class="form-control @error('disk_image') is-invalid @enderror upload-file">
                                 @error('disk_image')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
