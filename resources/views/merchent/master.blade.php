@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +12,6 @@
     @yield('pageCss')
     <title>{{ config('app.name', 'Laravel') }} @yield('pageTitle')</title>
 </head>
-
 <body>
     <header>
         <div class="benefitme">

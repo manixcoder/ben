@@ -5,8 +5,6 @@
 <style>
 </style>
 @stop
-
-
 <div class="add-newoffer">
     <div class="pra-sec">
         <p>Add New Dish</p>
@@ -73,7 +71,6 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
-
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6">

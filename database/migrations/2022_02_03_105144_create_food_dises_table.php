@@ -18,7 +18,7 @@ class CreateFoodDisesTable extends Migration
             $table->integer('merchent_id');
             $table->string('disk_category_id')->nullable();
             $table->string('dise_name')->nullable();
-            $table->longText('dise_description')->nullable();            
+            $table->longText('dise_description')->nullable();
             $table->string('disk_price')->nullable();
             $table->string('disk_discount')->nullable();
             $table->date('disk_valid')->nullable();
