@@ -23,6 +23,7 @@ class CreateFoodDisesTable extends Migration
             $table->string('disk_discount')->nullable();
             $table->date('disk_valid')->nullable();
             $table->date('disk_image')->nullable();
+            $table->enum('is_with_category', ['0', '1'])->default(1)->comment = '0=with_category , 1 = with_category';
             $table->enum('is_available', ['1', '2'])->default(1)->comment = '1=available, 2 = not available';
             $table->timestamps();
         });
