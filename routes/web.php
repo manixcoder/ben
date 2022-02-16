@@ -274,12 +274,16 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
     Route::group(['prefix' => 'menu-management'], function () {
 
         Route::get('/', 'Merchant\MenuManagementController@index');
+        Route::get('/menu-list', 'Merchant\MenuManagementController@menuList');
         Route::get('create', 'Merchant\MenuManagementController@create');
 
+        Route::get('create-card', 'Merchant\MenuManagementController@createCard');
+
         Route::post('/save-menu', 'Merchant\MenuManagementController@store');
+        Route::post('/save-menu-card', 'Merchant\MenuManagementController@saveMenuCard');
         Route::get('{id}/show', 'Merchant\MenuManagementController@show');
         Route::get('{id}/edit', 'Merchant\MenuManagementController@edit');
-        Route::post('{id}/update', 'Merchant\MenuManagementController@update');
+        Route::post('{id}/update-menu', 'Merchant\MenuManagementController@update');
         Route::get('delete/{id}', 'Merchant\MenuManagementController@destroy');
     });
 

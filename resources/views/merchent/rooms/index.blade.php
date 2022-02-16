@@ -351,13 +351,15 @@
                                 <img src="{{ asset('public/merchemtAssets/images/circle.jpg')}}" alt="circle">
                             </figure>
                             <div class="Jessica-pra">
-                                <p>#NUD5449595</p>
-                                <h3>Jessica Johnson</h3>
-                                <p>jessicajohn94@gmail.com</p>
-                                <p>9800000058</p>
-                                <h3>Room Name 2</h3>
+                                <p> #NUD5449595 </p>
+                                <h3> Jessica Johnson </h3>
+                                <p> jessicajohn94@gmail.com </p>
+                                <p> 9800000058 </p>
+                                <h3> Room Name 2 </h3>
                                 <p>
-                                    <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
+                                    <i>
+                                        <img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px">
+                                    </i>
                                     4 People 2 Room
                                 </p>
                             </div>
@@ -393,15 +395,17 @@
                 </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="messages">
-
                 <?php
                 $room2Data = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->where('room_for', '2')->get();
+                $room2Data = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->where('room_for', '2')->get();
                 $room4Data = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->where('room_for', '4')->get();
+                $room5Data = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->where('room_for', '5')->get();
                 ?>
                 <a href="{{ url('merchant/room-management/create') }}" class="addproduct-btn pull-right">Add New Room</a>
                 <div class="new-booking">
                     <div class="row">
                         <ul class="nav nav-tabs number-sec col-md-12" role="tablist">
+
                             <li class="col-md-4 text-left active" role="presentation">
                                 <a class="number-table" href="#subhome" aria-controls="subhome" role="tab" data-toggle="tab">
                                     <figure>
@@ -419,6 +423,8 @@
                                     </div>
                                 </a>
                             </li>
+
+
                             <li class="col-md-4 text-left" role="presentation">
                                 <a class="number-table table-box" href="#profilesub" aria-controls="profilesub" role="tab" data-toggle="tab">
                                     <figure class="small-img">
@@ -433,7 +439,6 @@
                                                 4
                                             </b>
                                         </p>
-
                                     </div>
                                 </a>
                             </li>
@@ -443,7 +448,14 @@
                                         <img src="{{ asset('public/merchemtAssets/images/room_no.png')}}" alt="icon" width="80%">
                                     </figure>
                                     <div class="Jessica-pra room-for">
-                                        <p> <span>Room for</span><b>5</b></p>
+                                        <p>
+                                            <span>
+                                                Room for
+                                            </span>
+                                            <b>
+                                                5
+                                            </b>
+                                        </p>
                                     </div>
                                 </a>
                             </li>
@@ -453,7 +465,7 @@
                 </div>
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="subhome">
-                        1
+
                         @forelse($room2Data as $room2)
                         <div class="john-doe-box">
                             <div class="row">
@@ -521,58 +533,10 @@
                         </div>
                         @endforelse
 
-                        <!-- div class="john-doe-box">
-                            <div class="row">
-                                <div class="col-md-9 text-left">
-                                    <figure class="pizza-sec">
-                                        <img src="{{ asset('public/merchemtAssets/images/room-img.jpeg')}}" alt="circle">
-                                    </figure>
-                                    <div class="Jessica-pra text-contant">
-                                        <h3>Royal Deluxe Room</h3>
-                                        <p> <img src="{{ asset('public/merchemtAssets/images/my_profile.png')}}" alt=""> 2 Guest</p>
-                                        <ul>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_sqft.png')}}" alt="">
-                                                10 Sq Ft
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="">
-                                                2 Single Beds
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">
-                                                Free WiFi
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="">
-                                                Air Condition
-                                            </li>
-                                        </ul>
-                                        <h3>$ 1200 <span class="per-night">Per Night</span></h3>
+                    </div>
+                    <div role="tabpanel" class="tab-pane " id="profilesub">
 
-                                    </div>
-                                </div>
-                                <div class="col-md-3 text-right">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        @forelse($room4Data as $room4)
                         <div class="john-doe-box">
                             <div class="row">
                                 <div class="col-md-9 text-left">
@@ -580,16 +544,19 @@
                                         <img src="{{ asset('public/merchemtAssets/images/room-img.jpeg')}}" alt="circle">
                                     </figure>
                                     <div class="Jessica-pra text-contant">
-                                        <h3>Family Room</h3>
-                                        <p> <img src="images/my_profile.png" alt=""> 2 Guest</p>
+                                        <h3>{{ $room4->room_type }}</h3>
+                                        <p>
+                                            <img src="{{ asset('public/merchemtAssets/images/my_profile.png')}}" alt="">
+                                            {{ $room4->room_for }} Guest
+                                        </p>
                                         <ul>
                                             <li>
                                                 <img src="{{ asset('public/merchemtAssets/images/amt_sqft.png')}}" alt="">
-                                                10 Sq Ft
+                                                {{ $room4->room_sq_ft }} Sq Ft
                                             </li>
                                             <li>
                                                 <img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="">
-                                                2 Single Beds
+                                                {{ $room4->single_beds }} Single Beds
                                             </li>
                                             <li>
                                                 <img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">
@@ -601,7 +568,7 @@
                                             </li>
                                         </ul>
                                         <h3>
-                                            $ 1200
+                                            $ {{ $room4->price_per_night }}
                                             <span class="per-night">
                                                 Per Night
                                             </span>
@@ -629,12 +596,16 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div -->
+                        </div>
+                        @empty
+                        <div class="col-md-9 text-left">
+                            No data
+                        </div>
+                        @endforelse
                     </div>
-                    <div role="tabpanel" class="tab-pane " id="profilesub">
-                        2
+                    <div role="tabpanel" class="tab-pane " id="messagessub">
 
-                        @forelse($room4Data as $room2)
+                        @forelse($room5Data as $room5)
                         <div class="john-doe-box">
                             <div class="row">
                                 <div class="col-md-9 text-left">
@@ -642,16 +613,19 @@
                                         <img src="{{ asset('public/merchemtAssets/images/room-img.jpeg')}}" alt="circle">
                                     </figure>
                                     <div class="Jessica-pra text-contant">
-                                        <h3>Superior Double or Twin Room</h3>
-                                        <p> <img src="{{ asset('public/merchemtAssets/images/my_profile.png')}}" alt=""> 2 Guest</p>
+                                        <h3>{{ $room5->room_type }}</h3>
+                                        <p>
+                                            <img src="{{ asset('public/merchemtAssets/images/my_profile.png')}}" alt="">
+                                            {{ $room5->room_for }} Guest
+                                        </p>
                                         <ul>
                                             <li>
                                                 <img src="{{ asset('public/merchemtAssets/images/amt_sqft.png')}}" alt="">
-                                                10 Sq Ft
+                                                {{ $room5->room_sq_ft }} Sq Ft
                                             </li>
                                             <li>
                                                 <img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="">
-                                                2 Single Beds
+                                                {{ $room5->single_beds }} Single Beds
                                             </li>
                                             <li>
                                                 <img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">
@@ -663,7 +637,7 @@
                                             </li>
                                         </ul>
                                         <h3>
-                                            $ 1200
+                                            $ {{ $room5->price_per_night }}
                                             <span class="per-night">
                                                 Per Night
                                             </span>
@@ -698,297 +672,6 @@
                         </div>
                         @endforelse
 
-
-
-                        <!-- div class="john-doe-box">
-                            <div class="row">
-                                <div class="col-md-9 text-left">
-                                    <figure class="pizza-sec">
-                                        <img src="{{ asset('public/merchemtAssets/images/room-img.jpeg')}}" alt="circle">
-                                    </figure>
-                                    <div class="Jessica-pra text-contant">
-                                        <h3>Royal Deluxe Room</h3>
-                                        <p> <img src="{{ asset('public/merchemtAssets/images/my_profile.png')}}" alt=""> 2 Guest</p>
-                                        <ul>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_sqft.png')}}" alt="">
-                                                10 Sq Ft
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="">
-                                                2 Single Beds
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">
-                                                Free WiFi
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="">
-                                                Air Condition
-                                            </li>
-                                        </ul>
-                                        <h3>
-                                            $ 1200
-                                            <span class="per-night">
-                                                Per Night
-                                            </span>
-                                        </h3>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-3 text-right">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="john-doe-box">
-                            <div class="row">
-                                <div class="col-md-9 text-left">
-                                    <figure class="pizza-sec">
-                                        <img src="{{ asset('public/merchemtAssets/images/room-img.jpeg')}}" alt="circle">
-                                    </figure>
-                                    <div class="Jessica-pra text-contant">
-                                        <h3>Family Room</h3>
-                                        <p> <img src="{{ asset('public/merchemtAssets/images/my_profile.png')}}" alt=""> 2 Guest</p>
-                                        <ul>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_sqft.png')}}" alt="">
-                                                10 Sq Ft
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="">
-                                                2 Single Beds
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">
-                                                Free WiFi
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="">
-                                                Air Condition
-                                            </li>
-                                        </ul>
-                                        <h3>
-                                            $ 1200
-                                            <span class="per-night">
-                                                Per Night
-                                            </span>
-                                        </h3>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-3 text-right">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div -->
-                    </div>
-                    <div role="tabpanel" class="tab-pane " id="messagessub">
-                        3
-                        <div class="john-doe-box">
-                            <div class="row">
-                                <div class="col-md-9 text-left">
-                                    <figure class="pizza-sec">
-                                        <img src="{{ asset('public/merchemtAssets/images/room-img.jpeg')}}" alt="circle">
-                                    </figure>
-                                    <div class="Jessica-pra text-contant">
-                                        <h3>Superior Double or Twin Room</h3>
-                                        <p> <img src="{{ asset('public/merchemtAssets/images/my_profile.png')}}" alt=""> 2 Guest</p>
-                                        <ul>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_sqft.png')}}" alt="">
-                                                10 Sq Ft
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="">
-                                                2 Single Beds
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">
-                                                Free WiFi
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="">
-                                                Air Condition
-                                            </li>
-                                        </ul>
-                                        <h3>
-                                            $ 1200
-                                            <span class="per-night">
-                                                Per Night
-                                            </span>
-                                        </h3>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-3 text-right">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="john-doe-box">
-                            <div class="row">
-                                <div class="col-md-9 text-left">
-                                    <figure class="pizza-sec">
-                                        <img src="{{ asset('public/merchemtAssets/images/room-img.jpeg')}}" alt="circle">
-                                    </figure>
-                                    <div class="Jessica-pra text-contant">
-                                        <h3>Royal Deluxe Room</h3>
-                                        <p> <img src="{{ asset('public/merchemtAssets/images/my_profile.png')}}" alt=""> 2 Guest</p>
-                                        <ul>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_sqft.png')}}" alt="">
-                                                10 Sq Ft
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="">
-                                                2 Single Beds
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">
-                                                Free WiFi
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="">
-                                                Air Condition
-                                            </li>
-                                        </ul>
-                                        <h3>
-                                            $ 1200
-                                            <span class="per-night">
-                                                Per Night
-                                            </span>
-                                        </h3>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-3 text-right">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="john-doe-box">
-                            <div class="row">
-                                <div class="col-md-9 text-left">
-                                    <figure class="pizza-sec">
-                                        <img src="{{ asset('public/merchemtAssets/images/room-img.jpeg')}}" alt="circle">
-                                    </figure>
-                                    <div class="Jessica-pra text-contant">
-                                        <h3>Family Room</h3>
-                                        <p> <img src="{{ asset('public/merchemtAssets/images/my_profile.png')}}" alt=""> 2 Guest</p>
-                                        <ul>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_sqft.png')}}" alt="">
-                                                10 Sq Ft
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="">
-                                                2 Single Beds
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">
-                                                Free WiFi
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="">
-                                                Air Condition
-                                            </li>
-                                        </ul>
-                                        <h3>
-                                            $ 1200
-                                            <span class="per-night">
-                                                Per Night
-                                            </span>
-                                        </h3>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-3 text-right">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/edit.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img src="{{ asset('public/merchemtAssets/images/delete.png')}}" alt="icon" width="18px">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
