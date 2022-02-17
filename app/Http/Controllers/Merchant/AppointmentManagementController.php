@@ -53,7 +53,7 @@ class AppointmentManagementController extends Controller
      * @param  \App\Models\Appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function show(Appointment $appointment)
+    public function show(Appointment $appointment, $id)
     {
         //
     }
@@ -64,7 +64,7 @@ class AppointmentManagementController extends Controller
      * @param  \App\Models\Appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Appointment $appointment)
+    public function edit(Appointment $appointment, $id)
     {
         //
     }

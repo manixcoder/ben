@@ -19,7 +19,10 @@ class TableManagementController extends Controller
     public function index()
     {
         $data = array();
-        return view('merchent.tables.index', $data);
+        return view(
+            'merchent.tables.index',
+            $data
+        );
     }
 
     /**
@@ -30,7 +33,7 @@ class TableManagementController extends Controller
     public function create()
     {
         $data = array();
-        return view('merchent.tables.create', $data);
+        return view('merchent.tables.create',$data);
     }
 
     /**
@@ -58,10 +61,10 @@ class TableManagementController extends Controller
                 'booking_time'          => $request->has('booking_time') ? $request->booking_time : '',
                 'number_tables'         => $request->has('number_tables') ? $request->number_tables : '',
             ]);
-            return redirect('/merchant/table-management')->with(['status' => 'success', 'message' => 'New Table added Successfully!']);
+            return redirect('/merchant/table-management')->with(['status' => 'success','message' => 'New Table added Successfully!']);
         } catch (\Exception $e) {
-            return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);
-            return back()->with(['status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.']);
+            return back()->with(['status' => 'danger','message' => $e->getMessage()]);
+            return back()->with(['status' => 'danger','message' => 'Some thing went wrong! Please try again later.']);
         }
     }
 
