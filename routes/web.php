@@ -305,6 +305,26 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
         Route::get('delete/{id}', 'Merchant\MenuCategoryManagementController@destroy');
         Route::get('getcategoryData/{id}', 'Merchant\MenuCategoryManagementController@getcategoryData');
     });
+
+
+    /*
+    |------------------------------------------
+    | Menu Category Management Routes Here     |
+    |-----------------------------------------
+     */
+    Route::group(['prefix' => 'appointments-management'], function () {
+
+        Route::get('/', 'Merchant\AppointmentManagementController@index');
+        Route::get('/availability-appointments', 'Merchant\AppointmentManagementController@availabilityAppointments');
+        Route::get('create', 'Merchant\AppointmentManagementController@create');
+
+        Route::post('/save-menu-category', 'Merchant\AppointmentManagementController@store');
+        Route::get('{id}/show', 'Merchant\AppointmentManagementController@show');
+        Route::get('{id}/edit', 'Merchant\AppointmentManagementController@edit');
+        Route::post('{id}/update-menu-category', 'Merchant\AppointmentManagementController@update');
+        Route::get('delete/{id}', 'Merchant\AppointmentManagementController@destroy');
+        Route::get('getcategoryData/{id}', 'Merchant\AppointmentManagementController@getcategoryData');
+    });
 });
 /*=====================================Merchant End=====================================*/
 Route::group(['prefix' => 'users', 'middleware' => ['users', 'auth']], function () {

@@ -21,13 +21,6 @@
                         <div class="form-group ">
                             <div class="coutome-uploadbtn">
                                 <input type="file" name="disk_image" class="form-control @error('disk_image') is-invalid @enderror upload-file">
-                                @error('disk_image')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-
-
                                 <span>
                                     <figure>
                                         <img src="{{ asset('public/merchemtAssets/images/upload_img.png')}}" alt="upload_img " width="40px">
@@ -36,6 +29,11 @@
                                     <br>
                                     .pdf .jpg .png
                                 </span>
+                                @error('disk_image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
                     </div>

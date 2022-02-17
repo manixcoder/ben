@@ -69,7 +69,7 @@ class MenuManagementController extends Controller
             'disk_price'            => 'required',
             'disk_discount'         => 'required',
             'disk_valid'            => 'required',
-            'disk_image'            => 'required',
+            // 'disk_image'            => 'required',
             //'disk_image'          => 'required|image|mimes:jpeg,bmp,svg,jpg,png',
         ]);
         if ($validator->fails()) {
@@ -117,11 +117,12 @@ class MenuManagementController extends Controller
 
     public function saveMenuCard(Request $request)
     {
-        //dd($request->all());
+        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'disk_image'            => 'required',
         ]);
         if ($validator->fails()) {
+            // dd($validator);
             return back()->withErrors($validator)->withInput();
         }
         try {
@@ -129,6 +130,8 @@ class MenuManagementController extends Controller
                 $destinationPath = public_path('/uploads/');
                 $profileImage = date('YmdHis') . "-" . $files->getClientOriginalName();
                 $path =  $files->move($destinationPath, $profileImage);
+            } else {
+                $profileImage = '';
             }
             $diseData = MenuModel::create([
                 'merchent_id'           => Auth::user()->id,
@@ -137,16 +140,14 @@ class MenuManagementController extends Controller
                 'dise_description'      => '',
                 'disk_category_id'      => '',
                 'disk_image'            => $profileImage,
-
             ]);
-
-
             return redirect('/merchant/menu-management/menu-list')
                 ->with([
                     'status' => 'success',
                     'message' => 'Dise created Successfully!'
                 ]);
         } catch (\Exception $e) {
+            // dd($validator);
             return back()
                 ->with([
                     'status' => 'danger',
@@ -232,16 +233,8 @@ class MenuManagementController extends Controller
                     'message' => 'Dise updated Successfully!'
                 ]);
         } catch (\Exception $e) {
-            return back()
-                ->with([
-                    'status' => 'danger',
-                    'message' => $e->getMessage()
-                ]);
-            return back()
-                ->with([
-                    'status' => 'danger',
-                    'message' => 'Some thing went wrong! Please try again later.'
-                ]);
+            return back()->with(['status' => 'danger','message' => $e->getMessage()]);
+            return back()->with(['status' => 'danger','message' => 'Some thing went wrong! Please try again later.']);
         }
     }
 

@@ -116,7 +116,7 @@ class RoomManagementController extends Controller
      * @param  \App\Models\RoomModel  $roomModel
      * @return \Illuminate\Http\Response
      */
-    public function show(RoomModel $roomModel)
+    public function show(RoomModel $roomModel, $id)
     {
         //
     }
@@ -127,7 +127,7 @@ class RoomManagementController extends Controller
      * @param  \App\Models\RoomModel  $roomModel
      * @return \Illuminate\Http\Response
      */
-    public function edit(RoomModel $roomModel)
+    public function edit(RoomModel $roomModel, $id)
     {
         //
     }
@@ -139,7 +139,7 @@ class RoomManagementController extends Controller
      * @param  \App\Models\RoomModel  $roomModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RoomModel $roomModel)
+    public function update(Request $request, RoomModel $roomModel, $id)
     {
         //
     }
@@ -150,7 +150,7 @@ class RoomManagementController extends Controller
      * @param  \App\Models\RoomModel  $roomModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RoomModel $roomModel)
+    public function destroy(RoomModel $roomModel, $id)
     {
         //
     }

@@ -41,7 +41,6 @@ class TableManagementController extends Controller
      */
     public function store(Request $request)
     {
-      //  dd($request->all());
         $validator = Validator::make($request->all(), [
             'table_name'        => 'required',
             'table_for'         => 'required',
@@ -72,7 +71,7 @@ class TableManagementController extends Controller
      * @param  \App\Models\TableModel  $tableModel
      * @return \Illuminate\Http\Response
      */
-    public function show(TableModel $tableModel)
+    public function show(TableModel $tableModel, $id)
     {
         //
     }
@@ -83,7 +82,7 @@ class TableManagementController extends Controller
      * @param  \App\Models\TableModel  $tableModel
      * @return \Illuminate\Http\Response
      */
-    public function edit(TableModel $tableModel,$id)
+    public function edit(TableModel $tableModel, $id)
     {
         dd($id);
     }
@@ -95,7 +94,7 @@ class TableManagementController extends Controller
      * @param  \App\Models\TableModel  $tableModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TableModel $tableModel)
+    public function update(Request $request, TableModel $tableModel, $id)
     {
         //
     }
@@ -106,7 +105,7 @@ class TableManagementController extends Controller
      * @param  \App\Models\TableModel  $tableModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TableModel $tableModel)
+    public function destroy(TableModel $tableModel, $id)
     {
         //
     }
