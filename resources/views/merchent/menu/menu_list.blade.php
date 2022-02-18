@@ -10,6 +10,12 @@
         <div class="col-md-6 text-left">
             <span> Menu</span>
         </div>
+        @if(Session::has('status'))
+        <div class="alert alert-{{ Session::get('status') }}">
+            <i class="fa fa-building-o" aria-hidden="true"></i> {{ Session::get('message') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+        </div>
+        @endif
         <div class="col-md-6 text-right">
             <span class="refresh">
                 <a href="{{ url('merchant/menu-management/') }}">

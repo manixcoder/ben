@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Redirect;
 use Validator;
 use Auth;
+use File;
 
 class RoomManagementController extends Controller
 {
@@ -43,7 +44,7 @@ class RoomManagementController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
+        // dd($request->all());
         $validator = Validator::make($request->all(), [
             'room_type'             => 'required',
             'room_for'              => 'required',
@@ -67,6 +68,7 @@ class RoomManagementController extends Controller
         try {
             // dd($request->all());
             if ($files = $request->room_image) {
+                
                 $destinationPath = public_path('/uploads/');
                 $profileImage = date('YmdHis') . "-" . $files->getClientOriginalName();
                 $path =  $files->move($destinationPath, $profileImage);
@@ -91,7 +93,7 @@ class RoomManagementController extends Controller
                 'check_out'                 => $request->has('check_out') ? $request->check_out : '',
                 'extra_rows'                => serialize($request->extra_rows),
                 'health_safety'             => serialize($request->health_safety),
-                'room_image'                => $image
+                //'room_image'                => $image
             ]);
             // if ($request->hasFile('room_image')) {
             //     $room = RoomModel::find($roomData->id);
@@ -100,6 +102,8 @@ class RoomManagementController extends Controller
             //     $room->move('public/uploads/', $filename);
             //     $room->room_image = $filename;
             //     $room->save();
+            // } else {
+            //     $image = '';
             // }
             // dd($roomData);
 
