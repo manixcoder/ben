@@ -67,15 +67,15 @@ class RoomManagementController extends Controller
         }
         try {
             // dd($request->all());
-            if ($files = $request->room_image) {
-                
-                $destinationPath = public_path('/uploads/');
-                $profileImage = date('YmdHis') . "-" . $files->getClientOriginalName();
-                $path =  $files->move($destinationPath, $profileImage);
-                $image = $insert['room_image'] = "$profileImage";
-            } else {
-                $image = '';
-            }
+            // if ($files = $request->room_image) {
+            //     $destinationPath = public_path('/uploads/');
+            //     $profileImage = date('YmdHis') . "-" . $files->getClientOriginalName();
+            //     $path =  $files->move($destinationPath, $profileImage);
+            //     $image = $insert['room_image'] = "$profileImage";
+            // } else {
+            //     $image = '';
+            // }
+            $image = '';
             $roomData =  RoomModel::create([
                 'merchent_id'               => Auth::user()->id,
                 'room_type'                 => $request->has('room_type') ? $request->room_type : '',
@@ -93,7 +93,7 @@ class RoomManagementController extends Controller
                 'check_out'                 => $request->has('check_out') ? $request->check_out : '',
                 'extra_rows'                => serialize($request->extra_rows),
                 'health_safety'             => serialize($request->health_safety),
-                //'room_image'                => $image
+                'room_image'             => $image
             ]);
             // if ($request->hasFile('room_image')) {
             //     $room = RoomModel::find($roomData->id);
