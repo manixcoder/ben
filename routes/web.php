@@ -326,6 +326,23 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
         Route::get('delete/{id}', 'Merchant\AppointmentManagementController@destroy');
         Route::get('getcategoryData/{id}', 'Merchant\AppointmentManagementController@getcategoryData');
     });
+
+    /*
+    |------------------------------------------
+    | Adverting Management Routes Here     |
+    |-----------------------------------------
+     */
+    Route::group(['prefix' => 'adverting-management'], function () {
+
+        Route::get('/', 'Merchant\AdvertingManagementController@index');
+        Route::get('create', 'Merchant\AdvertingManagementController@create');
+
+        Route::post('/save-adverting', 'Merchant\AdvertingManagementController@store');
+        Route::get('{id}/show', 'Merchant\AdvertingManagementController@show');
+        Route::get('{id}/edit', 'Merchant\AdvertingManagementController@edit');
+        Route::post('{id}/update-adverting', 'Merchant\AdvertingManagementController@update');
+        Route::get('delete/{id}', 'Merchant\AdvertingManagementController@destroy');
+    });
 });
 /*=====================================Merchant End=====================================*/
 Route::group(['prefix' => 'users', 'middleware' => ['users', 'auth']], function () {
