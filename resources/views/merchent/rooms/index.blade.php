@@ -436,12 +436,16 @@
                 <?php
                 if (count($roomTypeData) > 0) {
                     $roomsData = DB::table('hotel_room')->where('room_for', $roomTypeData[0]->room_for)->where('merchent_id', Auth::user()->id)->get();
+                    
                 
                 ?>
                 <div class="tab-content" id="listings_list">
                     <div id="default_div">
                         <div role="tabpanel" class="tab-pane active" id="subhome">
                         @foreach($roomsData as $rooms)
+                        @php 
+                        $ammenitis = unserialize($rooms->selected_amenities); 
+                        @endphp
                             <div class="john-doe-box">
                                 <div class="row">
                                     <div class="col-md-9 text-left">
@@ -463,14 +467,18 @@
                                                 <img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="">
                                                 {{ $rooms->single_beds  }} Single Beds
                                             </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">
-                                                Free WiFi
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="">
-                                                Air Condition
-                                            </li>
+
+                                            @foreach($ammenitis as $am)
+                                            @php
+                                            $amenitieData = DB::table('amenities')->where('id', $am)->first();
+                                            @endphp
+                                            @if($amenitieData->amenities_name =='Free WiFi')
+                                            <li><img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">Free WiFi</li>
+                                            @endif
+                                            @if($amenitieData->amenities_name =='Air Condition')
+                                            <li><img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="">Air Condition</li>
+                                            @endif
+                                            @endforeach
                                         </ul>
                                         <h3>
                                             $ {{ $rooms->price_per_night  }}

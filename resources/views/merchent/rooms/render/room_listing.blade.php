@@ -1,5 +1,10 @@
 @if(count($roomsData) > 0)
 @foreach($roomsData as $room)
+@php
+
+$ammenitis = unserialize($room->selected_amenities);
+
+@endphp
 <div role="tabpanel" class="tab-pane active" id="subhome-{{ $room->room_for }}">
     <div class="john-doe-box">
         <div class="row">
@@ -13,8 +18,17 @@
                     <ul>
                         <li><img src="{{ asset('public/merchemtAssets/images/amt_sqft.png')}}" alt="">{{ $room->room_sq_ft }} Sq Ft</li>
                         <li><img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="">{{ $room->single_beds  }} Single Beds</li>
+                        @foreach($ammenitis as $am)
+                        @php
+                        $amenitieData = DB::table('amenities')->where('id', $am)->first();                        
+                        @endphp
+                        @if($amenitieData->amenities_name =='Free WiFi')
                         <li><img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">Free WiFi</li>
+                        @endif
+                        @if($amenitieData->amenities_name =='Air Condition')
                         <li><img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="">Air Condition</li>
+                        @endif
+                        @endforeach
                     </ul>
                     <h3>
                         $ {{ $room->price_per_night  }}
