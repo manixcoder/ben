@@ -119,7 +119,7 @@ class RoomManagementController extends Controller
         if (!empty($id)) {
             $id = $id;
         } else {
-            $catData = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->where('room_for',$id)->orderby('id', 'ASC')->first();
+            $catData = DB::table('hotel_room')->where('merchent_id', Auth::user()->id)->where('room_for',$id)->orderby('id', 'ASC')->first();
             $id = $catData->room_for;
         }
         $roomsData = RoomModel::where('room_for', $id)->where('merchent_id', Auth::user()->id)->get();

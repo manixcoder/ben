@@ -13,7 +13,7 @@ class CreateHotelRoomeTable extends Migration
      */
     public function up()
     {
-        Schema::create('hotel_roome', function (Blueprint $table) {
+        Schema::create('hotel_room', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('merchent_id');
             $table->string('room_type')->nullable();
@@ -43,6 +43,6 @@ class CreateHotelRoomeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hotel_roome');
+        Schema::dropIfExists('hotel_room');
     }
 }

@@ -22,6 +22,14 @@
                             Per Night
                         </span>
                     </h3>
+                    @if($room->discount !='')
+                    <h3 style="color:red">
+                        $ {{ $room->discount  }}
+                        <span class="per-night-discount">
+                            Per Night
+                        </span>
+                    </h3>
+                    @endif
 
                 </div>
             </div>

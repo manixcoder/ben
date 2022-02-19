@@ -398,19 +398,15 @@
             <div role="tabpanel" class="tab-pane" id="messages">
                 <?php
 
-                $roomTypeData = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->distinct()->get(['room_for']);
+                $roomTypeData = DB::table('hotel_room')->where('merchent_id', Auth::user()->id)->distinct()->get(['room_for']);
 
                 $i = 0;
-                // $room2Data = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->where('room_for', '2')->get();
-                // $room4Data = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->where('room_for', '4')->get();
-                // $room5Data = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->where('room_for', '5')->get();
+               
                 ?>
                 <a href="{{ url('merchant/room-management/create') }}" class="addproduct-btn pull-right">Add New Room</a>
                 <div class="new-booking">
                     <div class="row">
                         <ul class="nav nav-tabs number-sec col-md-12" role="tablist">
-
-                            <?php  ?>
                             @forelse ($roomTypeData as $key=>  $roomType)
                             <li class="col-md-4 text-left <?php if ($pageTitle == 'Room' && $i == '0') { ?> active <?php } ?>" role="presentation">
                                 <a class="number-table room" href="#subhome-{{ $roomType->room_for }}" data-id="{{ $roomType->room_for }}" aria-controls="subhome-{{ $roomType->room_for }}" role="tab" data-toggle="tab">
@@ -434,20 +430,18 @@
                             <li class="col-md-4 text-left active" role="presentation">
                             </li>
                             @endforelse
-
                         </ul>
                     </div>
                 </div>
                 <?php
                 if (count($roomTypeData) > 0) {
-                    $roomsData = DB::table('hotel_roome')->where('room_for', $roomTypeData[0]->room_for)->where('merchent_id', Auth::user()->id)->get();
+                    $roomsData = DB::table('hotel_room')->where('room_for', $roomTypeData[0]->room_for)->where('merchent_id', Auth::user()->id)->get();
                 
                 ?>
                 <div class="tab-content" id="listings_list">
                     <div id="default_div">
                         <div role="tabpanel" class="tab-pane active" id="subhome">
                         @foreach($roomsData as $rooms)
-                        <?php // dd($rooms);?>
                             <div class="john-doe-box">
                                 <div class="row">
                                     <div class="col-md-9 text-left">
@@ -484,6 +478,14 @@
                                                 Per Night
                                             </span>
                                         </h3>
+                                        @if($rooms->discount !='')
+                                        <h3 style="color:red">
+                                            $ {{ $rooms->discount  }}
+                                            <span class="per-night-discount">
+                                                Per Night
+                                            </span>
+                                        </h3>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-md-3 text-right">
@@ -525,7 +527,6 @@
 <script>
     $(document).on('click', '.room', function() {
         var id = $(this).attr("data-id");
-        // alert(id);
         $('#default_div').css({
             'display': 'none',
         });
