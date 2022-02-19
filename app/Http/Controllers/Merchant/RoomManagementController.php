@@ -119,7 +119,7 @@ class RoomManagementController extends Controller
         if (!empty($id)) {
             $id = $id;
         } else {
-            $catData = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->where('room_for',$id)->orderby('id', 'ASC')->first();
+            $catData = DB::table('hotel_room')->where('merchent_id', Auth::user()->id)->where('room_for',$id)->orderby('id', 'ASC')->first();
             $id = $catData->room_for;
         }
         $roomsData = RoomModel::where('room_for', $id)->where('merchent_id', Auth::user()->id)->get();
@@ -127,7 +127,7 @@ class RoomManagementController extends Controller
         $data = array();
         $data['roomsData'] = $roomsData;
 
-        $currentData = view('merchent.rooms.render.roome_listing')->with('roomsData', $roomsData)->render();
+        $currentData = view('merchent.rooms.render.room_listing')->with('roomsData', $roomsData)->render();
 
         if ($currentData) {
             return response()->json(['status' => 'success', 'currentData' => $currentData]);

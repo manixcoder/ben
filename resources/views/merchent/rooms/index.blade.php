@@ -84,121 +84,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="john-doe-box">
-                    <div class="row">
-                        <div class="col-md-6 text-left">
-                            <figure>
-                                <img src="{{ asset('public/merchemtAssets/images/circle.jpg')}}" alt="circle">
-                            </figure>
-                            <div class="Jessica-pra">
-                                <p>#NUD5449595</p>
-                                <h3>Jessica Johnson</h3>
-                                <p>jessicajohn94@gmail.com</p>
-                                <p>9800000058</p>
-                                <h3>Room Name 2</h3>
-                                <p>
-                                    <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
-                                    4 People 2 Room
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <div class="appointment-for">
-                                <p>
-                                    Booking for :
-                                    <span>
-                                        10 Jun 21 | 10:30 am - 12 Jun 21 | 3:00 pm
-                                    </span>
-                                </p>
-                            </div>
-                            <span>
-                                <a>Decline</a>
-                            </span>
-                            <span>
-                                <a class="accept-bg">
-                                    Accept
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="john-doe-box">
-                    <div class="row">
-                        <div class="col-md-6 text-left">
-                            <figure>
-                                <img src="{{ asset('public/merchemtAssets/images/circle.jpg')}}" alt="circle">
-                            </figure>
-                            <div class="Jessica-pra">
-                                <p>#NUD5449595</p>
-                                <h3>John Doe</h3>
-                                <p>doejohn33@gmail.com</p>
-                                <p>9600000052</p>
-                                <h3>Room Name 1</h3>
-                                <p>
-                                    <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
-                                    4 People 2 Room
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <div class="appointment-for">
-                                <p>
-                                    Booking for :
-                                    <span>
-                                        10 Jun 21 | 10:30 am - 12 Jun 21 | 3:00 pm
-                                    </span>
-                                </p>
-                            </div>
-                            <span>
-                                <a>Decline</a>
-                            </span>
-                            <span>
-                                <a class="accept-bg">
-                                    Accept
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="john-doe-box">
-                    <div class="row">
-                        <div class="col-md-6 text-left">
-                            <figure>
-                                <img src="{{ asset('public/merchemtAssets/images/circle.jpg')}}" alt="circle">
-                            </figure>
-                            <div class="Jessica-pra">
-                                <p>#NUD5449595</p>
-                                <h3>Jessica Johnson</h3>
-                                <p>jessicajohn94@gmail.com</p>
-                                <p>9800000058</p>
-                                <h3>Room Name 2</h3>
-                                <p>
-                                    <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
-                                    4 People 2 Room
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <div class="appointment-for">
-                                <p>
-                                    Booking for :
-                                    <span>
-                                        10 Jun 21 | 10:30 am - 12 Jun 21 | 3:00 pm
-                                    </span>
-                                </p>
-                            </div>
-                            <span>
-                                <a>
-                                    Decline
-                                </a></span>
-                            <span>
-                                <a class="accept-bg">
-                                    Accept
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div role="tabpanel" class="tab-pane" id="profile">
                 <div class="john-doe-box">
@@ -214,155 +100,12 @@
                                 <p>9600000052</p>
                                 <h3>Room Name 1</h3>
                                 <p>
-                                    <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
-                                    4 People 2 Room
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <div class="appointment-for">
-                                <p>
-                                    Booking for :
-                                    <span>
-                                        10 Jun 21 | 10:30 am - 12 Jun 21 | 3:00 pm
-                                    </span>
-                                </p>
-                            </div>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="john-doe-box">
-                    <div class="row">
-                        <div class="col-md-6 text-left">
-                            <figure>
-                                <img src="{{ asset('public/merchemtAssets/images/circle.jpg')}}" alt="circle">
-                            </figure>
-                            <div class="Jessica-pra">
-                                <p>#NUD5449595</p>
-                                <h3>Jessica Johnson</h3>
-                                <p>jessicajohn94@gmail.com</p>
-                                <p>9800000058</p>
-                                <h3>Room Name 2</h3>
-                                <p>
-                                    <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
-                                    4 People 2 Room
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <div class="appointment-for">
-                                <p>
-                                    Booking for :
-                                    <span>
-                                        10 Jun 21 | 10:30 am - 12 Jun 21 | 3:00 pm
-                                    </span>
-                                </p>
-                            </div>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="john-doe-box">
-                    <div class="row">
-                        <div class="col-md-6 text-left">
-                            <figure>
-                                <img src="{{ asset('public/merchemtAssets/images/circle.jpg')}}" alt="circle">
-                            </figure>
-                            <div class="Jessica-pra">
-                                <p>#NUD5449595</p>
-                                <h3>John Doe</h3>
-                                <p>doejohn33@gmail.com</p>
-                                <p>9600000052</p>
-                                <h3>Room Name 1</h3>
-                                <p>
-                                    <i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i>
-                                    4 People 2 Room
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <div class="appointment-for">
-                                <p>
-                                    Booking for :
-                                    <span>
-                                        10 Jun 21 | 10:30 am - 12 Jun 21 | 3:00 pm
-                                    </span>
-                                </p>
-                            </div>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="john-doe-box">
-                    <div class="row">
-                        <div class="col-md-6 text-left">
-                            <figure>
-                                <img src="{{ asset('public/merchemtAssets/images/circle.jpg')}}" alt="circle">
-                            </figure>
-                            <div class="Jessica-pra">
-                                <p> #NUD5449595 </p>
-                                <h3> Jessica Johnson </h3>
-                                <p> jessicajohn94@gmail.com </p>
-                                <p> 9800000058 </p>
-                                <h3> Room Name 2 </h3>
-                                <p>
                                     <i>
                                         <img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px">
                                     </i>
                                     4 People 2 Room
                                 </p>
+
                             </div>
                         </div>
                         <div class="col-md-6 text-right">
@@ -394,25 +137,22 @@
                         </div>
                     </div>
                 </div>
+               
             </div>
             <div role="tabpanel" class="tab-pane" id="messages">
                 <?php
 
-                $roomTypeData = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->distinct()->get(['room_for']);
+                $roomTypeData = DB::table('hotel_room')->where('merchent_id', Auth::user()->id)->orderBy('room_for', 'ASC')->distinct()->get(['room_for']);
 
                 $i = 0;
-                // $room2Data = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->where('room_for', '2')->get();
-                // $room4Data = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->where('room_for', '4')->get();
-                // $room5Data = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->where('room_for', '5')->get();
+               
                 ?>
                 <a href="{{ url('merchant/room-management/create') }}" class="addproduct-btn pull-right">Add New Room</a>
                 <div class="new-booking">
                     <div class="row">
                         <ul class="nav nav-tabs number-sec col-md-12" role="tablist">
-
-                            <?php  ?>
-                            @forelse ($roomTypeData as $roomType)
-                            <li class="col-md-4 text-left <?php if ($pageTitle == 'Room' && $i == '0') { ?> class=" active" <?php } ?>" role="presentation">
+                            @forelse ($roomTypeData as $key=>  $roomType)
+                            <li class="col-md-4 text-left <?php if ($pageTitle == 'Room' && $i == '0') { ?> active <?php } ?>" role="presentation">
                                 <a class="number-table room" href="#subhome-{{ $roomType->room_for }}" data-id="{{ $roomType->room_for }}" aria-controls="subhome-{{ $roomType->room_for }}" role="tab" data-toggle="tab">
                                     <figure>
                                         <img src="{{ asset('public/merchemtAssets/images/room_no.png')}}" alt="icon" width="90px">
@@ -434,20 +174,22 @@
                             <li class="col-md-4 text-left active" role="presentation">
                             </li>
                             @endforelse
-
                         </ul>
                     </div>
                 </div>
                 <?php
                 if (count($roomTypeData) > 0) {
-                    $roomsData = DB::table('hotel_roome')->where('room_for', $roomTypeData[0]->room_for)->where('merchent_id', Auth::user()->id)->get();
+                    $roomsData = DB::table('hotel_room')->where('room_for', $roomTypeData[0]->room_for)->where('merchent_id', Auth::user()->id)->get();
+                    
                 
                 ?>
                 <div class="tab-content" id="listings_list">
                     <div id="default_div">
                         <div role="tabpanel" class="tab-pane active" id="subhome">
                         @foreach($roomsData as $rooms)
-                        <?php // dd($rooms);?>
+                        @php 
+                        $ammenitis = unserialize($rooms->selected_amenities); 
+                        @endphp
                             <div class="john-doe-box">
                                 <div class="row">
                                     <div class="col-md-9 text-left">
@@ -469,14 +211,18 @@
                                                 <img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="">
                                                 {{ $rooms->single_beds  }} Single Beds
                                             </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">
-                                                Free WiFi
-                                            </li>
-                                            <li>
-                                                <img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="">
-                                                Air Condition
-                                            </li>
+
+                                            @foreach($ammenitis as $am)
+                                            @php
+                                            $amenitieData = DB::table('amenities')->where('id', $am)->first();
+                                            @endphp
+                                            @if($amenitieData->amenities_name =='Free WiFi')
+                                            <li><img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">Free WiFi</li>
+                                            @endif
+                                            @if($amenitieData->amenities_name =='Air Condition')
+                                            <li><img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="">Air Condition</li>
+                                            @endif
+                                            @endforeach
                                         </ul>
                                         <h3>
                                             $ {{ $rooms->price_per_night  }}
@@ -484,6 +230,14 @@
                                                 Per Night
                                             </span>
                                         </h3>
+                                        @if($rooms->discount !='')
+                                        <h3 style="color:red">
+                                            $ {{ $rooms->discount  }}
+                                            <span class="per-night-discount">
+                                                Per Night
+                                            </span>
+                                        </h3>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-md-3 text-right">
@@ -525,7 +279,6 @@
 <script>
     $(document).on('click', '.room', function() {
         var id = $(this).attr("data-id");
-        // alert(id);
         $('#default_div').css({
             'display': 'none',
         });
