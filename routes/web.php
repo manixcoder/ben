@@ -247,6 +247,7 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
         Route::get('{id}/edit', 'Merchant\RoomManagementController@edit');
         Route::post('{id}/update', 'Merchant\RoomManagementController@update');
         Route::get('delete/{id}', 'Merchant\RoomManagementController@destroy');
+        Route::get('getRoomData/{id}', 'Merchant\RoomManagementController@getRoomData');
     });
 
     /*

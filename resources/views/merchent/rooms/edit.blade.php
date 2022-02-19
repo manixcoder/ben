@@ -1,5 +1,5 @@
 @extends('merchent.master')
-@section('pageTitle', 'Room Create')
+@section('pageTitle', 'Room Edit')
 @section('content')
 @section('pageCss')
 <style>
@@ -7,7 +7,7 @@
 @stop
 <div class="add-newoffer">
     <div class="pra-sec">
-        <p>Add New Room</p>
+        <p>Edit Room</p>
     </div>
     @if(Session::has('status'))
     <div class="alert alert-{{ Session::get('status') }}">
@@ -18,7 +18,7 @@
     <div class="form-box">
         <div class="row">
             <div class="generate  Customer-journey">
-                <form method="POST" action="{{ url('/merchant/room-management/save-room') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ url('/merchant/room-management/'..'/update-room') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="col-md-12">
                         <h3>Basic Room Details</h3>

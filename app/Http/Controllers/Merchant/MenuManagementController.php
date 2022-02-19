@@ -116,10 +116,10 @@ class MenuManagementController extends Controller
 
             if ($files = $request->disk_image) {
                 $destinationPath = public_path('/uploads/');
-                $profileImage = date('YmdHis') . "-" . $files->getClientOriginalName();
-                $path =  $files->move($destinationPath, $profileImage);
+                $disk_image = date('YmdHis') . "-" . $files->getClientOriginalName();
+                $path =  $files->move($destinationPath, $disk_image);
             } else {
-                $profileImage = '';
+                $disk_image = '';
             }
             $diseData = MenuModel::create([
                 'merchent_id'           => Auth::user()->id,
@@ -127,7 +127,7 @@ class MenuManagementController extends Controller
                 'dise_name'             => Null,
                 'dise_description'      => Null,
                 'disk_category_id'      => Null,
-                'disk_image'            => $profileImage,
+                'disk_image'            => $disk_image,
                 'created_at'            => date("Y-m-d H:i:s"),
                 'updated_at'            => date("Y-m-d H:i:s"),
             ]);

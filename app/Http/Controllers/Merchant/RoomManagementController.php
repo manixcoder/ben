@@ -67,15 +67,15 @@ class RoomManagementController extends Controller
         }
         try {
             // dd($request->all());
-            // if ($files = $request->room_image) {
-            //     $destinationPath = public_path('/uploads/');
-            //     $profileImage = date('YmdHis') . "-" . $files->getClientOriginalName();
-            //     $path =  $files->move($destinationPath, $profileImage);
-            //     $image = $insert['room_image'] = "$profileImage";
-            // } else {
-            //     $image = '';
-            // }
-            $image = '';
+            if ($files = $request->room_image) {
+                $destinationPath = public_path('/uploads/');
+                $profileImage = date('YmdHis') . "-" . $files->getClientOriginalName();
+                $path =  $files->move($destinationPath, $profileImage);
+                $image = $insert['room_image'] = "$profileImage";
+            } else {
+                $image = '';
+            }
+            //$image = '';
             $roomData =  RoomModel::create([
                 'merchent_id'               => Auth::user()->id,
                 'room_type'                 => $request->has('room_type') ? $request->room_type : '',
@@ -93,19 +93,8 @@ class RoomManagementController extends Controller
                 'check_out'                 => $request->has('check_out') ? $request->check_out : '',
                 'extra_rows'                => serialize($request->extra_rows),
                 'health_safety'             => serialize($request->health_safety),
-                'room_image'             => $image
+                'room_image'                => $image
             ]);
-            // if ($request->hasFile('room_image')) {
-            //     $room = RoomModel::find($roomData->id);
-            //     $file = $request->file('room_image');
-            //     $filename = 'roomimage-' . time() . '.' . $file->getClientOriginalExtension();
-            //     $room->move('public/uploads/', $filename);
-            //     $room->room_image = $filename;
-            //     $room->save();
-            // } else {
-            //     $image = '';
-            // }
-            // dd($roomData);
 
             return redirect('/merchant/room-management')->with(['status' => 'success', 'message' => 'New Room added Successfully!']);
         } catch (\Exception $e) {
@@ -124,6 +113,27 @@ class RoomManagementController extends Controller
     {
         //
     }
+    public function getRoomData($id)
+    {
+       // dd($id);
+        if (!empty($id)) {
+            $id = $id;
+        } else {
+            $catData = DB::table('hotel_roome')->where('merchent_id', Auth::user()->id)->where('room_for',$id)->orderby('id', 'ASC')->first();
+            $id = $catData->room_for;
+        }
+        $roomsData = RoomModel::where('room_for', $id)->where('merchent_id', Auth::user()->id)->get();
+        // dd($category_dise);
+        $data = array();
+        $data['roomsData'] = $roomsData;
+
+        $currentData = view('merchent.rooms.render.roome_listing')->with('roomsData', $roomsData)->render();
+
+        if ($currentData) {
+            return response()->json(['status' => 'success', 'currentData' => $currentData]);
+        }
+        return response()->json(['status' => 'danger', 'message' => 'No matches found.']);
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -133,7 +143,7 @@ class RoomManagementController extends Controller
      */
     public function edit(RoomModel $roomModel, $id)
     {
-        //
+        dd($id);
     }
 
     /**
@@ -145,7 +155,7 @@ class RoomManagementController extends Controller
      */
     public function update(Request $request, RoomModel $roomModel, $id)
     {
-        //
+        dd($id);
     }
 
     /**
@@ -156,6 +166,6 @@ class RoomManagementController extends Controller
      */
     public function destroy(RoomModel $roomModel, $id)
     {
-        //
+        dd($id);
     }
 }
