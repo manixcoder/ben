@@ -21,7 +21,7 @@
             <div class="col-md-6 text-right">
                 <a href="{{ url('merchant/menu-management/menu-list') }}" class="refresh-box"><i class="fa fa-refresh" aria-hidden="true"></i> Switch to created menu</a>
                 <a href="{{ url('merchant/menu-category-management') }}">Categories</a>
-                <a href="{{ url('merchant/menu-management/create') }}">Add New Menu</a>
+                <a href="{{ url('merchant/menu-management/create') }}">Add New Dish</a>
             </div>
         </div>
     </div>
@@ -32,31 +32,27 @@
         $pageTitle = 'Menu';
         ?>
         <ul class="nav nav-tabs" role="tablist">
-
-
-            @if(count($foodCategoryData) > 0)
             <?php $i = 0; ?>
-
-            @foreach($foodCategoryData as $key=> $foodCategory)
+            @forelse ($foodCategoryData as $key=> $foodCategory)
             <li role="presentation" <?php if ($pageTitle == 'Menu' && $i == '0') { ?> class="active" <?php } ?>>
                 <a href="#{{ $foodCategory->category_name }}" data-id="{{ $foodCategory->id }}" class="delete" aria-controls="{{ $foodCategory->category_name }}" role="tab" data-toggle="tab">
                     {{ $foodCategory->category_name }}</a>
             </li>
             <?php $i++ ?>
-            @endforeach
-            @else
-            <li role="presentation" class="active">
-                <a href="#" class="delete" aria-controls="#" role="tab" data-toggle="tab">
-                    Select Category</a>
-            </li>
-            @endif
+            @empty
+           
+            @endforelse
         </ul>
         <!-- Tab panes -->
         <?php
+        if(count($foodCategoryData) > 0){
         $foodCategoryData = DB::table('food_category')->where('merchent_id', Auth::user()->id)->orderBy('id', 'ASC')->first();
         $diseData = DB::table('food_dises')->where('disk_category_id', $foodCategoryData->id)->where('merchent_id', Auth::user()->id)->get();
+        
         ?>
+
         <div class="tab-content" id="listings_list">
+            
 
             <div id="default_div">
                 @foreach($diseData as $dise)
@@ -76,7 +72,9 @@
                                     <p>{{ $dise->dise_description }}</p>
                                     <h3>$ {{ $dise->disk_price }}</h3>
                                     @if($dise->disk_discount !='')
-                                    <span class="offer">{{ $dise->disk_discount }}% Discount</span>
+                                    <span class="offer">
+                                        {{ $dise->disk_discount }}% Discount
+                                    </span>
                                     @endif
                                 </div>
                             </div>
@@ -99,6 +97,11 @@
                 </div>
                 @endforeach
             </div>
+            @php 
+              }
+            @endphp
+
+
             <!--div role="tabpanel" class="tab-pane" id="profile">
                 2
             </div>

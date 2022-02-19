@@ -7,8 +7,14 @@
 @stop
 <div class="add-newoffer">
     <div class="pra-sec">
-        <p>Add New Menu</p>
+        <p>Add New Dish</p>
     </div>
+    @if(Session::has('status'))
+    <div class="alert alert-{{ Session::get('status') }}">
+        <i class="fa fa-building-o" aria-hidden="true"></i> {{ Session::get('message') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+    </div>
+    @endif
     <div class="form-box">
         <div class="row">
             <?php
@@ -21,13 +27,6 @@
                         <div class="form-group ">
                             <div class="coutome-uploadbtn">
                                 <input type="file" name="disk_image" class="form-control @error('disk_image') is-invalid @enderror upload-file">
-                                @error('disk_image')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-
-
                                 <span>
                                     <figure>
                                         <img src="{{ asset('public/merchemtAssets/images/upload_img.png')}}" alt="upload_img " width="40px">
@@ -36,6 +35,11 @@
                                     <br>
                                     .pdf .jpg .png
                                 </span>
+                                @error('disk_image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
                     </div>

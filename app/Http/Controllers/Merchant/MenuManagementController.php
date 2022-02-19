@@ -69,8 +69,8 @@ class MenuManagementController extends Controller
             'disk_price'            => 'required',
             'disk_discount'         => 'required',
             'disk_valid'            => 'required',
-            'disk_image'            => 'required',
-            //'disk_image'          => 'required|image|mimes:jpeg,bmp,svg,jpg,png',
+            // 'disk_image'            => 'required',
+            // 'disk_image'          => 'required|image|mimes:jpeg,bmp,svg,jpg,png',
         ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
@@ -87,66 +87,57 @@ class MenuManagementController extends Controller
                 //'disk_discount'       => $request->has('disk_discount') ? $request->disk_discount : '',
                 'disk_valid'            => $request->has('disk_valid') ? $request->disk_valid : '',
             ]);
-            if ($request->hasFile('disk_image')) {
-                $productData = MenuModel::find($diseData->id);
-                $file = $request->file('disk_image');
-                $filename = 'disk_image-' . time() . '.' . $file->getClientOriginalExtension();
-                $file->move('public/uploads/', $filename);
-                $productData->disk_image = $filename;
-                $productData->save();
-            }
+            // if ($request->hasFile('disk_image')) {
+            //     $productData = MenuModel::find($diseData->id);
+            //     $file = $request->file('disk_image');
+            //     $filename = 'disk_image-' . time() . '.' . $file->getClientOriginalExtension();
+            //     $file->move('public/uploads/', $filename);
+            //     $productData->disk_image = $filename;
+            //     $productData->save();
+            // }
 
-            return redirect('/merchant/menu-management')
-                ->with([
-                    'status' => 'success',
-                    'message' => 'Dise created Successfully!'
-                ]);
+            return redirect('/merchant/menu-management')->with(['status' => 'success', 'message' => 'Dise created Successfully!']);
         } catch (\Exception $e) {
-            return back()
-                ->with([
-                    'status' => 'danger',
-                    'message' => $e->getMessage()
-                ]);
-            return back()
-                ->with([
-                    'status' => 'danger',
-                    'message' => 'Some thing went wrong! Please try again later.'
-                ]);
+            return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);
+            return back()->with(['status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.']);
         }
     }
 
     public function saveMenuCard(Request $request)
     {
-        //dd($request->all());
         $validator = Validator::make($request->all(), [
             'disk_image'            => 'required',
         ]);
         if ($validator->fails()) {
+            //dd($validator);
             return back()->withErrors($validator)->withInput();
         }
         try {
+
             if ($files = $request->disk_image) {
                 $destinationPath = public_path('/uploads/');
-                $profileImage = date('YmdHis') . "-" . $files->getClientOriginalName();
-                $path =  $files->move($destinationPath, $profileImage);
+                $disk_image = date('YmdHis') . "-" . $files->getClientOriginalName();
+                $path =  $files->move($destinationPath, $disk_image);
+            } else {
+                $disk_image = '';
             }
             $diseData = MenuModel::create([
                 'merchent_id'           => Auth::user()->id,
                 'is_with_category'      => '1',
-                'dise_name'             => '',
-                'dise_description'      => '',
-                'disk_category_id'      => '',
-                'disk_image'            => $profileImage,
-
+                'dise_name'             => Null,
+                'dise_description'      => Null,
+                'disk_category_id'      => Null,
+                'disk_image'            => $disk_image,
+                'created_at'            => date("Y-m-d H:i:s"),
+                'updated_at'            => date("Y-m-d H:i:s"),
             ]);
-
-
             return redirect('/merchant/menu-management/menu-list')
                 ->with([
                     'status' => 'success',
                     'message' => 'Dise created Successfully!'
                 ]);
         } catch (\Exception $e) {
+            //dd($e->getMessage());
             return back()
                 ->with([
                     'status' => 'danger',
@@ -232,16 +223,8 @@ class MenuManagementController extends Controller
                     'message' => 'Dise updated Successfully!'
                 ]);
         } catch (\Exception $e) {
-            return back()
-                ->with([
-                    'status' => 'danger',
-                    'message' => $e->getMessage()
-                ]);
-            return back()
-                ->with([
-                    'status' => 'danger',
-                    'message' => 'Some thing went wrong! Please try again later.'
-                ]);
+            return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);
+            return back()->with(['status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.']);
         }
     }
 
