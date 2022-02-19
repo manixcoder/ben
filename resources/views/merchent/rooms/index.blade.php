@@ -411,8 +411,8 @@
                         <ul class="nav nav-tabs number-sec col-md-12" role="tablist">
 
                             <?php  ?>
-                            @forelse ($roomTypeData as $roomType)
-                            <li class="col-md-4 text-left <?php if ($pageTitle == 'Room' && $i == '0') { ?> class=" active" <?php } ?>" role="presentation">
+                            @forelse ($roomTypeData as $key=>  $roomType)
+                            <li class="col-md-4 text-left <?php if ($pageTitle == 'Room' && $i == '0') { ?> active <?php } ?>" role="presentation">
                                 <a class="number-table room" href="#subhome-{{ $roomType->room_for }}" data-id="{{ $roomType->room_for }}" aria-controls="subhome-{{ $roomType->room_for }}" role="tab" data-toggle="tab">
                                     <figure>
                                         <img src="{{ asset('public/merchemtAssets/images/room_no.png')}}" alt="icon" width="90px">
