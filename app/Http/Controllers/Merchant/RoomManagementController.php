@@ -127,7 +127,7 @@ class RoomManagementController extends Controller
         $data = array();
         $data['roomsData'] = $roomsData;
 
-        $currentData = view('merchent.rooms.render.roome_listing')->with('roomsData', $roomsData)->render();
+        $currentData = view('merchent.rooms.render.room_listing')->with('roomsData', $roomsData)->render();
 
         if ($currentData) {
             return response()->json(['status' => 'success', 'currentData' => $currentData]);
