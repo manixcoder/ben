@@ -7,7 +7,7 @@
 @stop
 <div class="add-newoffer">
     <div class="pra-sec">
-        <p>Add New Menu</p>
+        <p>Add New Dish</p>
     </div>
     @if(Session::has('status'))
     <div class="alert alert-{{ Session::get('status') }}">

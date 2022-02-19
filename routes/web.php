@@ -262,7 +262,7 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
         Route::post('/save-table', 'Merchant\TableManagementController@store');
         Route::get('{id}/show', 'Merchant\TableManagementController@show');
         Route::get('{id}/edit', 'Merchant\TableManagementController@edit');
-        Route::post('{id}/update', 'Merchant\TableManagementController@update');
+        Route::post('{id}/update-table', 'Merchant\TableManagementController@update');
         Route::get('delete/{id}', 'Merchant\TableManagementController@destroy');
     });
 

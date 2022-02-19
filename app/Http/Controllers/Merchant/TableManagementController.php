@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Redirect;
 use Validator;
 use Auth;
+use DB;
 
 class TableManagementController extends Controller
 {
@@ -33,7 +34,7 @@ class TableManagementController extends Controller
     public function create()
     {
         $data = array();
-        return view('merchent.tables.create',$data);
+        return view('merchent.tables.create', $data);
     }
 
     /**
@@ -54,17 +55,24 @@ class TableManagementController extends Controller
             return back()->withErrors($validator)->withInput();
         }
         try {
+            $tablesData = DB::table('tables')->where('merchent_id', Auth::user()->id)->count();
+            if ($tablesData > 0) {
+                $tableNum = $tablesData + 1;
+            } else {
+                $tableNum = 1;
+            }
+            
             $companyData = TableModel::create([
                 'merchent_id'           => Auth::user()->id,
-                'table_name'            => $request->has('table_name') ? $request->table_name : '',
+                'table_name'            => $request->table_name . '-' .  $tableNum,
                 'table_for'             => $request->has('table_for') ? $request->table_for : '',
                 'booking_time'          => $request->has('booking_time') ? $request->booking_time : '',
                 'number_tables'         => $request->has('number_tables') ? $request->number_tables : '',
             ]);
-            return redirect('/merchant/table-management')->with(['status' => 'success','message' => 'New Table added Successfully!']);
+            return redirect('/merchant/table-management')->with(['status' => 'success', 'message' => 'New Table added Successfully!']);
         } catch (\Exception $e) {
-            return back()->with(['status' => 'danger','message' => $e->getMessage()]);
-            return back()->with(['status' => 'danger','message' => 'Some thing went wrong! Please try again later.']);
+            return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);
+            return back()->with(['status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.']);
         }
     }
 
@@ -87,7 +95,11 @@ class TableManagementController extends Controller
      */
     public function edit(TableModel $tableModel, $id)
     {
-        dd($id);
+        // dd($id);
+        $tableData = TableModel::find($id);
+        $data = array();
+        $data['table'] = $tableData;
+        return view('merchent.tables.edit', $data);
     }
 
     /**
@@ -99,7 +111,15 @@ class TableManagementController extends Controller
      */
     public function update(Request $request, TableModel $tableModel, $id)
     {
-        //
+
+        $tableData  = TableModel::find($id);
+        $tableData->table_name = $request->table_name;
+        $tableData->table_for = $request->table_for;
+        $tableData->booking_time = $request->booking_time;
+        $tableData->number_tables = $request->number_tables;
+        $tableData->save();
+        return redirect('/merchant/table-management')->with(['status' => 'success', 'message' => 'Table updated Successfully!']);
+        //dd($tableData);
     }
 
     /**
@@ -110,6 +130,7 @@ class TableManagementController extends Controller
      */
     public function destroy(TableModel $tableModel, $id)
     {
-        //
+        TableModel::find($id)->delete();
+        return redirect('/merchant/table-management')->with(['status' => 'success', 'message' => 'Table Deleted Successfully!']);
     }
 }

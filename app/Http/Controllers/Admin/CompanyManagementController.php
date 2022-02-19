@@ -12,7 +12,7 @@ use App\Models\UserRoleRelation;
 use Yajra\Datatables\Datatables;
 use Illuminate\Support\Facades\Auth;
 use DateTime;
- 
+
 class CompanyManagementController extends Controller
 {
     public function __construct()

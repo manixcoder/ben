@@ -21,7 +21,7 @@
             <div class="col-md-6 text-right">
                 <a href="{{ url('merchant/menu-management/menu-list') }}" class="refresh-box"><i class="fa fa-refresh" aria-hidden="true"></i> Switch to created menu</a>
                 <a href="{{ url('merchant/menu-category-management') }}">Categories</a>
-                <a href="{{ url('merchant/menu-management/create') }}">Add New Menu</a>
+                <a href="{{ url('merchant/menu-management/create') }}">Add New Dish</a>
             </div>
         </div>
     </div>
@@ -72,7 +72,9 @@
                                     <p>{{ $dise->dise_description }}</p>
                                     <h3>$ {{ $dise->disk_price }}</h3>
                                     @if($dise->disk_discount !='')
-                                    <span class="offer">{{ $dise->disk_discount }}% Discount</span>
+                                    <span class="offer">
+                                        {{ $dise->disk_discount }}% Discount
+                                    </span>
                                     @endif
                                 </div>
                             </div>

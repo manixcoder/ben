@@ -20,7 +20,11 @@
                     <h3>{{ $dise->dise_name }}</h3>
                     <p>{{ $dise->dise_description }}</p>
                     <h3>$ {{ $dise->disk_price }}</h3>
-                    <span class="offer">{{ $dise->disk_discount }}% Discount</span>
+                    @if($dise->disk_discount !='')
+                    <span class="offer">
+                        {{ $dise->disk_discount }}% Discount
+                    </span>
+                    @endif
                 </div>
             </div>
             <div class="col-md-6 text-right">

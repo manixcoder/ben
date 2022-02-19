@@ -252,7 +252,7 @@
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <div class="form-group">
-                        <input class="form-check-input" type="checkbox" name="is_audience" id="is_audience" required>
+                        <input class="form-check-input" type="checkbox" name="is_audience" id="is_audience">
                         <label class="form-check-label" for="is_audience">
                             This person gave me permission to email them
                             <span>
@@ -268,7 +268,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <input class="form-check-input" type="checkbox" name="is_confirmation_chk" id="is_confirmation_chk" required>
+                        <input class="form-check-input" type="checkbox" name="is_confirmation_chk" id="is_confirmation_chk">
                         <label class="form-check-label" for="is_confirmation_chk">
                             If this person is already in my audience,update their profile
 

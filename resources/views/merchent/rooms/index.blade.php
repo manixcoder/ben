@@ -503,6 +503,14 @@
                                                 Per Night
                                             </span>
                                         </h3>
+                                        @if($room2->discount !='')
+                                        <h3 style="color:red;">
+                                            {{ $room2->discount }}
+                                            <span class="per-night" style="color:red;">
+                                                Discount
+                                            </span>
+                                        </h3>
+                                        @endif
 
                                     </div>
                                 </div>
@@ -573,6 +581,14 @@
                                                 Per Night
                                             </span>
                                         </h3>
+                                        @if($room2->discount !='')
+                                        <h3 style="color:red;">
+                                            {{ $room2->discount }}
+                                            <span class="per-night" style="color:red;">
+                                                Discount
+                                            </span>
+                                        </h3>
+                                        @endif
 
                                     </div>
                                 </div>
@@ -642,6 +658,14 @@
                                                 Per Night
                                             </span>
                                         </h3>
+                                        @if($room2->discount !='')
+                                        <h3 style="color:red;">
+                                            {{ $room2->discount }}
+                                            <span class="per-night" style="color:red;">
+                                                Discount
+                                            </span>
+                                        </h3>
+                                        @endif
 
                                     </div>
                                 </div>
