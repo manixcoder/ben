@@ -141,8 +141,11 @@
             </div>
             <div role="tabpanel" class="tab-pane" id="messages">
                 <?php
-
-                $roomTypeData = DB::table('hotel_room')->where('merchent_id', Auth::user()->id)->orderBy('room_for', 'ASC')->distinct()->get(['room_for']);
+                $roomTypeData = DB::table('hotel_room')
+                ->where('merchent_id', Auth::user()->id)
+                ->orderBy('room_for', 'ASC')
+                ->distinct()
+                ->get(['room_for']);
 
                 $i = 0;
                
