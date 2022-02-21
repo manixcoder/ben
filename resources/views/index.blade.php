@@ -429,7 +429,14 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <p>Don't have an account ? <a href="javascript:void(0);" data-toggle="modal" data-target="#singupModal"><span>Sign up</span></a></p>
+                                                <p>
+                                                    Don't have an account ?
+                                                    <a href="javascript:void(0);" data-toggle="modal" id="singup_mod" data-target="#singupModal">
+                                                        <span>
+                                                            Sign up
+                                                        </span>
+                                                    </a>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -489,7 +496,13 @@
                                                         <button type="submit" class="btn btn-primary text-color "> <img src="{{ asset('public/frontendAssets/images/l_google.png')}}" alt="" width="22px"> Login with Google</button>
                                                     </div>
                                                 </div>
-                                                <p>Don't have an account ? <a href="javascript:void(0);" data-toggle="modal" data-target="#loginModal"><span>Login</span></a></p>
+                                                <p>Don't have an account ?
+                                                    <a href="javascript:void(0);" data-toggle="modal" id="login_mod" data-target="#loginModal">
+                                                        <span>
+                                                            Login
+                                                        </span>
+                                                    </a>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -586,3 +599,21 @@
     </div>
 </div>
 @endsection
+
+@section('pagejs')
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        $("#singup_mod").click(function() {
+            $('#loginModal').modal('hide');
+        });
+
+
+
+        $("#login_mod").click(function() {
+            $('#singupModal').modal('hide');
+           
+        });
+    });
+</script>
+@stop
