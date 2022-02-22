@@ -8,7 +8,7 @@
 
 <div class="add-newoffer">
     <div class="pra-sec">
-        <p> New Ad</p>
+        <p> Edit Ad</p>
     </div>
     @if(Session::has('status'))
     <div class="alert alert-{{ Session::get('status') }}">
@@ -27,10 +27,11 @@
         </a>
     </div>
     @endif
+    <?php // dd($addsData); ?>
     <div class="form-box">
         <div class="row">
             <div class="generate  Customer-journey">
-                <form method="POST" action="{{ url('/merchant/adverting-management/save-adverting') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ url('/merchant/adverting-management/'.$addsData->id.'/update-adverting') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="col-md-12 col-sm-12">
                         <div class="form-group ">
@@ -38,7 +39,11 @@
                                 <input type="file" name="banner_image" class="form-control @error('parent') has-danger @enderror upload-file">
                                 <span>
                                     <figure>
+                                        @if($addsData->banner_image !='')
+                                        <img src="{{ asset('public/uploads')}}/{{ $addsData->banner_image }}" alt="upload_img " width="40px">
+                                        @else
                                         <img src="{{ asset('public/merchemtAssets/images/upload_img.png')}}" alt="upload_img " width="40px">
+                                        @endif
                                     </figure>
                                     Upload an ad banner
                                 </span>
@@ -53,7 +58,7 @@
                     <div class="col-md-12 col-sm-12">
                         <label>Advertisement Title</label>
                         <div class="form-group">
-                            <input type="text" name="ad_title" class="form-control @error('ad_title') has-danger @enderror" placeholder="Advertisement Title">
+                            <input type="text" name="ad_title" class="form-control @error('ad_title') has-danger @enderror" value="{{ $addsData->ad_title }}" placeholder="Advertisement Title">
                             @error('ad_title')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -70,7 +75,7 @@
                             <select class="form-control @error('ad_product') has-danger @enderror givepoint-img" name="ad_product">
                                 <option value="">Select Product</option>
                                 @foreach($productData as $product)
-                                <option value="{{ $product->id }}">{{ $product->product_name }}</option>
+                                <option value="{{ $product->id }}" {{ $product->id == $addsData->ad_product ? 'selected' : '' }}>{{ $product->product_name }}</option>
                                 @endforeach
                             </select>
                             @error('ad_product')
@@ -83,7 +88,7 @@
                     <div class="col-md-12 col-sm-12">
                         <label>Target (product url)</label>
                         <div class="form-group">
-                            <input type="text" name="product_url" class="form-control @error('product_url') has-danger @enderror" placeholder="https://www.benifitme.com/Lenovo Ideapad 5DSGVYF24&marketplace">
+                            <input type="text" name="product_url" class="form-control @error('product_url') has-danger @enderror" value="{{ $addsData->product_url }}" placeholder="https://www.benifitme.com/Lenovo Ideapad 5DSGVYF24&marketplace">
                             @error('product_url')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
