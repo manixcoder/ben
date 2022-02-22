@@ -23,9 +23,10 @@ Route::get('clear-cache', function () {
     Session::flash('success', 'All Clear');
     echo "DONE";
 });
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 /*
 |---------------------------------
 | Admin Common Routes Here     |
@@ -33,6 +34,13 @@ Route::get('/', function () {
 */
 Route::get('/admin-login', function () {
     return view('admin_login');
+});
+Route::get('/merchent-sign-up', function () {
+    return view('merchentRegistration.registration');
+});
+
+Route::get('/merchent-login', function () {
+    return view('merchentRegistration.login');
 });
 Route::get('/forgot-password', function () {
     return view('forgot_password');
@@ -47,14 +55,8 @@ Route::get('/create-newpassword', function () {
     return view('create_newpassword');
 });
 Route::any('update-password', 'HomeController@updatePassword');
-/*
-|---------------------------------
-| Admin Common Routes Here     |
-|---------------------------------
-*/
-Route::get('/merchent-sign-up', function () {
-    return view('merchentRegistration.registration');
-});
+
+
 
 
 Route::any('/merchent-registration/save-merchent', 'Merchant\MerchantRegistrationController@store');
@@ -63,7 +65,13 @@ Auth::routes();
 use App\User;
 
 Route::get('/validate-user', 'HomeController@checkUserRole');
+
 Route::get('/request/get-sub-category/{id}', 'HomeController@getSubCategory');
+/*
+|---------------------------------
+| Admin Common Routes Here     |
+|---------------------------------
+*/
 /*=====================================ADMIN=====================================*/
 Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function () {
     Route::get('/', 'Admin\DashboardController@index');
@@ -147,7 +155,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
     /*
     |------------------------------------------
     | Subscription Management Routes Here     |
-    |-----------------------------------------
+    |------------------------------------------
      */
     Route::group(['prefix' => 'subscription-management'], function () {
         Route::get('/', 'Admin\SubscriptionsManagementController@index');
@@ -161,7 +169,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
     /*
     |------------------------------------------
     | Permissions Management Routes Here     |
-    |-----------------------------------------
+    |------------------------------------------
      */
     Route::group(['prefix' => 'permissions-management'], function () {
         Route::get('/', 'Admin\PermissionsManegmentController@index');
@@ -178,9 +186,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
         Route::get('delete/{id}', 'Admin\PermissionsManegmentController@destroy');
     });
     /*
-    |------------------------------------------
-    | Payment Management Routes Here     |
-    |-----------------------------------------
+    |-------------------------------------------
+    | Payment Management Routes Here           |
+    |-------------------------------------------
      */
     Route::group(['prefix' => 'payment-management'], function () {
         Route::get('/', 'Admin\PaymentManagementController@index');
@@ -203,7 +211,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
 });
 
 /*=====================================ADMIN END=====================================*/
-Route::get('/', 'HomeController@index')->name('home');
+
 
 /*=====================================Merchant=====================================*/
 Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], function () {
