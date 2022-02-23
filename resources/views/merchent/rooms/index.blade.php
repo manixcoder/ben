@@ -246,7 +246,7 @@
                                 <div class="col-md-3 text-right">
                                     <ul>
                                         <li>
-                                            <a href="{{ url('merchant/room-management')}}/{{ $rooms->id }}/show">
+                                        <a href="#" data-toggle="modal" data-target="#roomview-popup">
                                                 <img src="{{ asset('public/merchemtAssets/images/view.png')}}" alt="icon" width="18px">
                                             </a>
                                         </li>
@@ -264,6 +264,136 @@
                                 </div>
                             </div>
                         </div>
+
+<!-- Modal -->
+<div class="modal fade roompopup-sec  " id="roomview-popup" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel">
+			<div class="modal-dialog " role="document">
+				<div class="modal-content appoint-ment ">
+					<div class="modal-header">
+						<button type="button" class="close ConnectPclose" data-dismiss="modal" aria-label="Close"><span
+						aria-hidden="true">&times;</span></button>
+					</div>
+					<div class="modal-body new-requests">
+						<div class="messagepopCant">
+							<div class="john-doe-box pad0">
+								<div class="row">
+									<div class="col-md-12 text-left">
+										<div class="Jessica-pra text-contant">
+											<h3>
+                                                Superior Double or Twin Room 
+                                                <span>
+                                                    <a  href="#">
+                                                        <img src="{{ asset('public/merchemtAssets/images/edit.png')}}">
+                                                    </a>
+                                                    </span>
+                                                    <span>
+                                                        <a  href="#">
+                                                            <img src="images/delete.png">
+                                                        </a>
+                                                    </span>
+                                                </h3>
+											<p> 
+                                                <img src="{{ asset('public/merchemtAssets/images/my_profile.png')}}" alt=""> 
+                                                    2 Guest
+                                                </p>
+											<ul>
+												<li>
+                                                    <img src="{{ asset('public/merchemtAssets/images/amt_sqft.png')}}" alt="">
+                                                    10 Sq Ft
+                                                </li>
+												<li>
+                                                    <img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="">
+                                                    2 Single Beds
+                                                </li>
+												<li>
+                                                    <img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">
+                                                    Free WiFi
+                                                </li>
+												<li>
+                                                    <img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="">
+                                                    Air Condition
+                                                </li>
+											</ul>
+											<h3>
+                                                $ 1200 
+                                                <span class="per-night">
+                                                    Per Night
+                                                </span>
+                                            </h3>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="calender-pgsec">
+								<div class="calenderform">
+									<table id="calendar">
+										<tr id="monthrow">
+											<th colspan="7">
+												<button id="prev" onclick="prevMonth()">&#10094;</button>
+												<span id="month"></span>
+												<button id="next" onclick="nextMonth()">&#10095;</button>
+											</th>
+										</tr>
+										<tr class="daysoftheweek">
+											<th>Sun</th>
+											<th>Mon</th>
+											<th>Tue</th>
+											<th>Wed</th>
+											<th>Thu</th>
+											<th>Fri</th>
+											<th>Sat</th>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="john-doe-box imgprofile pad0">
+								<div class="row">
+									<div class="col-md-8 text-left" >
+										<figure>
+											<img src="{{ asset('public/merchemtAssets/images/circle.jpg')}}" alt="circle">
+										</figure>
+										<div class="Jessica-pra">
+											<p>#NUD5449595</p>
+											<h3>Jessica Johnson</h3>
+											<p>jessicajohn94@gmail.com</p>
+											<p>9800000058</p>
+											<h3>Room Name 2</h3>
+											<p><i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People 2 Room</p>
+											<p><span>Booking for :</span>10 Jun 21 | 10:30 am - 12 Jun 21 | 3:00 pm</p>
+											
+										</div>
+									</div>
+									<div class="col-md-4 text-right" style="padding-left: 0;">
+										<ul>
+											<li>
+                                                <a href="#"> 
+                                                <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px">
+                                            </a>
+                                        </li>
+											<li>
+                                                <a href="#"> 
+                                                    <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px">
+                                                </a>
+                                            </li>
+											<li>
+                                                <a href="#"> 
+                                                    <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px">
+                                                </a>
+                                            </li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
                         @endforeach
                     </div>
                     </div>
@@ -309,4 +439,44 @@
         });
     });
 </script>
+
+<script src="{{ asset('public/merchemtAssets/js/libaury.js')}}"></script>
+		<script src="{{ asset('public/merchemtAssets/js/bootstrap.min.js')}}"></script>
+		<script src="{{ asset('public/merchemtAssets/js/calendar.js')}}"></script>
+		<script >
+			var app = {
+			settings: {
+            container: $('.calendar'),
+            calendar: $('.front'),
+            days: $('.weeks span'),
+            form: $('.back'),
+            input: $('.back input'),
+            buttons: $('.back button')
+			},
+			
+			init: function() {
+            instance = this;
+            settings = this.settings;
+            this.bindUIActions();
+			},
+			swap: function(currentSide, desiredSide) {
+            settings.container.toggleClass('flip');
+			
+            currentSide.fadeOut(900);
+            currentSide.hide();
+            desiredSide.show();
+			},
+			bindUIActions: function() {
+            settings.days.on('click', function(){
+			instance.swap(settings.calendar, settings.form);
+			settings.input.focus();
+            });
+            settings.buttons.on('click', function(){
+			instance.swap(settings.form, settings.calendar);
+            });
+			}
+			}
+			
+			app.init();
+		</script>
 @stop
