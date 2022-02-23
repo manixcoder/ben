@@ -354,41 +354,63 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
 
     Route::group(['prefix' => 'check-in-management'], function () {
 
-        Route::get('/', 'Merchant\AdvertingManagementController@index');
-        Route::get('create', 'Merchant\AdvertingManagementController@create');
+        Route::get('/', 'Merchant\CheckInManagementController@index');
+        Route::get('create', 'Merchant\CheckInManagementController@create');
 
-        Route::post('/save-adverting', 'Merchant\AdvertingManagementController@store');
-        Route::get('{id}/show', 'Merchant\AdvertingManagementController@show');
-        Route::get('{id}/edit', 'Merchant\AdvertingManagementController@edit');
-        Route::post('{id}/update-adverting', 'Merchant\AdvertingManagementController@update');
-        Route::get('delete/{id}', 'Merchant\AdvertingManagementController@destroy');
+        Route::post('/save-adverting', 'Merchant\CheckInManagementController@store');
+        Route::get('{id}/show', 'Merchant\CheckInManagementController@show');
+        Route::get('{id}/edit', 'Merchant\CheckInManagementController@edit');
+        Route::post('{id}/update-adverting', 'Merchant\CheckInManagementController@update');
+        Route::get('delete/{id}', 'Merchant\CheckInManagementController@destroy');
     });
 
     Route::group(['prefix' => 'invite-people-management'], function () {
 
-        Route::get('/', 'Merchant\AdvertingManagementController@index');
-        Route::get('create', 'Merchant\AdvertingManagementController@create');
+        Route::get('/', 'Merchant\InvitePeopleManagementController@index');
+        Route::get('create', 'Merchant\InvitePeopleManagementController@create');
 
-        Route::post('/save-adverting', 'Merchant\AdvertingManagementController@store');
-        Route::get('{id}/show', 'Merchant\AdvertingManagementController@show');
-        Route::get('{id}/edit', 'Merchant\AdvertingManagementController@edit');
-        Route::post('{id}/update-adverting', 'Merchant\AdvertingManagementController@update');
-        Route::get('delete/{id}', 'Merchant\AdvertingManagementController@destroy');
+        Route::post('/save-adverting', 'Merchant\InvitePeopleManagementController@store');
+        Route::get('{id}/show', 'Merchant\InvitePeopleManagementController@show');
+        Route::get('{id}/edit', 'Merchant\InvitePeopleManagementController@edit');
+        Route::post('{id}/update-adverting', 'Merchant\InvitePeopleManagementController@update');
+        Route::get('delete/{id}', 'Merchant\InvitePeopleManagementController@destroy');
     });
 
     Route::group(['prefix' => 'awards-management'], function () {
 
-        Route::get('/', 'Merchant\AdvertingManagementController@index');
-        Route::get('create', 'Merchant\AdvertingManagementController@create');
+        Route::get('/', 'Merchant\AwardsManagementController@index');
+        Route::get('create', 'Merchant\AwardsManagementController@create');
 
-        Route::post('/save-adverting', 'Merchant\AdvertingManagementController@store');
-        Route::get('{id}/show', 'Merchant\AdvertingManagementController@show');
-        Route::get('{id}/edit', 'Merchant\AdvertingManagementController@edit');
-        Route::post('{id}/update-adverting', 'Merchant\AdvertingManagementController@update');
-        Route::get('delete/{id}', 'Merchant\AdvertingManagementController@destroy');
+        Route::post('/save-adverting', 'Merchant\AwardsManagementController@store');
+        Route::get('{id}/show', 'Merchant\AwardsManagementController@show');
+        Route::get('{id}/edit', 'Merchant\AwardsManagementController@edit');
+        Route::post('{id}/update-adverting', 'Merchant\AwardsManagementController@update');
+        Route::get('delete/{id}', 'Merchant\AwardsManagementController@destroy');
     });
 
-    
+    Route::group(['prefix' => 'qr-code-management'], function () {
+
+        Route::get('/', 'Merchant\QRCodeManagementController@index');
+        Route::get('create', 'Merchant\QRCodeManagementController@create');
+
+        Route::post('/save-adverting', 'Merchant\QRCodeManagementController@store');
+        Route::get('{id}/show', 'Merchant\QRCodeManagementController@show');
+        Route::get('{id}/edit', 'Merchant\QRCodeManagementController@edit');
+        Route::post('{id}/update-adverting', 'Merchant\QRCodeManagementController@update');
+        Route::get('delete/{id}', 'Merchant\QRCodeManagementController@destroy');
+    });
+
+    Route::group(['prefix' => 'customer-jouney-management'], function () {
+
+        Route::get('/', 'Merchant\CustomerJouneryManagementController@index');
+        Route::get('create', 'Merchant\CustomerJouneryManagementController@create');
+
+        Route::post('/save-adverting', 'Merchant\CustomerJouneryManagementController@store');
+        Route::get('{id}/show', 'Merchant\CustomerJouneryManagementController@show');
+        Route::get('{id}/edit', 'Merchant\CustomerJouneryManagementController@edit');
+        Route::post('{id}/update-adverting', 'Merchant\CustomerJouneryManagementController@update');
+        Route::get('delete/{id}', 'Merchant\CustomerJouneryManagementController@destroy');
+    });
 });
 /*=====================================Merchant End=====================================*/
 Route::group(['prefix' => 'users', 'middleware' => ['users', 'auth']], function () {
