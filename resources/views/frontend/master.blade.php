@@ -13,11 +13,12 @@
     <link href="{{ asset('public/frontendAssets/fonts/fonts.css')}}" rel="stylesheet">
     <!-- <link href="{{ asset('public/frontendAssets/css/responsive.css')}}" rel="stylesheet"> -->
     <link rel="icon" href="{{ asset('public/frontendAssets/images/favicon.png')}}" type="skype-img" />
+    @yield('pageCss')
     <title>{{ config('app.name', 'Laravel') }} Customer @yield('pageTitle')</title>
 </head>
 
 <body>
-    
+
     @include('frontend.includes.header')
     @yield('content')
     @yield('pagejs')
