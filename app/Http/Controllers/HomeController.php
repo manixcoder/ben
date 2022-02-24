@@ -61,7 +61,7 @@ class HomeController extends Controller
                 'name'  => $request->has('name') ? $request->name : '',
                 'mobile'  => $request->has('mobile') ? $request->mobile : '',
                 'email'  => $request->has('email') ? $request->email : '',
-                'otp' => '0000',
+                'otp' =>  $this->otp_code(),
                 'password'  => Hash::make($request->input('password')),
             ]);
             $roleArray = array(
@@ -108,7 +108,7 @@ class HomeController extends Controller
         $otp_code = $this->otp_code();
         if (!empty($userdata)) {
             $postdata = DB::table('users')->where('email', $request->email)->update([
-                'otp' => $otp_code
+                'otp' => $this->otp_code()
             ]);
         }
         $userdata = User::where('email', $request->email)->first();
@@ -181,11 +181,7 @@ class HomeController extends Controller
     public function getSubCategory(Request $request, $id)
     {
         try {
-            $list = DB::table('categories')
-                ->where('parent_id', '=', $id)
-                ->where('c_type', '=', '1')
-                ->get();
-            //dd($list);
+            $list = DB::table('categories')->where('parent_id', '=', $id)->where('c_type', '=', '1')->get();
             if ($list) {
                 $data['status'] = 'success';
             } else {
