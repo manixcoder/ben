@@ -212,6 +212,21 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function 
         Route::get('/', 'Admin\AwardsManagementController@index');
         Route::post('{id}/update', 'Admin\AwardsManagementController@update');
     });
+
+    /*
+    |-------------------------------------------
+    | Payment Management Routes Here           |
+    |-------------------------------------------
+     */
+    Route::group(['prefix' => 'services-category-management'], function () {
+        Route::get('/', 'Admin\ServicesCategoryManagementController@index');
+        Route::get('create', 'Admin\ServicesCategoryManagementController@create');
+        Route::post('/save-services-category', 'Admin\ServicesCategoryManagementController@store');
+        Route::get('{id}/show', 'Admin\ServicesCategoryManagementController@show');
+        Route::get('{id}/edit', 'Admin\ServicesCategoryManagementController@edit');
+        Route::post('{id}/update-services-category', 'Admin\ServicesCategoryManagementController@update');
+        Route::get('delete/{id}', 'Admin\ServicesCategoryManagementController@destroy');
+    });
 });
 
 /*=====================================ADMIN END=====================================*/
@@ -412,6 +427,18 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
         Route::post('/save-customer-jouney', 'Merchant\CustomerJouneryManagementController@store');
         Route::get('{id}/show', 'Merchant\CustomerJouneryManagementController@show');
         Route::get('{id}/edit', 'Merchant\CustomerJouneryManagementController@edit');
+        Route::post('{id}/update-customer-jouney', 'Merchant\CustomerJouneryManagementController@update');
+        Route::get('delete/{id}', 'Merchant\CustomerJouneryManagementController@destroy');
+    });
+
+    Route::group(['prefix' => 'loyalty-management'], function () {
+
+        Route::get('/', 'Merchant\LoyaltyManagementController@index');
+        Route::get('create', 'Merchant\LoyaltyManagementController@create');
+
+        Route::post('/save-customer-jouney', 'Merchant\LoyaltyManagementController@store');
+        Route::get('{id}/show', 'Merchant\LoyaltyManagementController@show');
+        Route::get('{id}/edit', 'Merchant\LoyaltyManagementController@edit');
         Route::post('{id}/update-customer-jouney', 'Merchant\CustomerJouneryManagementController@update');
         Route::get('delete/{id}', 'Merchant\CustomerJouneryManagementController@destroy');
     });

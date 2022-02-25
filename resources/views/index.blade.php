@@ -249,25 +249,28 @@
         </div>
         <div class="restaurants-slider">
             <div class="loop owl-carousel owl-theme">
+
                 @forelse ($hotleRestroData as $resthotel)
-                <div class="item">
-                    <div class="hotel-bgbox">
-                        <div class="hotel-img">
-                            <figure>
-                                <img src="{{ asset('public/frontendAssets/images/hotel-img1.jpg')}}" alt="img" />
-                            </figure>
-                            @if($resthotel->company_type =='2')
-                            <span>Restaurant</span>
-                            @else
-                            <span>Hotel</span>
-                            @endif
-                        </div>
-                        <div class="hotel-cont">
-                            <h3>{{ $resthotel->company_name }}</h3>
-                            <h4><i><img src="{{ asset('public/frontendAssets/images/full_address.png')}}" alt="icon" /></i>{{ $resthotel->city }}</h4>
+                <a href="#">
+                    <div class="item">
+                        <div class="hotel-bgbox">
+                            <div class="hotel-img">
+                                <figure>
+                                    <img src="{{ asset('public/frontendAssets/images/hotel-img1.jpg')}}" alt="img" />
+                                </figure>
+                                @if($resthotel->company_type =='2')
+                                <span>Restaurant</span>
+                                @else
+                                <span>Hotel</span>
+                                @endif
+                            </div>
+                            <div class="hotel-cont">
+                                <h3>{{ $resthotel->company_name }}</h3>
+                                <h4><i><img src="{{ asset('public/frontendAssets/images/full_address.png')}}" alt="icon" /></i>{{ $resthotel->city }}</h4>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 @empty
                 <div class="item">
                     <div class="hotel-bgbox">
