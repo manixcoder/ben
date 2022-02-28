@@ -1,6 +1,35 @@
 @extends('frontend.master')
+@section('pageCss')
+<style>
+    #verificationModal.in {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+        background-color: rgba(0, 0, 0, .5);
+    }
+</style>
+@stop
 @section('content')
-
+@if(Session::has('status'))
+<div class="alert alert-{{ Session::get('status') }}">
+    <i class="fa fa-building-o" aria-hidden="true"></i> {{ Session::get('message') }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">
+            ×
+        </span>
+    </button>
+</div>
+@elseif(Session::get('status') == "danger")
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ Session::get('message') }}
+    <a href="#" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </a>
+</div>
+@endif
 <section class="service-slider fw text-center">
     <div class="fadeOut owl-carousel owl-theme">
         <div class="item">
@@ -35,23 +64,6 @@
         </div>
     </div>
 </section>
-@if(Session::has('status'))
-<div class="alert alert-{{ Session::get('status') }}">
-    <i class="fa fa-building-o" aria-hidden="true"></i> {{ Session::get('message') }}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">
-            ×
-        </span>
-    </button>
-</div>
-@elseif(Session::get('status') == "danger")
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
-    {{ Session::get('message') }}
-    <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">×</span>
-    </a>
-</div>
-@endif
 <section class="topstores-sec fw text-center">
     <div class="container">
         <div class="site-heading">
@@ -249,28 +261,25 @@
         </div>
         <div class="restaurants-slider">
             <div class="loop owl-carousel owl-theme">
-
                 @forelse ($hotleRestroData as $resthotel)
-                <a href="#">
-                    <div class="item">
-                        <div class="hotel-bgbox">
-                            <div class="hotel-img">
-                                <figure>
-                                    <img src="{{ asset('public/frontendAssets/images/hotel-img1.jpg')}}" alt="img" />
-                                </figure>
-                                @if($resthotel->company_type =='2')
-                                <span>Restaurant</span>
-                                @else
-                                <span>Hotel</span>
-                                @endif
-                            </div>
-                            <div class="hotel-cont">
-                                <h3>{{ $resthotel->company_name }}</h3>
-                                <h4><i><img src="{{ asset('public/frontendAssets/images/full_address.png')}}" alt="icon" /></i>{{ $resthotel->city }}</h4>
-                            </div>
+                <div class="item">
+                    <div class="hotel-bgbox">
+                        <div class="hotel-img">
+                            <figure>
+                                <img src="{{ asset('public/frontendAssets/images/hotel-img1.jpg')}}" alt="img" />
+                            </figure>
+                            @if($resthotel->company_type =='2')
+                            <span>Restaurant</span>
+                            @else
+                            <span>Hotel</span>
+                            @endif
+                        </div>
+                        <div class="hotel-cont">
+                            <h3>{{ $resthotel->company_name }}</h3>
+                            <h4><i><img src="{{ asset('public/frontendAssets/images/full_address.png')}}" alt="icon" /></i>{{ $resthotel->city }}</h4>
                         </div>
                     </div>
-                </a>
+                </div>
                 @empty
                 <div class="item">
                     <div class="hotel-bgbox">
@@ -579,44 +588,31 @@
     </div>
 </div>
 <!--Referral Code  Modal  -->
-<div class="modal fade" id="referralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="login">
-                    <div class="login-form">
-                        <div class="login-form-sec">
-                            <div class="login-with">
-                                <figure>
-                                    <img src="{{ asset('public/frontendAssets/images/logo_onboarding.png')}}" alt="logo_onboarding" width="80px">
-                                </figure>
 
-                                <form>
-                                    <h3>Referral Code</h3>
-                                    <p>Enter Referral Code to get loyalty points <br> in your account</p>
-                                    <div class="form-box-sec">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Enter Referral Code" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="form-group">
-                                                <a href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#verificationModal">Done</a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!--Referral Code  Modal  -->
-<div class="modal fade" id="verificationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade in" id="verificationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: block;">
     <div class="modal-dialog" role="document">
+        @if(Session::has('status'))
+        <div class="alert alert-{{ Session::get('status') }}">
+            <i class="fa fa-building-o" aria-hidden="true"></i> {{ Session::get('message') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">
+                    ×
+                </span>
+            </button>
+        </div>
+        @elseif(Session::get('status') == "danger")
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ Session::get('message') }}
+            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </a>
+        </div>
+        @endif
+
+        <?php // dd($userData) 
+        ?>
+
         <div class="modal-content">
             <div class="modal-body">
                 <div class="login">
@@ -626,23 +622,25 @@
                                 <figure>
                                     <img src="{{ asset('public/frontendAssets/images/logo_onboarding.png')}}" alt="logo_onboarding" width="80px">
                                 </figure>
-                                <form>
+                                <form method="POST" action="{{ url('/user-verify-otp') }}" enctype="multipart/form-data">
+                                    @csrf
                                     <h3>Verification</h3>
-                                    <p>We've sent an OTP to verify on <b>9000000209</b> </p>
+                                    <p>We've sent an OTP to verify on <b>{{ $userData->mobile }}</b> OTP {{ $userData->otp}}</p>
+                                    <input type="hidden" name="user_id" value="{{ $userData->id }}">
                                     <div class="form-box-sec otp-below">
                                         <ul>
                                             <label>Enter OTP Below</label>
                                             <li>
-                                                <input type="name" placeholder="0" maxlength="1" required>
+                                                <input type="text" name="otp[]" placeholder="0" maxlength="1" required>
                                             </li>
                                             <li>
-                                                <input type="name" placeholder="0" maxlength="1" required>
+                                                <input type="text" name="otp[]" placeholder="0" maxlength="1" required>
                                             </li>
                                             <li>
-                                                <input type="name" placeholder="0" maxlength="1" required>
+                                                <input type="text" name="otp[]" placeholder="0" maxlength="1" required>
                                             </li>
                                             <li>
-                                                <input type="name" placeholder="0" maxlength="1" required>
+                                                <input type="text" name="otp[]" placeholder="0" maxlength="1" required>
                                             </li>
                                             <label>Didn't Receive ? <span>Resend</span></label>
                                         </ul>
@@ -667,16 +665,12 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function() {
-        $("#singup_mod").click(function() {
-            $('#loginModal').modal('hide');
+        $('.in').on('click', function() {
+            // $(this).removeClass('in').css('display:none');
         });
 
 
-
-        $("#login_mod").click(function() {
-            $('#singupModal').modal('hide');
-
-        });
     });
 </script>
+
 @stop

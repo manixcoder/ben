@@ -2,6 +2,7 @@
 @section('pageTitle', 'Appointments')
 @section('content')
 @section('pageCss')
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <style>
 </style>
 @stop
@@ -17,7 +18,17 @@
 
     <div class="new-requests">
         <div class="row">
+
             <div class="col-md-5 text-left">
+                <div class="Jessica-pra calendar-box">
+                    <div class="calendar">
+                        <input type="text" name="start" id="dates-available-from" value="01/01/2018 - 01/15/2018" />
+
+                        <input type="text" name="end" id="dates-available-to" value="01/01/2018 - 01/15/2018" />
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-5 text-left">
                 <div class="Jessica-pra calendar-box">
                     <div class="calendar">
                         <div class="header">
@@ -35,10 +46,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
             <div class="col-md-5 text-left">
                 <div class="appointment-for title">
-                    <form>
+                    <form method="POST" action="{{ url('/merchant/awards-management/'. $awardsData->id .'/update-aawards') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
                             <label>Appointment Title</label>
                             <input type="name" class="form-control" placeholder="Write title here">
@@ -101,6 +114,34 @@
 
 @endsection
 @section('pagejs')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+<script>
+    var fromDate = new Date();
+    $('input[id="dates-available-from"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+            autoApply: true,
+            locale: {
+                format: 'YYYY-MM-DD'
+            },
+            minDate: new Date()
+        },
+        function(start, end, label) {
+            fromDate = start.format('YYYY-MM-DD');
+            $('input[id="dates-available-to"]').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                autoApply: true,
+                locale: {
+                    format: 'YYYY-MM-DD'
+                },
+                minDate: fromDate
+            });
+        });
+</script>
 <script>
     var Calendar = function(t) {
         this.divId = t.RenderID ? t.RenderID : '[data-render="calendar"]', this.DaysOfWeek = t.DaysOfWeek ? t.DaysOfWeek : ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], this.Months = t.Months ? t.Months : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
