@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServicesLoyaltyTable extends Migration
+class CreateInvitePeopleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateServicesLoyaltyTable extends Migration
      */
     public function up()
     {
-        Schema::create('services_loyalty', function (Blueprint $table) {
+        Schema::create('invite_people', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('services_name')->nullable();
+            $table->integer('user_id');
+            $table->integer('merchent_id');
+            $table->string('invite_qr_code')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateServicesLoyaltyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services_loyalty');
+        Schema::dropIfExists('invite_people');
     }
 }

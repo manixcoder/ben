@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Merchant;
 use App\Models\AwardsModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Validator;
 
 class AwardsManagementController extends Controller
 {
@@ -16,6 +17,8 @@ class AwardsManagementController extends Controller
     public function index()
     {
         $data = array();
+        $data['awards'] = AwardsModel::get();
+
         return view('merchent.awards.index', $data);
     }
 
@@ -69,9 +72,33 @@ class AwardsManagementController extends Controller
      * @param  \App\Models\AwardsModel  $awardsModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AwardsModel $awardsModel)
+    public function update(Request $request, AwardsModel $awardsModel, $id)
     {
-        //
+        // dd($request->all());
+        $validator = Validator::make($request->all(), array(
+            'regular_visitor'       => 'required',
+            'visitor_points'        => 'required',
+            'big_spender'           => 'required',
+
+        ));
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+        try {
+            $awardData = AwardsModel::find($id);
+            $updateData = array(
+                "regular_visitor" => $request->has('regular_visitor') ? $request->regular_visitor : $awardData->regular_visitor,
+                "visitor_points" => $request->has('visitor_points') ? $request->visitor_points : $awardData->visitor_points,
+                "big_spender" => $request->has('big_spender') ? $request->big_spender : $awardData->big_spender,
+
+
+            );
+            $awardData->update($updateData);
+            return redirect('/merchant/awards-management')->with(array('status' => 'success', 'message' => 'Update record successfully.'));
+        } catch (\exception $e) {
+            return back()->with(array('status' => 'danger', 'message' =>  $e->getMessage()));
+            return back()->with(array('status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.'));
+        }
     }
 
     /**

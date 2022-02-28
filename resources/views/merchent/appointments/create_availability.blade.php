@@ -28,10 +28,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
             <!-- <div class="col-md-5 text-left">
                 <div class="Jessica-pra calendar-box">
                     <div class="calendar">
@@ -54,7 +50,8 @@
 
             <div class="col-md-5 text-left">
                 <div class="appointment-for title">
-                    <form>
+                    <form method="POST" action="{{ url('/merchant/awards-management/'. $awardsData->id .'/update-aawards') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
                             <label>Appointment Title</label>
                             <input type="name" class="form-control" placeholder="Write title here">

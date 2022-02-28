@@ -34,7 +34,8 @@
             <div role="tabpanel" class="tab-pane active" id="home">
                 <div class="form-box ">
                     <div class="row">
-                        <form>
+                        <form method="POST" action="{{ url('/merchant/check-in-management/save-check-in') }}" enctype="multipart/form-data">
+                            @csrf
                             <div class="col-md-6 col-sm-6">
                                 <div class="generate Customer-journey">
                                     <div class="form-group loction">
@@ -42,11 +43,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Set Reward</label>
-                                        <input type="name" class="form-control" placeholder="100">
+                                        <input type="text" name="point" class="form-control" placeholder="100">
                                     </div>
                                     <div class="form-group">
                                         <label>Terms &amp; Conditions</label>
-                                        <textarea class="form-control">Write a short terms &amp; conditions</textarea>
+                                        <textarea class="form-control" name="term_conditions">Write a short terms &amp; conditions</textarea>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary bgcolor">Save</button>
