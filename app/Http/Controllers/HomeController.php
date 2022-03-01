@@ -211,4 +211,9 @@ class HomeController extends Controller
             return $randomString;
         }
     }
+
+
+    public function createProductCategory()
+    {
+    }
 }

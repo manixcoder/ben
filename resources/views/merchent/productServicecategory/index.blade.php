@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('merchent.master')
 @section('pageTitle', 'Service & Product Category')
 @section('content')
 @section('pageCss')

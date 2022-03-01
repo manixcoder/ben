@@ -184,8 +184,4 @@ if (Auth::check()) {
         </div>
     </div>
 </header>
-
-
-
-
 @endauth

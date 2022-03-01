@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('merchent.master')
 @section('pageTitle', 'Service & Product Category')
 @section('content')
 @section('pageCss')
@@ -36,16 +36,13 @@
         @php
         $categorydata = DB::table('services_category')->get();
         @endphp
-        <form method="POST" action="{{ url('/admin/services-category-management/save-services-category') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ url('/merchant/services-category-management/save-services-category') }}" enctype="multipart/form-data">
             @csrf
 
             <div class="col-md-6 col-sm-6">
                 <div class="form-group">
                     <label>Service & Product Category Name</label>
-                    <input type="text" name="category_name" 
-                    class="form-control @error('category_name') has-danger @enderror" 
-                    value="{{ old('category_name') }}" 
-                    placeholder="Service & Product Category Name">
+                    <input type="text" name="category_name" class="form-control @error('category_name') has-danger @enderror" value="{{ old('category_name') }}" placeholder="Service & Product Category Name">
                     @error('category_name')
                     <small class="form-control-feedback">{{ $errors->first('category_name') }}</small>
                     @enderror
@@ -61,7 +58,7 @@
                         <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                         @endforeach
                     </select>
-                    
+
                 </div>
             </div>
             @endif
