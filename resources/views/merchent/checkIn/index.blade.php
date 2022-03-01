@@ -10,6 +10,12 @@
     <div class="pra-sec">
         <p>Check In</p>
     </div>
+    @if(Session::has('status'))
+    <div class="alert alert-{{ Session::get('status') }}">
+        <i class="fa fa-building-o" aria-hidden="true"></i> {{ Session::get('message') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+    </div>
+    @endif
     <div class="check-in-tabing">
 
         <!-- Nav tabs -->
@@ -29,6 +35,7 @@
         </div>
 
 
+
         <!-- Tab panes -->
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="home">
@@ -43,11 +50,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Set Reward</label>
-                                        <input type="text" name="point" class="form-control" placeholder="100">
+                                        <input type="text" name="reward_value" class="form-control" placeholder="100">
                                     </div>
                                     <div class="form-group">
                                         <label>Terms &amp; Conditions</label>
-                                        <textarea class="form-control" name="term_conditions">Write a short terms &amp; conditions</textarea>
+                                        <textarea class="form-control" name="terms_conditions" placeholder="Write a short terms &amp; conditions"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary bgcolor">Save</button>
@@ -61,7 +68,8 @@
             <div role="tabpanel" class="tab-pane" id="profile">
                 <div class="form-box check-in-add ">
                     <div class="row">
-                        <form>
+                        <form method="POST" action="{{ url('/merchant/check-in-management/save-check-in') }}" enctype="multipart/form-data">
+                            @csrf
                             <div class="col-md-6 col-sm-6">
                                 <div class="generate Customer-journey">
                                     <div class="form-group">
@@ -72,11 +80,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Set Reward</label>
-                                        <input type="name" class="form-control" placeholder="100">
+                                        <input type="text" name="reward_value" class="form-control" placeholder="100">
                                     </div>
                                     <div class="form-group">
                                         <label>Terms &amp; Conditions</label>
-                                        <textarea class="form-control">Write a short terms &amp; conditions</textarea>
+                                        <textarea class="form-control" name="terms_conditions" placeholder="Write a short terms &amp; conditions"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary bgcolor">Save</button>
@@ -90,8 +98,6 @@
         </div>
     </div>
 </div>
-
-
 @endsection
 @section('pagejs')
 <script>

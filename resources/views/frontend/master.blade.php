@@ -61,10 +61,10 @@
                             <div class="pull-right">
                                 <h5>Legal</h5>
                                 <ul>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="{{ url('about-us') }}">About Us</a></li>
+                                    <li><a href="{{ url('privacy-policy') }}">Privacy Policy</a></li>
+                                    <li><a href="{{ url('terms-condition') }}">Terms & Conditions</a></li>
+                                    <li><a href="{{ url('contact-us') }}">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>

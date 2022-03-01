@@ -58,6 +58,18 @@ Route::any('verify-otp', 'HomeController@verifyOtp');
 Route::get('/create-newpassword', function () {
     return view('create_newpassword');
 });
+Route::get('/about-us', function () {
+    return view('about_us');
+});
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy');
+});
+Route::get('/terms-condition', function () {
+    return view('terms-condition');
+});
+Route::get('contact-us', function () {
+    return view('contact-us');
+});
 Route::any('update-password', 'HomeController@updatePassword');
 
 
@@ -260,9 +272,9 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
     });
 
     /*
-    |------------------------------------------
-    | Room Management Routes Here     |
-    |-----------------------------------------
+    |--------------------------------------------
+    | Room Management Routes Here               |
+    |--------------------------------------------
      */
     Route::group(['prefix' => 'room-management'], function () {
 
@@ -278,9 +290,9 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
     });
 
     /*
-    |------------------------------------------
-    | Table Management Routes Here     |
-    |-----------------------------------------
+    |--------------------------------------------
+    | Table Management Routes Here              |
+    |-------------------------------------------
      */
     Route::group(['prefix' => 'table-management'], function () {
 
@@ -295,9 +307,9 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
     });
 
     /*
-    |------------------------------------------
-    | Menu Management Routes Here     |
-    |-----------------------------------------
+    |--------------------------------------------
+    | Menu Management Routes Here               |
+    |--------------------------------------------
      */
     Route::group(['prefix' => 'menu-management'], function () {
 
@@ -317,9 +329,9 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
 
 
     /*
-    |------------------------------------------
+    |-------------------------------------------
     | Menu Category Management Routes Here     |
-    |-----------------------------------------
+    |-------------------------------------------
      */
     Route::group(['prefix' => 'menu-category-management'], function () {
 
@@ -336,9 +348,9 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
 
 
     /*
-    |------------------------------------------
+    |-------------------------------------------
     | Menu Category Management Routes Here     |
-    |-----------------------------------------
+    |-------------------------------------------
      */
     Route::group(['prefix' => 'appointments-management'], function () {
 
@@ -355,9 +367,9 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
     });
 
     /*
-    |------------------------------------------
+    |-------------------------------------------
     | Adverting Management Routes Here         |
-    |-----------------------------------------
+    |-------------------------------------------
      */
     Route::group(['prefix' => 'adverting-management'], function () {
 
@@ -441,6 +453,16 @@ Route::group(['prefix' => 'merchant', 'middleware' => ['merchant', 'auth']], fun
         Route::get('{id}/edit', 'Merchant\LoyaltyManagementController@edit');
         Route::post('{id}/update-customer-jouney', 'Merchant\CustomerJouneryManagementController@update');
         Route::get('delete/{id}', 'Merchant\CustomerJouneryManagementController@destroy');
+    });
+
+    Route::group(['prefix' => 'services-category-management'], function () {
+        Route::get('/', 'Merchant\ServicesCategoryManagementController@index');
+        Route::get('create', 'Merchant\ServicesCategoryManagementController@create');
+        Route::post('/save-services-category', 'Merchant\ServicesCategoryManagementController@store');
+        Route::get('{id}/show', 'Merchant\ServicesCategoryManagementController@show');
+        Route::get('{id}/edit', 'Merchant\ServicesCategoryManagementController@edit');
+        Route::post('{id}/update-services-category', 'Merchant\ServicesCategoryManagementController@update');
+        Route::get('delete/{id}', 'Merchant\ServicesCategoryManagementController@destroy');
     });
 });
 /*=====================================Merchant End=====================================*/
