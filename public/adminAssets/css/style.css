@@ -1596,3 +1596,15 @@ header .benefitme .col-sm-6.text-right a {
     text-align: left;
     color: #ff0000;
 }
+
+a.add_new_button {
+    text-decoration: none;
+    font-size: 14px;
+    background: #06C6B3;
+    padding: 8px 14px;
+    border-radius: 5px;
+    color: #ffff;
+    display: inline-block;
+    float: right;
+    margin-top: -121px;
+}

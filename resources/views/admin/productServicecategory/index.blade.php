@@ -23,8 +23,8 @@
             <p>Service & Product Category</p>
         </div>
         <div class="col-md-6 text-right">
-            <a href="#">
-
+            <a href="{{ url('admin/services-category-management/create') }}">
+                Add New Sub Category
             </a>
         </div>
     </div>
@@ -34,12 +34,13 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="home">
+            <!-- <div class="col-md-12 text-right">
+                <a class="add_new_button mrdown" href="{{ url('admin/services-category-management/create') }}">
+                    Add New Sub Category
+                </a>
+            </div> -->
             <div class="table-responsive">
-                <div class="col-md-6 text-right">
-                    <a href="{{ url('admin/services-category-management/create') }}">
-                        Add New Sub Category
-                    </a>
-                </div>
+
                 @php
                 $categorydata = DB::table('services_category')->get();
                 @endphp
@@ -59,7 +60,7 @@
                                         -- {{ $businessCategories->category_name }}
                                     </span>
                                     @else
-                                    
+
                                     @endif
                                 </span>
                                 <br>
@@ -67,12 +68,12 @@
                             </td>
                             <td class="text-right">
                                 <span class="edit-icon">
-                                    <a href="#">
+                                    <a href="{{ url('/admin/services-category-management/'.$cat->id.'/edit') }}">
                                         <img src="{{ asset('public/adminAssets/images/edit.png')}}" alt="edit" width="15px">
                                     </a>
                                 </span>
                                 <span class="delete-icon">
-                                    <a href="#">
+                                    <a href="{{ url('/admin/services-category-management/delete/'.$cat->id) }}">
                                         <img src="{{ asset('public/adminAssets/images/delete.png')}}" alt="delete" width="15px">
                                     </a>
                                 </span>

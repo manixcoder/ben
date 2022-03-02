@@ -90,9 +90,14 @@ class ServicesCategoryManagementController extends Controller
      * @param  \App\Models\ServicesCategory  $servicesCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(ServicesCategory $servicesCategory)
+    public function edit(ServicesCategory $servicesCategory, $id)
     {
-        //
+
+        $serviceData = ServicesCategory::find($id);
+        //dd($serviceData);
+        $data = array();
+        $data['serviceData'] = $serviceData;
+        return view('admin.productServicecategory.edit', $data);
     }
 
     /**
@@ -102,9 +107,23 @@ class ServicesCategoryManagementController extends Controller
      * @param  \App\Models\ServicesCategory  $servicesCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ServicesCategory $servicesCategory)
+    public function update(Request $request, ServicesCategory $servicesCategory, $id)
     {
-        //
+        $servicesData = ServicesCategory::find($id);
+        //dd($request->all());
+        if ($request->parent != null) {
+            $updateData = array(
+                'category_name'              => $request->has('category_name') ? $request->category_name : '',
+                'parent_id'              => $request->has('parent') ? $request->parent : '0',
+            );
+        } else {
+            $updateData = array(
+                'category_name'              => $request->has('category_name') ? $request->category_name : '',
+            );
+        }
+        $servicesData->update($updateData);
+
+        return redirect('/admin/services-category-management')->with(['status' => 'success', 'message' => 'Update Category Successfully!']);
     }
 
     /**
@@ -113,8 +132,11 @@ class ServicesCategoryManagementController extends Controller
      * @param  \App\Models\ServicesCategory  $servicesCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ServicesCategory $servicesCategory)
+    public function destroy(ServicesCategory $servicesCategory, $id)
     {
-        //
+        ServicesCategory::find($id)->delete();
+        ServicesCategory::where('parent_id', $id)->delete();
+        
+        return redirect('/admin/services-category-management')->with(['status' => 'success', 'message' => 'Delete Category Successfully!']);
     }
 }
