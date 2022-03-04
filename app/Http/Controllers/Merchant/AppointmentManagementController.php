@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Merchant;
 
 use App\Models\Appointment;
+use App\Models\CrudEvents;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -30,10 +31,52 @@ class AppointmentManagementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        // if ($request->ajax()) {
+        //     $data = Appointment::whereDate('event_start1', '>=', $request->start)
+        //         ->whereDate('event_end',   '<=', $request->end)
+        //         ->get(['id', 'event_name', 'event_start', 'event_end']);
+        //     return response()->json($data);
+        // }
+
         $data = array();
         return view('merchent.appointments.create_availability', $data);
+    }
+
+    public function calendarEvents(Request $request)
+    {
+        switch ($request->type) {
+            case 'create':
+                $event = CrudEvents::create([
+                    'event_name' => $request->event_name,
+                    'event_start' => $request->event_start,
+                    'event_end' => $request->event_end,
+                ]);
+
+                return response()->json($event);
+                break;
+
+            case 'edit':
+                $event = CrudEvents::find($request->id)->update([
+                    'event_name' => $request->event_name,
+                    'event_start' => $request->event_start,
+                    'event_end' => $request->event_end,
+                ]);
+
+                return response()->json($event);
+                break;
+
+            case 'delete':
+                $event = CrudEvents::find($request->id)->delete();
+
+                return response()->json($event);
+                break;
+
+            default:
+                # ...
+                break;
+        }
     }
 
     /**
@@ -44,7 +87,8 @@ class AppointmentManagementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        Appointment::create([]);
     }
 
     /**

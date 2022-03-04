@@ -13,7 +13,7 @@
             <p>Availability to Appointments </p>
         </div>
         <div class="col-md-6 text-right">
-            <a href="{{ url('merchant/appointments-management/create') }}">Add Availability</a>
+            <a href="{{ url('merchant/appointments-management/calendar-event') }}">Add Availability</a>
         </div>
     </div>
 

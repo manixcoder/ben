@@ -212,6 +212,22 @@ class HomeController extends Controller
         }
     }
 
+    public function subscriptionPlan(Request $request)
+    {
+        // dd($request->all());
+        // dd(Auth::user()->id);
+        $userData = DB::table('users')->where('id', Auth::user()->id)->update([
+            'subscription_id' => $request->plan_id
+        ]);
+
+        return redirect('/payment-method')->with(['status' => 'success', 'message' => 'New Company added Successfully!']);
+    }
+
+    public function subscriptionPayment()
+    {
+        
+    }
+
 
     public function createProductCategory()
     {

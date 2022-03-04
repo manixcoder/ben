@@ -802,7 +802,7 @@ header .benefitme .user-dropdown button#dLabel {
     font-family: 'PF Bague Sans Pro';
     font-weight: 400;
 }
-.Subscription a {
+.Subscription a, .btn-free {
     font-size: 18px;
     padding: 10px 20px 10px;
     background: #FFFFFF;
@@ -812,6 +812,9 @@ header .benefitme .user-dropdown button#dLabel {
     border-radius: 5px;
     font-family: 'PF Bague Sans Pro';
     font-weight: 400;
+    display: inline-block;
+    width: auto;
+    height: auto;
 }
 .subscri-features {
     float: left;

@@ -285,6 +285,7 @@ header {
     height: 350px;
     float: left;
     border-radius: 12px;
+    object-fit: cover;
 }
 
 .company-categroy {

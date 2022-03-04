@@ -228,9 +228,21 @@
                                 <p>Appontment for : <span>10 Jun 21 | 10:30 am</span></p>
                             </div>
                             <ul>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px"></a></li>
-                                <li><a href="#"> <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px"></a></li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_location.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_message.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('public/merchemtAssets/images/c_call.png')}}" alt="icon" width="35px">
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
