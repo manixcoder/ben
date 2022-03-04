@@ -11,53 +11,90 @@
         <div class="col-md-6 text-left">
             <p>Add Availability </p>
         </div>
-
     </div>
+    @if(Session::has('status'))
+    <div class="alert alert-{{ Session::get('status') }}">
+        <i class="fa fa-building-o" aria-hidden="true"></i> {{ Session::get('message') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+    </div>
+    @endif
 
+    @if($errors->any())
+    <div class="alert alert-danger">
+        <p><strong>Opps Something went wrong</strong></p>
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 
     <div class="new-requests">
-        <div class="row">
-            <div class="col-md-5 text-left">
-                <div id='full_calendar_events'></div>
-
-            </div>
-            <!-- <div class="col-md-5 text-left">
-                <div class="Jessica-pra calendar-box">
-                    <div class="calendar">
-                        <div class="header">
-                            <a data-action="prev-month" href="javascript:void(0)" title="Previous Month"><i></i></a>
-                            <div class="text" data-render="month-year"></div>
-                            <a data-action="next-month" href="javascript:void(0)" title="Next Month"><i></i></a>
-                        </div>
-                        <div class="months" data-flow="left">
-                            <div class="month month-a">
-                                <div class="render render-a"></div>
+        <form method="POST" action="{{ url('/merchant/appointments-management/save-appointments') }}" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-md-5 text-left">
+                    <div id='full_calendar_events' class="form-control @error('appointment_start') is-invalid @enderror"></div>
+                    @error('appointment_start')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+                <!-- 
+                <div class="col-md-5 text-left">
+                    <div class="Jessica-pra calendar-box">
+                        <div class="calendar">
+                            <div class="header">
+                                <a data-action="prev-month" href="javascript:void(0)" title="Previous Month"><i></i></a>
+                                <div class="text" data-render="month-year"></div>
+                                <a data-action="next-month" href="javascript:void(0)" title="Next Month"><i></i></a>
                             </div>
-                            <div class="month month-b">
-                                <div class="render render-b"></div>
+                            <div class="months" data-flow="left">
+                                <div class="month month-a">
+                                    <div class="render render-a"></div>
+                                </div>
+                                <div class="month month-b">
+                                    <div class="render render-b"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> -->
-            <form method="POST" action="{{ url('/merchant/appointments-management/save-appointments') }}" enctype="multipart/form-data">
+                -->
                 <div class="col-md-5 text-left">
                     <div class="appointment-for title">
+                        <input type="hidden" class="form-control @error('appointment_start') is-invalid @enderror" name="appointment_start" id="appointment_start">
 
-                        @csrf
-                        <input type="hidden" name="appointment_start" id="appointment_start">
-                        <input type="hidden" name="appointment_end" id="appointment_end">
+                        <input type="hidden" class="form-control @error('appointment_end') is-invalid @enderror" name="appointment_end" id="appointment_end">
+
                         <div class="form-group">
                             <label>Appointment Title</label>
-                            <input type="text" class="form-control" name="appointment_title" placeholder="Write title here">
+                            <input type="text" class="form-control @error('appointment_title') is-invalid @enderror" name="appointment_title" placeholder="Write title here">
+                            @error('appointment_title')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label>From</label>
-                            <input type="time" class="form-control " name="start_time" placeholder="HH:MM">
+                            <input type="time" class="form-control @error('appointment_time_start') is-invalid @enderror" name="appointment_time_start" placeholder="HH:MM">
+                            @error('appointment_time_start')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label>To</label>
-                            <input type="time" class="form-control " name="end_time" placeholder="HH:MM">
+                            <input type="time" class="form-control @error('appointment_time_end') is-invalid @enderror" name="appointment_time_end" placeholder="HH:MM">
+                            @error('appointment_time_end')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label class="recurring">Recurring Appointment</label>
@@ -68,7 +105,6 @@
                                 </label>
                             </span>
                         </div>
-
                         <div class="Jessica-pra appointment">
                             <div class="pro-service Message">
                                 <a href="#">
@@ -91,6 +127,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-6">
@@ -105,13 +143,10 @@
                         </div>
                     </div>
                 </div>
-
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </div>
-
-
 @endsection
 @section('pagejs')
 

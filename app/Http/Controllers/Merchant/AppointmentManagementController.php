@@ -6,6 +6,12 @@ use App\Models\Appointment;
 use App\Models\CrudEvents;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use Illuminate\Support\Facades\Hash;
+use Redirect;
+use Validator;
+use DB;
 
 class AppointmentManagementController extends Controller
 {
@@ -87,8 +93,33 @@ class AppointmentManagementController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-        Appointment::create([]);
+        $validator = Validator::make($request->all(), array(
+            'appointment_title'       => 'required',
+            'appointment_start'        => 'required',
+            'appointment_end'        => 'required',
+            'appointment_time_start'        => 'required',
+            'appointment_time_end'        => 'required',
+
+        ));
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+        try {
+            // dd($request->all());
+            Appointment::create([
+                'merchent_id' => Auth::user()->id,
+                'appointment_title'             => $request->appointment_title,
+                'appointment_start'             => $request->appointment_start,
+                'appointment_end'               => $request->appointment_end,
+                'appointment_time_start'        => $request->appointment_time_start,
+                'appointment_time_end'          => $request->appointment_time_end,
+                'appointment_product_services'  => ''
+            ]);
+            return redirect('/merchant/appointments-management/availability-appointments')->with(array('status' => 'success', 'message' => 'Appointment created successfully.'));
+        } catch (\exception $e) {
+            return back()->with(array('status' => 'danger', 'message' =>  $e->getMessage()));
+            return back()->with(array('status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.'));
+        }
     }
 
     /**
