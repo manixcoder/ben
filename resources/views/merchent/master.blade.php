@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    @if(Route::current()->uri == 'merchant/appointments-management/calendar-event')
+    @if(Route::current()->uri == 'merchant/appointments-management/calendar-event' || Route::current()->uri == 'appointments-management/{$id}/edit')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
@@ -161,7 +161,7 @@
     </div>
     @yield('content')
     @yield('pagejs')
-    @if(Route::current()->uri == 'merchant/appointments-management/calendar-event')
+    @if(Route::current()->uri == 'merchant/appointments-management/calendar-event' || Route::current()->uri == 'appointments-management/{$id}/edit')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>

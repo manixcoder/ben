@@ -141,7 +141,12 @@ class AppointmentManagementController extends Controller
      */
     public function edit(Appointment $appointment, $id)
     {
-        //
+        //dd($id);
+        $Appointment = Appointment::find($id);
+        $data = array();
+        $data['appointment']=$Appointment;
+
+        return view('merchent.appointments.edit_availability', $data);
     }
 
     /**
