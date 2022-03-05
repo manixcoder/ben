@@ -18,7 +18,6 @@
 </head>
 
 <body>
-
     @include('frontend.includes.header')
     @yield('content')
     @yield('pagejs')
@@ -49,10 +48,10 @@
                         <div class="footer-leftpad">
                             <h5>Quick Links</h5>
                             <ul>
-                                <li><a href="#">Browse Offers</a></li>
-                                <li><a href="#">Hot Discounts</a></li>
-                                <li><a href="#">Calendar</a></li>
-                                <li><a href="#">Be a Partner</a></li>
+                                <li><a href="{{ url('/') }}">Browse Offers</a></li>
+                                <li><a href="{{ url('/') }}">Hot Discounts</a></li>
+                                <li><a href="{{ url('/') }}">Calendar</a></li>
+                                <li><a href="{{ url('/') }}">Be a Partner</a></li>
                             </ul>
                         </div>
                     </div>
@@ -82,7 +81,6 @@
     <script src="{{ asset('public/frontendAssets/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('public/frontendAssets/js/owl.animate.js') }}"></script>
     <script src="{{ asset('public/frontendAssets/js/aos.js') }}"></script>
-
     <script>
         $(window).bind("load", function() {
             if (document.readyState === "complete") {

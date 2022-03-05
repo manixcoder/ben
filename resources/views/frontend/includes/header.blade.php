@@ -15,12 +15,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ url('/') }}">
                             Browse Offers
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ url('/') }}">
                             Hot Discounts
                         </a>
                     </li>

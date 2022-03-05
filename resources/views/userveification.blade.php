@@ -286,118 +286,7 @@
                     </div>
                 </div>
                 @endforelse
-                <!-- div class="item">
-                    <div class="hotel-bgbox">
-                        <div class="hotel-img">
-                            <figure>
-                                <img src="{{ asset('public/frontendAssets/images/hotelnew-img1.jpg')}}" alt="img" />
-                            </figure>
-                            <span>Hotel</span>
-                        </div>
-                        <div class="hotel-cont">
-                            <h3>Emerald Bay Inn</h3>
-                            <h4><i><img src="{{ asset('public/frontendAssets/images/full_address.png')}}" alt="icon" /></i>New York</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="hotel-bgbox">
-                        <div class="hotel-img">
-                            <figure>
-                                <img src="{{ asset('public/frontendAssets/images/hotelnew-img2.jpg')}}" alt="img" />
-                            </figure>
-                            <span>Hotel</span>
-                        </div>
-                        <div class="hotel-cont">
-                            <h3>Emerald Bay Inn</h3>
-                            <h4><i><img src="{{ asset('public/frontendAssets/images/full_address.png')}}" alt="icon" /></i>New York</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="hotel-bgbox">
-                        <div class="hotel-img">
-                            <figure>
-                                <img src="{{ asset('public/frontendAssets/images/hotelnew-img3.jpg')}}" alt="img" />
-                            </figure>
-                            <span>Hotel</span>
-                        </div>
-                        <div class="hotel-cont">
-                            <h3>Emerald Bay Inn</h3>
-                            <h4><i><img src="{{ asset('public/frontendAssets/images/full_address.png')}}" alt="icon" /></i>New York</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="hotel-bgbox">
-                        <div class="hotel-img">
-                            <figure>
-                                <img src="{{ asset('public/frontendAssets/images/tabel-hotel.jpg')}}" alt="img" />
-                            </figure>
-                            <span>Hotel</span>
-                        </div>
-                        <div class="hotel-cont">
-                            <h3>Emerald Bay Inn</h3>
-                            <h4><i><img src="{{ asset('public/frontendAssets/images/full_address.png')}}" alt="icon" /></i>New York</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="hotel-bgbox">
-                        <div class="hotel-img">
-                            <figure>
-                                <img src="{{ asset('public/frontendAssets/images/hotelnew-img1.jpg')}}" alt="img" />
-                            </figure>
-                            <span>Hotel</span>
-                        </div>
-                        <div class="hotel-cont">
-                            <h3>Emerald Bay Inn</h3>
-                            <h4><i><img src="{{ asset('public/frontendAssets/images/full_address.png')}}" alt="icon" /></i>New York</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="hotel-bgbox">
-                        <div class="hotel-img">
-                            <figure>
-                                <img src="{{ asset('public/frontendAssets/images/hotelnew-img2.jpg')}}" alt="img" />
-                            </figure>
-                            <span>Hotel</span>
-                        </div>
-                        <div class="hotel-cont">
-                            <h3>Emerald Bay Inn</h3>
-                            <h4><i><img src="{{ asset('public/frontendAssets/images/full_address.png')}}" alt="icon" /></i>New York</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="hotel-bgbox">
-                        <div class="hotel-img">
-                            <figure>
-                                <img src="{{ asset('public/frontendAssets/images/hotelnew-img3.jpg')}}" alt="img" />
-                            </figure>
-                            <span>Hotel</span>
-                        </div>
-                        <div class="hotel-cont">
-                            <h3>Emerald Bay Inn</h3>
-                            <h4><i><img src="{{ asset('public/frontendAssets/images/full_address.png')}}" alt="icon" /></i>New York</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="hotel-bgbox">
-                        <div class="hotel-img">
-                            <figure>
-                                <img src="{{ asset('public/frontendAssets/images/tabel-hotel.jpg')}}" alt="img" />
-                            </figure>
-                            <span>Hotel</span>
-                        </div>
-                        <div class="hotel-cont">
-                            <h3>Emerald Bay Inn</h3>
-                            <h4><i><img src="{{ asset('public/frontendAssets/images/full_address.png')}}" alt="icon" /></i>New York</h4>
-                        </div>
-                    </div>
-                </div -->
+                
             </div>
         </div>
     </div>
@@ -665,12 +554,16 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function() {
-        $('.in').on('click', function() {
-            // $(this).removeClass('in').css('display:none');
+        $("#singup_mod").click(function() {
+            $('#loginModal').modal('hide');
         });
 
 
+
+        $("#login_mod").click(function() {
+            $('#singupModal').modal('hide');
+
+        });
     });
 </script>
-
 @stop

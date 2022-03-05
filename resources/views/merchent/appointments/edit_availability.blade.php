@@ -42,27 +42,7 @@
                     </span>
                     @enderror
                 </div>
-                <!-- 
-                <div class="col-md-5 text-left">
-                    <div class="Jessica-pra calendar-box">
-                        <div class="calendar">
-                            <div class="header">
-                                <a data-action="prev-month" href="javascript:void(0)" title="Previous Month"><i></i></a>
-                                <div class="text" data-render="month-year"></div>
-                                <a data-action="next-month" href="javascript:void(0)" title="Next Month"><i></i></a>
-                            </div>
-                            <div class="months" data-flow="left">
-                                <div class="month month-a">
-                                    <div class="render render-a"></div>
-                                </div>
-                                <div class="month month-b">
-                                    <div class="render render-b"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                -->
+               
                 <div class="col-md-5 text-left">
                     <div class="appointment-for title">
                         <input type="hidden" class="form-control @error('appointment_start') is-invalid @enderror" name="appointment_start" id="appointment_start">
@@ -71,7 +51,7 @@
 
                         <div class="form-group">
                             <label>Appointment Title</label>
-                            <input type="text" class="form-control @error('appointment_title') is-invalid @enderror" name="appointment_title" placeholder="Write title here">
+                            <input type="text" class="form-control @error('appointment_title') is-invalid @enderror" name="appointment_title" value="" placeholder="Write title here">
                             @error('appointment_title')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -80,7 +60,7 @@
                         </div>
                         <div class="form-group">
                             <label>From</label>
-                            <input type="time" class="form-control @error('appointment_time_start') is-invalid @enderror" name="appointment_time_start" placeholder="HH:MM">
+                            <input type="time" class="form-control @error('appointment_time_start') is-invalid @enderror" name="appointment_time_start" value="" placeholder="HH:MM">
                             @error('appointment_time_start')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -89,7 +69,7 @@
                         </div>
                         <div class="form-group">
                             <label>To</label>
-                            <input type="time" class="form-control @error('appointment_time_end') is-invalid @enderror" name="appointment_time_end" placeholder="HH:MM">
+                            <input type="time" class="form-control @error('appointment_time_end') is-invalid @enderror" value="" name="appointment_time_end" placeholder="HH:MM">
                             @error('appointment_time_end')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -138,7 +118,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary bgcolor">Add</button>
+                                <button type="submit" class="btn btn-primary bgcolor">Update</button>
                             </div>
                         </div>
                     </div>

@@ -12,10 +12,10 @@ class ServiceCategorySeeder extends Seeder
     public function run()
     {
         DB::table('services_category')->delete();
-        $servicesData = array(
+        $subscriptionData = array(
             array(
                 'id'                => 1,
-                'category_name'     => 'Personal Care Appliances',
+                'category_name'     => "Personal Care Appliances",
                 'parent_id'         => '0',
                 'status'            => '1',
                 'created_at'        =>  date("Y-m-d H:i:s"),
@@ -23,7 +23,7 @@ class ServiceCategorySeeder extends Seeder
             ),
             array(
                 'id'                => 2,
-                'category_name'     => 'Home appliances',
+                'category_name'     => "Home appliances",
                 'parent_id'         => '0',
                 'status'            => '1',
                 'created_at'        =>  date("Y-m-d H:i:s"),
@@ -33,6 +33,7 @@ class ServiceCategorySeeder extends Seeder
                 'id'                => 3,
                 'category_name'     => "Men's Shoes & T-Shirt",
                 'parent_id'         => '0',
+                'status'            => '1',
                 'created_at'        =>  date("Y-m-d H:i:s"),
                 'updated_at'        =>  date("Y-m-d H:i:s"),
             ),
@@ -45,7 +46,10 @@ class ServiceCategorySeeder extends Seeder
                 'updated_at'        =>  date("Y-m-d H:i:s"),
             ),
 
+
+
         );
-        DB::table('services_category')->insert($servicesData);
+        DB::table('services_category')->insert($subscriptionData);
+        
     }
 }
