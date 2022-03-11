@@ -95,7 +95,7 @@ class ProductManagementController extends Controller
                 $product->pro_image = $filename;
                 $product->save();
             }
-            
+
 
             return redirect('/merchant/product-management')->with([
                 'status' => 'success',
