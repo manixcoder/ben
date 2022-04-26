@@ -31,7 +31,7 @@ class UserManagementController extends Controller
         ]);
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 401);
-            return back()->withErrors($validator)->withInput();
+            // return back()->withErrors($validator)->withInput();
         }
         try {
             if ($request->gender == '1') {
@@ -63,14 +63,12 @@ class UserManagementController extends Controller
             $userData = User::find($userData->id);
             $success['data'] =  $userData;
             $success['token'] =  $userData->createToken('MyApp')->accessToken;
-           
-            return response()->json([
-                'success' => $success
-            ], $this->successStatus);
+
+            return response()->json(['success' => $success], $this->successStatus);
         } catch (\Exception $e) {
             return response()->json(['status' => 'danger', 'message' => $e->getMessage()], 401);
-            return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);
-            return back()->with(['status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.']);
+            // return back()->with(['status' => 'danger', 'message' => $e->getMessage()]);
+            // return back()->with(['status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.']);
         }
     }
 }

@@ -66,9 +66,7 @@
                 <div class="col-md-5 text-left">
                     <div class="appointment-for title">
                         <input type="hidden" class="form-control @error('appointment_start') is-invalid @enderror" name="appointment_start" id="appointment_start">
-
                         <input type="hidden" class="form-control @error('appointment_end') is-invalid @enderror" name="appointment_end" id="appointment_end">
-
                         <div class="form-group">
                             <label>Appointment Title</label>
                             <input type="text" class="form-control @error('appointment_title') is-invalid @enderror" name="appointment_title" placeholder="Write title here">
@@ -89,7 +87,11 @@
                         </div>
                         <div class="form-group">
                             <label>To</label>
-                            <input type="time" class="form-control @error('appointment_time_end') is-invalid @enderror" name="appointment_time_end" placeholder="HH:MM">
+                            <input type="time" 
+                            class="form-control @error('appointment_time_end') is-invalid @enderror" 
+                            name="appointment_time_end" 
+                            placeholder="HH:MM"
+                            >
                             @error('appointment_time_end')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -149,7 +151,4 @@
 </div>
 @endsection
 @section('pagejs')
-
-
-
 @stop

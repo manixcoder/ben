@@ -71,7 +71,7 @@ class ProductManagementController extends Controller
             return back()->withErrors($validator)->withInput();
         }
         try {
-            
+
             $productData = Product::create([
                 'merchent_id'           => Auth::user()->id,
                 'product_type'          => $request->has('product_type') ? $request->product_type : '',
@@ -82,19 +82,20 @@ class ProductManagementController extends Controller
                 'pro_description'       => $request->has('pro_description') ? $request->pro_description : '',
                 'pro_price'             => $request->has('pro_price') ? $request->pro_price : '',
             ]);
-            if ($request->hasFile('pro_image')) {
-                $product = Product::find($productData->id);
-                $file = $request->file('pro_image');
-                $filename = 'pro_image-' . time() . '.' . $file->getClientOriginalExtension();
-                $file->move('public/uploads/', $filename);
-                $product->pro_image = $filename;
-                $product->save();
-            }
             if ($request->product_type == '1') {
                 $product_type = "Product";
             } else {
                 $product_type = "Services";
             }
+            if ($request->hasFile('pro_image')) {
+                $product = Product::find($productData->id);
+                $file = $request->file('pro_image');
+                $filename = $product_type . time() . '.' . $file->getClientOriginalExtension();
+                $file->move('public/uploads/', $filename);
+                $product->pro_image = $filename;
+                $product->save();
+            }
+
 
             return redirect('/merchant/product-management')->with([
                 'status' => 'success',
