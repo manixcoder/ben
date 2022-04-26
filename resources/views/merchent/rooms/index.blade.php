@@ -44,7 +44,7 @@
                     Accepted
                 </a>
             </li>
-            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">My Room</a></li>
+            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">My Rooms</a></li>
         </ul>
         <!-- Tab panes -->
         <div class="tab-content">
@@ -146,16 +146,19 @@
                     ->orderBy('room_for', 'ASC')
                     ->distinct()
                     ->get(['room_for']);
-
                 $i = 0;
 
                 ?>
-                <a href="{{ url('merchant/room-management/create') }}" class="addproduct-btn pull-right">Add New Room</a>
+                <a href="{{ url('merchant/room-management/create') }}" class="addproduct-btn pull-right">Add New Rooms</a>
                 <div class="new-booking">
                     <div class="row">
                         <ul class="nav nav-tabs number-sec col-md-12" role="tablist">
                             @forelse ($roomTypeData as $key=> $roomType)
-                            <li class="col-md-4 text-left <?php if ($pageTitle == 'Room' && $i == '0') { ?> active <?php } ?>" role="presentation">
+                            <li class="col-md-4 text-left <?php
+                                                            if ($pageTitle == 'Room' && $i == '0') {
+                                                            ?> active <?php
+                                                                    }
+                                                                        ?>" role="presentation">
                                 <a class="number-table room" href="#subhome-{{ $roomType->room_for }}" data-id="{{ $roomType->room_for }}" aria-controls="subhome-{{ $roomType->room_for }}" role="tab" data-toggle="tab">
                                     <figure>
                                         <img src="{{ asset('public/merchemtAssets/images/room_no.png')}}" alt="icon" width="90px">
@@ -183,13 +186,11 @@
                 @if (count($roomTypeData) > 0)
                 <?php
                 $roomsData = DB::table('hotel_room')->where('room_for', $roomTypeData[0]->room_for)->where('merchent_id', Auth::user()->id)->get();
-
-
                 ?>
                 <div class="tab-content" id="listings_list">
                     <div id="default_div">
                         <div role="tabpanel" class="tab-pane active" id="subhome">
-                            @foreach($roomsData as $rooms)
+                            @foreach($roomsData as $key => $rooms)
                             @php
                             $ammenitis = unserialize($rooms->selected_amenities);
                             @endphp
@@ -207,11 +208,11 @@
                                             </p>
                                             <ul>
                                                 <li>
-                                                    <img src="{{ asset('public/merchemtAssets/images/amt_sqft.png')}}" alt="">
+                                                    <img src="{{ asset('public/merchemtAssets/images/amt_sqft.png')}}" alt="{{ $rooms->room_sq_ft }}">
                                                     {{ $rooms->room_sq_ft }} Sq Ft
                                                 </li>
                                                 <li>
-                                                    <img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="">
+                                                    <img src="{{ asset('public/merchemtAssets/images/amt_single_beds.png')}}" alt="{{ $rooms->single_beds  }}">
                                                     {{ $rooms->single_beds  }} Single Beds
                                                 </li>
 
@@ -220,10 +221,10 @@
                                                 $amenitieData = DB::table('amenities')->where('id', $am)->first();
                                                 @endphp
                                                 @if($amenitieData->amenities_name =='Free WiFi')
-                                                <li><img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="">Free WiFi</li>
+                                                <li><img src="{{ asset('public/merchemtAssets/images/amt_free_wifi.png')}}" alt="{{ $amenitieData->amenities_name }}">Free WiFi</li>
                                                 @endif
                                                 @if($amenitieData->amenities_name =='Air Condition')
-                                                <li><img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="">Air Condition</li>
+                                                <li><img src="{{ asset('public/merchemtAssets/images/amt_air_condition.png')}}" alt="{{ $amenitieData->amenities_name }}">Air Condition</li>
                                                 @endif
                                                 @endforeach
                                             </ul>
@@ -269,7 +270,11 @@
                                 <div class="modal-dialog " role="document">
                                     <div class="modal-content appoint-ment ">
                                         <div class="modal-header">
-                                            <button type="button" class="close ConnectPclose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <button type="button" class="close ConnectPclose" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">
+                                                    &times;
+                                                </span>
+                                            </button>
                                         </div>
                                         <div class="modal-body new-requests">
                                             <div class="messagepopCant">
@@ -286,7 +291,7 @@
                                                                     </span>
                                                                     <span>
                                                                         <a href="#">
-                                                                            <img src="images/delete.png">
+                                                                            <img src="{{ asset('public/merchemtAssets/images/delete.png')}}">
                                                                         </a>
                                                                     </span>
                                                                 </h3>
@@ -357,9 +362,18 @@
                                                                 <p>jessicajohn94@gmail.com</p>
                                                                 <p>9800000058</p>
                                                                 <h3>Room Name 2</h3>
-                                                                <p><i><img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px"></i> 4 People 2 Room</p>
-                                                                <p><span>Booking for :</span>10 Jun 21 | 10:30 am - 12 Jun 21 | 3:00 pm</p>
-
+                                                                <p>
+                                                                    <i>
+                                                                        <img src="{{ asset('public/merchemtAssets/images/people.png')}}" alt="icon" width="18px">
+                                                                    </i>
+                                                                    4 People 2 Room
+                                                                </p>
+                                                                <p>
+                                                                    <span>
+                                                                        Booking for :
+                                                                    </span>
+                                                                    10 Jun 21 | 10:30 am - 12 Jun 21 | 3:00 pm
+                                                                </p>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 text-right" style="padding-left: 0;">
@@ -447,7 +461,6 @@
             input: $('.back input'),
             buttons: $('.back button')
         },
-
         init: function() {
             instance = this;
             settings = this.settings;
@@ -470,7 +483,6 @@
             });
         }
     }
-
     app.init();
 </script>
 @stop

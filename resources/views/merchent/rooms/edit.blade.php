@@ -9,7 +9,8 @@
     <div class="pra-sec">
         <p>Edit Room</p>
     </div>
-    <?php // dd($roomsData);
+    <?php 
+    // dd($roomsData);
     ?>
     @if(Session::has('status'))
     <div class="alert alert-{{ Session::get('status') }}">
@@ -60,8 +61,7 @@
                         <div class="form-group">
                             <select class="form-control @error('room_for') has-danger @enderror givepoint-img" name="room_for">
                                 <option value="">Select Room</option>
-                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option>
-                                    @endfor
+                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option> @endfor
                             </select>
                             @error('room_for')
                             <span class="invalid-feedback" role="alert">
@@ -90,8 +90,7 @@
                         <div class="form-group">
                             <select class="form-control @error('min_booking_for') has-danger @enderror givepoint-img" name="min_booking_for">
                                 <option value="">Select Booking For</option>
-                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option>
-                                    @endfor
+                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option> @endfor
                             </select>
                             @error('min_booking_for')
                             <span class="invalid-feedback" role="alert">
@@ -122,10 +121,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6">
-
-                    </div>
-
+                    <div class="col-md-6 col-sm-6"></div>
                     <div class="col-md-12">
                         <label>Description</label>
                         <div class="form-group">
@@ -176,7 +172,8 @@
                             $amenitiesData = DB::table('amenities')->get();
                             ?>
                             @foreach($amenitiesData as $amenities)
-                            <?php // dd($amenities); 
+                            <?php
+                                // dd($amenities); 
                             ?>
                             <div class="col-md-4">
                                 <div class="form-group">
@@ -301,7 +298,6 @@
 
     $(document).ready(function() {
         $("#add_more_safty").click(function() {
-            //alert("Hello here");
             $("#safty_add").append('<input  type="text" name="health_safety[]" class="form-control" placeholder="Health & Safety" style="margin-top: 10px;display: inline-block;width: 100%;" >');
         });
     });

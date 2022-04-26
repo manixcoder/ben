@@ -57,8 +57,7 @@
                         <div class="form-group">
                             <select class="form-control @error('room_for') has-danger @enderror givepoint-img" name="room_for">
                                 <option value="">Select Room</option>
-                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option>
-                                    @endfor
+                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option>@endfor
                             </select>
                             @error('room_for')
                             <span class="invalid-feedback" role="alert">
@@ -72,8 +71,7 @@
                         <div class="form-group">
                             <select class="form-control @error('number_of_room') has-danger @enderror givepoint-img" name="number_of_room">
                                 <option value="">Select No of Room</option>
-                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option>
-                                    @endfor
+                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option> @endfor
                             </select>
                             @error('number_of_room')
                             <span class="invalid-feedback" role="alert">
@@ -87,8 +85,7 @@
                         <div class="form-group">
                             <select class="form-control @error('min_booking_for') has-danger @enderror givepoint-img" name="min_booking_for">
                                 <option value="">Select Booking For</option>
-                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option>
-                                    @endfor
+                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option> @endfor
                             </select>
                             @error('min_booking_for')
                             <span class="invalid-feedback" role="alert">
@@ -100,7 +97,7 @@
                     <div class="col-md-6 col-sm-6">
                         <label>Price/Night</label>
                         <div class="form-group">
-                            <input type="text" name="price_per_night" class="form-control @error('price_per_night') has-danger @enderror" placeholder="$      500">
+                            <input type="text" name="price_per_night" class="form-control @error('price_per_night') has-danger @enderror" placeholder="$ 500">
                             @error('price_per_night')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -142,8 +139,7 @@
                         <div class="form-group">
                             <select class="form-control @error('room_sq_ft') has-danger @enderror givepoint-img" name="room_sq_ft">
                                 <option>Select Room Sq Ft</option>
-                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option>
-                                    @endfor
+                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option> @endfor
                             </select>
                             @error('room_sq_ft')
                             <span class="invalid-feedback" role="alert">
@@ -157,8 +153,7 @@
                         <div class="form-group">
                             <select class="form-control @error('single_beds') has-danger @enderror givepoint-img" name="single_beds">
                                 <option>Select Single Beds</option>
-                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option>
-                                    @endfor
+                                @for($i=1; $i<=8;$i++) <option value="{{ $i }}">{{ $i }}</option> @endfor
                             </select>
                             @error('single_beds')
                             <span class="invalid-feedback" role="alert">
