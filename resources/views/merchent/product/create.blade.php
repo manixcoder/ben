@@ -7,7 +7,7 @@
 @stop
 <div class="add-newoffer">
     <div class="dashboard-heading">
-        <h3>Add New Product</h3>
+        <h3>Add New Product</h3> 
     </div>
     @if(Session::has('status'))
     <div class="alert alert-{{ Session::get('status') }}">
@@ -114,6 +114,17 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <textarea class="form-control @error('pro_description') is-invalid @enderror" value="{{ old('pro_description') }}" name="pro_description"></textarea>
+                            @error('pro_description')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <textarea class="form-control @error('pro_description') is-invalid @enderror" value="{{ old('pro_description') }}" name="pro_description" placeholder="How its works"></textarea>
                             @error('pro_description')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
