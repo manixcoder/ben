@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2022 at 08:16 AM
+-- Generation Time: Jun 02, 2022 at 10:42 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.24
 
@@ -606,7 +606,8 @@ INSERT INTO `role_user` (`user_id`, `role_id`, `created_at`, `updated_at`) VALUE
 (5, 3, '2022-03-05 08:20:26', '2022-03-05 08:20:26'),
 (6, 3, '2022-03-05 08:21:19', '2022-03-05 08:21:19'),
 (7, 3, '2022-03-05 08:22:53', '2022-03-05 08:22:53'),
-(8, 3, '2022-03-05 08:31:19', '2022-03-05 08:31:19');
+(8, 3, '2022-03-05 08:31:19', '2022-03-05 08:31:19'),
+(9, 2, '2022-06-02 03:10:56', '2022-06-02 03:10:56');
 
 -- --------------------------------------------------------
 
@@ -744,13 +745,14 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `user_role`, `first_name`, `last_name`, `name`, `email`, `email_verified_at`, `password`, `company_name`, `profile_image`, `company_logo`, `company_banner`, `company_type`, `sub_restaurant_type`, `address`, `city`, `zip_code`, `uid_number`, `general_layality`, `user_type`, `date_birthday`, `gender`, `mobile`, `otp`, `subscription_id`, `last_login`, `about_description`, `opening_time`, `closing_time`, `website_link`, `facebook_link`, `instagram_link`, `twitter_link`, `comp_short_descriptin`, `is_confirmation_chk`, `is_active`, `is_audience`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, '1', 'Super', 'Admin', 'administrator', 'admin@yopmail.com', '2022-03-04 00:37:45', '$2y$10$HcHKGtWWk99Xf0RGkzmTPuk5CHtNFFMdXxxkjUbEmuSufJpt3tNu.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, '2022-05-17 05:48:17', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '1', NULL, '2022-03-04 00:37:45', '2022-05-17 00:18:17'),
-(2, '2', 'Manish', 'Pathak', 'ARK NEW TECH', 'mani@yopmail.com', NULL, '$2y$10$4e8Camc2y3mTCRfDZXOyH.8BJLLBh0P0xsB5aQT6YPqf3avME9y2W', 'ARK NEW TECH', 'boy.png', NULL, NULL, '1', '7', 'Noida', 'Noida', '345345', '456346456', 'yes', '4', '2006-02-04', '1', '8054251404', NULL, '1', '2022-05-17 05:49:15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '1', NULL, '2022-03-04 00:43:51', '2022-05-17 00:19:15'),
+(2, '2', 'Manish', 'Pathak', 'ARK NEW TECH', 'mani@yopmail.com', NULL, '$2y$10$4e8Camc2y3mTCRfDZXOyH.8BJLLBh0P0xsB5aQT6YPqf3avME9y2W', 'ARK NEW TECH', 'boy.png', NULL, NULL, '1', '7', 'Noida', 'Noida', '345345', '456346456', 'yes', '4', '2006-02-04', '1', '8054251404', NULL, '1', '2022-05-30 08:35:04', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '1', NULL, '2022-03-04 00:43:51', '2022-05-30 03:05:04'),
 (3, '3', 'Manish', 'Pathak', 'mmm', 'mmm@yopmail.com', NULL, '$2y$10$i0gp6fzmyYV./vjQ6YLKCuJfaa2BRf8RZK1Zw2UsgFE8UwIDJM9gu', NULL, 'boy.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '9708364910', NULL, NULL, '2022-03-05 13:07:36', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '1', NULL, '2022-03-05 07:33:18', '2022-03-05 07:37:36'),
 (4, '2', 'Manish22', 'Pathak22', 'ARK NEW TECH2', 'mani56465@yopmail.com', NULL, '$2y$10$3S/tYnwNd1RBkesQ5wf0m.lTmBTHm.Z3yPfNcQeVQ2UHQEUCONBrW', 'ARK NEW TECH2', 'boy.png', NULL, NULL, '3', '9', 'Noida', 'Noida', '345345', '8789798', 'yes', '4', '2011-06-08', '1', '8054251405', NULL, '1', '2022-03-05 13:10:20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '1', NULL, '2022-03-05 07:40:20', '2022-03-05 07:40:20'),
 (5, '3', 'Manish', 'Pathak', 'mani3345', 'mani3345@yopmail.com', NULL, '$2y$10$o5vVTPUbsuC32r2e5KkpUuqgWvVyMez/9McFcq7XR2pmfIeTfwQjG', NULL, 'boy.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '8054251404', NULL, NULL, '2022-03-05 13:50:26', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '1', NULL, '2022-03-05 08:20:26', '2022-03-05 08:20:26'),
 (6, '3', 'Manish', 'Pathak', 'mani3345456', 'mani3345546@yopmail.com', NULL, '$2y$10$jqPUyxtWNdSTs/HeIzMbFe/PVB9NN53m16WLilbQk1OCOQRmo8xlC', NULL, 'boy.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '8054251404', NULL, NULL, '2022-03-05 13:51:19', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '1', NULL, '2022-03-05 08:21:19', '2022-03-05 08:21:19'),
 (7, '3', 'Manish', 'Pathak', 'mani334545656', 'mani334554656@yopmail.com', NULL, '$2y$10$SQPsE5ujJbKH9abehCRi/eLI6XYV61dJyb8xurEaT/DG6LuWKMyDi', NULL, 'boy.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '8054251404', NULL, NULL, '2022-03-05 13:52:53', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '1', NULL, '2022-03-05 08:22:53', '2022-03-05 08:22:53'),
-(8, '3', 'Manish', 'Pathak', 'mani334545656435', 'mani33455465645@yopmail.com', NULL, '$2y$10$yq3W8u0p.yR64yKOFXlDCuMlHh9T20dDGKD251KG1uERWTS7OXRH2', NULL, 'boy.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '8054251404', NULL, NULL, '2022-03-08 10:31:35', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '1', NULL, '2022-03-05 08:31:19', '2022-03-08 05:01:35');
+(8, '3', 'Manish', 'Pathak', 'mani334545656435', 'mani33455465645@yopmail.com', NULL, '$2y$10$yq3W8u0p.yR64yKOFXlDCuMlHh9T20dDGKD251KG1uERWTS7OXRH2', NULL, 'boy.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '8054251404', NULL, NULL, '2022-03-08 10:31:35', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '1', '1', NULL, '2022-03-05 08:31:19', '2022-03-08 05:01:35'),
+(9, '2', 'MMMMMMMMMMMM', 'PPPPPPP', 'Maish', 'mmmm@yopmail.com', NULL, '$2y$10$/QK8zSFT2y.fM/0N5Xrcuu.MqQKgPd/d.VDgIhNXo5DfgxuzUToS.', 'Maish', 'boy.png', NULL, NULL, '1', '7', 'nnnnnnnnnn', 'erewrwer', 'erewrwer', '34534534534', '', '4', '2022-03-10', '1', '78678678678678', NULL, NULL, '2022-06-02 08:40:56', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '0', '1', NULL, '2022-06-02 03:10:56', '2022-06-02 03:10:56');
 
 --
 -- Indexes for dumped tables
@@ -1091,7 +1093,7 @@ ALTER TABLE `tables`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
