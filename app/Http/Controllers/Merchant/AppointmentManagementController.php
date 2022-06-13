@@ -39,13 +39,6 @@ class AppointmentManagementController extends Controller
      */
     public function create(Request $request)
     {
-        // if ($request->ajax()) {
-        //     $data = Appointment::whereDate('event_start1', '>=', $request->start)
-        //         ->whereDate('event_end',   '<=', $request->end)
-        //         ->get(['id', 'event_name', 'event_start', 'event_end']);
-        //     return response()->json($data);
-        // }
-
         $data = array();
         return view('merchent.appointments.create_availability', $data);
     }

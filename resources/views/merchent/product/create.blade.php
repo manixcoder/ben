@@ -124,8 +124,8 @@
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <textarea class="form-control @error('pro_description') is-invalid @enderror" value="{{ old('pro_description') }}" name="pro_description" placeholder="How its works"></textarea>
-                            @error('pro_description')
+                            <textarea class="form-control @error('description') is-invalid @enderror" value="{{ old('description') }}" name="description" placeholder="How its works"></textarea>
+                            @error('description')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -152,5 +152,10 @@
 @endsection
 @section('pagejs')
 <script>
+</script>
+<script type="text/javascript">
+
+    CKEDITOR.replace('description');
+
 </script>
 @stop

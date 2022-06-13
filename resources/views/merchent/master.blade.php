@@ -22,7 +22,12 @@
     <link rel="stylesheet" href="{{ asset('public/merchemtAssets/css/style.css')}}">
     @endif
 
-
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> -->
+    <script src="choosen.js"></script>
+    <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script> <!-- Editor script -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
 
     @yield('pageCss')
     <title>{{ config('app.name', 'Laravel') }} @yield('pageTitle')</title>

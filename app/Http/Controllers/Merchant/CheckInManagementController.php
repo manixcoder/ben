@@ -73,11 +73,8 @@ class CheckInManagementController extends Controller
             return back()->with(array('status' => 'danger', 'message' =>  $e->getMessage()));
             return back()->with(array('status' => 'danger', 'message' => 'Some thing went wrong! Please try again later.'));
         }
-
-
         return redirect('/merchant/check-in-management')->with(['status' => 'success', 'message' => 'Under progress!']);
-        dd("Under progress");
-        dd($request->all());
+       
     }
 
     /**
