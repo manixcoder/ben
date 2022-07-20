@@ -88,6 +88,7 @@ Route::get('/validate-user', 'HomeController@checkUserRole');
 Route::get('/request/get-sub-category/{id}', 'HomeController@getSubCategory');
 
 Route::any('subscription-plan', 'HomeController@subscriptionPlan');
+Route::any('browse-offers','HomeController@browseOffers');
 
 Route::get('payment-method', function () {
     return view('merchentRegistration.payment-method');

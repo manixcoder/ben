@@ -225,11 +225,16 @@ class HomeController extends Controller
 
     public function subscriptionPayment()
     {
-        
     }
 
 
     public function createProductCategory()
     {
+    }
+
+    public function browseOffers(Request $request)
+    {
+        $data = array();
+        return view('frontend.browse_offer', $data); 
     }
 }
