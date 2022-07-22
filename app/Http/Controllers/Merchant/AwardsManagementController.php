@@ -90,8 +90,6 @@ class AwardsManagementController extends Controller
                 "regular_visitor" => $request->has('regular_visitor') ? $request->regular_visitor : $awardData->regular_visitor,
                 "visitor_points" => $request->has('visitor_points') ? $request->visitor_points : $awardData->visitor_points,
                 "big_spender" => $request->has('big_spender') ? $request->big_spender : $awardData->big_spender,
-
-
             );
             $awardData->update($updateData);
             return redirect('/merchant/awards-management')->with(array('status' => 'success', 'message' => 'Update record successfully.'));

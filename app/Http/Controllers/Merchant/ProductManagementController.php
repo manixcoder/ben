@@ -71,7 +71,7 @@ class ProductManagementController extends Controller
             return back()->withErrors($validator)->withInput();
         }
         try {
-
+            
             $productData = Product::create([
                 'merchent_id'           => Auth::user()->id,
                 'product_type'          => $request->has('product_type') ? $request->product_type : '',
@@ -95,8 +95,6 @@ class ProductManagementController extends Controller
                 $product->pro_image = $filename;
                 $product->save();
             }
-
-
             return redirect('/merchant/product-management')->with([
                 'status' => 'success',
                 'message' => 'New ' . $product_type . ' added Successfully!',

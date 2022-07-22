@@ -3,6 +3,53 @@
 @section('content')
 @section('pageCss')
 <style>
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
 </style>
 @stop
 
@@ -42,27 +89,7 @@
                     </span>
                     @enderror
                 </div>
-                <!-- 
-                <div class="col-md-5 text-left">
-                    <div class="Jessica-pra calendar-box">
-                        <div class="calendar">
-                            <div class="header">
-                                <a data-action="prev-month" href="javascript:void(0)" title="Previous Month"><i></i></a>
-                                <div class="text" data-render="month-year"></div>
-                                <a data-action="next-month" href="javascript:void(0)" title="Next Month"><i></i></a>
-                            </div>
-                            <div class="months" data-flow="left">
-                                <div class="month month-a">
-                                    <div class="render render-a"></div>
-                                </div>
-                                <div class="month month-b">
-                                    <div class="render render-b"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                -->
+
                 <div class="col-md-5 text-left">
                     <div class="appointment-for title">
                         <input type="hidden" class="form-control @error('appointment_start') is-invalid @enderror" name="appointment_start" id="appointment_start">
@@ -87,11 +114,7 @@
                         </div>
                         <div class="form-group">
                             <label>To</label>
-                            <input type="time" 
-                            class="form-control @error('appointment_time_end') is-invalid @enderror" 
-                            name="appointment_time_end" 
-                            placeholder="HH:MM"
-                            >
+                            <input type="time" class="form-control @error('appointment_time_end') is-invalid @enderror" name="appointment_time_end" placeholder="HH:MM">
                             @error('appointment_time_end')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -109,7 +132,7 @@
                         </div>
                         <div class="Jessica-pra appointment">
                             <div class="pro-service Message">
-                                <a href="#">
+                                <a href="#" id="myBtn">
                                     Connect with Product/Service
                                     <img src="{{ asset('public/merchemtAssets/images/arrow_view.png')}}" alt="arrow_view">
                                 </a>
@@ -148,7 +171,309 @@
             </div>
         </form>
     </div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                    <button type="button" class="close ConnectPclose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div> -->
+                    <div class="modal-body">
+                        <div class="messagepopCant">
+                            <h3>Appointment availibility connect with</h3>
+                            <div class="offerconnect">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#Products" aria-controls="home" role="tab" data-toggle="tab">Products</a></li>
+                                    <li role="presentation"><a href="#Services" aria-controls="profile" role="tab" data-toggle="tab">Services</a></li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="form-group">
+                                        <input type="button" class="form-control" placeholder="Search" />
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane active" id="Products">
+                                        <?php
+                                        $productsData = DB::table('products')->where('product_type', '1')->where('merchent_id', Auth::user()->id)->get();
+                                        ?>
+                                        <table class="table">
+                                            <tbody>
+                                                @forelse ($productsData as $product)
+                                                <tr>
+                                                    <td>
+                                                        <span class="firstimg">
+                                                            <img src="{{ asset('public/merchemtAssets/images/vivo.jpg')}}" />
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        #{{ $product->id }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $product->product_name}}
+                                                    </td>
+                                                    <td>
+                                                        <span class="tdcheckbox">
+                                                            <input type="checkbox" class="checkbox">
+                                                            <small>&#10004;</small>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                @empty
+                                                <p>No product</p>
+                                                @endforelse
+                                                <!-- <tr>
+                                                    <td>
+                                                        <span class="firstimg">
+                                                            <img src="{{ asset('public/merchemtAssets/images/vivo.jpg')}}" />
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        #89478494
+                                                    </td>
+                                                    <td>
+                                                        HUAWEI P50 Pro
+                                                    </td>
+                                                    <td>
+                                                        <span class="tdcheckbox">
+                                                            <input type="checkbox" class="checkbox">
+                                                            <small>&#10004;</small>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="firstimg">
+                                                            <img src="{{ asset('public/merchemtAssets/images/vivo.jpg')}}" />
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        #89478494
+                                                    </td>
+                                                    <td>
+                                                        HUAWEI P50 Pro
+                                                    </td>
+                                                    <td>
+                                                        <span class="tdcheckbox">
+                                                            <input type="checkbox" class="checkbox">
+                                                            <small>&#10004;</small>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="firstimg">
+                                                            <img src="{{ asset('public/merchemtAssets/images/vivo.jpg')}}" />
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        #89478494
+                                                    </td>
+                                                    <td>
+                                                        HUAWEI P50 Pro
+                                                    </td>
+                                                    <td>
+                                                        <span class="tdcheckbox">
+                                                            <input type="checkbox" class="checkbox">
+                                                            <small>&#10004;</small>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="firstimg">
+                                                            <img src="{{ asset('public/merchemtAssets/images/vivo.jpg')}}" />
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        #89478494
+                                                    </td>
+                                                    <td>
+                                                        HUAWEI P50 Pro
+                                                    </td>
+                                                    <td>
+                                                        <span class="tdcheckbox">
+                                                            <input type="checkbox" class="checkbox">
+                                                            <small>&#10004;</small>
+                                                        </span>
+                                                    </td>
+                                                </tr> -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="Services">
+                                        <table class="table">
+                                            <?php
+                                            $servicesData = DB::table('products')->where('product_type', '2')->where('merchent_id', Auth::user()->id)->get();
+                                            ?>
+                                            <tbody>
+                                                @forelse ($servicesData as $service)
+                                                <tr>
+                                                    <td>
+                                                        <span class="firstimg">
+                                                            <img src="{{ asset('public/merchemtAssets/images/vivo.jpg')}}" />
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        #{{ $service->id}}
+                                                    </td>
+                                                    <td>
+                                                        {{ $service->product_name}}
+                                                    </td>
+                                                    <td>
+                                                        <span class="tdcheckbox">
+                                                            <input type="checkbox" class="checkbox">
+                                                            <small>&#10004;</small>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                @empty
+                                                <p>No service</p>
+                                                @endforelse
+                                                <!-- <tr>
+                                                    <td>
+                                                        <span class="firstimg">
+                                                            <img src="{{ asset('public/merchemtAssets/images/vivo.jpg')}}" />
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        #89478494
+                                                    </td>
+                                                    <td>
+                                                        HUAWEI P50 Pro
+                                                    </td>
+                                                    <td>
+                                                        <span class="tdcheckbox">
+                                                            <input type="checkbox" class="checkbox">
+                                                            <small>&#10004;</small>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="firstimg">
+                                                            <img src="{{ asset('public/merchemtAssets/images/vivo.jpg')}}" />
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        #89478494
+                                                    </td>
+                                                    <td>
+                                                        HUAWEI P50 Pro
+                                                    </td>
+                                                    <td>
+                                                        <span class="tdcheckbox">
+                                                            <input type="checkbox" class="checkbox">
+                                                            <small>&#10004;</small>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="firstimg">
+                                                            <img src="{{ asset('public/merchemtAssets/images/vivo.jpg')}}" />
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        #89478494
+                                                    </td>
+                                                    <td>
+                                                        HUAWEI P50 Pro
+                                                    </td>
+                                                    <td>
+                                                        <span class="tdcheckbox">
+                                                            <input type="checkbox" class="checkbox">
+                                                            <small>&#10004;</small>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="firstimg">
+                                                            <img src="{{ asset('public/merchemtAssets/images/vivo.jpg')}}" />
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        #89478494
+                                                    </td>
+                                                    <td>
+                                                        HUAWEI P50 Pro
+                                                    </td>
+                                                    <td>
+                                                        <span class="tdcheckbox">
+                                                            <input type="checkbox" class="checkbox">
+                                                            <small>&#10004;</small>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="firstimg">
+                                                            <img src="{{ asset('public/merchemtAssets/images/vivo.jpg')}}" />
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        #89478494
+                                                    </td>
+                                                    <td>
+                                                        HUAWEI P50 Pro
+                                                    </td>
+                                                    <td>
+                                                        <span class="tdcheckbox">
+                                                            <input type="checkbox" class="checkbox">
+                                                            <small>&#10004;</small>
+                                                        </span>
+                                                    </td>
+                                                </tr> -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="button" class="btn comanebtn">Done</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
 </div>
 @endsection
 @section('pagejs')
+<script src="{{ asset('public/merchemtAssets/js/libaury.js')}}"></script>
+<script src="{{ asset('public/merchemtAssets/js/bootstrap.min.js')}}"></script>
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 @stop

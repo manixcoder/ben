@@ -88,6 +88,11 @@ Route::get('/validate-user', 'HomeController@checkUserRole');
 Route::get('/request/get-sub-category/{id}', 'HomeController@getSubCategory');
 
 Route::any('subscription-plan', 'HomeController@subscriptionPlan');
+Route::any('browse-offers','HomeController@browseOffers');
+Route::any('store-details-product','HomeController@storeDetailsProduct');
+Route::any('restaurant-details-menu','HomeController@restaurantDetailsMenu');
+Route::any('hotel-details','HomeController@hotelDetails');
+Route::any('room-details','HomeController@roomDetails');
 
 Route::get('payment-method', function () {
     return view('merchentRegistration.payment-method');

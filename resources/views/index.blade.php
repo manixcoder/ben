@@ -56,8 +56,27 @@
     <div class="container">
         <div class="site-heading">
             <h3>Top Stores</h3>
+            @php
+            $hotleRestroData = DB::table('users')->whereIn('user_role', [2])->get();
+          //  dd($hotleRestroData);
+            @endphp
         </div>
         <div class="row">
+        @forelse ($hotleRestroData as $hotleRestro)
+        <?php  // dd($hotleRestro); ?>
+            <div class="col-md-3 col-sm-4">
+                <div class="store-contbox">
+                    <figure class="radius-box">
+                        <img src="{{ asset('public/frontendAssets/images/grocery-img.jpg')}}" alt="img" />
+                    </figure>
+                    <div class="store-cont">
+                        <h3>{{ $hotleRestro->company_name }}</h3>
+                        <p>20 offers</p>
+                    </div>
+                </div>
+            </div>
+            @empty
+           
             <div class="col-md-3 col-sm-4">
                 <div class="store-contbox">
                     <figure class="radius-box">
@@ -113,6 +132,7 @@
                     </div>
                 </div>
             </div>
+            @endforelse
         </div>
     </div>
 </section>
