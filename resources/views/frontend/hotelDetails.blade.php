@@ -121,7 +121,7 @@
 <section class="roomgest-detail newdetailsec1 fw">
     <div class="container">
         <div class="roomgest-detailcont fw">
-            <a href="{{ URL::to('/room-details') }}" class="imgbox">
+            <a href="{{ URL::to('/users/room-details') }}" class="imgbox">
                 <figure>
                     <img src="{{ asset('public/frontendAssets/images/roomnew-img1.jpg')}}" alt="img" />
                 </figure>
@@ -169,7 +169,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <a class="check-availibility-btn pull-right" href="{{ URL::to('/room-details') }}">
+                        <a class="check-availibility-btn pull-right" href="{{ URL::to('/users/room-details') }}">
                             Request To Book
                         </a>
                     </div>
@@ -177,7 +177,7 @@
             </div>
         </div>
         <div class="roomgest-detailcont newsdetail-sec fw">
-            <a href="{{ URL::to('/room-details') }}" class="imgbox">
+            <a href="{{ URL::to('/users/room-details') }}" class="imgbox">
                 <figure>
                     <img src="{{ asset('public/frontendAssets/images/hotel-img1.jpg')}}" alt="img" />
                 </figure>
@@ -225,13 +225,13 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <a class="check-availibility-btn pull-right" href="{{ URL::to('/room-details') }}">Request To Book</a>
+                        <a class="check-availibility-btn pull-right" href="{{ URL::to('/users/room-details') }}">Request To Book</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="roomgest-detailcont fw">
-            <a href="{{ URL::to('/room-details') }}" class="imgbox">
+            <a href="{{ URL::to('/users/room-details') }}" class="imgbox">
                 <figure>
                     <img src="{{ asset('public/frontendAssets/images/roomnew-img1.jpg')}}" alt="img" />
                 </figure>
@@ -279,7 +279,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <a class="check-availibility-btn pull-right" href="{{ URL::to('/room-details') }}">Request To Book</a>
+                        <a class="check-availibility-btn pull-right" href="{{ URL::to('/users/room-details') }}">Request To Book</a>
                     </div>
                 </div>
             </div>

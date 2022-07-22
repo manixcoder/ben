@@ -102,4 +102,31 @@ class DashboardController extends Controller
     {
         //
     }
+
+    public function browseOffers(Request $request)
+    {
+        $data = array();
+        return view('frontend.browse_offer', $data);
+    }
+
+    public function storeDetailsProduct(Request $request)
+    {
+        $data = array();
+        return view('frontend.storeDetailsProduct', $data);
+    }
+    public function restaurantDetailsMenu(Request $request)
+    {
+        $data = array();
+        return view('frontend.restaurantDetailsMenu', $data);
+    }
+    public function hotelDetails(Request $request)
+    {
+        $data = array();
+        return view('frontend.hotelDetails', $data);
+    }
+    public function roomDetails(Request $request)
+    {
+        $data = array();
+        return view('frontend.roomDetails', $data);
+    }
 }
