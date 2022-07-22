@@ -119,7 +119,7 @@ if (Auth::check()) {
                 </ul>
                 <ul class="header-menu">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="{{ URL::to('/browse-offers') }}">Browse Offers</a></li>
+                    <li><a href="{{ URL::to('/users/browse-offers') }}">Browse Offers</a></li>
                     <li><a href="#">Hot Discounts</a></li>
                     <li><a href="#">calendar</a></li>
                 </ul>
