@@ -70,7 +70,7 @@
                   Migeez
                 </span>
                 <span class="pull-right likeicon">
-                  <img src="images/like.png" alt="icon">
+                  <img src="{{ asset('public/frontendAssets/images/like.png')}}" alt="icon">
                   30
                 </span>
               </div>
@@ -140,7 +140,7 @@
                   Migeez
                 </span>
                 <span class="pull-right likeicon">
-                  <img src="images/like.png" alt="icon">
+                  <img src="{{ asset('public/frontendAssets/images/like.png')}}" alt="icon">
                   30
                 </span>
               </div>
@@ -165,7 +165,7 @@
               </h3>
               <div class="mappra fw">
                 <span>
-                  <img src="images/full_address.png" alt="icon" />
+                  <img src="{{ asset('public/frontendAssets/images/full_address.png')}}" alt="icon" />
                 </span>
                 3245 Twin House Lane, Springfield
               </div>
