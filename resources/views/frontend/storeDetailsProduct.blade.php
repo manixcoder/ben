@@ -98,7 +98,7 @@
                           Apple Air buds
                           <i><img src="{{ asset('public/frontendAssets/images/add_to_favourite.png')}}" alt="icon" /></i>
                         </h3>
-                        <h4>$ 150 <span>Offer Valid till : 10 Oct 21</span></h4>
+                        <h4>$ 150 <span>Offer Valid till : 10 Oct 21 </span></h4>
                         <ul class="prodect-socail fw">
                           <li><span><img src="{{ asset('public/frontendAssets/images/favicon.png')}}" alt="icon" /></span>Migeez</li>
                           <li><span><img src="{{ asset('public/frontendAssets/images/like.png')}}" alt="icon" /></span>30</li>
@@ -155,7 +155,7 @@
                   <div class="discount_detailcontBox fw">
                     <a href="./prodect-details.html">
                       <figure class="discount-img">
-                        <img src="{{ asset('public/frontendAssets/images/phone.jpg')]]" alt="img" />
+                        <img src="{{ asset('public/frontendAssets/images/phone.jpg')}}" alt="img" />
                         <span >70% Discount</span>
                       </figure>
                       <div class="discount_detailcont">

@@ -41,7 +41,7 @@
     <div class="row">
       <div class="col-md-4 col-sm-4">
         <div class="store-contbox text-center">
-          <a href="./Store_Details_Product.html">
+          <a href="{{ url('store-details-product')  }}">
             <figure class="store-icon">
               <span class="redtext fw">70% Discount</span>
               <img src="{{ asset('public/frontendAssets/images/phone.jpg')}}" alt="img" />
@@ -80,7 +80,7 @@
       </div>
       <div class="col-md-4 col-sm-4">
         <div class="store-contbox text-center">
-          <a href="{{ URL::to('/browse-offers') }}">
+          <a href="{{ URL::to('/store-details-product') }}">
             <figure class="store-icon">
               <span class="redtext fw">70% Discount</span>
               <img src="{{ asset('public/frontendAssets/images/apple-burd.jpeg')}}" alt="img" />
@@ -114,7 +114,7 @@
       </div>
       <div class="col-md-4 col-sm-4">
         <div class="store-contbox text-center">
-          <a href="{{ URL::to('/browse-offers') }}">
+          <a href="{{ URL::to('/store-details-product') }}">
             <figure class="store-icon">
               <span class="redtext fw">
                 70% Discount
@@ -148,9 +148,11 @@
           </a>
         </div>
       </div>
+
+
       <div class="col-md-4 col-sm-4">
         <div class="store-contbox text-center">
-          <a href="./Restaurant_Details_Menu.html">
+          <a href="{{ URL::to('/restaurant-details-menu') }}">
             <figure class="store-icon">
               <img src="{{ asset('public/frontendAssets/images/tabel-seat.jpg')}}" alt="img" class="fw">
             </figure>
@@ -190,7 +192,7 @@
       </div>
       <div class="col-md-4 col-sm-4">
         <div class="store-contbox text-center">
-          <a href="#">
+          <a href="{{ URL::to('/restaurant-details-menu') }}">
             <figure class="store-icon">
               <img src="{{ asset('public/frontendAssets/images/hotel-imgtable.jpg')}}" alt="img" class="fw">
             </figure>
@@ -241,7 +243,7 @@
       </div>
       <div class="col-md-4 col-sm-4">
         <div class="store-contbox text-center">
-          <a href="#">
+          <a href="{{ URL::to('/restaurant-details-menu') }}">
             <figure class="store-icon">
               <img src="{{ asset('public/frontendAssets/images/tabel-hotel-11.jpg')}}" alt="img" class="fw">
             </figure>
@@ -293,7 +295,7 @@
       </div>
       <div class="col-md-4 col-sm-4">
         <div class="store-contbox text-center">
-          <a href="./hotel-detail.html">
+          <a href="{{ URL::to('/hotel-details') }}">
             <figure class="store-icon">
               <img src="{{ asset('public/frontendAssets/images/hotel-img5.jpg')}}" alt="img" class="fw">
             </figure>
@@ -338,7 +340,7 @@
       </div>
       <div class="col-md-4 col-sm-4">
         <div class="store-contbox text-center">
-          <a href="#">
+        <a href="{{ URL::to('/hotel-details') }}">
             <figure class="store-icon">
               <img src="{{ asset('public/frontendAssets/images/hotel-img12.jpg')}}" alt="img" class="fw">
             </figure>
@@ -384,7 +386,7 @@
       </div>
       <div class="col-md-4 col-sm-4">
         <div class="store-contbox text-center">
-          <a href="#">
+        <a href="{{ URL::to('/hotel-details') }}">
             <figure class="store-icon">
               <img src="{{ asset('public/frontendAssets/images/hotelnew-img2.jpg')}}" alt="img" class="fw">
             </figure>
