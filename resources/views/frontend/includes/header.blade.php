@@ -118,10 +118,10 @@ if (Auth::check()) {
                     </li>
                 </ul>
                 <ul class="header-menu">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="{{ URL::to('/users') }}">Home</a></li>
                     <li><a href="{{ URL::to('/users/browse-offers') }}">Browse Offers</a></li>
                     <li><a href="{{ URL::to('/users/hot-discounts') }}">Hot Discounts</a></li>
-                    <li><a href="#">calendar</a></li>
+                    <li><a href="{{ URL::to('/users/calender') }}">calendar</a></li>
                 </ul>
             </div>
         </div>
