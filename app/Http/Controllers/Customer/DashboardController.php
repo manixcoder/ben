@@ -129,4 +129,9 @@ class DashboardController extends Controller
         $data = array();
         return view('frontend.roomDetails', $data);
     }
+    public function productDetails(Request $request)
+    {
+        $data = array();
+        return view('frontend.productDetails', $data);
+    }
 }

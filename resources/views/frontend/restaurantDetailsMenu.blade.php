@@ -30,8 +30,12 @@
                     </p>
                 </div>
                 <div class="harticon">
-                    <i><img src="{{ asset('public/frontendAssets/images/added_to_favourite.png')}}" alt="iconalt" /></i>
-                    <i><img src="{{ asset('public/frontendAssets/images/share.png')}}" alt="iconalt" /></i>
+                    <i>
+                        <img src="{{ asset('public/frontendAssets/images/added_to_favourite.png')}}" alt="iconalt" />
+                    </i>
+                    <i>
+                        <img src="{{ asset('public/frontendAssets/images/share.png')}}" alt="iconalt" />
+                    </i>
                 </div>
             </div>
         </div>
@@ -45,15 +49,37 @@
             <div class="row">
                 <div class="col-md-6">
                     <h4>Contact</h4>
-                    <p><i><img src="{{ asset('public/frontendAssets/images/c_call.png')}}" class="phone-cion" alt="icon"></i> 96000000051</p>
-                    <p><i><img src="{{ asset('public/frontendAssets/images/c_mail.png')}}" class="mail-icon" alt="icon"></i>hyattdynamite@gmail.com</p>
+                    <p>
+                        <i>
+                            <img src="{{ asset('public/frontendAssets/images/c_call.png')}}" class="phone-cion" alt="icon">
+                        </i> 
+                        96000000051
+                    </p>
+                    <p>
+                        <i>
+                            <img src="{{ asset('public/frontendAssets/images/c_mail.png')}}" class="mail-icon" alt="icon">
+                        </i>
+                        hyattdynamite@gmail.com
+                    </p>
                 </div>
                 <div class="col-md-6 col-sm-6 text-right">
                     <h4>Social Links</h4>
                     <ul>
-                        <li><a href="#"><img src="{{ asset('public/frontendAssets/images/l_facebook.png')}}" alt="icon" /></a></li>
-                        <li><a href="#"><img src="{{ asset('public/frontendAssets/images/s_instagram.png')}}" alt="icon" /></a></li>
-                        <li><a href="#"><img src="{{ asset('public/frontendAssets/images/s_twitter.png')}}" alt="icon" /></a></li>
+                        <li>
+                            <a href="#">
+                                <img src="{{ asset('public/frontendAssets/images/l_facebook.png')}}" alt="icon" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{{ asset('public/frontendAssets/images/s_instagram.png')}}" alt="icon" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{{ asset('public/frontendAssets/images/s_twitter.png')}}" alt="icon" />
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -63,24 +89,72 @@
 <section class="roomgest-detail fw">
     <div class="container">
         <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#roomgest-menu" aria-controls="roomgest-menu" role="tab" data-toggle="tab">Menu</a></li>
-            <li role="presentation"><a href="#roomgest-rable" aria-controls="roomgest-rable" role="tab" data-toggle="tab">Table</a></li>
+            <li role="presentation" class="active">
+                <a href="#roomgest-menu" aria-controls="roomgest-menu" role="tab" data-toggle="tab">
+                    Menu
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="#roomgest-rable" aria-controls="roomgest-rable" role="tab" data-toggle="tab">
+                    Table
+                </a>
+            </li>
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="roomgest-menu">
                 <div class="row">
                     <div class="col-md-3 col-sm-4">
                         <ul class="nav nav-tabs inner-tebs" role="tablist">
-                            <li role="presentation" class="active"><a href="#Category-menu" aria-controls="Category-menu" role="tab" data-toggle="tab">Category 1</a></li>
-                            <li role="presentation"><a href="#Category-menu1" aria-controls="Category-menu1" role="tab" data-toggle="tab">Category 2</a></li>
-                            <li role="presentation"><a href="#Category-menu2" aria-controls="Category-menu2" role="tab" data-toggle="tab">Category 3</a></li>
-                            <li role="presentation"><a href="#Category-menu3" aria-controls="Category-menu3" role="tab" data-toggle="tab">Category 4</a></li>
-                            <li role="presentation"><a href="#Category-menu4" aria-controls="Category-menu4" role="tab" data-toggle="tab">Category 5</a></li>
-                            <li role="presentation"><a href="#Category-menu5" aria-controls="Category-menu5" role="tab" data-toggle="tab">Category 6</a></li>
-                            <li role="presentation"><a href="#Category-menu6" aria-controls="Category-menu6" role="tab" data-toggle="tab">Category 7</a></li>
-                            <li role="presentation"><a href="#Category-menu7" aria-controls="Category-menu7" role="tab" data-toggle="tab">Category 8</a></li>
-                            <li role="presentation"><a href="#Category-menu8" aria-controls="Category-menu8" role="tab" data-toggle="tab">Category 9</a></li>
-                            <li role="presentation"><a href="#Category-menu9" aria-controls="Category-menu9" role="tab" data-toggle="tab">Category 10</a></li>
+                            <li role="presentation" class="active">
+                                <a href="#Category-menu" aria-controls="Category-menu" role="tab" data-toggle="tab">
+                                    Category 1
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#Category-menu1" aria-controls="Category-menu1" role="tab" data-toggle="tab">
+                                    Category 2
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#Category-menu2" aria-controls="Category-menu2" role="tab" data-toggle="tab">
+                                    Category 3
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#Category-menu3" aria-controls="Category-menu3" role="tab" data-toggle="tab">
+                                    Category 4
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#Category-menu4" aria-controls="Category-menu4" role="tab" data-toggle="tab">
+                                    Category 5
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#Category-menu5" aria-controls="Category-menu5" role="tab" data-toggle="tab">
+                                    Category 6
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#Category-menu6" aria-controls="Category-menu6" role="tab" data-toggle="tab">
+                                    Category 7
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#Category-menu7" aria-controls="Category-menu7" role="tab" data-toggle="tab">
+                                    Category 8
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#Category-menu8" aria-controls="Category-menu8" role="tab" data-toggle="tab">
+                                    Category 9
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#Category-menu9" aria-controls="Category-menu9" role="tab" data-toggle="tab">
+                                    Category 10
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-md-9 col-sm-8">
@@ -97,8 +171,15 @@
                                         <p class="lg-pra">with cheese & oregano</p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -114,8 +195,15 @@
                                         <p class="lg-pra">with cheese & oregano</p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -131,8 +219,15 @@
                                         <p class="lg-pra">with cheese & oregano</p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -147,11 +242,20 @@
                                     </div>
                                     <div class="detailcontright">
                                         <h4>Frozen Pizza</h4>
-                                        <p class="lg-pra">with cheese & oregano</p>
+                                        <p class="lg-pra">
+                                            with cheese & oregano
+                                        </p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -164,11 +268,20 @@
                                     </div>
                                     <div class="detailcontright">
                                         <h4>cheese burst pizza</h4>
-                                        <p class="lg-pra">with cheese & oregano</p>
+                                        <p class="lg-pra">
+                                            with cheese & oregano
+                                        </p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -186,8 +299,15 @@
                                         <p class="lg-pra">with cheese & oregano</p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -203,8 +323,15 @@
                                         <p class="lg-pra">with cheese & oregano</p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -220,8 +347,15 @@
                                         <p class="lg-pra">with cheese & oregano</p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -237,8 +371,15 @@
                                         <p class="lg-pra">with cheese & oregano</p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -253,11 +394,20 @@
                                     </div>
                                     <div class="detailcontright">
                                         <h4>Frozen Pizza</h4>
-                                        <p class="lg-pra">with cheese & oregano</p>
+                                        <p class="lg-pra">
+                                            with cheese & oregano
+                                        </p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -272,11 +422,20 @@
                                     </div>
                                     <div class="detailcontright">
                                         <h4>Frozen Pizza</h4>
-                                        <p class="lg-pra">with cheese & oregano</p>
+                                        <p class="lg-pra">
+                                            with cheese & oregano
+                                        </p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -289,11 +448,20 @@
                                     </div>
                                     <div class="detailcontright">
                                         <h4>cheese burst pizza</h4>
-                                        <p class="lg-pra">with cheese & oregano</p>
+                                        <p class="lg-pra">
+                                            with cheese & oregano
+                                        </p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -306,11 +474,20 @@
                                     </div>
                                     <div class="detailcontright">
                                         <h4>Frozen Pizza</h4>
-                                        <p class="lg-pra">with cheese & oregano</p>
+                                        <p class="lg-pra">
+                                            with cheese & oregano
+                                        </p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -324,12 +501,23 @@
                                         </figure>
                                     </div>
                                     <div class="detailcontright">
-                                        <h4>Frozen Pizza</h4>
-                                        <p class="lg-pra">with cheese & oregano</p>
+                                        <h4>
+                                            Frozen Pizza
+                                        </h4>
+                                        <p class="lg-pra">
+                                            with cheese & oregano
+                                        </p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -341,12 +529,23 @@
                                         </figure>
                                     </div>
                                     <div class="detailcontright">
-                                        <h4>cheese burst pizza</h4>
-                                        <p class="lg-pra">with cheese & oregano</p>
+                                        <h4>
+                                            cheese burst pizza
+                                        </h4>
+                                        <p class="lg-pra">
+                                            with cheese & oregano
+                                        </p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -358,12 +557,23 @@
                                         </figure>
                                     </div>
                                     <div class="detailcontright">
-                                        <h4>Frozen Pizza</h4>
-                                        <p class="lg-pra">with cheese & oregano</p>
+                                        <h4>
+                                            Frozen Pizza
+                                        </h4>
+                                        <p class="lg-pra">
+                                            with cheese & oregano
+                                        </p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -375,12 +585,23 @@
                                         </figure>
                                     </div>
                                     <div class="detailcontright">
-                                        <h4>cheese burst pizza</h4>
-                                        <p class="lg-pra">with cheese & oregano</p>
+                                        <h4>
+                                            cheese burst pizza
+                                        </h4>
+                                        <p class="lg-pra">
+                                            with cheese & oregano
+                                        </p>
                                         <div class="row">
                                             <div class="col-md-8">
-                                                <span class="boldtext">$ 840</span>
-                                                <span class="lightcolor">$ 1200<span class="redcolor">30% off</span></span>
+                                                <span class="boldtext">
+                                                    $ 840
+                                                </span>
+                                                <span class="lightcolor">
+                                                    $ 1200
+                                                    <span class="redcolor">
+                                                        30% off
+                                                    </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>

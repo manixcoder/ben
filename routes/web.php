@@ -495,4 +495,10 @@ Route::group(['prefix' => 'users', 'middleware' => ['users', 'auth']], function 
     Route::any('restaurant-details-menu', 'Customer\DashboardController@restaurantDetailsMenu');
     Route::any('hotel-details', 'Customer\DashboardController@hotelDetails');
     Route::any('room-details', 'Customer\DashboardController@roomDetails');
+    Route::any('product-details', 'Customer\DashboardController@productDetails');
+
+    Route::group(['prefix' => 'hot-discounts'], function () {
+        Route::get('/', 'Customer\HotDiscountController@index');
+        
+    });
 });
